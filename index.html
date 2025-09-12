@@ -46,9 +46,6 @@
         }
 
         /* Ancient Israel Atmospheric Elements */
-
-
-        /* Floating Ancient Elements */
         .ancient-elements {
             position: fixed;
             top: 0;
@@ -123,6 +120,242 @@
             }
         }
 
+        /* Interactive Guide Avatar Styles */
+        .guide-avatar-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1500;
+        }
+
+        .floating-guide-avatar {
+            position: absolute;
+            top: 20%;
+            right: 50px;
+            pointer-events: all;
+            animation: guideFloat 4s ease-in-out infinite;
+        }
+
+        .guide-avatar-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3b82f6, #06b6d4);
+            border: 4px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .guide-avatar-image:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+        }
+
+        .avatar-speech-bubble {
+            position: absolute;
+            bottom: 130px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            color: #1f2937;
+            padding: 15px 20px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            font-size: 0.9rem;
+            font-weight: bold;
+            white-space: nowrap;
+            max-width: 250px;
+            text-align: center;
+            animation: speechBubblePulse 3s ease-in-out infinite;
+        }
+
+        .avatar-speech-bubble::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 10px solid transparent;
+            border-top-color: white;
+        }
+
+        @keyframes guideFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes speechBubblePulse {
+            0%, 100% { opacity: 1; transform: translateX(-50%) scale(1); }
+            50% { opacity: 0.8; transform: translateX(-50%) scale(1.05); }
+        }
+
+        /* Feature Callout Points */
+        .feature-callouts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        /* Dynamic positioning for specific callouts */
+        .timeline-callout {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 15;
+        }
+
+        .quiz-callout {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 15;
+        }
+
+        .testimony-callout {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 15;
+        }
+
+        .support-callout {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 15;
+        }
+
+        .callout-point {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            pointer-events: all;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .callout-pulse {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #10b981, #059669);
+            border-radius: 50%;
+            animation: calloutPulse 2s ease-in-out infinite;
+            position: relative;
+        }
+
+        .callout-pulse::before {
+            content: '👆';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2rem;
+            animation: pointingFinger 1.5s ease-in-out infinite;
+        }
+
+        @keyframes calloutPulse {
+            0%, 100% { 
+                transform: scale(1); 
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); 
+            }
+            50% { 
+                transform: scale(1.1); 
+                box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); 
+            }
+        }
+
+        @keyframes pointingFinger {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+            25% { transform: translate(-50%, -50%) rotate(-10deg); }
+            75% { transform: translate(-50%, -50%) rotate(10deg); }
+        }
+
+        .callout-tooltip {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.95);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            min-width: 250px;
+            max-width: 300px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .callout-tooltip h4 {
+            margin: 0 0 8px 0;
+            color: #10b981;
+            font-size: 1rem;
+        }
+
+        .callout-tooltip p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+
+        .callout-point:hover .callout-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-5px);
+        }
+
+        /* Guide Navigation */
+        .guide-navigation {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+            pointer-events: all;
+        }
+
+        .guide-nav-btn {
+            background: rgba(15, 23, 42, 0.9);
+            color: white;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            font-weight: bold;
+        }
+
+        .guide-nav-btn:hover {
+            background: rgba(59, 130, 246, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+
         /* Ancient Scroll Texture on Cards */
         .event-card {
             background: linear-gradient(135deg, 
@@ -165,7 +398,6 @@
             z-index: 1;
         }
 
-        /* Gentle Parchment Animation */
         .event-card:hover {
             transform: scale(1.02) translateY(-2px);
             box-shadow: 
@@ -351,8 +583,6 @@
             left: 100%;
         }
 
-
-
         @keyframes nightSkyShift {
             0%, 100% { background-position: 0% 50%; }
             25% { background-position: 100% 25%; }
@@ -365,11 +595,6 @@
             25% { opacity: 0.7; transform: scale(1.1); }
             50% { opacity: 0.4; transform: scale(0.9); }
             75% { opacity: 0.8; transform: scale(1.05); }
-        }
-
-        @keyframes moonGlow {
-            0%, 100% { opacity: 0.3; transform: translateY(0px); }
-            50% { opacity: 0.5; transform: translateY(-10px); }
         }
 
         .container {
@@ -391,11 +616,16 @@
 
         .header h1 {
             font-size: 2.5rem;
-            background: linear-gradient(45deg, #0ea5e9, #10b981);
+            background: linear-gradient(45deg, #2563eb, #1d4ed8, #0ea5e9);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 20px;
             line-height: 1.2;
+            text-shadow: 
+                0 2px 4px rgba(37, 99, 235, 0.3),
+                0 4px 8px rgba(37, 99, 235, 0.2),
+                0 8px 16px rgba(37, 99, 235, 0.1);
+            filter: drop-shadow(0 2px 4px rgba(37, 99, 235, 0.3));
         }
 
         .jlr-branding {
@@ -457,14 +687,6 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        .scripture-quote {
-            font-size: 1.1rem;
-            color: #cbd5e1;
-            margin: 20px 0;
-            font-style: italic;
-            line-height: 1.5;
-        }
-
         .guide-section {
             display: flex;
             align-items: center;
@@ -514,16 +736,6 @@
             margin: 50px 0;
         }
 
-        .timeline-line {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 6px;
-            height: 100%;
-            background: linear-gradient(to bottom, #3b82f6, #10b981, #06b6d4, #0d9488);
-            border-radius: 3px;
-        }
-
         .timeline-event {
             position: relative;
             margin: 100px 0;
@@ -545,23 +757,6 @@
             padding-left: calc(50% + 60px);
         }
 
-        .event-marker {
-            position: absolute;
-            left: 50%;
-            top: 30px;
-            transform: translateX(-50%);
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            border: 4px solid white;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            transition: all 0.3s ease;
-        }
-
         .event-marker.creation { background: linear-gradient(45deg, #3b82f6, #2563eb); }
         .event-marker.old-testament { background: linear-gradient(45deg, #10b981, #059669); }
         .event-marker.new-testament { background: linear-gradient(45deg, #06b6d4, #0891b2); }
@@ -570,16 +765,6 @@
         .timeline-event:hover .event-marker {
             transform: translateX(-50%) scale(1.3);
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .event-card {
-            background: white;
-            border-radius: 20px;
-            padding: 35px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-            border-left: 6px solid;
-            transition: all 0.3s ease;
-            overflow: hidden;
         }
 
         .event-card.creation { border-left-color: #3b82f6; }
@@ -651,18 +836,6 @@
             color: #1e40af;
         }
 
-        .expand-btn {
-            background: linear-gradient(45deg, #3b82f6, #06b6d4);
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-        }
-
         .expand-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
@@ -716,19 +889,6 @@
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-        }
-
-        .quiz-btn {
-            background: linear-gradient(45deg, #3b82f6, #06b6d4);
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            min-width: 200px;
         }
 
         .quiz-btn:hover {
@@ -804,19 +964,6 @@
             border-radius: 10px;
             margin: 10px auto;
             display: block;
-        }
-
-        .submit-testimony {
-            background: linear-gradient(45deg, #10b981, #059669);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1rem;
-            width: 100%;
-            transition: all 0.3s ease;
         }
 
         .submit-testimony:hover {
@@ -906,12 +1053,12 @@
         @media (max-width: 768px) {
             .container { 
                 padding: 15px; 
-                padding-top: 80px; /* Add padding to prevent overlap with mobile buttons */
+                padding-top: 80px;
             }
             .header { 
                 padding: 25px; 
                 margin-bottom: 25px; 
-                margin-top: 20px; /* Additional top margin for mobile */
+                margin-top: 20px;
             }
             .header h1 { 
                 font-size: 1.6rem; 
@@ -947,6 +1094,30 @@
                 flex-direction: column;
                 gap: 5px;
             }
+            .floating-guide-avatar {
+                right: 20px;
+                top: 15%;
+            }
+            .guide-avatar-image {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+            .avatar-speech-bubble {
+                bottom: 90px;
+                max-width: 200px;
+                font-size: 0.8rem;
+                padding: 10px 15px;
+            }
+            .callout-point {
+                width: 25px;
+                height: 25px;
+            }
+            .callout-tooltip {
+                min-width: 200px;
+                max-width: 250px;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -973,6 +1144,58 @@
 
     <!-- Desert Wind Effect -->
     <div class="desert-wind"></div>
+
+    <!-- Interactive Guide Avatar with Feature Callouts -->
+    <div class="guide-avatar-container" id="guideContainer" style="display: none;">
+        <div class="floating-guide-avatar">
+            <div class="guide-avatar-image" id="guideAvatarImage">👤
+                <div class="avatar-speech-bubble">
+                    <span id="guideSpeechText">Welcome! Let me show you around! 👋</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Feature Callout Points -->
+        <div class="feature-callouts">
+            <div class="callout-point timeline-callout" data-feature="timeline">
+                <div class="callout-pulse"></div>
+                <div class="callout-tooltip">
+                    <h4>📜 Interactive Biblical Timeline</h4>
+                    <p>Explore God's redemptive story from Creation to Christ's return! Click any event to dive deeper.</p>
+                </div>
+            </div>
+            
+            <div class="callout-point quiz-callout" data-feature="quiz">
+                <div class="callout-pulse"></div>
+                <div class="callout-tooltip">
+                    <h4>🎯 Biblical Knowledge Quizzes</h4>
+                    <p>Test your understanding with interactive quizzes on biblical events and scripture memory!</p>
+                </div>
+            </div>
+            
+            <div class="callout-point testimony-callout" data-feature="testimony">
+                <div class="callout-pulse"></div>
+                <div class="callout-tooltip">
+                    <h4>💝 Share Your Testimony</h4>
+                    <p>Share how Jesus has transformed your life and encourage others in their faith journey!</p>
+                </div>
+            </div>
+            
+            <div class="callout-point support-callout" data-feature="support">
+                <div class="callout-pulse"></div>
+                <div class="callout-tooltip">
+                    <h4>☕ Support the Ministry</h4>
+                    <p>Help spread God's love by supporting Jesus Love Revealed YouTube channel!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Guide Navigation -->
+        <div class="guide-navigation">
+            <button class="guide-nav-btn" onclick="startGuidedTour()">🎯 Start Tour</button>
+            <button class="guide-nav-btn" onclick="hideGuide()">✕ Hide Guide</button>
+        </div>
+    </div>
 
     <div class="container">
         <div class="header">
@@ -1003,7 +1226,7 @@
                 <div class="avatar-placeholder" id="userAvatar">👤</div>
                 <div class="guide-text">
                     <h3>Your Personal Faith Guide</h3>
-                    <p>Click here to upload your avatar and personalize your biblical journey!</p>
+                    <p>Click here to upload your Facebook avatar and I'll show you around!</p>
                 </div>
             </div>
         </div>
@@ -1290,7 +1513,7 @@
             }
         ];
 
-        // Avatar upload functionality
+        // Avatar upload functionality with guide activation
         document.getElementById('userAvatar').addEventListener('click', function() {
             const input = document.createElement('input');
             input.type = 'file';
@@ -1308,12 +1531,159 @@
                         
                         // Update guide text
                         const guideText = document.querySelector('.guide-text p');
-                        guideText.textContent = 'Welcome to your personalized biblical journey of faith!';
+                        guideText.textContent = 'Perfect! Now let me show you around this biblical journey!';
+                        
+                        // Activate the floating guide with the same image
+                        activateGuideAvatar(e.target.result);
                     };
                     reader.readAsDataURL(file);
                 }
             };
             input.click();
+        });
+
+        // Guide Avatar Functions
+        function activateGuideAvatar(imageUrl) {
+            const guideContainer = document.getElementById('guideContainer');
+            const guideAvatarImage = document.getElementById('guideAvatarImage');
+            
+            // Set the uploaded image as the guide avatar
+            guideAvatarImage.style.backgroundImage = `url(${imageUrl})`;
+            guideAvatarImage.style.backgroundSize = 'cover';
+            guideAvatarImage.style.backgroundPosition = 'center';
+            guideAvatarImage.innerHTML = '';
+            
+            // Show the guide container
+            guideContainer.style.display = 'block';
+            
+            // Position the callout points over interactive elements
+            positionCalloutPoints();
+            
+            // Start the welcome sequence
+            setTimeout(() => {
+                updateGuideSpeech("Hi! I'm your personal guide! 👋");
+                setTimeout(() => {
+                    updateGuideSpeech("Let me show you all the amazing features!");
+                    setTimeout(() => {
+                        updateGuideSpeech("Hover over the green points to explore! 🎯");
+                    }, 3000);
+                }, 3000);
+            }, 1000);
+        }
+
+        function positionCalloutPoints() {
+            // Position timeline callout over the first timeline event
+            const firstTimelineEvent = document.querySelector('.timeline-event');
+            const timelineCallout = document.querySelector('.timeline-callout');
+            if (firstTimelineEvent && timelineCallout) {
+                const rect = firstTimelineEvent.getBoundingClientRect();
+                const containerRect = document.querySelector('.container').getBoundingClientRect();
+                timelineCallout.style.position = 'absolute';
+                timelineCallout.style.top = (rect.top - containerRect.top + rect.height / 2) + 'px';
+                timelineCallout.style.left = (rect.left - containerRect.left + rect.width / 2) + 'px';
+                timelineCallout.style.transform = 'translate(-50%, -50%)';
+            }
+
+            // Position quiz callout over quiz buttons
+            const quizSection = document.querySelector('.quiz-section');
+            const quizCallout = document.querySelector('.quiz-callout');
+            if (quizSection && quizCallout) {
+                const rect = quizSection.getBoundingClientRect();
+                quizCallout.style.position = 'fixed';
+                quizCallout.style.top = (rect.top + rect.height / 2) + 'px';
+                quizCallout.style.left = (rect.left + rect.width / 2) + 'px';
+                quizCallout.style.transform = 'translate(-50%, -50%)';
+            }
+
+            // Position testimony callout over testimony form
+            const testimonySection = document.querySelector('.testimony-section');
+            const testimonyCallout = document.querySelector('.testimony-callout');
+            if (testimonySection && testimonyCallout) {
+                const rect = testimonySection.getBoundingClientRect();
+                testimonyCallout.style.position = 'fixed';
+                testimonyCallout.style.top = (rect.top + rect.height / 2) + 'px';
+                testimonyCallout.style.left = (rect.left + rect.width / 2) + 'px';
+                testimonyCallout.style.transform = 'translate(-50%, -50%)';
+            }
+
+            // Position support callout over support link
+            const supportLink = document.querySelector('.support-link');
+            const supportCallout = document.querySelector('.support-callout');
+            if (supportLink && supportCallout) {
+                const rect = supportLink.getBoundingClientRect();
+                supportCallout.style.position = 'fixed';
+                supportCallout.style.top = (rect.top + rect.height / 2) + 'px';
+                supportCallout.style.left = (rect.left + rect.width / 2) + 'px';
+                supportCallout.style.transform = 'translate(-50%, -50%)';
+            }
+        }
+
+        function updateGuideSpeech(text) {
+            const speechElement = document.getElementById('guideSpeechText');
+            speechElement.textContent = text;
+            
+            // Add a little animation
+            speechElement.parentElement.style.transform = 'translateX(-50%) scale(0.9)';
+            setTimeout(() => {
+                speechElement.parentElement.style.transform = 'translateX(-50%) scale(1)';
+            }, 200);
+        }
+
+        function startGuidedTour() {
+            const callouts = document.querySelectorAll('.callout-point');
+            let currentIndex = 0;
+            
+            function highlightNextFeature() {
+                if (currentIndex >= callouts.length) {
+                    updateGuideSpeech("Tour complete! Enjoy exploring! ✨");
+                    return;
+                }
+                
+                const callout = callouts[currentIndex];
+                const feature = callout.dataset.feature;
+                
+                // Highlight the current callout
+                callout.style.transform = 'scale(1.5)';
+                callout.style.zIndex = '20';
+                
+                // Update speech based on feature
+                const speeches = {
+                    'timeline': "📜 This is our interactive Biblical Timeline! Click events to learn more!",
+                    'quiz': "🎯 Test your biblical knowledge with fun quizzes!",
+                    'testimony': "💝 Share your faith story to encourage others!",
+                    'support': "☕ Support our ministry to keep spreading God's love!"
+                };
+                
+                updateGuideSpeech(speeches[feature]);
+                
+                // Reset after 4 seconds and move to next
+                setTimeout(() => {
+                    callout.style.transform = 'scale(1)';
+                    callout.style.zIndex = '10';
+                    currentIndex++;
+                    highlightNextFeature();
+                }, 4000);
+            }
+            
+            updateGuideSpeech("Starting guided tour! 🚀");
+            setTimeout(highlightNextFeature, 2000);
+        }
+
+        function hideGuide() {
+            const guideContainer = document.getElementById('guideContainer');
+            guideContainer.style.display = 'none';
+            
+            // Update the main guide text
+            const guideText = document.querySelector('.guide-text p');
+            guideText.textContent = 'Click to bring back your personal guide anytime!';
+        }
+
+        // Make the main avatar clickable to reshow guide
+        document.getElementById('userAvatar').addEventListener('dblclick', function() {
+            if (this.style.backgroundImage) {
+                const imageUrl = this.style.backgroundImage.slice(5, -2); // Remove url(" and ")
+                activateGuideAvatar(imageUrl);
+            }
         });
 
         // Modal functions
@@ -1548,6 +1918,19 @@
                 }, 100);
             });
         });
+
+        // Reposition callout points on window resize and scroll
+        window.addEventListener('resize', () => {
+            if (document.getElementById('guideContainer').style.display !== 'none') {
+                setTimeout(positionCalloutPoints, 100);
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (document.getElementById('guideContainer').style.display !== 'none') {
+                positionCalloutPoints();
+            }
+        });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97e1eac8c450a4b9',t:'MTc1NzcwNjQ1MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97e21794575eda26',t:'MTc1NzcwODI4Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
