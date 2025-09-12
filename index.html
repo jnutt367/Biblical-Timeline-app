@@ -1,0 +1,2873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblical Timeline - Journey of Faith</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4f9cf9 0%, #2dd4bf 100%);
+            min-height: 100vh;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #e2e8f0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .header {
+            background: rgba(30, 41, 59, 0.95);
+            color: #e2e8f0;
+        }
+
+        .dark-mode-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #3b82f6, #06b6d4);
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dark-mode-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            background: linear-gradient(45deg, #1e293b, #334155);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #3b82f6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        body.dark-mode .header h1 {
+            background: linear-gradient(45deg, #60a5fa, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .jlr-branding {
+            background: linear-gradient(45deg, #3b82f6, #06b6d4);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .jlr-branding {
+            background: linear-gradient(45deg, #1e40af, #0f766e);
+        }
+
+        .guide-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 15px;
+            background: linear-gradient(45deg, #06b6d4 0%, #3b82f6 100%);
+            border-radius: 15px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .guide-section {
+            background: linear-gradient(45deg, #0f766e 0%, #1e40af 100%);
+        }
+
+        .avatar-placeholder {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #3b82f6;
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .avatar-placeholder {
+            background: #334155;
+            color: #60a5fa;
+            border-color: rgba(148, 163, 184, 0.8);
+        }
+
+        .controls {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .controls {
+            background: rgba(30, 41, 59, 0.95);
+            color: #e2e8f0;
+        }
+
+        .filter-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .filter-btn.active {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .filter-btn.old-testament.active {
+            background: linear-gradient(45deg, #10b981 0%, #059669 100%);
+            color: white;
+        }
+
+        .filter-btn.new-testament.active {
+            background: linear-gradient(45deg, #06b6d4 0%, #0891b2 100%);
+            color: white;
+        }
+
+        .filter-btn.creation.active {
+            background: linear-gradient(45deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+        }
+
+        .filter-btn.prophetic.active {
+            background: linear-gradient(45deg, #0f766e 0%, #0d9488 100%);
+            color: white;
+        }
+
+        body.dark-mode .filter-btn {
+            background: #475569;
+            color: #e2e8f0;
+        }
+
+        body.dark-mode .filter-btn.active {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .quiz-section {
+            background: linear-gradient(45deg, #3b82f6 0%, #06b6d4 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .quiz-section {
+            background: linear-gradient(45deg, #1e40af 0%, #0f766e 100%);
+        }
+
+        .quiz-question {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .quiz-option {
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-option:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        body.dark-mode .quiz-option:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .quiz-option.correct {
+            background: #10b981;
+            border-color: #059669;
+        }
+
+        .quiz-option.incorrect {
+            background: #ef4444;
+            border-color: #dc2626;
+        }
+
+        .quiz-score {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        body.dark-mode .quiz-score {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .drag-score {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        body.dark-mode .drag-score {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, #3b82f6, #10b981, #06b6d4, #0d9488);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .timeline-line {
+            background: linear-gradient(to bottom, #1e40af, #059669, #0891b2, #0f766e);
+        }
+
+        .timeline-event {
+            position: relative;
+            margin: 80px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 1;
+        }
+
+        .timeline-event.hidden {
+            display: none;
+        }
+
+        .timeline-event:hover {
+            transform: scale(1.02);
+        }
+
+        .timeline-event.left {
+            text-align: right;
+            padding-right: calc(50% + 50px);
+        }
+
+        .timeline-event.right {
+            text-align: left;
+            padding-left: calc(50% + 50px);
+        }
+
+        .event-marker {
+            position: absolute;
+            left: 50%;
+            top: 25px;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 4px solid white;
+            z-index: 10;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .event-marker.creation {
+            background: linear-gradient(45deg, #3b82f6, #2563eb);
+        }
+
+        .event-marker.old-testament {
+            background: linear-gradient(45deg, #10b981, #059669);
+        }
+
+        .event-marker.new-testament {
+            background: linear-gradient(45deg, #06b6d4, #0891b2);
+        }
+
+        .event-marker.prophetic {
+            background: linear-gradient(45deg, #0f766e, #0d9488);
+        }
+
+        body.dark-mode .event-marker.creation {
+            background: linear-gradient(45deg, #1e40af, #1d4ed8);
+        }
+
+        body.dark-mode .event-marker.old-testament {
+            background: linear-gradient(45deg, #059669, #047857);
+        }
+
+        body.dark-mode .event-marker.new-testament {
+            background: linear-gradient(45deg, #0891b2, #0e7490);
+        }
+
+        body.dark-mode .event-marker.prophetic {
+            background: linear-gradient(45deg, #0f766e, #115e59);
+        }
+
+        .timeline-event:hover .event-marker {
+            transform: translateX(-50%) scale(1.3);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-left: 6px solid;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        body.dark-mode .event-card {
+            background: #334155;
+            color: #e2e8f0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .event-card.creation {
+            border-left-color: #3b82f6;
+        }
+
+        .event-card.old-testament {
+            border-left-color: #10b981;
+        }
+
+        .event-card.new-testament {
+            border-left-color: #06b6d4;
+        }
+
+        .event-card.prophetic {
+            border-left-color: #0f766e;
+        }
+
+        .event-date {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .event-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        body.dark-mode .event-title {
+            color: #f1f5f9;
+        }
+
+        .event-category {
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .event-category.creation {
+            background: linear-gradient(45deg, #3b82f6, #2563eb);
+            color: white;
+        }
+
+        .event-category.old-testament {
+            background: linear-gradient(45deg, #10b981, #059669);
+            color: white;
+        }
+
+        .event-category.new-testament {
+            background: linear-gradient(45deg, #06b6d4, #0891b2);
+            color: white;
+        }
+
+        .event-category.prophetic {
+            background: linear-gradient(45deg, #0f766e, #0d9488);
+            color: white;
+        }
+
+        .event-preview {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        body.dark-mode .event-preview {
+            color: #cbd5e1;
+        }
+
+        .event-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .event-details.expanded {
+            max-height: 800px;
+        }
+
+        .event-details p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        body.dark-mode .event-details p {
+            color: #cbd5e1;
+        }
+
+        .scripture-ref {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #3b82f6;
+            margin: 15px 0;
+            font-style: italic;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .scripture-ref {
+            background: #475569;
+            color: #e2e8f0;
+            border-left-color: #60a5fa;
+        }
+
+        .expand-btn {
+            background: linear-gradient(45deg, #3b82f6, #06b6d4);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .expand-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        body.dark-mode .expand-btn {
+            background: linear-gradient(45deg, #1e40af, #0f766e);
+        }
+
+        body.dark-mode .expand-btn:hover {
+            box-shadow: 0 5px 15px rgba(30, 64, 175, 0.4);
+        }
+
+        /* Authentication Styles */
+        .user-auth {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .user-profile {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .user-profile.hidden {
+            display: none;
+        }
+
+        .auth-btn {
+            background: linear-gradient(45deg, #10b981, #059669);
+            border: none;
+            border-radius: 25px;
+            padding: 8px 16px;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .auth-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+        }
+
+        .auth-btn.logout {
+            background: linear-gradient(45deg, #ef4444, #dc2626);
+        }
+
+        .auth-btn.logout:hover {
+            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+        }
+
+        body.dark-mode .auth-btn {
+            background: linear-gradient(45deg, #059669, #047857);
+        }
+
+        body.dark-mode .auth-btn.logout {
+            background: linear-gradient(45deg, #dc2626, #b91c1c);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #374151;
+            font-weight: 600;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        body.dark-mode .user-info {
+            color: #e2e8f0;
+        }
+
+        /* Data Management Styles */
+        .data-management {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .data-management {
+            background: rgba(30, 41, 59, 0.95);
+            color: #e2e8f0;
+        }
+
+        .data-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .data-btn {
+            background: linear-gradient(45deg, #0f766e, #0d9488);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .data-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(15, 118, 110, 0.4);
+        }
+
+        body.dark-mode .data-btn {
+            background: linear-gradient(45deg, #115e59, #134e4a);
+        }
+
+        .demo-notice {
+            background: linear-gradient(45deg, #06b6d4, #0891b2);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        body.dark-mode .demo-notice {
+            background: linear-gradient(45deg, #0891b2, #0e7490);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: all 0.3s ease;
+        }
+
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+
+        body.dark-mode .modal-content {
+            background: #334155;
+            color: #e2e8f0;
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .modal-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #3b82f6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        body.dark-mode .modal-header h3 {
+            background: linear-gradient(45deg, #60a5fa, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        body.dark-mode .form-group label {
+            color: #d1d5db;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        body.dark-mode .form-group input {
+            background: #475569;
+            border-color: #64748b;
+            color: #e2e8f0;
+        }
+
+        body.dark-mode .form-group input:focus {
+            border-color: #60a5fa;
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #3b82f6, #06b6d4);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6b7280;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #4b5563;
+            transform: translateY(-2px);
+        }
+
+        body.dark-mode .btn-primary {
+            background: linear-gradient(45deg, #1e40af, #0f766e);
+        }
+
+        body.dark-mode .btn-secondary {
+            background: #475569;
+        }
+
+        body.dark-mode .btn-secondary:hover {
+            background: #334155;
+        }
+
+        /* Stats and Leaderboard Styles */
+        .stats-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .stats-section {
+            background: rgba(30, 41, 59, 0.95);
+            color: #e2e8f0;
+        }
+
+        .personal-stats {
+            margin-bottom: 30px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .stat-card {
+            background: linear-gradient(45deg, #f8fafc, #f1f5f9);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark-mode .stat-card {
+            background: linear-gradient(45deg, #475569, #334155);
+            border-color: #64748b;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #3b82f6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+
+        body.dark-mode .stat-number {
+            background: linear-gradient(45deg, #60a5fa, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-weight: 600;
+        }
+
+        body.dark-mode .stat-label {
+            color: #9ca3af;
+        }
+
+        .leaderboard-section h4 {
+            margin-bottom: 15px;
+        }
+
+        .leaderboard-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background: #f3f4f6;
+            color: #374151;
+            font-size: 0.9rem;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(45deg, #3b82f6, #06b6d4);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        body.dark-mode .tab-btn {
+            background: #475569;
+            color: #e2e8f0;
+        }
+
+        body.dark-mode .tab-btn.active {
+            background: linear-gradient(45deg, #1e40af, #0f766e);
+        }
+
+        .leaderboard-content {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .leaderboard-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .leaderboard-item:hover {
+            background: #f1f5f9;
+            transform: translateX(5px);
+        }
+
+        body.dark-mode .leaderboard-item {
+            background: #475569;
+        }
+
+        body.dark-mode .leaderboard-item:hover {
+            background: #334155;
+        }
+
+        .rank {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            margin-right: 15px;
+            font-size: 1.1rem;
+        }
+
+        .rank:nth-child(1) {
+            background: linear-gradient(45deg, #10b981, #059669);
+        }
+
+        .leaderboard-item:nth-child(1) .rank {
+            background: linear-gradient(45deg, #10b981, #059669);
+        }
+
+        .leaderboard-item:nth-child(2) .rank {
+            background: linear-gradient(45deg, #06b6d4, #0891b2);
+        }
+
+        .leaderboard-item:nth-child(3) .rank {
+            background: linear-gradient(45deg, #0f766e, #0d9488);
+        }
+
+        .leaderboard-item:nth-child(n+4) .rank {
+            background: linear-gradient(45deg, #3b82f6, #2563eb);
+        }
+
+        .player-info {
+            flex: 1;
+        }
+
+        .player-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 3px;
+        }
+
+        .player-score {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        body.dark-mode .player-score {
+            color: #9ca3af;
+        }
+
+        .drag-drop-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .drag-drop-section {
+            background: rgba(30, 41, 59, 0.95);
+            color: #e2e8f0;
+        }
+
+        .drag-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .drag-item {
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #3b82f6, #06b6d4);
+            color: white;
+            border-radius: 25px;
+            cursor: grab;
+            user-select: none;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .drag-item {
+            background: linear-gradient(45deg, #1e40af, #0f766e);
+        }
+
+        .drag-item:active {
+            cursor: grabbing;
+        }
+
+        .drag-item.dragging {
+            opacity: 0.5;
+            transform: rotate(5deg);
+        }
+
+        .drop-zones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .drop-zone {
+            min-height: 80px;
+            border: 3px dashed #ddd;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            padding: 15px;
+            text-align: center;
+        }
+
+        body.dark-mode .drop-zone {
+            border-color: #64748b;
+            color: #e2e8f0;
+        }
+
+        .drop-zone.drag-over {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        body.dark-mode .drop-zone.drag-over {
+            border-color: #60a5fa;
+            background: rgba(96, 165, 250, 0.2);
+        }
+
+        .drop-zone.correct {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        body.dark-mode .drop-zone.correct {
+            border-color: #34d399;
+            background: rgba(52, 211, 153, 0.2);
+        }
+
+        .drop-zone.incorrect {
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        body.dark-mode .drop-zone.incorrect {
+            border-color: #f87171;
+            background: rgba(248, 113, 113, 0.2);
+        }
+
+        /* Mobile-first approach - base styles for mobile */
+        .container {
+            padding: 15px;
+        }
+
+        .header {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            line-height: 1.2;
+        }
+
+        .header p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .guide-section {
+            flex-direction: column;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .avatar-placeholder {
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+        }
+
+        .controls {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .filter-section {
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            min-width: 120px;
+        }
+
+        .quiz-section {
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .quiz-question {
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .quiz-options {
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        .quiz-option {
+            padding: 12px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .drag-drop-section {
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .drag-items {
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .drag-item {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .drop-zones {
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .drop-zone {
+            min-height: 60px;
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* Timeline mobile optimization */
+        .timeline-event {
+            margin: 40px 0;
+        }
+
+        .timeline-event.left,
+        .timeline-event.right {
+            text-align: left;
+            padding-left: 60px;
+            padding-right: 15px;
+        }
+
+        .timeline-line {
+            left: 30px;
+            width: 4px;
+        }
+
+        .event-marker {
+            left: 30px;
+            width: 24px;
+            height: 24px;
+            font-size: 1rem;
+        }
+
+        .event-card {
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .event-date {
+            font-size: 1rem;
+        }
+
+        .event-title {
+            font-size: 1.3rem;
+            line-height: 1.3;
+        }
+
+        .event-category {
+            padding: 4px 12px;
+            font-size: 0.8rem;
+        }
+
+        .event-preview {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .event-details p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .scripture-ref {
+            padding: 12px;
+            font-size: 0.9rem;
+            margin: 12px 0;
+        }
+
+        .expand-btn {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        /* Tablet styles */
+        @media (min-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .header {
+                padding: 30px;
+                margin-bottom: 30px;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .header p {
+                font-size: 1.1rem;
+            }
+
+            .guide-section {
+                flex-direction: row;
+                text-align: left;
+            }
+
+            .avatar-placeholder {
+                width: 55px;
+                height: 55px;
+                font-size: 1.3rem;
+            }
+
+            .controls {
+                padding: 25px;
+            }
+
+            .filter-section {
+                gap: 12px;
+            }
+
+            .filter-btn {
+                padding: 10px 18px;
+                font-size: 1rem;
+                min-width: auto;
+            }
+
+            .quiz-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .drag-items {
+                gap: 12px;
+            }
+
+            .drop-zones {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .timeline-event {
+                margin: 60px 0;
+            }
+
+            .timeline-event.left {
+                text-align: right;
+                padding-right: calc(50% + 40px);
+                padding-left: 20px;
+            }
+
+            .timeline-event.right {
+                text-align: left;
+                padding-left: calc(50% + 40px);
+                padding-right: 20px;
+            }
+
+            .timeline-line {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 5px;
+            }
+
+            .event-marker {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 26px;
+                height: 26px;
+                font-size: 1.1rem;
+            }
+
+            .event-card {
+                padding: 25px;
+            }
+
+            .expand-btn {
+                width: auto;
+                margin-top: 10px;
+            }
+        }
+
+        /* Desktop styles */
+        @media (min-width: 1024px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header p {
+                font-size: 1.2rem;
+            }
+
+            .avatar-placeholder {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .quiz-options {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .drop-zones {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .timeline-event {
+                margin: 80px 0;
+            }
+
+            .timeline-line {
+                width: 6px;
+            }
+
+            .event-marker {
+                width: 30px;
+                height: 30px;
+                font-size: 1.2rem;
+            }
+
+            .event-card {
+                padding: 30px;
+                border-radius: 20px;
+            }
+
+            .event-title {
+                font-size: 1.6rem;
+            }
+
+            .event-preview {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .filter-btn,
+            .quiz-option,
+            .expand-btn,
+            .timeline-event {
+                min-height: 44px;
+                touch-action: manipulation;
+            }
+
+            .timeline-event:hover {
+                transform: none;
+            }
+
+            .event-marker:hover {
+                transform: translateX(-50%);
+            }
+
+            .expand-btn:hover {
+                transform: none;
+            }
+
+            .drag-item {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+                <span>🌙</span> Dark Mode
+            </button>
+            <div class="user-auth" id="userAuth">
+                <button class="auth-btn" onclick="showLoginModal()">🔑 Login</button>
+                <button class="auth-btn" onclick="showRegisterModal()">📝 Sign Up</button>
+            </div>
+            <div class="user-profile hidden" id="userProfile">
+                <div class="user-info">
+                    <span id="welcomeUser">Welcome back!</span>
+                    <button class="auth-btn logout" onclick="logout()">Logout</button>
+                </div>
+            </div>
+            <h1>📖 Biblical Timeline: Journey of Faith</h1>
+            <div class="jlr-branding">
+                <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 5px;">⛪ Jesus Love Revealed</div>
+                <div style="font-size: 0.9rem; opacity: 0.9;">Created by Jason Nutt • Founder of Jesus Love Revealed YouTube Channel</div>
+                <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.3);">
+                    <div style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 8px;">Enjoying this Biblical Timeline? Support the ministry:</div>
+                    <a href="https://cash.app/$jnuttwebdev1" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; text-decoration: none; color: white; font-size: 0.85rem; font-weight: 600; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.3);" onmouseover="this.style.background='rgba(255,255,255,0.3)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'; this.style.transform='translateY(0)'">
+                        ☕ Buy Jason a Coffee
+                    </a>
+                </div>
+            </div>
+            <p style="font-size: 1.2rem; color: #666; margin-bottom: 20px;">
+                "For I know the plans I have for you," declares the Lord, "plans to prosper you and not to harm you, to give you hope and a future." - Jeremiah 29:11
+            </p>
+            
+            <div class="guide-section">
+                <div class="avatar-placeholder" id="userAvatar">
+                    👤
+                </div>
+                <div>
+                    <strong>Your Faith Guide</strong>
+                    <p id="avatarText">Click here to upload your avatar and personalize your journey!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-notice" id="demoNotice">
+            🎭 Demo Mode Active: Competing with sample users! Create your own account to track real progress.
+        </div>
+
+        <div class="data-management">
+            <h4>💾 Data Management</h4>
+            <p>Backup your progress or start fresh with these tools:</p>
+            <div class="data-buttons">
+                <button class="data-btn" onclick="exportData()">📤 Export Data</button>
+                <button class="data-btn" onclick="importData()">📥 Import Data</button>
+                <button class="data-btn" onclick="resetData()">🔄 Reset All Data</button>
+                <button class="data-btn" onclick="loadDemoData()">🎭 Load Demo Users</button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <h3 style="margin-bottom: 15px;">🔍 Explore by Period</h3>
+            <div class="filter-section">
+                <button class="filter-btn creation active" onclick="filterEvents('creation')">Creation & Beginnings</button>
+                <button class="filter-btn old-testament active" onclick="filterEvents('old-testament')">Old Testament</button>
+                <button class="filter-btn new-testament active" onclick="filterEvents('new-testament')">New Testament</button>
+                <button class="filter-btn prophetic active" onclick="filterEvents('prophetic')">Prophetic Future</button>
+                <button class="filter-btn" onclick="showAll()">Show All</button>
+            </div>
+
+            <div class="stats-section">
+                <div class="personal-stats">
+                    <h4>📊 Your Progress</h4>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" id="personalQuizScore">0%</div>
+                            <div class="stat-label">Quiz Accuracy</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="personalDragScore">0%</div>
+                            <div class="stat-label">Matching Accuracy</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalAnswered">0</div>
+                            <div class="stat-label">Questions Answered</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="currentStreak">0</div>
+                            <div class="stat-label">Current Streak</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="leaderboard-section">
+                    <h4>🏆 Leaderboard</h4>
+                    <div class="leaderboard-tabs">
+                        <button class="tab-btn active" onclick="showLeaderboard('quiz')">Quiz Masters</button>
+                        <button class="tab-btn" onclick="showLeaderboard('drag')">Matching Experts</button>
+                        <button class="tab-btn" onclick="showLeaderboard('overall')">Overall Champions</button>
+                    </div>
+                    <div class="leaderboard-content" id="leaderboardContent">
+                        <div class="leaderboard-item">
+                            <div class="rank">1</div>
+                            <div class="player-info">
+                                <div class="player-name">Loading...</div>
+                                <div class="player-score">--</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-section" id="quizSection">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <h4>🧠 Test Your Knowledge</h4>
+                    <div class="quiz-score" id="quizScore">Score: 0/0 (0%)</div>
+                </div>
+                <div class="quiz-question" id="quizQuestion">
+                    Loading question...
+                </div>
+                <div class="quiz-options" id="quizOptions">
+                </div>
+            </div>
+        </div>
+
+        <div class="drag-drop-section">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <h3>🎯 Match Events to Their Periods</h3>
+                <div class="drag-score" id="dragScore">Score: 0/0 (0%)</div>
+            </div>
+            <div class="drag-items" id="dragItems">
+            </div>
+            <div class="drop-zones">
+                <div class="drop-zone" data-period="creation">
+                    <strong>Creation Era</strong><br>
+                    <small>Beginning of Time</small>
+                </div>
+                <div class="drop-zone" data-period="old-testament">
+                    <strong>Old Testament</strong><br>
+                    <small>God's Chosen People</small>
+                </div>
+                <div class="drop-zone" data-period="new-testament">
+                    <strong>New Testament</strong><br>
+                    <small>Christ's Ministry</small>
+                </div>
+                <div class="drop-zone" data-period="prophetic">
+                    <strong>Prophetic Future</strong><br>
+                    <small>End Times</small>
+                </div>
+            </div>
+            <button class="expand-btn" onclick="generateNewDragDrop()" style="margin-top: 15px;">🔄 New Challenge</button>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-event left creation" onclick="toggleDetails(this)">
+                <div class="event-marker creation">🌍</div>
+                <div class="event-card creation">
+                    <div class="event-date">In the Beginning</div>
+                    <div class="event-title">Creation of the Universe</div>
+                    <div class="event-category creation">Creation & Beginnings</div>
+                    <div class="event-preview">"In the beginning God created the heavens and the earth." The foundation of all existence.</div>
+                    <div class="event-details">
+                        <p>God speaks the universe into existence through His divine Word, establishing the fundamental order of creation over six days and resting on the seventh.</p>
+                        <div class="scripture-ref">
+                            "And God said, 'Let there be light,' and there was light." - Genesis 1:3
+                        </div>
+                        <p><strong>Theological Significance:</strong> This establishes God as the sovereign Creator, the source of all life, and the foundation for understanding our purpose and relationship with Him.</p>
+                        <p><strong>For Disciples:</strong> Creation reveals God's character - His power, creativity, and intentionality. We are made in His image (imago Dei), giving us inherent dignity and purpose.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            <div class="timeline-event right creation" onclick="toggleDetails(this)">
+                <div class="event-marker creation">🍎</div>
+                <div class="event-card creation">
+                    <div class="event-date">Genesis 3</div>
+                    <div class="event-title">The Fall of Humanity</div>
+                    <div class="event-category creation">Creation & Beginnings</div>
+                    <div class="event-preview">Adam and Eve's disobedience introduces sin into the world, but God promises redemption.</div>
+                    <div class="event-details">
+                        <p>The first humans, created in perfect fellowship with God, choose to disobey His command, bringing sin and death into creation.</p>
+                        <div class="scripture-ref">
+                            "And I will put enmity between you and the woman, and between your offspring and hers; he will crush your head, and you will strike his heel." - Genesis 3:15
+                        </div>
+                        <p><strong>The Protoevangelium:</strong> Genesis 3:15 is called the first gospel - God's first promise of a coming Savior who will defeat Satan and restore humanity.</p>
+                        <p><strong>Hope in Darkness:</strong> Even in judgment, God shows mercy by providing clothing and promising redemption through the woman's seed - pointing to Christ.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            <div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+                <div class="event-marker old-testament">🌈</div>
+                <div class="event-card old-testament">
+                    <div class="event-date">c. 2348 BC</div>
+                    <div class="event-title">Noah's Ark and the Flood</div>
+                    <div class="event-category old-testament">Old Testament</div>
+                    <div class="event-preview">God judges the world's wickedness but preserves Noah's family, establishing His covenant of grace.</div>
+                    <div class="event-details">
+                        <p>As humanity's wickedness grieves God's heart, He chooses to start anew while preserving righteous Noah and his family through the ark.</p>
+                        <div class="scripture-ref">
+                            "I establish my covenant with you: Never again will all life be destroyed by the waters of a flood; never again will there be a flood to destroy the earth." - Genesis 9:11
+                        </div>
+                        <p><strong>God's Justice and Mercy:</strong> The flood demonstrates God's holy judgment against sin, while the ark shows His mercy and plan for salvation.</p>
+                        <p><strong>Covenant Theology:</strong> The rainbow covenant establishes God's faithfulness and introduces the pattern of divine covenants that culminate in Christ.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            <div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+                <div class="event-marker old-testament">⭐</div>
+                <div class="event-card old-testament">
+                    <div class="event-date">c. 2000 BC</div>
+                    <div class="event-title">God's Call to Abraham</div>
+                    <div class="event-category old-testament">Old Testament</div>
+                    <div class="event-preview">God calls Abram to leave his homeland and promises to make him a great nation through whom all peoples will be blessed.</div>
+                    <div class="event-details">
+                        <p>God calls Abram from Ur of the Chaldeans, promising to make him the father of many nations and to bless all families of the earth through him.</p>
+                        <div class="scripture-ref">
+                            "I will make you into a great nation, and I will bless you; I will make your name great, and you will be a blessing... and all peoples on earth will be blessed through you." - Genesis 12:2-3
+                        </div>
+                        <p><strong>The Abrahamic Covenant:</strong> This unconditional covenant establishes the foundation for God's redemptive plan, promising land, descendants, and universal blessing.</p>
+                        <p><strong>Faith and Justification:</strong> Abraham's faith is credited to him as righteousness (Romans 4:16), making him the father of all who believe.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            <div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+                <div class="event-marker old-testament">🔥</div>
+                <div class="event-card old-testament">
+                    <div class="event-date">c. 1446 BC</div>
+                    <div class="event-title">The Exodus from Egypt</div>
+                    <div class="event-category old-testament">Old Testament</div>
+                    <div class="event-preview">God delivers Israel from slavery through Moses, demonstrating His power and faithfulness to His covenant promises.</div>
+                    <div class="event-details">
+                        <p>After 400 years of slavery, God raises up Moses to lead Israel out of Egypt through miraculous plagues and the parting of the Red Sea.</p>
+                        <div class="scripture-ref">
+                            "I am the Lord your God, who brought you out of Egypt, out of the land of slavery." - Exodus 20:2
+                        </div>
+                        <p><strong>Redemption Pattern:</strong> The Exodus becomes the Old Testament's greatest redemption event, prefiguring Christ's greater deliverance from sin.</p>
+                        <p><strong>Passover Lamb:</strong> The Passover lamb's blood protecting Israel points directly to Christ as "our Passover lamb" (1 Corinthians 5:7).</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            <div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+                <div class="event-marker old-testament">📜</div>
+                <div class="event-card old-testament">
+                    <div class="event-date">c. 1446 BC</div>
+                    <div class="event-title">Giving of the Law at Sinai</div>
+                    <div class="event-category old-testament">Old Testament</div>
+                    <div class="event-preview">God establishes His covenant with Israel through the Law, revealing His holiness and humanity's need for redemption.</div>
+                    <div class="event-details">
+                        <p>At Mount Sinai, God gives Moses the Law, including the Ten Commandments, establishing the moral and ceremonial framework for His people.</p>
+                        <div class="scripture-ref">
+                            "Now if you obey me fully and keep my covenant, then out of all nations you will be my treasured possession." - Exodus 19:5
+                        </div>
+                        <p><strong>Purpose of the Law:</strong> The Law reveals God's holiness, defines sin, and points to our need for a Savior (Galatians 3:24).</p>
+                        <p><strong>Christ's Fulfillment:</strong> Jesus perfectly fulfilled the Law's requirements and bore its curse, freeing us to live by grace through faith.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            <div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+                <div class="event-marker old-testament">👑</div>
+                <div class="event-card old-testament">
+                    <div class="event-date">c. 1000 BC</div>
+                    <div class="event-title">David's Kingdom and Messianic Promise</div>
+                    <div class="event-category old-testament">Old Testament</div>
+                    <div class="event-preview">God establishes David as king and promises an eternal kingdom through his lineage, pointing to the coming Messiah.</div>
+                    <div class="event-details">
+                        <p>David, the shepherd boy who defeated Goliath, becomes Israel's greatest king and receives God's promise of an eternal dynasty.</p>
+                        <div class="scripture-ref">
+                            "Your house and your kingdom will endure forever before me; your throne will be established forever." - 2 Samuel 7:16
+                        </div>
+                        <p><strong>Davidic Covenant:</strong> This covenant promises that the Messiah will come from David's line and establish an eternal kingdom.</p>
+                        <p><strong>Jesus as Son of David:</strong> The New Testament repeatedly identifies Jesus as the Son of David, fulfilling this ancient promise (Matthew 1:1).</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            <div class="timeline-event right new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">⭐</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 4 BC</div>
+                    <div class="event-title">The Incarnation - Birth of Jesus</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">The eternal Word becomes flesh as Jesus is born of the Virgin Mary, fulfilling centuries of prophetic promises.</div>
+                    <div class="event-details">
+                        <p>In the fullness of time, God sends His Son, born of a woman, to redeem humanity and fulfill all the promises made to the fathers.</p>
+                        <div class="scripture-ref">
+                            "The Word became flesh and made his dwelling among us. We have seen his glory, the glory of the one and only Son, who came from the Father, full of grace and truth." - John 1:14
+                        </div>
+                        <p><strong>Hypostatic Union:</strong> Jesus is fully God and fully man, uniquely qualified to be our mediator and substitute.</p>
+                        <p><strong>Fulfillment of Prophecy:</strong> His virgin birth, Bethlehem birthplace, and Davidic lineage fulfill specific Old Testament prophecies.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">💧</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 30 AD</div>
+                    <div class="event-title">Jesus' Baptism and Ministry Begins</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">Jesus is baptized by John and begins His public ministry, anointed by the Holy Spirit and affirmed by the Father.</div>
+                    <div class="event-details">
+                        <p>At His baptism, the Trinity is revealed as the Father speaks, the Spirit descends, and the Son is anointed for His messianic mission.</p>
+                        <div class="scripture-ref">
+                            "And a voice from heaven said, 'This is my Son, whom I love; with him I am well pleased.'" - Matthew 3:17
+                        </div>
+                        <p><strong>Trinitarian Revelation:</strong> This event provides one of the clearest revelations of the Trinity in Scripture.</p>
+                        <p><strong>Messianic Anointing:</strong> Jesus is anointed as Prophet, Priest, and King, beginning His redemptive work.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            <div class="timeline-event right new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">✝️</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 33 AD</div>
+                    <div class="event-title">The Crucifixion and Resurrection</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">Jesus dies for our sins and rises from the dead, accomplishing salvation and defeating death forever.</div>
+                    <div class="event-details">
+                        <p>The central event of human history: Jesus bears the penalty for sin on the cross and conquers death through His resurrection.</p>
+                        <div class="scripture-ref">
+                            "He was delivered over to death for our sins and was raised to life for our justification." - Romans 4:25
+                        </div>
+                        <p><strong>Substitutionary Atonement:</strong> Jesus takes our place, bearing God's wrath against sin so we can receive His righteousness.</p>
+                        <p><strong>Victory Over Death:</strong> The resurrection proves Jesus' deity, validates His sacrifice, and guarantees our future resurrection.</p>
+                        <p><strong>New Creation:</strong> Christ's resurrection begins the new creation, making all things new for those who believe.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">🔥</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 33 AD</div>
+                    <div class="event-title">Pentecost and Birth of the Church</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">The Holy Spirit is poured out on the disciples, empowering them to spread the Gospel to all nations.</div>
+                    <div class="event-details">
+                        <p>Fifty days after the resurrection, the Holy Spirit comes upon the disciples, fulfilling Jesus' promise and launching the church's mission.</p>
+                        <div class="scripture-ref">
+                            "But you will receive power when the Holy Spirit comes on you; and you will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth." - Acts 1:8
+                        </div>
+                        <p><strong>The Great Commission:</strong> The church is empowered to make disciples of all nations, baptizing and teaching them.</p>
+                        <p><strong>Universal Gospel:</strong> The Spirit's gift of tongues demonstrates that the Gospel is for every tribe, tongue, and nation.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            <div class="timeline-event right prophetic" onclick="toggleDetails(this)">
+                <div class="event-marker prophetic">👑</div>
+                <div class="event-card prophetic">
+                    <div class="event-date">Future</div>
+                    <div class="event-title">The Second Coming of Christ</div>
+                    <div class="event-category prophetic">Prophetic Future</div>
+                    <div class="event-preview">Jesus will return in glory to judge the living and the dead, establishing His eternal kingdom.</div>
+                    <div class="event-details">
+                        <p>Christ will return visibly and gloriously to complete His redemptive work, judge all humanity, and establish the new heavens and new earth.</p>
+                        <div class="scripture-ref">
+                            "Look, he is coming with the clouds, and every eye will see him, even those who pierced him; and all peoples on earth will mourn because of him." - Revelation 1:7
+                        </div>
+                        <p><strong>Blessed Hope:</strong> The Second Coming is the Christian's blessed hope, when we will be glorified and sin will be finally defeated.</p>
+                        <p><strong>Final Judgment:</strong> Christ will judge all people according to their response to the Gospel, separating the righteous from the wicked.</p>
+                        <p><strong>Consummation:</strong> God's kingdom will be fully established, and He will dwell with His people forever.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            <div class="timeline-event left prophetic" onclick="toggleDetails(this)">
+                <div class="event-marker prophetic">🌟</div>
+                <div class="event-card prophetic">
+                    <div class="event-date">Eternity</div>
+                    <div class="event-title">New Heaven and New Earth</div>
+                    <div class="event-category prophetic">Prophetic Future</div>
+                    <div class="event-preview">God creates a new heaven and new earth where righteousness dwells, and He will be with His people forever.</div>
+                    <div class="event-details">
+                        <p>The ultimate fulfillment of God's redemptive plan: a perfect creation where sin, death, and suffering are no more.</p>
+                        <div class="scripture-ref">
+                            "Then I saw 'a new heaven and a new earth,' for the first heaven and the first earth had passed away... And I heard a loud voice from the throne saying, 'Look! God's dwelling place is now among the people, and he will dwell with them.'" - Revelation 21:1,3
+                        </div>
+                        <p><strong>Restoration Complete:</strong> What was lost in Eden is fully restored and glorified beyond our imagination.</p>
+                        <p><strong>Eternal Fellowship:</strong> The ultimate purpose of creation is fulfilled as God dwells with His people in perfect harmony.</p>
+                        <p><strong>No More Curse:</strong> Sin, death, pain, and sorrow are forever banished from God's perfect kingdom.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🔑 Welcome Back!</h3>
+                <p>Sign in to track your biblical knowledge progress</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn-primary">Sign In</button>
+                    <button type="button" class="btn-secondary" onclick="closeModal('loginModal')">Cancel</button>
+                </div>
+            </form>
+            <p style="margin-top: 15px; text-align: center; font-size: 0.9rem; opacity: 0.8;">
+                💡 Try demo account: sarah@example.com / demo123
+            </p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>📝 Join the Journey!</h3>
+                <p>Create your account to start tracking your progress</p>
+            </div>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" required minlength="6">
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn-primary">Create Account</button>
+                    <button type="button" class="btn-secondary" onclick="closeModal('registerModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Avatar upload functionality
+        document.getElementById('userAvatar').addEventListener('click', function() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const avatar = document.getElementById('userAvatar');
+                        avatar.style.backgroundImage = `url(${e.target.result})`;
+                        avatar.style.backgroundSize = 'cover';
+                        avatar.style.backgroundPosition = 'center';
+                        avatar.innerHTML = '';
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
+            input.click();
+        });
+
+        // Filter functionality
+        let activeFilters = new Set(['creation', 'old-testament', 'new-testament', 'prophetic']);
+
+        function filterEvents(category) {
+            const btn = event.target;
+            
+            if (activeFilters.has(category)) {
+                activeFilters.delete(category);
+                btn.classList.remove('active');
+            } else {
+                activeFilters.add(category);
+                btn.classList.add('active');
+            }
+            
+            updateEventVisibility();
+        }
+
+        function showAll() {
+            activeFilters = new Set(['creation', 'old-testament', 'new-testament', 'prophetic']);
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (!btn.textContent.includes('Show All')) {
+                    btn.classList.add('active');
+                }
+            });
+            updateEventVisibility();
+        }
+
+        function updateEventVisibility() {
+            document.querySelectorAll('.timeline-event').forEach(event => {
+                const hasActiveCategory = Array.from(event.classList).some(cls => activeFilters.has(cls));
+                event.classList.toggle('hidden', !hasActiveCategory);
+            });
+        }
+
+        // Enhanced User Authentication System
+        let currentUser = null;
+        let users = JSON.parse(localStorage.getItem('biblicalTimelineUsers')) || {};
+        let leaderboardData = JSON.parse(localStorage.getItem('biblicalTimelineLeaderboard')) || {
+            quiz: [],
+            drag: [],
+            overall: []
+        };
+        let recentQuestions = JSON.parse(localStorage.getItem('recentQuestions')) || [];
+
+        // Demo accounts for realistic experience
+        const demoAccounts = {
+            'sarah@example.com': {
+                name: 'Sarah Johnson',
+                email: 'sarah@example.com',
+                password: 'demo123',
+                stats: {
+                    quizCorrect: 47,
+                    quizTotal: 52,
+                    dragCorrect: 23,
+                    dragTotal: 28,
+                    currentStreak: 8,
+                    bestStreak: 15,
+                    joinDate: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString()
+                }
+            },
+            'michael@example.com': {
+                name: 'Michael Chen',
+                email: 'michael@example.com',
+                password: 'demo123',
+                stats: {
+                    quizCorrect: 38,
+                    quizTotal: 45,
+                    dragCorrect: 19,
+                    dragTotal: 22,
+                    currentStreak: 12,
+                    bestStreak: 18,
+                    joinDate: new Date(Date.now() - 45 * 24 * 60 * 60 * 1000).toISOString()
+                }
+            },
+            'emma@example.com': {
+                name: 'Emma Rodriguez',
+                email: 'emma@example.com',
+                password: 'demo123',
+                stats: {
+                    quizCorrect: 62,
+                    quizTotal: 68,
+                    dragCorrect: 31,
+                    dragTotal: 35,
+                    currentStreak: 5,
+                    bestStreak: 22,
+                    joinDate: new Date(Date.now() - 60 * 24 * 60 * 60 * 1000).toISOString()
+                }
+            },
+            'david@example.com': {
+                name: 'David Thompson',
+                email: 'david@example.com',
+                password: 'demo123',
+                stats: {
+                    quizCorrect: 29,
+                    quizTotal: 35,
+                    dragCorrect: 15,
+                    dragTotal: 18,
+                    currentStreak: 3,
+                    bestStreak: 9,
+                    joinDate: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000).toISOString()
+                }
+            },
+            'rachel@example.com': {
+                name: 'Rachel Kim',
+                email: 'rachel@example.com',
+                password: 'demo123',
+                stats: {
+                    quizCorrect: 55,
+                    quizTotal: 61,
+                    dragCorrect: 27,
+                    dragTotal: 30,
+                    currentStreak: 14,
+                    bestStreak: 20,
+                    joinDate: new Date(Date.now() - 25 * 24 * 60 * 60 * 1000).toISOString()
+                }
+            }
+        };
+
+        // Initialize demo accounts if no users exist
+        function initializeDemoAccounts() {
+            if (Object.keys(users).length === 0) {
+                users = { ...demoAccounts };
+                localStorage.setItem('biblicalTimelineUsers', JSON.stringify(users));
+                updateDemoNotice(true);
+            } else {
+                // Check if current users are all demo accounts
+                const isDemoMode = Object.keys(users).every(email => demoAccounts[email]);
+                updateDemoNotice(isDemoMode);
+            }
+        }
+
+        function updateDemoNotice(showDemo) {
+            const notice = document.getElementById('demoNotice');
+            if (showDemo) {
+                notice.style.display = 'block';
+            } else {
+                notice.style.display = 'none';
+            }
+        }
+
+        // Data Management Functions
+        function exportData() {
+            const data = {
+                users: users,
+                leaderboard: leaderboardData,
+                recentQuestions: recentQuestions,
+                currentUser: currentUser ? currentUser.email : null,
+                exportDate: new Date().toISOString(),
+                version: '1.0'
+            };
+            
+            const dataStr = JSON.stringify(data, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(dataBlob);
+            link.download = `biblical-timeline-backup-${new Date().toISOString().split('T')[0]}.json`;
+            link.click();
+            
+            alert('📤 Data exported successfully! Save this file to restore your progress later.');
+        }
+
+        function importData() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        try {
+                            const data = JSON.parse(e.target.result);
+                            
+                            if (data.users && data.leaderboard) {
+                                users = data.users;
+                                leaderboardData = data.leaderboard;
+                                recentQuestions = data.recentQuestions || [];
+                                
+                                localStorage.setItem('biblicalTimelineUsers', JSON.stringify(users));
+                                localStorage.setItem('biblicalTimelineLeaderboard', JSON.stringify(leaderboardData));
+                                localStorage.setItem('recentQuestions', JSON.stringify(recentQuestions));
+                                
+                                // Try to restore current user session
+                                if (data.currentUser && users[data.currentUser]) {
+                                    login(data.currentUser, users[data.currentUser].password);
+                                }
+                                
+                                updateLeaderboard();
+                                updateDemoNotice(false);
+                                alert('📥 Data imported successfully! Your progress has been restored.');
+                            } else {
+                                alert('❌ Invalid backup file format. Please select a valid Biblical Timeline backup file.');
+                            }
+                        } catch (error) {
+                            alert('❌ Error reading backup file. Please ensure it\'s a valid JSON file.');
+                        }
+                    };
+                    reader.readAsText(file);
+                }
+            };
+            input.click();
+        }
+
+        function resetData() {
+            if (confirm('⚠️ This will delete ALL your data including accounts, progress, and leaderboards. Are you sure?')) {
+                if (confirm('🚨 This action cannot be undone! Click OK to permanently delete everything.')) {
+                    localStorage.removeItem('biblicalTimelineUsers');
+                    localStorage.removeItem('biblicalTimelineLeaderboard');
+                    localStorage.removeItem('recentQuestions');
+                    localStorage.removeItem('currentBiblicalUser');
+                    
+                    users = {};
+                    leaderboardData = { quiz: [], drag: [], overall: [] };
+                    recentQuestions = [];
+                    currentUser = null;
+                    
+                    // Reset UI
+                    document.getElementById('userAuth').style.display = 'flex';
+                    document.getElementById('userProfile').classList.add('hidden');
+                    
+                    // Reset scores
+                    quizScore = 0;
+                    totalQuizzes = 0;
+                    dragScore = 0;
+                    totalDrags = 0;
+                    updateScoreDisplay();
+                    updateDragScore();
+                    updatePersonalStats();
+                    updateLeaderboard();
+                    updateDemoNotice(false);
+                    
+                    alert('🔄 All data has been reset! You can now start fresh or load demo data.');
+                }
+            }
+        }
+
+        function loadDemoData() {
+            if (confirm('🎭 This will load sample users and leaderboard data. Continue?')) {
+                users = { ...demoAccounts };
+                localStorage.setItem('biblicalTimelineUsers', JSON.stringify(users));
+                updateLeaderboard();
+                updateDemoNotice(true);
+                alert('🎭 Demo data loaded! You can now compete with sample users or login with: sarah@example.com / demo123');
+            }
+        }
+
+        // User management functions
+        function showLoginModal() {
+            document.getElementById('loginModal').classList.add('show');
+        }
+
+        function showRegisterModal() {
+            document.getElementById('registerModal').classList.add('show');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('show');
+        }
+
+        function register(name, email, password) {
+            if (users[email]) {
+                alert('User already exists! Please login instead.');
+                return false;
+            }
+
+            users[email] = {
+                name: name,
+                email: email,
+                password: password, // In real app, this would be hashed
+                stats: {
+                    quizCorrect: 0,
+                    quizTotal: 0,
+                    dragCorrect: 0,
+                    dragTotal: 0,
+                    currentStreak: 0,
+                    bestStreak: 0,
+                    joinDate: new Date().toISOString()
+                }
+            };
+
+            localStorage.setItem('biblicalTimelineUsers', JSON.stringify(users));
+            updateDemoNotice(false);
+            login(email, password);
+            return true;
+        }
+
+        function login(email, password) {
+            if (!users[email] || users[email].password !== password) {
+                alert('Invalid email or password!');
+                return false;
+            }
+
+            currentUser = users[email];
+            localStorage.setItem('currentBiblicalUser', email);
+            
+            // Update UI
+            document.getElementById('userAuth').style.display = 'none';
+            document.getElementById('userProfile').classList.remove('hidden');
+            document.getElementById('welcomeUser').textContent = `Welcome, ${currentUser.name}!`;
+            document.getElementById('avatarText').textContent = `${currentUser.name}, click to upload your avatar!`;
+            
+            updatePersonalStats();
+            closeModal('loginModal');
+            closeModal('registerModal');
+            return true;
+        }
+
+        function logout() {
+            currentUser = null;
+            localStorage.removeItem('currentBiblicalUser');
+            
+            // Reset UI
+            document.getElementById('userAuth').style.display = 'flex';
+            document.getElementById('userProfile').classList.add('hidden');
+            document.getElementById('avatarText').textContent = 'Click here to upload your avatar and personalize your journey!';
+            
+            // Reset scores display
+            quizScore = 0;
+            totalQuizzes = 0;
+            dragScore = 0;
+            totalDrags = 0;
+            updateScoreDisplay();
+            updateDragScore();
+            updatePersonalStats();
+        }
+
+        function updatePersonalStats() {
+            if (!currentUser) {
+                document.getElementById('personalQuizScore').textContent = '0%';
+                document.getElementById('personalDragScore').textContent = '0%';
+                document.getElementById('totalAnswered').textContent = '0';
+                document.getElementById('currentStreak').textContent = '0';
+                return;
+            }
+
+            const stats = currentUser.stats;
+            const quizAccuracy = stats.quizTotal > 0 ? Math.round((stats.quizCorrect / stats.quizTotal) * 100) : 0;
+            const dragAccuracy = stats.dragTotal > 0 ? Math.round((stats.dragCorrect / stats.dragTotal) * 100) : 0;
+
+            document.getElementById('personalQuizScore').textContent = `${quizAccuracy}%`;
+            document.getElementById('personalDragScore').textContent = `${dragAccuracy}%`;
+            document.getElementById('totalAnswered').textContent = stats.quizTotal + stats.dragTotal;
+            document.getElementById('currentStreak').textContent = stats.currentStreak;
+        }
+
+        function updateUserStats(isQuiz, isCorrect) {
+            if (!currentUser) return;
+
+            if (isQuiz) {
+                currentUser.stats.quizTotal++;
+                if (isCorrect) {
+                    currentUser.stats.quizCorrect++;
+                    currentUser.stats.currentStreak++;
+                } else {
+                    currentUser.stats.currentStreak = 0;
+                }
+            } else {
+                currentUser.stats.dragTotal++;
+                if (isCorrect) {
+                    currentUser.stats.dragCorrect++;
+                    currentUser.stats.currentStreak++;
+                } else {
+                    currentUser.stats.currentStreak = 0;
+                }
+            }
+
+            if (currentUser.stats.currentStreak > currentUser.stats.bestStreak) {
+                currentUser.stats.bestStreak = currentUser.stats.currentStreak;
+            }
+
+            // Save to localStorage
+            users[currentUser.email] = currentUser;
+            localStorage.setItem('biblicalTimelineUsers', JSON.stringify(users));
+            
+            updatePersonalStats();
+            updateLeaderboard();
+        }
+
+        function updateLeaderboard() {
+            const userList = Object.values(users);
+            
+            // Quiz leaderboard (by accuracy, then by total questions)
+            leaderboardData.quiz = userList
+                .filter(user => user.stats.quizTotal > 0)
+                .sort((a, b) => {
+                    const aAccuracy = a.stats.quizCorrect / a.stats.quizTotal;
+                    const bAccuracy = b.stats.quizCorrect / b.stats.quizTotal;
+                    if (Math.abs(aAccuracy - bAccuracy) < 0.01) {
+                        return b.stats.quizTotal - a.stats.quizTotal;
+                    }
+                    return bAccuracy - aAccuracy;
+                })
+                .slice(0, 10);
+
+            // Drag leaderboard
+            leaderboardData.drag = userList
+                .filter(user => user.stats.dragTotal > 0)
+                .sort((a, b) => {
+                    const aAccuracy = a.stats.dragCorrect / a.stats.dragTotal;
+                    const bAccuracy = b.stats.dragCorrect / b.stats.dragTotal;
+                    if (Math.abs(aAccuracy - bAccuracy) < 0.01) {
+                        return b.stats.dragTotal - a.stats.dragTotal;
+                    }
+                    return bAccuracy - aAccuracy;
+                })
+                .slice(0, 10);
+
+            // Overall leaderboard (by total correct answers and streak)
+            leaderboardData.overall = userList
+                .filter(user => (user.stats.quizTotal + user.stats.dragTotal) > 0)
+                .sort((a, b) => {
+                    const aTotal = a.stats.quizCorrect + a.stats.dragCorrect;
+                    const bTotal = b.stats.quizCorrect + b.stats.dragCorrect;
+                    if (aTotal === bTotal) {
+                        return b.stats.bestStreak - a.stats.bestStreak;
+                    }
+                    return bTotal - aTotal;
+                })
+                .slice(0, 10);
+
+            localStorage.setItem('biblicalTimelineLeaderboard', JSON.stringify(leaderboardData));
+            displayLeaderboard('quiz');
+        }
+
+        function showLeaderboard(type) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            displayLeaderboard(type);
+        }
+
+        function displayLeaderboard(type) {
+            const container = document.getElementById('leaderboardContent');
+            const data = leaderboardData[type] || [];
+            
+            if (data.length === 0) {
+                container.innerHTML = '<div class="leaderboard-item"><div class="player-info"><div class="player-name">No players yet!</div><div class="player-score">Be the first to compete</div></div></div>';
+                return;
+            }
+
+            container.innerHTML = data.map((user, index) => {
+                let scoreText = '';
+                if (type === 'quiz') {
+                    const accuracy = Math.round((user.stats.quizCorrect / user.stats.quizTotal) * 100);
+                    scoreText = `${accuracy}% (${user.stats.quizCorrect}/${user.stats.quizTotal})`;
+                } else if (type === 'drag') {
+                    const accuracy = Math.round((user.stats.dragCorrect / user.stats.dragTotal) * 100);
+                    scoreText = `${accuracy}% (${user.stats.dragCorrect}/${user.stats.dragTotal})`;
+                } else {
+                    const totalCorrect = user.stats.quizCorrect + user.stats.dragCorrect;
+                    scoreText = `${totalCorrect} correct • ${user.stats.bestStreak} best streak`;
+                }
+
+                return `
+                    <div class="leaderboard-item">
+                        <div class="rank">${index + 1}</div>
+                        <div class="player-info">
+                            <div class="player-name">${user.name}</div>
+                            <div class="player-score">${scoreText}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Form handlers
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            login(email, password);
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('registerName').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            register(name, email, password);
+        });
+
+        // Close modals when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('show');
+                }
+            });
+        });
+
+        // Enhanced Quiz functionality with non-repeating questions
+        const quizBank = [
+            {
+                question: "In which book does God first promise to send a Messiah?",
+                options: ["Exodus", "Genesis", "Leviticus", "Deuteronomy"],
+                correct: 1
+            },
+            {
+                question: "What was the sign of God's covenant with Noah?",
+                options: ["Rainbow", "Dove", "Olive Branch", "Mountain"],
+                correct: 0
+            },
+            {
+                question: "Through which patriarch did God promise to bless all nations?",
+                options: ["Isaac", "Jacob", "Abraham", "Moses"],
+                correct: 2
+            },
+            {
+                question: "What event marks the beginning of the New Testament church?",
+                options: ["Jesus' Birth", "Crucifixion", "Pentecost", "Ascension"],
+                correct: 2
+            },
+            {
+                question: "Who led the Israelites out of Egypt?",
+                options: ["Aaron", "Moses", "Joshua", "Samuel"],
+                correct: 1
+            },
+            {
+                question: "How many days did Jesus fast in the wilderness?",
+                options: ["30", "40", "50", "60"],
+                correct: 1
+            },
+            {
+                question: "What did God create on the first day?",
+                options: ["Animals", "Plants", "Light", "Humans"],
+                correct: 2
+            },
+            {
+                question: "Who was the first king of Israel?",
+                options: ["David", "Solomon", "Saul", "Samuel"],
+                correct: 2
+            },
+            {
+                question: "In which city was Jesus born?",
+                options: ["Nazareth", "Jerusalem", "Bethlehem", "Capernaum"],
+                correct: 2
+            },
+            {
+                question: "How many disciples did Jesus choose?",
+                options: ["10", "11", "12", "13"],
+                correct: 2
+            },
+            {
+                question: "What did Jesus turn water into at the wedding?",
+                options: ["Oil", "Wine", "Milk", "Honey"],
+                correct: 1
+            },
+            {
+                question: "Who betrayed Jesus for 30 pieces of silver?",
+                options: ["Peter", "Thomas", "Judas", "Matthew"],
+                correct: 2
+            },
+            {
+                question: "How many books are in the New Testament?",
+                options: ["25", "26", "27", "28"],
+                correct: 2
+            },
+            {
+                question: "Who wrote most of the New Testament letters?",
+                options: ["Peter", "Paul", "John", "James"],
+                correct: 1
+            },
+            {
+                question: "What was the name of the garden where Adam and Eve lived?",
+                options: ["Paradise", "Eden", "Zion", "Canaan"],
+                correct: 1
+            },
+            {
+                question: "How many plagues did God send upon Egypt?",
+                options: ["7", "8", "9", "10"],
+                correct: 3
+            },
+            {
+                question: "Who built the ark?",
+                options: ["Abraham", "Noah", "Moses", "David"],
+                correct: 1
+            },
+            {
+                question: "What sea did Moses part?",
+                options: ["Dead Sea", "Mediterranean", "Red Sea", "Sea of Galilee"],
+                correct: 2
+            },
+            {
+                question: "Who was thrown into the lion's den?",
+                options: ["Daniel", "Shadrach", "Meshach", "Abednego"],
+                correct: 0
+            },
+            {
+                question: "What did Jesus say is the greatest commandment?",
+                options: ["Don't steal", "Love God", "Honor parents", "Don't lie"],
+                correct: 1
+            },
+            {
+                question: "How many days was Jonah in the whale?",
+                options: ["1", "2", "3", "4"],
+                correct: 2
+            },
+            {
+                question: "Who was the strongest man in the Bible?",
+                options: ["David", "Goliath", "Samson", "Joshua"],
+                correct: 2
+            },
+            {
+                question: "What did Jesus use to feed 5000 people?",
+                options: ["Bread and wine", "Fish and bread", "Meat and bread", "Fruit and bread"],
+                correct: 1
+            },
+            {
+                question: "Who was swallowed by a great fish?",
+                options: ["Jonah", "Job", "Joel", "Joshua"],
+                correct: 0
+            },
+            {
+                question: "What mountain did Moses receive the Ten Commandments on?",
+                options: ["Mount Olive", "Mount Zion", "Mount Sinai", "Mount Carmel"],
+                correct: 2
+            },
+            {
+                question: "Who was the mother of Jesus?",
+                options: ["Martha", "Mary", "Elizabeth", "Ruth"],
+                correct: 1
+            },
+            {
+                question: "What did God use to destroy Sodom and Gomorrah?",
+                options: ["Flood", "Fire and brimstone", "Earthquake", "Plague"],
+                correct: 1
+            },
+            {
+                question: "Who was the wisest king in the Bible?",
+                options: ["David", "Solomon", "Saul", "Hezekiah"],
+                correct: 1
+            },
+            {
+                question: "What did Moses' staff turn into?",
+                options: ["Fish", "Bird", "Snake", "Lion"],
+                correct: 2
+            },
+            {
+                question: "How many years did the Israelites wander in the wilderness?",
+                options: ["30", "40", "50", "60"],
+                correct: 1
+            }
+        ];
+
+        let quizScore = 0;
+        let totalQuizzes = 0;
+
+        function getRandomQuiz() {
+            // Filter out recently asked questions
+            const availableQuestions = quizBank.filter((_, index) => !recentQuestions.includes(index));
+            
+            // If we've used all questions, reset the recent list but keep the last 5
+            if (availableQuestions.length === 0) {
+                recentQuestions = recentQuestions.slice(-5);
+                return getRandomQuiz(); // Recursive call with reset list
+            }
+            
+            // Select random question from available ones
+            const randomIndex = Math.floor(Math.random() * availableQuestions.length);
+            const selectedQuestion = availableQuestions[randomIndex];
+            
+            // Find the original index and add to recent questions
+            const originalIndex = quizBank.indexOf(selectedQuestion);
+            recentQuestions.push(originalIndex);
+            
+            // Keep only last 10 questions in recent list
+            if (recentQuestions.length > 10) {
+                recentQuestions = recentQuestions.slice(-10);
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('recentQuestions', JSON.stringify(recentQuestions));
+            
+            return selectedQuestion;
+        }
+
+        function checkAnswer(option, isCorrect, correctIndex) {
+            totalQuizzes++;
+            if (isCorrect) {
+                quizScore++;
+            }
+            
+            // Update user stats if logged in
+            updateUserStats(true, isCorrect);
+            updateScoreDisplay();
+            
+            document.querySelectorAll('.quiz-option').forEach((opt, index) => {
+                opt.style.pointerEvents = 'none';
+                if (opt === option) {
+                    opt.classList.add(isCorrect ? 'correct' : 'incorrect');
+                } else if (index === correctIndex) {
+                    opt.classList.add('correct');
+                }
+            });
+
+            setTimeout(() => {
+                loadQuiz();
+            }, 2000);
+        }
+
+        function updateScoreDisplay() {
+            const percentage = totalQuizzes > 0 ? Math.round((quizScore / totalQuizzes) * 100) : 0;
+            document.getElementById('quizScore').textContent = `Score: ${quizScore}/${totalQuizzes} (${percentage}%)`;
+        }
+
+        function loadQuiz() {
+            const quiz = getRandomQuiz();
+            document.getElementById('quizQuestion').textContent = quiz.question;
+            const optionsContainer = document.getElementById('quizOptions');
+            optionsContainer.innerHTML = '';
+            
+            quiz.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'quiz-option';
+                optionDiv.textContent = option;
+                optionDiv.onclick = () => checkAnswer(optionDiv, index === quiz.correct, quiz.correct);
+                optionsContainer.appendChild(optionDiv);
+            });
+        }
+
+        // Drag and drop functionality
+        const dragDropEvents = {
+            creation: [
+                "Garden of Eden", "Adam and Eve", "Tree of Knowledge", "The Fall", 
+                "Cain and Abel", "First Sin", "God's First Promise", "Creation of Light",
+                "Seventh Day Rest", "Naming the Animals"
+            ],
+            "old-testament": [
+                "Exodus from Egypt", "Noah's Ark", "Tower of Babel", "Abraham's Call",
+                "Isaac's Birth", "Jacob's Ladder", "Joseph in Egypt", "Moses and Burning Bush",
+                "Ten Commandments", "Golden Calf", "Promised Land", "David and Goliath",
+                "Solomon's Temple", "Elijah's Fire", "Daniel's Lions", "Jonah and Whale"
+            ],
+            "new-testament": [
+                "Jesus' Birth", "Jesus' Baptism", "Sermon on Mount", "Feeding 5000",
+                "Walking on Water", "Jesus' Crucifixion", "Jesus' Resurrection", "Pentecost",
+                "Paul's Conversion", "Great Commission", "Last Supper", "Transfiguration",
+                "Healing the Blind", "Raising Lazarus", "Palm Sunday", "Ascension"
+            ],
+            prophetic: [
+                "Second Coming", "New Heaven & Earth", "Final Judgment", "Rapture",
+                "Millennium Reign", "Satan Bound", "Great White Throne", "New Jerusalem",
+                "River of Life", "Tree of Life Returns", "No More Death", "God Dwells with Man"
+            ]
+        };
+
+        let dragScore = 0;
+        let totalDrags = 0;
+        let draggedItem = null;
+
+        function generateNewDragDrop() {
+            const dragContainer = document.getElementById('dragItems');
+            dragContainer.innerHTML = '';
+            
+            // Reset drop zones
+            document.querySelectorAll('.drop-zone').forEach(zone => {
+                zone.classList.remove('correct', 'incorrect');
+                // Remove any previously dropped items
+                const droppedItems = zone.querySelectorAll('.drag-item');
+                droppedItems.forEach(item => item.remove());
+            });
+            
+            // Get random events from each period
+            const periods = ['creation', 'old-testament', 'new-testament', 'prophetic'];
+            const selectedEvents = [];
+            
+            periods.forEach(period => {
+                const events = dragDropEvents[period];
+                const randomEvent = events[Math.floor(Math.random() * events.length)];
+                selectedEvents.push({ event: randomEvent, period: period });
+            });
+            
+            // Shuffle the events
+            selectedEvents.sort(() => Math.random() - 0.5);
+            
+            // Create drag items
+            selectedEvents.forEach(({ event, period }) => {
+                const dragItem = document.createElement('div');
+                dragItem.className = 'drag-item';
+                dragItem.draggable = true;
+                dragItem.dataset.period = period;
+                dragItem.textContent = event;
+                
+                dragItem.addEventListener('dragstart', function(e) {
+                    draggedItem = this;
+                    this.classList.add('dragging');
+                });
+
+                dragItem.addEventListener('dragend', function() {
+                    this.classList.remove('dragging');
+                    draggedItem = null;
+                });
+                
+                dragContainer.appendChild(dragItem);
+            });
+        }
+
+        function updateDragScore() {
+            const percentage = totalDrags > 0 ? Math.round((dragScore / totalDrags) * 100) : 0;
+            document.getElementById('dragScore').textContent = `Score: ${dragScore}/${totalDrags} (${percentage}%)`;
+        }
+
+        function setupDropZones() {
+            document.querySelectorAll('.drop-zone').forEach(zone => {
+                zone.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                    this.classList.add('drag-over');
+                });
+
+                zone.addEventListener('dragleave', function() {
+                    this.classList.remove('drag-over');
+                });
+
+                zone.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    this.classList.remove('drag-over');
+                    
+                    if (draggedItem) {
+                        const draggedPeriod = draggedItem.dataset.period;
+                        const zonePeriod = this.dataset.period;
+                        
+                        totalDrags++;
+                        
+                        if (draggedPeriod === zonePeriod) {
+                            dragScore++;
+                            this.classList.add('correct');
+                            this.appendChild(draggedItem);
+                            draggedItem.style.cursor = 'default';
+                            draggedItem.draggable = false;
+                            
+                            // Update user stats if logged in
+                            updateUserStats(false, true);
+                            
+                            // Check if all items are placed correctly
+                            const remainingItems = document.querySelectorAll('#dragItems .drag-item');
+                            if (remainingItems.length === 0) {
+                                setTimeout(() => {
+                                    alert('🎉 Great job! Click "New Challenge" for more practice!');
+                                }, 500);
+                            }
+                        } else {
+                            this.classList.add('incorrect');
+                            setTimeout(() => this.classList.remove('incorrect'), 1000);
+                            
+                            // Update user stats if logged in
+                            updateUserStats(false, false);
+                        }
+                        
+                        updateDragScore();
+                    }
+                });
+            });
+        }
+
+        // Timeline event details toggle
+        function toggleDetails(eventElement) {
+            const details = eventElement.querySelector('.event-details');
+            const button = eventElement.querySelector('.expand-btn');
+            
+            if (details.classList.contains('expanded')) {
+                details.classList.remove('expanded');
+                button.textContent = '▼ Explore Deeper';
+            } else {
+                // Close all other expanded details
+                document.querySelectorAll('.event-details.expanded').forEach(detail => {
+                    detail.classList.remove('expanded');
+                });
+                document.querySelectorAll('.expand-btn').forEach(btn => {
+                    btn.textContent = '▼ Explore Deeper';
+                });
+                
+                // Open clicked details
+                details.classList.add('expanded');
+                button.textContent = '▲ Show Less';
+                
+                // Smooth scroll to the event
+                eventElement.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+            }
+        }
+
+        // Dark mode functionality
+        function toggleDarkMode() {
+            const body = document.body;
+            const button = document.querySelector('.dark-mode-toggle');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                button.innerHTML = '<span>☀️</span> Light Mode';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                button.innerHTML = '<span>🌙</span> Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        }
+
+        // Initialize
+        window.addEventListener('load', () => {
+            // Check for saved dark mode preference
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                document.querySelector('.dark-mode-toggle').innerHTML = '<span>☀️</span> Light Mode';
+            }
+            
+            // Initialize demo accounts and check user session
+            initializeDemoAccounts();
+            
+            // Check for saved user session
+            const savedUserEmail = localStorage.getItem('currentBiblicalUser');
+            if (savedUserEmail && users[savedUserEmail]) {
+                currentUser = users[savedUserEmail];
+                document.getElementById('userAuth').style.display = 'none';
+                document.getElementById('userProfile').classList.remove('hidden');
+                document.getElementById('welcomeUser').textContent = `Welcome, ${currentUser.name}!`;
+                document.getElementById('avatarText').textContent = `${currentUser.name}, click to upload your avatar!`;
+                updatePersonalStats();
+            }
+            
+            // Initialize leaderboard
+            updateLeaderboard();
+            
+            // Initialize quiz and drag-drop
+            loadQuiz();
+            setupDropZones();
+            generateNewDragDrop();
+            
+            // Animate timeline events on load
+            const events = document.querySelectorAll('.timeline-event');
+            events.forEach((event, index) => {
+                event.style.opacity = '0';
+                event.style.transform = 'translateY(50px)';
+                
+                setTimeout(() => {
+                    event.style.transition = 'all 0.6s ease';
+                    event.style.opacity = '1';
+                    event.style.transform = 'translateY(0)';
+                }, index * 150);
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97e119f286cb4c10',t:'MTc1NzY5Nzg5Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+
+
+
+
+
