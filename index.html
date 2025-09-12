@@ -590,6 +590,13 @@
             75% { background-position: 25% 0%; }
         }
 
+        @keyframes lightModeShift {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 100% 25%; }
+            50% { background-position: 50% 100%; }
+            75% { background-position: 25% 0%; }
+        }
+
         @keyframes starTwinkle {
             0%, 100% { opacity: 1; transform: scale(1); }
             25% { opacity: 0.7; transform: scale(1.1); }
@@ -616,16 +623,16 @@
 
         .header h1 {
             font-size: 2.5rem;
-            background: linear-gradient(45deg, #2563eb, #1d4ed8, #0ea5e9);
+            background: linear-gradient(45deg, #60a5fa, #3b82f6, #0ea5e9);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 20px;
             line-height: 1.2;
             text-shadow: 
-                0 2px 4px rgba(37, 99, 235, 0.3),
-                0 4px 8px rgba(37, 99, 235, 0.2),
-                0 8px 16px rgba(37, 99, 235, 0.1);
-            filter: drop-shadow(0 2px 4px rgba(37, 99, 235, 0.3));
+                0 2px 4px rgba(96, 165, 250, 0.3),
+                0 4px 8px rgba(96, 165, 250, 0.2),
+                0 8px 16px rgba(96, 165, 250, 0.1);
+            filter: drop-shadow(0 2px 4px rgba(96, 165, 250, 0.3));
         }
 
         .jlr-branding {
@@ -691,44 +698,243 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
             margin: 25px 0;
-            padding: 20px;
+            padding: 30px;
             background: linear-gradient(45deg, #0c4a6e 0%, #064e3b 100%);
             border-radius: 15px;
             color: white;
             border: 1px solid rgba(14, 165, 233, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guide-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.1) 50%, 
+                transparent 100%);
+            animation: shimmerEffect 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmerEffect {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .avatar-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
         }
 
         .avatar-placeholder {
-            width: 70px;
-            height: 70px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             background: #1e293b;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #0ea5e9;
-            border: 3px solid rgba(14, 165, 233, 0.5);
+            border: 4px dashed rgba(14, 165, 233, 0.8);
             cursor: pointer;
             transition: all 0.3s ease;
+            position: relative;
+            animation: avatarPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes avatarPulse {
+            0%, 100% { 
+                transform: scale(1);
+                border-color: rgba(14, 165, 233, 0.8);
+                box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7);
+            }
+            50% { 
+                transform: scale(1.05);
+                border-color: rgba(14, 165, 233, 1);
+                box-shadow: 0 0 0 10px rgba(14, 165, 233, 0);
+            }
         }
 
         .avatar-placeholder:hover {
             transform: scale(1.1);
             border-color: #0ea5e9;
-            box-shadow: 0 0 25px rgba(14, 165, 233, 0.4);
+            box-shadow: 0 0 30px rgba(14, 165, 233, 0.6);
+            animation: none;
+        }
+
+        .upload-prompt {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            animation: promptBounce 1.5s ease-in-out infinite;
+        }
+
+        @keyframes promptBounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .prompt-arrow {
+            font-size: 1.5rem;
+            animation: pointingAnimation 1s ease-in-out infinite;
+        }
+
+        @keyframes pointingAnimation {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-10deg) scale(1.1); }
+            75% { transform: rotate(10deg) scale(1.1); }
+        }
+
+        .prompt-text {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #fbbf24;
+            text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+            animation: textGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+            0%, 100% { 
+                color: #fbbf24;
+                text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+            }
+            50% { 
+                color: #f59e0b;
+                text-shadow: 0 0 15px rgba(245, 158, 11, 0.8);
+            }
         }
 
         .guide-text h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            text-align: center;
         }
 
         .guide-text p {
-            font-size: 0.95rem;
+            font-size: 1rem;
             opacity: 0.9;
+            text-align: center;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .feature-preview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .locked-feature {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 12px 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            opacity: 0.7;
+            animation: lockedPulse 3s ease-in-out infinite;
+        }
+
+        .locked-feature::before {
+            content: '🔒';
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: rgba(239, 68, 68, 0.9);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            animation: lockShake 2s ease-in-out infinite;
+        }
+
+        @keyframes lockedPulse {
+            0%, 100% { 
+                background: rgba(0, 0, 0, 0.3);
+                border-color: rgba(255, 255, 255, 0.2);
+            }
+            50% { 
+                background: rgba(0, 0, 0, 0.4);
+                border-color: rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        @keyframes lockShake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; transform: translateY(0px); }
+            100% { opacity: 0; transform: translateY(-20px); }
+        }
+
+        @keyframes unlockFeature {
+            0% { 
+                transform: scale(1); 
+                background: rgba(0, 0, 0, 0.3);
+            }
+            50% { 
+                transform: scale(1.1); 
+                background: linear-gradient(45deg, #10b981, #059669);
+            }
+            100% { 
+                transform: scale(1); 
+                background: linear-gradient(45deg, #10b981, #059669);
+            }
+        }
+
+        @keyframes particleFloat {
+            0% { 
+                opacity: 1; 
+                transform: translateY(0px) scale(1); 
+            }
+            100% { 
+                opacity: 0; 
+                transform: translateY(-50px) scale(0.5); 
+            }
+        }
+
+        .locked-feature::before {
+            content: '🔒';
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: rgba(239, 68, 68, 0.9);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            animation: lockShake 2s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        .locked-feature.unlocked::before {
+            content: var(--unlock-icon, '🔓');
+            background: rgba(16, 185, 129, 0.9);
+            animation: none;
+            transform: scale(1.2);
         }
 
         .timeline {
@@ -1082,12 +1288,27 @@
             .guide-section { 
                 flex-direction: column; 
                 text-align: center; 
-                gap: 15px;
+                gap: 20px;
+                padding: 25px;
+            }
+            .avatar-container {
+                gap: 10px;
             }
             .avatar-placeholder {
-                width: 60px;
-                height: 60px;
-                font-size: 1.8rem;
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+            .feature-preview {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .locked-feature {
+                padding: 10px 12px;
+                font-size: 0.8rem;
+            }
+            .prompt-text {
+                font-size: 0.8rem;
             }
             .jlr-title {
                 font-size: 1.2rem;
@@ -1223,10 +1444,22 @@
             </div>
             
             <div class="guide-section">
-                <div class="avatar-placeholder" id="userAvatar">👤</div>
+                <div class="avatar-container">
+                    <div class="avatar-placeholder" id="userAvatar">👤</div>
+                    <div class="upload-prompt" id="uploadPrompt">
+                        <div class="prompt-arrow">👆</div>
+                        <div class="prompt-text">Click to Upload!</div>
+                    </div>
+                </div>
                 <div class="guide-text">
-                    <h3>Your Personal Faith Guide</h3>
-                    <p>Click here to upload your Facebook avatar and I'll show you around!</p>
+                    <h3>🔓 Unlock All Features!</h3>
+                    <p id="guideInstructions">Upload your Facebook avatar or any photo to activate your personal guide and unlock interactive features!</p>
+                    <div class="feature-preview">
+                        <div class="locked-feature">🎯 Interactive Quizzes</div>
+                        <div class="locked-feature">📜 Guided Timeline Tour</div>
+                        <div class="locked-feature">💝 Personal Testimony Sharing</div>
+                        <div class="locked-feature">👤 Your Personal Guide</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1523,24 +1756,97 @@
                 if (file) {
                     const reader = new FileReader();
                     reader.onload = function(e) {
+                        // Hide upload prompt with animation
+                        const uploadPrompt = document.getElementById('uploadPrompt');
+                        uploadPrompt.style.animation = 'fadeOut 0.5s ease-out forwards';
+                        
+                        setTimeout(() => {
+                            uploadPrompt.style.display = 'none';
+                        }, 500);
+                        
                         const avatar = document.getElementById('userAvatar');
                         avatar.style.backgroundImage = `url(${e.target.result})`;
                         avatar.style.backgroundSize = 'cover';
                         avatar.style.backgroundPosition = 'center';
+                        avatar.style.border = '4px solid #10b981';
+                        avatar.style.animation = 'none';
                         avatar.innerHTML = '';
                         
+                        // Unlock features with animation
+                        unlockFeatures();
+                        
                         // Update guide text
-                        const guideText = document.querySelector('.guide-text p');
-                        guideText.textContent = 'Perfect! Now let me show you around this biblical journey!';
+                        const guideText = document.getElementById('guideInstructions');
+                        guideText.innerHTML = '🎉 <strong>Features Unlocked!</strong> Your personal guide is now active and ready to show you around!';
                         
                         // Activate the floating guide with the same image
-                        activateGuideAvatar(e.target.result);
+                        setTimeout(() => {
+                            activateGuideAvatar(e.target.result);
+                        }, 1000);
                     };
                     reader.readAsDataURL(file);
                 }
             };
             input.click();
         });
+
+        // Unlock features animation
+        function unlockFeatures() {
+            const features = document.querySelectorAll('.locked-feature');
+            const guideSection = document.querySelector('.guide-section');
+            
+            // Add success animation to the whole section
+            guideSection.style.background = 'linear-gradient(45deg, #059669 0%, #0d9488 100%)';
+            guideSection.style.transform = 'scale(1.02)';
+            
+            setTimeout(() => {
+                guideSection.style.transform = 'scale(1)';
+            }, 300);
+            
+            // Unlock each feature with staggered animation
+            features.forEach((feature, index) => {
+                setTimeout(() => {
+                    feature.style.animation = 'unlockFeature 0.6s ease-out forwards';
+                    feature.style.background = 'linear-gradient(45deg, #10b981, #059669)';
+                    feature.style.borderColor = '#10b981';
+                    feature.style.opacity = '1';
+                    feature.classList.add('unlocked');
+                    
+                    // Change lock to unlock icon
+                    feature.style.setProperty('--unlock-icon', '"🔓"');
+                    
+                    // Add success particle effect
+                    createSuccessParticles(feature);
+                }, index * 200);
+            });
+        }
+
+        // Create success particle effect
+        function createSuccessParticles(element) {
+            const particles = ['✨', '🎉', '⭐', '💫'];
+            
+            for (let i = 0; i < 6; i++) {
+                setTimeout(() => {
+                    const particle = document.createElement('div');
+                    particle.textContent = particles[Math.floor(Math.random() * particles.length)];
+                    particle.style.position = 'absolute';
+                    particle.style.fontSize = '1.2rem';
+                    particle.style.pointerEvents = 'none';
+                    particle.style.zIndex = '1000';
+                    particle.style.animation = 'particleFloat 2s ease-out forwards';
+                    
+                    const rect = element.getBoundingClientRect();
+                    particle.style.left = (rect.left + Math.random() * rect.width) + 'px';
+                    particle.style.top = (rect.top + Math.random() * rect.height) + 'px';
+                    
+                    document.body.appendChild(particle);
+                    
+                    setTimeout(() => {
+                        particle.remove();
+                    }, 2000);
+                }, i * 100);
+            }
+        }
 
         // Guide Avatar Functions
         function activateGuideAvatar(imageUrl) {
@@ -1708,13 +2014,45 @@
             const body = document.body;
             
             if (isLightMode) {
-                body.style.background = 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #cbd5e1 50%, #e2e8f0 75%, #f8fafc 100%)';
+                body.style.background = 'linear-gradient(135deg, #fef7ed 0%, #fed7aa 25%, #fdba74 50%, #fed7aa 75%, #fef7ed 100%)';
                 body.style.color = '#1f2937';
+                body.style.backgroundSize = '400% 400%';
+                body.style.animation = 'lightModeShift 40s ease-in-out infinite';
                 document.querySelector('.mobile-btn:last-child').textContent = '🌙';
+                
+                // Update header and cards for light mode
+                const headers = document.querySelectorAll('.header, .quiz-section, .testimony-section');
+                headers.forEach(header => {
+                    header.style.background = 'rgba(255, 255, 255, 0.9)';
+                    header.style.color = '#1f2937';
+                    header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+                });
+                
+                const eventCards = document.querySelectorAll('.event-card');
+                eventCards.forEach(card => {
+                    card.style.background = 'linear-gradient(135deg, #ffffff 0%, #f9fafb 15%, #ffffff 30%, #f3f4f6 45%, #ffffff 60%, #f9fafb 75%, #ffffff 100%)';
+                    card.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9)';
+                });
             } else {
                 body.style.background = 'linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%)';
                 body.style.color = '#f1f5f9';
+                body.style.backgroundSize = '400% 400%';
+                body.style.animation = 'nightSkyShift 40s ease-in-out infinite';
                 document.querySelector('.mobile-btn:last-child').textContent = '☀️';
+                
+                // Reset to dark mode
+                const headers = document.querySelectorAll('.header, .quiz-section, .testimony-section');
+                headers.forEach(header => {
+                    header.style.background = '';
+                    header.style.color = '';
+                    header.style.boxShadow = '';
+                });
+                
+                const eventCards = document.querySelectorAll('.event-card');
+                eventCards.forEach(card => {
+                    card.style.background = '';
+                    card.style.boxShadow = '';
+                });
             }
         }
 
@@ -1932,5 +2270,5 @@
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97e21794575eda26',t:'MTc1NzcwODI4Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97e223d915c2da26',t:'MTc1NzcwODc4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
