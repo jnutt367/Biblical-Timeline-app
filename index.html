@@ -2645,30 +2645,138 @@
             });
         }
 
-        // Drag and drop functionality
+        // Drag and drop functionality with explanations
         const dragDropEvents = {
             creation: [
                 "Garden of Eden", "Adam and Eve", "Tree of Knowledge", "The Fall", 
                 "Cain and Abel", "First Sin", "God's First Promise", "Creation of Light",
-                "Seventh Day Rest", "Naming the Animals"
+                "Seventh Day Rest", "Naming the Animals", "Rivers of Eden", "Forbidden Fruit",
+                "Cherubim Guard", "Flaming Sword", "First Death", "First Murder"
             ],
             "old-testament": [
                 "Exodus from Egypt", "Noah's Ark", "Tower of Babel", "Abraham's Call",
                 "Isaac's Birth", "Jacob's Ladder", "Joseph in Egypt", "Moses and Burning Bush",
                 "Ten Commandments", "Golden Calf", "Promised Land", "David and Goliath",
-                "Solomon's Temple", "Elijah's Fire", "Daniel's Lions", "Jonah and Whale"
+                "Solomon's Temple", "Elijah's Fire", "Daniel's Lions", "Jonah and Whale",
+                "Red Sea Parting", "Manna from Heaven", "Bronze Serpent", "Ark of Covenant",
+                "Passover Lamb", "Pillar of Fire", "Joshua's Conquest", "Judges Period",
+                "Samuel's Calling", "Saul's Anointing", "David's Psalms", "Wisdom of Solomon"
             ],
             "new-testament": [
                 "Jesus' Birth", "Jesus' Baptism", "Sermon on Mount", "Feeding 5000",
                 "Walking on Water", "Jesus' Crucifixion", "Jesus' Resurrection", "Pentecost",
                 "Paul's Conversion", "Great Commission", "Last Supper", "Transfiguration",
-                "Healing the Blind", "Raising Lazarus", "Palm Sunday", "Ascension"
+                "Healing the Blind", "Raising Lazarus", "Palm Sunday", "Ascension",
+                "Wedding at Cana", "Cleansing Temple", "Woman at Well", "Good Samaritan",
+                "Prodigal Son", "Lord's Prayer", "Beatitudes", "Golden Rule"
             ],
             prophetic: [
                 "Second Coming", "New Heaven & Earth", "Final Judgment", "Rapture",
                 "Millennium Reign", "Satan Bound", "Great White Throne", "New Jerusalem",
-                "River of Life", "Tree of Life Returns", "No More Death", "God Dwells with Man"
+                "River of Life", "Tree of Life Returns", "No More Death", "God Dwells with Man",
+                "Marriage Supper", "Crystal Sea", "Pearly Gates", "Streets of Gold"
             ]
+        };
+
+        // Event explanations and timeline references
+        const eventExplanations = {
+            // Creation Events
+            "Garden of Eden": {
+                explanation: "The perfect paradise where God placed Adam and Eve, representing humanity's original relationship with God.",
+                timelineRef: "Creation of the Universe",
+                scripture: "Genesis 2:8"
+            },
+            "Adam and Eve": {
+                explanation: "The first humans, created in God's image to have fellowship with Him and rule over creation.",
+                timelineRef: "Creation of the Universe", 
+                scripture: "Genesis 1:27"
+            },
+            "The Fall": {
+                explanation: "When Adam and Eve disobeyed God by eating the forbidden fruit, bringing sin and death into the world.",
+                timelineRef: "The Fall of Humanity",
+                scripture: "Genesis 3:6"
+            },
+            "First Sin": {
+                explanation: "The original disobedience that separated humanity from God and corrupted all of creation.",
+                timelineRef: "The Fall of Humanity",
+                scripture: "Genesis 3:6"
+            },
+            "God's First Promise": {
+                explanation: "God's promise that the woman's offspring would defeat Satan - the first prophecy of Christ.",
+                timelineRef: "The Fall of Humanity",
+                scripture: "Genesis 3:15"
+            },
+
+            // Old Testament Events  
+            "Noah's Ark": {
+                explanation: "God saved Noah's family and animals from the worldwide flood, showing both His judgment and mercy.",
+                timelineRef: "Noah's Ark and the Flood",
+                scripture: "Genesis 7:1"
+            },
+            "Abraham's Call": {
+                explanation: "God called Abraham to leave his homeland and promised to make him a great nation through whom all would be blessed.",
+                timelineRef: "God's Call to Abraham", 
+                scripture: "Genesis 12:1-3"
+            },
+            "Exodus from Egypt": {
+                explanation: "God delivered Israel from 400 years of slavery through Moses, demonstrating His faithfulness to His promises.",
+                timelineRef: "The Exodus from Egypt",
+                scripture: "Exodus 12:31"
+            },
+            "Ten Commandments": {
+                explanation: "God's moral law given to Moses at Mount Sinai, revealing His holiness and humanity's need for redemption.",
+                timelineRef: "Giving of the Law at Sinai",
+                scripture: "Exodus 20:1-17"
+            },
+            "David and Goliath": {
+                explanation: "Young David's victory over the giant Goliath showed God's power working through faith and courage.",
+                timelineRef: "David's Kingdom and Messianic Promise",
+                scripture: "1 Samuel 17:50"
+            },
+
+            // New Testament Events
+            "Jesus' Birth": {
+                explanation: "The eternal Word became flesh when Jesus was born of the Virgin Mary, fulfilling centuries of prophecy.",
+                timelineRef: "The Incarnation - Birth of Jesus",
+                scripture: "Luke 2:7"
+            },
+            "Jesus' Baptism": {
+                explanation: "Jesus was baptized by John and anointed by the Holy Spirit, beginning His public ministry.",
+                timelineRef: "Jesus' Baptism and Ministry Begins",
+                scripture: "Matthew 3:16-17"
+            },
+            "Jesus' Crucifixion": {
+                explanation: "Jesus died on the cross as our substitute, bearing the penalty for sin that we deserved.",
+                timelineRef: "The Crucifixion and Resurrection",
+                scripture: "John 19:30"
+            },
+            "Jesus' Resurrection": {
+                explanation: "Jesus conquered death and rose from the grave, proving His deity and securing our salvation.",
+                timelineRef: "The Crucifixion and Resurrection", 
+                scripture: "Matthew 28:6"
+            },
+            "Pentecost": {
+                explanation: "The Holy Spirit was poured out on the disciples, empowering them to spread the Gospel worldwide.",
+                timelineRef: "Pentecost and Birth of the Church",
+                scripture: "Acts 2:4"
+            },
+
+            // Prophetic Events
+            "Second Coming": {
+                explanation: "Jesus will return in glory to judge the living and the dead and establish His eternal kingdom.",
+                timelineRef: "The Second Coming of Christ",
+                scripture: "Revelation 1:7"
+            },
+            "New Heaven & Earth": {
+                explanation: "God will create a perfect new creation where righteousness dwells and He will be with His people forever.",
+                timelineRef: "New Heaven and New Earth",
+                scripture: "Revelation 21:1"
+            },
+            "Final Judgment": {
+                explanation: "Christ will judge all people according to their response to the Gospel, separating the righteous from the wicked.",
+                timelineRef: "The Second Coming of Christ",
+                scripture: "Revelation 20:12"
+            }
         };
 
         let dragScore = 0;
@@ -2687,17 +2795,21 @@
                 droppedItems.forEach(item => item.remove());
             });
             
-            // Get random events from each period
+            // Get 2-3 random events from each period for more choices
             const periods = ['creation', 'old-testament', 'new-testament', 'prophetic'];
             const selectedEvents = [];
             
             periods.forEach(period => {
                 const events = dragDropEvents[period];
-                const randomEvent = events[Math.floor(Math.random() * events.length)];
-                selectedEvents.push({ event: randomEvent, period: period });
+                const numEvents = Math.floor(Math.random() * 2) + 2; // 2-3 events per period
+                const shuffledEvents = [...events].sort(() => Math.random() - 0.5);
+                
+                for (let i = 0; i < Math.min(numEvents, shuffledEvents.length); i++) {
+                    selectedEvents.push({ event: shuffledEvents[i], period: period });
+                }
             });
             
-            // Shuffle the events
+            // Shuffle all events
             selectedEvents.sort(() => Math.random() - 0.5);
             
             // Create drag items
@@ -2706,6 +2818,7 @@
                 dragItem.className = 'drag-item';
                 dragItem.draggable = true;
                 dragItem.dataset.period = period;
+                dragItem.dataset.event = event;
                 dragItem.textContent = event;
                 
                 dragItem.addEventListener('dragstart', function(e) {
@@ -2745,6 +2858,7 @@
                     if (draggedItem) {
                         const draggedPeriod = draggedItem.dataset.period;
                         const zonePeriod = this.dataset.period;
+                        const eventName = draggedItem.dataset.event;
                         
                         totalDrags++;
                         
@@ -2771,12 +2885,118 @@
                             
                             // Update user stats if logged in
                             updateUserStats(false, false);
+                            
+                            // Show explanation and guide to correct answer
+                            showEventExplanation(eventName, draggedPeriod);
                         }
                         
                         updateDragScore();
                     }
                 });
             });
+        }
+
+        // Show explanation for incorrect drag and drop answers
+        function showEventExplanation(eventName, correctPeriod) {
+            const explanation = eventExplanations[eventName];
+            
+            if (explanation) {
+                // Create explanation modal
+                const modal = document.createElement('div');
+                modal.className = 'modal show';
+                modal.innerHTML = `
+                    <div class="modal-content" style="max-width: 500px;">
+                        <div class="modal-header">
+                            <h3>📚 Learn About: ${eventName}</h3>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <p style="margin-bottom: 15px; line-height: 1.6;">${explanation.explanation}</p>
+                            <div style="background: rgba(59, 130, 246, 0.1); padding: 15px; border-radius: 10px; border-left: 4px solid #3b82f6; margin: 15px 0;">
+                                <strong>📖 Scripture:</strong> ${explanation.scripture}
+                            </div>
+                            <p style="margin-bottom: 15px;"><strong>✅ Correct Period:</strong> ${getPeriodDisplayName(correctPeriod)}</p>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="btn-primary" onclick="scrollToTimelineEvent('${explanation.timelineRef}')">📍 See on Timeline</button>
+                            <button class="btn-secondary" onclick="closeExplanationModal()">Got it!</button>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                // Auto-close after 8 seconds
+                setTimeout(() => {
+                    if (document.body.contains(modal)) {
+                        closeExplanationModal();
+                    }
+                }, 8000);
+            } else {
+                // Fallback for events without detailed explanations
+                alert(`📚 "${eventName}" belongs to the ${getPeriodDisplayName(correctPeriod)} period. Try dragging it to the correct zone!`);
+            }
+        }
+
+        function getPeriodDisplayName(period) {
+            const periodNames = {
+                'creation': 'Creation Era',
+                'old-testament': 'Old Testament',
+                'new-testament': 'New Testament', 
+                'prophetic': 'Prophetic Future'
+            };
+            return periodNames[period] || period;
+        }
+
+        function closeExplanationModal() {
+            const modal = document.querySelector('.modal.show');
+            if (modal && modal.querySelector('.modal-header h3').textContent.includes('Learn About:')) {
+                modal.remove();
+            }
+        }
+
+        function scrollToTimelineEvent(timelineRef) {
+            closeExplanationModal();
+            
+            // Find the timeline event with matching title
+            const timelineEvents = document.querySelectorAll('.timeline-event');
+            let targetEvent = null;
+            
+            timelineEvents.forEach(event => {
+                const title = event.querySelector('.event-title');
+                if (title && title.textContent.includes(timelineRef)) {
+                    targetEvent = event;
+                }
+            });
+            
+            if (targetEvent) {
+                // Scroll to the event
+                targetEvent.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+                
+                // Highlight the event temporarily
+                targetEvent.style.transform = 'scale(1.05)';
+                targetEvent.style.boxShadow = '0 0 30px rgba(59, 130, 246, 0.5)';
+                
+                setTimeout(() => {
+                    targetEvent.style.transform = '';
+                    targetEvent.style.boxShadow = '';
+                }, 3000);
+                
+                // Auto-expand the details
+                setTimeout(() => {
+                    const details = targetEvent.querySelector('.event-details');
+                    const button = targetEvent.querySelector('.expand-btn');
+                    
+                    if (details && !details.classList.contains('expanded')) {
+                        details.classList.add('expanded');
+                        button.textContent = '▲ Show Less';
+                    }
+                }, 1000);
+            } else {
+                alert('📍 Timeline event not found. You can explore the timeline below to learn more!');
+            }
         }
 
         // Timeline event details toggle
@@ -2868,6 +3088,6 @@
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97e13ad5c249dabd',t:'MTc1NzY5OTI0NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97e1490b564b5d0e',t:'MTc1NzY5OTgyNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
 
