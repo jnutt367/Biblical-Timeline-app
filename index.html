@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblical Timeline - Journey of Faith</title>
+    <title>Jesus Love Revealed: A Journey of Faith - Biblical Timelines</title>
     <style>
         * {
             margin: 0;
@@ -13,19 +13,11 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(
-                135deg, 
-                #0f172a 0%, 
-                #1e293b 25%, 
-                #334155 50%, 
-                #1e293b 75%, 
-                #0f172a 100%
-            );
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
             background-size: 400% 400%;
             animation: nightSkyShift 40s ease-in-out infinite;
             min-height: 100vh;
             color: #f1f5f9;
-            transition: all 0.3s ease;
             position: relative;
             overflow-x: hidden;
         }
@@ -38,66 +30,350 @@
             right: 0;
             bottom: 0;
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 2%),
-                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 2%),
-                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.06) 0%, transparent 1%),
-                radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.12) 0%, transparent 2%),
-                radial-gradient(circle at 20% 90%, rgba(255, 255, 255, 0.05) 0%, transparent 1%),
-                radial-gradient(circle at 60% 30%, rgba(255, 255, 255, 0.07) 0%, transparent 1%),
-                radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.04) 0%, transparent 1%),
-                radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.09) 0%, transparent 2%);
-            animation: twinkleStars 8s ease-in-out infinite;
+                radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 1px, transparent 3px),
+                radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.3) 1px, transparent 3px),
+                radial-gradient(circle at 25% 80%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.35) 1px, transparent 3px),
+                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.25) 1px, transparent 2px),
+                radial-gradient(circle at 45% 60%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 0.5px, transparent 2px),
+                radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.25) 0.5px, transparent 2px),
+                radial-gradient(circle at 70% 10%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.2) 0.5px, transparent 2px),
+                radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.4) 0%, transparent 1px),
+                radial-gradient(circle at 55% 20%, rgba(255, 255, 255, 0.35) 0%, transparent 1px),
+                radial-gradient(circle at 35% 55%, rgba(255, 255, 255, 0.3) 0%, transparent 1px);
+            animation: starTwinkle 8s ease-in-out infinite;
             pointer-events: none;
             z-index: -1;
         }
 
-        body::after {
-            content: '🌙';
+        /* Ancient Israel Atmospheric Elements */
+
+
+        /* Floating Ancient Elements */
+        .ancient-elements {
             position: fixed;
-            top: 5%;
-            right: 8%;
-            font-size: 3rem;
-            opacity: 0.3;
-            animation: moonGlow 12s ease-in-out infinite;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .ancient-element {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0.15;
+            animation: ancientFloat 25s linear infinite;
+        }
+
+        .ancient-element:nth-child(1) { left: 10%; animation-delay: 0s; font-size: 1.2rem; }
+        .ancient-element:nth-child(2) { left: 20%; animation-delay: -5s; font-size: 1.8rem; }
+        .ancient-element:nth-child(3) { left: 30%; animation-delay: -10s; font-size: 1.4rem; }
+        .ancient-element:nth-child(4) { left: 40%; animation-delay: -15s; font-size: 1.6rem; }
+        .ancient-element:nth-child(5) { left: 50%; animation-delay: -20s; font-size: 1.3rem; }
+        .ancient-element:nth-child(6) { left: 60%; animation-delay: -8s; font-size: 1.7rem; }
+        .ancient-element:nth-child(7) { left: 70%; animation-delay: -12s; font-size: 1.5rem; }
+        .ancient-element:nth-child(8) { left: 80%; animation-delay: -18s; font-size: 1.4rem; }
+        .ancient-element:nth-child(9) { left: 90%; animation-delay: -3s; font-size: 1.6rem; }
+
+        @keyframes ancientFloat {
+            0% { 
+                transform: translateY(100vh) rotate(0deg); 
+                opacity: 0; 
+            }
+            10% { 
+                opacity: 0.15; 
+            }
+            90% { 
+                opacity: 0.15; 
+            }
+            100% { 
+                transform: translateY(-100px) rotate(360deg); 
+                opacity: 0; 
+            }
+        }
+
+        /* Desert Wind Effect */
+        .desert-wind {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                transparent 0%, 
+                rgba(194, 154, 108, 0.03) 25%, 
+                transparent 50%, 
+                rgba(194, 154, 108, 0.02) 75%, 
+                transparent 100%);
+            animation: desertWind 20s ease-in-out infinite;
             pointer-events: none;
             z-index: -1;
         }
 
-        body.light-mode {
-            background: linear-gradient(
-                135deg, 
-                #4f9cf9 0%, 
-                #2dd4bf 25%, 
-                #60a5fa 50%, 
-                #34d399 75%, 
-                #4f9cf9 100%
-            );
-            background-size: 400% 400%;
-            animation: daySkyShift 35s ease-in-out infinite;
-            color: #333;
+        @keyframes desertWind {
+            0%, 100% { 
+                transform: translateX(-100px) skewX(0deg); 
+                opacity: 0.3; 
+            }
+            50% { 
+                transform: translateX(100px) skewX(2deg); 
+                opacity: 0.1; 
+            }
         }
 
-        body.light-mode::before {
-            background-image: 
-                radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.4) 0%, transparent 3%),
-                radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.3) 0%, transparent 4%),
-                radial-gradient(circle at 45% 60%, rgba(255, 255, 255, 0.35) 0%, transparent 5%),
-                radial-gradient(circle at 25% 80%, rgba(255, 255, 255, 0.25) 0%, transparent 3%),
-                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.3) 0%, transparent 4%);
-            animation: floatingClouds 15s ease-in-out infinite;
+        /* Ancient Scroll Texture on Cards */
+        .event-card {
+            background: linear-gradient(135deg, 
+                #fefefe 0%, 
+                #f9f7f4 15%, 
+                #ffffff 30%, 
+                #f8f6f2 45%, 
+                #ffffff 60%, 
+                #f7f5f1 75%, 
+                #fefefe 100%);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8),
+                inset 0 -1px 0 rgba(194, 154, 108, 0.1);
+            border-left: 6px solid;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
         }
 
-        body.light-mode::after {
-            content: '☀️';
-            top: 8%;
-            right: 10%;
-            font-size: 2.5rem;
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(194, 154, 108, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(139, 116, 88, 0.03) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 0%, rgba(194, 154, 108, 0.02) 50%, transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .event-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Gentle Parchment Animation */
+        .event-card:hover {
+            transform: scale(1.02) translateY(-2px);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9),
+                inset 0 -1px 0 rgba(194, 154, 108, 0.15);
+        }
+
+        /* Ancient Candle Flicker Effect on Markers */
+        .event-marker {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            transform: translateX(-50%);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 4px solid white;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            animation: candleFlicker 4s ease-in-out infinite;
+        }
+
+        @keyframes candleFlicker {
+            0%, 100% { 
+                box-shadow: 0 0 15px rgba(255, 215, 0, 0.3); 
+            }
+            25% { 
+                box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); 
+            }
+            50% { 
+                box-shadow: 0 0 25px rgba(255, 215, 0, 0.5); 
+            }
+            75% { 
+                box-shadow: 0 0 18px rgba(255, 215, 0, 0.35); 
+            }
+        }
+
+        /* Ancient Timeline with Stone Texture */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                #8b7355 0%, 
+                #a0916d 15%, 
+                #8b7355 30%, 
+                #9d8a66 45%, 
+                #8b7355 60%, 
+                #a68f6b 75%, 
+                #8b7355 100%);
+            border-radius: 3px;
+            box-shadow: 
+                inset 2px 0 4px rgba(0, 0, 0, 0.2),
+                inset -2px 0 4px rgba(255, 255, 255, 0.1);
+            animation: ancientStoneGlow 8s ease-in-out infinite;
+        }
+
+        @keyframes ancientStoneGlow {
+            0%, 100% { 
+                box-shadow: 
+                    inset 2px 0 4px rgba(0, 0, 0, 0.2),
+                    inset -2px 0 4px rgba(255, 255, 255, 0.1),
+                    0 0 10px rgba(139, 115, 85, 0.2);
+            }
+            50% { 
+                box-shadow: 
+                    inset 2px 0 4px rgba(0, 0, 0, 0.3),
+                    inset -2px 0 4px rgba(255, 255, 255, 0.2),
+                    0 0 15px rgba(139, 115, 85, 0.3);
+            }
+        }
+
+        /* Olive Branch Decorations */
+        .header::after {
+            content: '🕊️';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 1.5rem;
             opacity: 0.4;
-            animation: sunGlow 10s ease-in-out infinite;
+            animation: doveFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes doveFloat {
+            0%, 100% { 
+                transform: translateY(0px) rotate(-5deg); 
+                opacity: 0.4; 
+            }
+            50% { 
+                transform: translateY(-8px) rotate(5deg); 
+                opacity: 0.6; 
+            }
+        }
+
+        /* Ancient Incense Smoke Effect */
+        .jlr-branding::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            width: 2px;
+            height: 30px;
+            background: linear-gradient(to top, 
+                rgba(255, 255, 255, 0.3) 0%, 
+                rgba(255, 255, 255, 0.1) 50%, 
+                transparent 100%);
+            animation: incenseSmoke 3s ease-in-out infinite;
+            border-radius: 1px;
+        }
+
+        @keyframes incenseSmoke {
+            0% { 
+                transform: translateY(0px) translateX(0px) scaleY(1); 
+                opacity: 0.3; 
+            }
+            50% { 
+                transform: translateY(-15px) translateX(3px) scaleY(1.2); 
+                opacity: 0.6; 
+            }
+            100% { 
+                transform: translateY(-25px) translateX(-2px) scaleY(0.8); 
+                opacity: 0; 
+            }
+        }
+
+        /* Gentle Scripture Glow */
+        .scripture-quote {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin: 20px 0;
+            font-style: italic;
+            line-height: 1.5;
+            animation: scriptureGlow 6s ease-in-out infinite;
+            text-shadow: 0 0 10px rgba(203, 213, 225, 0.3);
+        }
+
+        @keyframes scriptureGlow {
+            0%, 100% { 
+                text-shadow: 0 0 10px rgba(203, 213, 225, 0.3); 
+            }
+            50% { 
+                text-shadow: 0 0 15px rgba(203, 213, 225, 0.5); 
+            }
+        }
+
+        /* Ancient Oil Lamp Flicker on Buttons */
+        .expand-btn, .quiz-btn, .submit-testimony {
+            background: linear-gradient(45deg, #3b82f6, #06b6d4);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .expand-btn::before, .quiz-btn::before, .submit-testimony::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.2) 50%, 
+                transparent 100%);
+            transition: left 0.6s ease;
+        }
+
+        .expand-btn:hover::before, .quiz-btn:hover::before, .submit-testimony:hover::before {
+            left: 100%;
+        }
+
+
+
+        @keyframes nightSkyShift {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 100% 25%; }
+            50% { background-position: 50% 100%; }
+            75% { background-position: 25% 0%; }
+        }
+
+        @keyframes starTwinkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            25% { opacity: 0.7; transform: scale(1.1); }
+            50% { opacity: 0.4; transform: scale(0.9); }
+            75% { opacity: 0.8; transform: scale(1.05); }
+        }
+
+        @keyframes moonGlow {
+            0%, 100% { opacity: 0.3; transform: translateY(0px); }
+            50% { opacity: 0.5; transform: translateY(-10px); }
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -109,49 +385,8 @@
             margin-bottom: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             text-align: center;
-            position: relative;
-            transition: all 0.3s ease;
             border: 1px solid rgba(59, 130, 246, 0.2);
-        }
-
-        body.light-mode .header {
-            background: rgba(255, 255, 255, 0.95);
-            color: #333;
-            border: none;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .dark-mode-toggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: linear-gradient(45deg, #0ea5e9, #10b981);
-            border: none;
-            border-radius: 50px;
-            padding: 12px 20px;
-            color: white;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .dark-mode-toggle:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(14, 165, 233, 0.5);
-            background: linear-gradient(45deg, #0284c7, #059669);
-        }
-
-        body.light-mode .dark-mode-toggle {
-            background: linear-gradient(45deg, #3b82f6, #06b6d4);
-            border: none;
-        }
-
-        body.light-mode .dark-mode-toggle:hover {
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+            position: relative;
         }
 
         .header h1 {
@@ -159,572 +394,124 @@
             background: linear-gradient(45deg, #0ea5e9, #10b981);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
-
-        body.light-mode .header h1 {
-            background: linear-gradient(45deg, #3b82f6, #06b6d4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        #scriptureText {
-            color: #e2e8f0 !important;
-        }
-
-        body.light-mode #scriptureText {
-            color: #666 !important;
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
 
         .jlr-branding {
             background: linear-gradient(45deg, #0c4a6e, #064e3b);
             color: white;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 15px 0;
-            text-align: center;
-            transition: all 0.3s ease;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
             border: 1px solid rgba(14, 165, 233, 0.3);
+            position: relative;
         }
 
-        body.light-mode .jlr-branding {
-            background: linear-gradient(45deg, #3b82f6, #06b6d4);
-            border: none;
+        .jlr-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .jlr-subtitle {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .support-section {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .support-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .support-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .support-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .scripture-quote {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin: 20px 0;
+            font-style: italic;
+            line-height: 1.5;
         }
 
         .guide-section {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin: 20px 0;
-            padding: 15px;
+            gap: 20px;
+            margin: 25px 0;
+            padding: 20px;
             background: linear-gradient(45deg, #0c4a6e 0%, #064e3b 100%);
             border-radius: 15px;
             color: white;
-            transition: all 0.3s ease;
             border: 1px solid rgba(14, 165, 233, 0.3);
         }
 
-        body.light-mode .guide-section {
-            background: linear-gradient(45deg, #06b6d4 0%, #3b82f6 100%);
-            border: none;
-        }
-
         .avatar-placeholder {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             background: #1e293b;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: #0ea5e9;
             border: 3px solid rgba(14, 165, 233, 0.5);
-            transition: all 0.3s ease;
-        }
-
-        body.light-mode .avatar-placeholder {
-            background: #fff;
-            color: #3b82f6;
-            border-color: rgba(255, 255, 255, 0.8);
-        }
-
-        .controls {
-            background: rgba(15, 23, 42, 0.95);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            color: #f1f5f9;
-        }
-
-        body.light-mode .controls {
-            background: rgba(255, 255, 255, 0.95);
-            color: #333;
-            border: none;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .filter-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 20px;
-            align-items: center;
-        }
-
-        .filter-btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 25px;
             cursor: pointer;
-            font-weight: 600;
             transition: all 0.3s ease;
-            background: #334155;
-            color: #e2e8f0;
-            border: 1px solid rgba(59, 130, 246, 0.3);
         }
 
-        .filter-btn.active {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-        }
-
-        .filter-btn.old-testament.active {
-            background: linear-gradient(45deg, #059669 0%, #047857 100%);
-            color: white;
-            border-color: #10b981;
-        }
-
-        .filter-btn.new-testament.active {
-            background: linear-gradient(45deg, #0284c7 0%, #0369a1 100%);
-            color: white;
+        .avatar-placeholder:hover {
+            transform: scale(1.1);
             border-color: #0ea5e9;
+            box-shadow: 0 0 25px rgba(14, 165, 233, 0.4);
         }
 
-        .filter-btn.creation.active {
-            background: linear-gradient(45deg, #1d4ed8 0%, #1e40af 100%);
-            color: white;
-            border-color: #3b82f6;
+        .guide-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
         }
 
-        .filter-btn.prophetic.active {
-            background: linear-gradient(45deg, #0d9488 0%, #0f766e 100%);
-            color: white;
-            border-color: #14b8a6;
-        }
-
-        body.light-mode .filter-btn {
-            background: #f8f9fa;
-            color: #333;
-            border: none;
-        }
-
-        body.light-mode .filter-btn.active {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        body.light-mode .filter-btn.old-testament.active {
-            background: linear-gradient(45deg, #10b981 0%, #059669 100%);
-        }
-
-        body.light-mode .filter-btn.new-testament.active {
-            background: linear-gradient(45deg, #06b6d4 0%, #0891b2 100%);
-        }
-
-        body.light-mode .filter-btn.creation.active {
-            background: linear-gradient(45deg, #3b82f6 0%, #2563eb 100%);
-        }
-
-        body.light-mode .filter-btn.prophetic.active {
-            background: linear-gradient(45deg, #0f766e 0%, #0d9488 100%);
-        }
-
-        .quiz-section {
-            background: linear-gradient(45deg, #3b82f6 0%, #06b6d4 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-        }
-
-        body.dark-mode .quiz-section {
-            background: linear-gradient(45deg, #1e40af 0%, #0f766e 100%);
-        }
-
-        .quiz-question {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-
-        .quiz-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-        }
-
-        .quiz-option {
-            padding: 10px 15px;
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid transparent;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .quiz-option:hover {
-            background: rgba(255, 255, 255, 0.3);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        body.dark-mode .quiz-option:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.4);
-        }
-
-        .quiz-option.correct {
-            background: #10b981;
-            border-color: #059669;
-        }
-
-        .quiz-option.incorrect {
-            background: #ef4444;
-            border-color: #dc2626;
-        }
-
-        .quiz-score {
-            background: rgba(255, 255, 255, 0.3);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        body.dark-mode .quiz-score {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .drag-score {
-            background: rgba(255, 255, 255, 0.3);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        body.dark-mode .drag-score {
-            background: rgba(255, 255, 255, 0.2);
+        .guide-text p {
+            font-size: 0.95rem;
+            opacity: 0.9;
         }
 
         .timeline {
             position: relative;
-            margin: 40px 0;
-        }
-
-        body.light-mode .timeline {
-            background: linear-gradient(
-                45deg,
-                rgba(139, 69, 19, 0.1) 0%,
-                rgba(160, 82, 45, 0.1) 25%,
-                rgba(210, 180, 140, 0.1) 50%,
-                rgba(244, 164, 96, 0.1) 75%,
-                rgba(139, 69, 19, 0.1) 100%
-            );
-            background-size: 400% 400%;
-            animation: israelLandscape 20s ease-in-out infinite;
-            border-radius: 20px;
-            padding: 40px 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        body.light-mode .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(160, 82, 45, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(210, 180, 140, 0.2) 0%, transparent 50%),
-                linear-gradient(180deg, rgba(135, 206, 235, 0.1) 0%, rgba(244, 164, 96, 0.1) 70%, rgba(139, 69, 19, 0.2) 100%);
-            animation: landscapeShift 25s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        body.light-mode .timeline::after {
-            content: '🏔️ 🌴 🏛️ 🐪 ⛰️ 🌾 🏺 🕊️';
-            position: absolute;
-            top: 20px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-size: 1.5rem;
-            opacity: 0.3;
-            animation: floatElements 15s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        @keyframes israelLandscape {
-            0%, 100% {
-                background-position: 0% 50%;
-            }
-            25% {
-                background-position: 100% 25%;
-            }
-            50% {
-                background-position: 50% 100%;
-            }
-            75% {
-                background-position: 25% 0%;
-            }
-        }
-
-        @keyframes landscapeShift {
-            0%, 100% {
-                transform: translateX(0) scale(1);
-                opacity: 0.6;
-            }
-            25% {
-                transform: translateX(-10px) scale(1.02);
-                opacity: 0.8;
-            }
-            50% {
-                transform: translateX(5px) scale(0.98);
-                opacity: 0.7;
-            }
-            75% {
-                transform: translateX(-5px) scale(1.01);
-                opacity: 0.9;
-            }
-        }
-
-        @keyframes floatElements {
-            0%, 100% {
-                transform: translateY(0px) translateX(0px);
-                opacity: 0.3;
-            }
-            25% {
-                transform: translateY(-5px) translateX(10px);
-                opacity: 0.5;
-            }
-            50% {
-                transform: translateY(-10px) translateX(-5px);
-                opacity: 0.4;
-            }
-            75% {
-                transform: translateY(-3px) translateX(8px);
-                opacity: 0.6;
-            }
-        }
-
-        @keyframes cardLandscape {
-            0%, 100% {
-                background-position: 0% 50%;
-            }
-            33% {
-                background-position: 100% 25%;
-            }
-            66% {
-                background-position: 50% 100%;
-            }
-        }
-
-        @keyframes cardLandscapeShift {
-            0%, 100% {
-                transform: translateX(0) scale(1);
-                opacity: 0.4;
-            }
-            25% {
-                transform: translateX(-5px) scale(1.01);
-                opacity: 0.6;
-            }
-            50% {
-                transform: translateX(3px) scale(0.99);
-                opacity: 0.5;
-            }
-            75% {
-                transform: translateX(-2px) scale(1.005);
-                opacity: 0.7;
-            }
-        }
-
-        @keyframes cardFloatElements {
-            0%, 100% {
-                transform: translateY(0px) translateX(0px) rotate(0deg);
-                opacity: 0.2;
-            }
-            25% {
-                transform: translateY(-3px) translateX(5px) rotate(1deg);
-                opacity: 0.3;
-            }
-            50% {
-                transform: translateY(-6px) translateX(-3px) rotate(-1deg);
-                opacity: 0.25;
-            }
-            75% {
-                transform: translateY(-2px) translateX(4px) rotate(0.5deg);
-                opacity: 0.35;
-            }
-        }
-
-        @keyframes nightLandscape {
-            0%, 100% {
-                background-position: 0% 50%;
-            }
-            25% {
-                background-position: 100% 75%;
-            }
-            50% {
-                background-position: 50% 25%;
-            }
-            75% {
-                background-position: 25% 100%;
-            }
-        }
-
-        @keyframes nightLandscapeShift {
-            0%, 100% {
-                transform: translateX(0) scale(1);
-                opacity: 0.6;
-            }
-            20% {
-                transform: translateX(-3px) scale(1.01);
-                opacity: 0.8;
-            }
-            40% {
-                transform: translateX(2px) scale(0.99);
-                opacity: 0.7;
-            }
-            60% {
-                transform: translateX(-1px) scale(1.005);
-                opacity: 0.9;
-            }
-            80% {
-                transform: translateX(1px) scale(0.995);
-                opacity: 0.75;
-            }
-        }
-
-        @keyframes nightFloatElements {
-            0%, 100% {
-                transform: translateY(0px) translateX(0px) rotate(0deg);
-                opacity: 0.25;
-            }
-            20% {
-                transform: translateY(-2px) translateX(3px) rotate(0.5deg);
-                opacity: 0.35;
-            }
-            40% {
-                transform: translateY(-4px) translateX(-2px) rotate(-0.5deg);
-                opacity: 0.3;
-            }
-            60% {
-                transform: translateY(-3px) translateX(4px) rotate(1deg);
-                opacity: 0.4;
-            }
-            80% {
-                transform: translateY(-1px) translateX(-1px) rotate(-0.3deg);
-                opacity: 0.32;
-            }
-        }
-
-        @keyframes nightSkyShift {
-            0%, 100% {
-                background-position: 0% 50%;
-            }
-            25% {
-                background-position: 100% 25%;
-            }
-            50% {
-                background-position: 50% 100%;
-            }
-            75% {
-                background-position: 25% 0%;
-            }
-        }
-
-        @keyframes daySkyShift {
-            0%, 100% {
-                background-position: 0% 50%;
-            }
-            33% {
-                background-position: 100% 75%;
-            }
-            66% {
-                background-position: 50% 25%;
-            }
-        }
-
-        @keyframes twinkleStars {
-            0%, 100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            25% {
-                opacity: 0.7;
-                transform: scale(1.1);
-            }
-            50% {
-                opacity: 0.9;
-                transform: scale(0.9);
-            }
-            75% {
-                opacity: 0.6;
-                transform: scale(1.05);
-            }
-        }
-
-        @keyframes moonGlow {
-            0%, 100% {
-                opacity: 0.3;
-                transform: translateY(0px) scale(1);
-                filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-            }
-            25% {
-                opacity: 0.4;
-                transform: translateY(-5px) scale(1.05);
-                filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
-            }
-            50% {
-                opacity: 0.35;
-                transform: translateY(-8px) scale(1.02);
-                filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.35));
-            }
-            75% {
-                opacity: 0.45;
-                transform: translateY(-3px) scale(1.03);
-                filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.45));
-            }
-        }
-
-        @keyframes floatingClouds {
-            0%, 100% {
-                opacity: 1;
-                transform: translateX(0px) scale(1);
-            }
-            25% {
-                opacity: 0.8;
-                transform: translateX(10px) scale(1.02);
-            }
-            50% {
-                opacity: 0.9;
-                transform: translateX(-5px) scale(0.98);
-            }
-            75% {
-                opacity: 0.85;
-                transform: translateX(8px) scale(1.01);
-            }
-        }
-
-        @keyframes sunGlow {
-            0%, 100% {
-                opacity: 0.4;
-                transform: translateY(0px) scale(1) rotate(0deg);
-                filter: drop-shadow(0 0 15px rgba(255, 193, 7, 0.4));
-            }
-            25% {
-                opacity: 0.5;
-                transform: translateY(-3px) scale(1.03) rotate(90deg);
-                filter: drop-shadow(0 0 20px rgba(255, 193, 7, 0.5));
-            }
-            50% {
-                opacity: 0.45;
-                transform: translateY(-5px) scale(1.01) rotate(180deg);
-                filter: drop-shadow(0 0 18px rgba(255, 193, 7, 0.45));
-            }
-            75% {
-                opacity: 0.55;
-                transform: translateY(-2px) scale(1.02) rotate(270deg);
-                filter: drop-shadow(0 0 22px rgba(255, 193, 7, 0.55));
-            }
+            margin: 50px 0;
         }
 
         .timeline-line {
@@ -735,23 +522,13 @@
             height: 100%;
             background: linear-gradient(to bottom, #3b82f6, #10b981, #06b6d4, #0d9488);
             border-radius: 3px;
-            transition: all 0.3s ease;
-        }
-
-        body.dark-mode .timeline-line {
-            background: linear-gradient(to bottom, #1e40af, #059669, #0891b2, #0f766e);
         }
 
         .timeline-event {
             position: relative;
-            margin: 80px 0;
+            margin: 100px 0;
             cursor: pointer;
             transition: all 0.3s ease;
-            opacity: 1;
-        }
-
-        .timeline-event.hidden {
-            display: none;
         }
 
         .timeline-event:hover {
@@ -760,243 +537,91 @@
 
         .timeline-event.left {
             text-align: right;
-            padding-right: calc(50% + 50px);
+            padding-right: calc(50% + 60px);
         }
 
         .timeline-event.right {
             text-align: left;
-            padding-left: calc(50% + 50px);
+            padding-left: calc(50% + 60px);
         }
 
         .event-marker {
             position: absolute;
             left: 50%;
-            top: 25px;
+            top: 30px;
             transform: translateX(-50%);
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             border: 4px solid white;
             z-index: 10;
-            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
         }
 
-        .event-marker.creation {
-            background: linear-gradient(45deg, #3b82f6, #2563eb);
-        }
-
-        .event-marker.old-testament {
-            background: linear-gradient(45deg, #10b981, #059669);
-        }
-
-        .event-marker.new-testament {
-            background: linear-gradient(45deg, #06b6d4, #0891b2);
-        }
-
-        .event-marker.prophetic {
-            background: linear-gradient(45deg, #0f766e, #0d9488);
-        }
-
-        body.dark-mode .event-marker.creation {
-            background: linear-gradient(45deg, #1e40af, #1d4ed8);
-        }
-
-        body.dark-mode .event-marker.old-testament {
-            background: linear-gradient(45deg, #059669, #047857);
-        }
-
-        body.dark-mode .event-marker.new-testament {
-            background: linear-gradient(45deg, #0891b2, #0e7490);
-        }
-
-        body.dark-mode .event-marker.prophetic {
-            background: linear-gradient(45deg, #0f766e, #115e59);
-        }
+        .event-marker.creation { background: linear-gradient(45deg, #3b82f6, #2563eb); }
+        .event-marker.old-testament { background: linear-gradient(45deg, #10b981, #059669); }
+        .event-marker.new-testament { background: linear-gradient(45deg, #06b6d4, #0891b2); }
+        .event-marker.prophetic { background: linear-gradient(45deg, #0f766e, #0d9488); }
 
         .timeline-event:hover .event-marker {
             transform: translateX(-50%) scale(1.3);
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
         }
 
         .event-card {
             background: white;
             border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            padding: 35px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
             border-left: 6px solid;
             transition: all 0.3s ease;
-            position: relative;
             overflow: hidden;
         }
 
-        body.light-mode .event-card {
-            background: linear-gradient(
-                135deg,
-                rgba(139, 69, 19, 0.05) 0%,
-                rgba(160, 82, 45, 0.08) 25%,
-                rgba(210, 180, 140, 0.06) 50%,
-                rgba(244, 164, 96, 0.04) 75%,
-                rgba(255, 255, 255, 0.95) 100%
-            );
-            background-size: 300% 300%;
-            animation: cardLandscape 18s ease-in-out infinite;
-        }
-
-        body.light-mode .event-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 15% 85%, rgba(139, 69, 19, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 85% 15%, rgba(160, 82, 45, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 50% 50%, rgba(210, 180, 140, 0.08) 0%, transparent 50%),
-                linear-gradient(180deg, rgba(135, 206, 235, 0.08) 0%, rgba(244, 164, 96, 0.06) 60%, rgba(139, 69, 19, 0.1) 100%);
-            animation: cardLandscapeShift 22s ease-in-out infinite;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        body.light-mode .event-card::after {
-            content: '🏔️ 🌴 🏛️ 🐪 ⛰️ 🌾 🏺 🕊️ 🌿 ☀️';
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 0.8rem;
-            opacity: 0.2;
-            animation: cardFloatElements 20s ease-in-out infinite;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        body.dark-mode .event-card {
-            background: linear-gradient(
-                135deg,
-                rgba(30, 41, 59, 0.95) 0%,
-                rgba(51, 65, 85, 0.9) 25%,
-                rgba(71, 85, 105, 0.85) 50%,
-                rgba(100, 116, 139, 0.8) 75%,
-                rgba(30, 41, 59, 0.95) 100%
-            );
-            background-size: 400% 400%;
-            animation: nightLandscape 25s ease-in-out infinite;
-            color: #e2e8f0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        body.dark-mode .event-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(30, 41, 59, 0.6) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(51, 65, 85, 0.4) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(71, 85, 105, 0.3) 0%, transparent 60%),
-                linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.6) 40%, rgba(51, 65, 85, 0.4) 100%);
-            animation: nightLandscapeShift 30s ease-in-out infinite;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        body.dark-mode .event-card::after {
-            content: '🌙 ⭐ 🏔️ 🌴 🏛️ 🐪 ⛰️ 🌾 🏺 🕊️ 🌿 ✨';
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 0.8rem;
-            opacity: 0.25;
-            animation: nightFloatElements 25s ease-in-out infinite;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .event-card > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .event-card.creation {
-            border-left-color: #3b82f6;
-        }
-
-        .event-card.old-testament {
-            border-left-color: #10b981;
-        }
-
-        .event-card.new-testament {
-            border-left-color: #06b6d4;
-        }
-
-        .event-card.prophetic {
-            border-left-color: #0f766e;
-        }
+        .event-card.creation { border-left-color: #3b82f6; }
+        .event-card.old-testament { border-left-color: #10b981; }
+        .event-card.new-testament { border-left-color: #06b6d4; }
+        .event-card.prophetic { border-left-color: #0f766e; }
 
         .event-date {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             opacity: 0.8;
+            color: #374151;
         }
 
         .event-title {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: bold;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-
-        body.dark-mode .event-title {
-            color: #f1f5f9;
+            margin-bottom: 18px;
+            color: #1f2937;
         }
 
         .event-category {
             display: inline-block;
-            padding: 6px 15px;
+            padding: 8px 18px;
             border-radius: 25px;
             font-size: 0.9rem;
             font-weight: bold;
             color: white;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
 
-        .event-category.creation {
-            background: linear-gradient(45deg, #3b82f6, #2563eb);
-            color: white;
-        }
-
-        .event-category.old-testament {
-            background: linear-gradient(45deg, #10b981, #059669);
-            color: white;
-        }
-
-        .event-category.new-testament {
-            background: linear-gradient(45deg, #06b6d4, #0891b2);
-            color: white;
-        }
-
-        .event-category.prophetic {
-            background: linear-gradient(45deg, #0f766e, #0d9488);
-            color: white;
-        }
+        .event-category.creation { background: linear-gradient(45deg, #3b82f6, #2563eb); }
+        .event-category.old-testament { background: linear-gradient(45deg, #10b981, #059669); }
+        .event-category.new-testament { background: linear-gradient(45deg, #06b6d4, #0891b2); }
+        .event-category.prophetic { background: linear-gradient(45deg, #0f766e, #0d9488); }
 
         .event-preview {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             line-height: 1.6;
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        body.dark-mode .event-preview {
-            color: #cbd5e1;
+            color: #4b5563;
+            margin-bottom: 20px;
         }
 
         .event-details {
@@ -1006,249 +631,130 @@
         }
 
         .event-details.expanded {
-            max-height: 800px;
+            max-height: 1000px;
         }
 
         .event-details p {
             font-size: 1rem;
             line-height: 1.7;
-            color: #444;
-            margin-bottom: 15px;
-        }
-
-        body.dark-mode .event-details p {
-            color: #cbd5e1;
+            color: #374151;
+            margin-bottom: 18px;
         }
 
         .scripture-ref {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
+            background: #f8fafc;
+            padding: 18px;
+            border-radius: 12px;
             border-left: 4px solid #3b82f6;
-            margin: 15px 0;
+            margin: 20px 0;
             font-style: italic;
-            transition: all 0.3s ease;
-        }
-
-        body.dark-mode .scripture-ref {
-            background: #475569;
-            color: #e2e8f0;
-            border-left-color: #60a5fa;
+            color: #1e40af;
         }
 
         .expand-btn {
             background: linear-gradient(45deg, #3b82f6, #06b6d4);
             color: white;
             border: none;
-            padding: 12px 25px;
-            border-radius: 25px;
+            padding: 14px 28px;
+            border-radius: 30px;
             cursor: pointer;
             font-weight: bold;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
         }
 
         .expand-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
         }
 
-        body.dark-mode .expand-btn {
-            background: linear-gradient(45deg, #1e40af, #0f766e);
-        }
-
-        body.dark-mode .expand-btn:hover {
-            box-shadow: 0 5px 15px rgba(30, 64, 175, 0.4);
-        }
-
-        /* Authentication Styles */
-        .user-auth {
-            position: absolute;
-            top: 20px;
-            left: 20px;
+        /* Mobile Control Buttons */
+        .mobile-controls {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
 
-        .user-profile {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-        }
-
-        .user-profile.hidden {
-            display: none;
-        }
-
-        .auth-btn {
-            background: linear-gradient(45deg, #10b981, #059669);
-            border: none;
-            border-radius: 25px;
-            padding: 8px 16px;
+        .mobile-btn {
+            background: rgba(15, 23, 42, 0.9);
             color: white;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
             cursor: pointer;
-            font-weight: 600;
             transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .auth-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
-        }
-
-        .auth-btn.logout {
-            background: linear-gradient(45deg, #ef4444, #dc2626);
-        }
-
-        .auth-btn.logout:hover {
-            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
-        }
-
-        body.dark-mode .auth-btn {
-            background: linear-gradient(45deg, #059669, #047857);
-        }
-
-        body.dark-mode .auth-btn.logout {
-            background: linear-gradient(45deg, #dc2626, #b91c1c);
-        }
-
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            color: #374151;
-            font-weight: 600;
-            padding: 12px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
             backdrop-filter: blur(10px);
         }
 
-        body.dark-mode .user-info {
-            color: #e2e8f0;
+        .mobile-btn:hover {
+            background: rgba(59, 130, 246, 0.8);
+            transform: translateY(-1px);
         }
 
-        /* Data Management Styles */
-        .data-management {
+        /* Quiz Section */
+        .quiz-section {
             background: rgba(15, 23, 42, 0.95);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-            transition: all 0.3s ease;
-            color: #f1f5f9;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
             border: 1px solid rgba(59, 130, 246, 0.2);
         }
 
-        body.light-mode .data-management {
-            background: rgba(255, 255, 255, 0.95);
-            color: #333;
-            border: none;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .data-buttons {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 15px;
-        }
-
-        .data-btn {
-            background: linear-gradient(45deg, #0f766e, #0d9488);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .data-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(15, 118, 110, 0.4);
-        }
-
-        body.dark-mode .data-btn {
-            background: linear-gradient(45deg, #115e59, #134e4a);
-        }
-
-        .demo-notice {
-            background: linear-gradient(45deg, #06b6d4, #0891b2);
-            color: white;
-            padding: 15px;
-            border-radius: 10px;
+        .quiz-title {
+            font-size: 1.8rem;
+            color: #0ea5e9;
             margin-bottom: 20px;
             text-align: center;
-            font-weight: 600;
         }
 
-        body.dark-mode .demo-notice {
-            background: linear-gradient(45deg, #0891b2, #0e7490);
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-        }
-
-        .modal.show {
+        .quiz-buttons {
             display: flex;
-            align-items: center;
+            gap: 20px;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
-        .modal-content {
-            background: #334155;
+        .quiz-btn {
+            background: linear-gradient(45deg, #3b82f6, #06b6d4);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+
+        .quiz-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Testimony Section */
+        .testimony-section {
+            background: rgba(15, 23, 42, 0.95);
             border-radius: 20px;
             padding: 30px;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            transform: scale(0.9);
-            transition: all 0.3s ease;
-            color: #e2e8f0;
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            margin: 30px 0;
+            border: 1px solid rgba(16, 185, 129, 0.2);
         }
 
-        .modal.show .modal-content {
-            transform: scale(1);
-        }
-
-        body.light-mode .modal-content {
-            background: white;
-            color: #333;
-            border: none;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .modal-header {
+        .testimony-title {
+            font-size: 1.8rem;
+            color: #10b981;
+            margin-bottom: 20px;
             text-align: center;
-            margin-bottom: 25px;
         }
 
-        .modal-header h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            background: linear-gradient(45deg, #3b82f6, #06b6d4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        body.dark-mode .modal-header h3 {
-            background: linear-gradient(45deg, #60a5fa, #22d3ee);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .testimony-form {
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .form-group {
@@ -1258,877 +764,284 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 600;
-            color: #d1d5db;
+            color: #cbd5e1;
+            font-weight: bold;
         }
 
-        body.light-mode .form-group label {
-            color: #374151;
-        }
-
-        .form-group input {
+        .form-group input,
+        .form-group textarea {
             width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #64748b;
+            padding: 12px;
+            border: 1px solid rgba(203, 213, 225, 0.3);
             border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
             font-size: 1rem;
-            transition: all 0.3s ease;
-            box-sizing: border-box;
-            background: #475569;
-            color: #e2e8f0;
         }
 
-        .form-group input:focus {
-            outline: none;
-            border-color: #60a5fa;
-            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
         }
 
-        body.light-mode .form-group input {
-            background: white;
-            border-color: #e5e7eb;
-            color: #333;
-        }
-
-        body.light-mode .form-group input:focus {
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 25px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, #3b82f6, #06b6d4);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
-        }
-
-        .btn-secondary {
-            background: #6b7280;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background: #4b5563;
-            transform: translateY(-2px);
-        }
-
-        body.dark-mode .btn-primary {
-            background: linear-gradient(45deg, #1e40af, #0f766e);
-        }
-
-        body.dark-mode .btn-secondary {
-            background: #475569;
-        }
-
-        body.dark-mode .btn-secondary:hover {
-            background: #334155;
-        }
-
-        /* Stats and Leaderboard Styles */
-        .stats-section {
-            background: rgba(15, 23, 42, 0.95);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-            transition: all 0.3s ease;
-            color: #f1f5f9;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-        }
-
-        body.light-mode .stats-section {
-            background: rgba(255, 255, 255, 0.95);
-            color: #333;
-            border: none;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .personal-stats {
-            margin-bottom: 30px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .stat-card {
-            background: linear-gradient(45deg, #f8fafc, #f1f5f9);
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            border: 2px solid #e2e8f0;
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        body.dark-mode .stat-card {
-            background: linear-gradient(45deg, #475569, #334155);
-            border-color: #64748b;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #3b82f6, #06b6d4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 5px;
-        }
-
-        body.dark-mode .stat-number {
-            background: linear-gradient(45deg, #60a5fa, #22d3ee);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: #6b7280;
-            font-weight: 600;
-        }
-
-        body.dark-mode .stat-label {
-            color: #9ca3af;
-        }
-
-        .leaderboard-section h4 {
-            margin-bottom: 15px;
-        }
-
-        .leaderboard-tabs {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            padding: 8px 16px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            background: #f3f4f6;
-            color: #374151;
-            font-size: 0.9rem;
-        }
-
-        .tab-btn.active {
-            background: linear-gradient(45deg, #3b82f6, #06b6d4);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
-        }
-
-        body.dark-mode .tab-btn {
-            background: #475569;
-            color: #e2e8f0;
-        }
-
-        body.dark-mode .tab-btn.active {
-            background: linear-gradient(45deg, #1e40af, #0f766e);
-        }
-
-        .leaderboard-content {
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .leaderboard-item {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            background: #f8fafc;
+        .image-upload {
+            border: 2px dashed rgba(203, 213, 225, 0.3);
             border-radius: 10px;
-            margin-bottom: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .leaderboard-item:hover {
-            background: #f1f5f9;
-            transform: translateX(5px);
-        }
-
-        body.dark-mode .leaderboard-item {
-            background: #475569;
-        }
-
-        body.dark-mode .leaderboard-item:hover {
-            background: #334155;
-        }
-
-        .rank {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: white;
-            margin-right: 15px;
-            font-size: 1.1rem;
-        }
-
-        .rank:nth-child(1) {
-            background: linear-gradient(45deg, #10b981, #059669);
-        }
-
-        .leaderboard-item:nth-child(1) .rank {
-            background: linear-gradient(45deg, #10b981, #059669);
-        }
-
-        .leaderboard-item:nth-child(2) .rank {
-            background: linear-gradient(45deg, #06b6d4, #0891b2);
-        }
-
-        .leaderboard-item:nth-child(3) .rank {
-            background: linear-gradient(45deg, #0f766e, #0d9488);
-        }
-
-        .leaderboard-item:nth-child(n+4) .rank {
-            background: linear-gradient(45deg, #3b82f6, #2563eb);
-        }
-
-        .player-info {
-            flex: 1;
-        }
-
-        .player-name {
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-bottom: 3px;
-        }
-
-        .player-score {
-            color: #6b7280;
-            font-size: 0.9rem;
-        }
-
-        body.dark-mode .player-score {
-            color: #9ca3af;
-        }
-
-        .drag-drop-section {
-            background: rgba(15, 23, 42, 0.95);
-            border-radius: 15px;
-            padding: 25px;
-            margin: 30px 0;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-            transition: all 0.3s ease;
-            color: #f1f5f9;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-        }
-
-        body.light-mode .drag-drop-section {
-            background: rgba(255, 255, 255, 0.95);
-            color: #333;
-            border: none;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .drag-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .drag-item {
-            padding: 10px 20px;
-            background: linear-gradient(45deg, #3b82f6, #06b6d4);
-            color: white;
-            border-radius: 25px;
-            cursor: grab;
-            user-select: none;
-            transition: all 0.3s ease;
-        }
-
-        body.dark-mode .drag-item {
-            background: linear-gradient(45deg, #1e40af, #0f766e);
-        }
-
-        .drag-item:active {
-            cursor: grabbing;
-        }
-
-        .drag-item.dragging {
-            opacity: 0.5;
-            transform: rotate(5deg);
-        }
-
-        .drop-zones {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
-        .drop-zone {
-            min-height: 80px;
-            border: 3px dashed #ddd;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            padding: 15px;
+            padding: 30px;
             text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        body.dark-mode .drop-zone {
-            border-color: #64748b;
-            color: #e2e8f0;
-        }
-
-        .drop-zone.drag-over {
-            border-color: #3b82f6;
-            background: rgba(59, 130, 246, 0.1);
-        }
-
-        body.dark-mode .drop-zone.drag-over {
-            border-color: #60a5fa;
-            background: rgba(96, 165, 250, 0.2);
-        }
-
-        .drop-zone.correct {
+        .image-upload:hover {
             border-color: #10b981;
             background: rgba(16, 185, 129, 0.1);
         }
 
-        body.dark-mode .drop-zone.correct {
-            border-color: #34d399;
-            background: rgba(52, 211, 153, 0.2);
+        .image-preview {
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 10px;
+            margin: 10px auto;
+            display: block;
         }
 
-        .drop-zone.incorrect {
-            border-color: #ef4444;
-            background: rgba(239, 68, 68, 0.1);
-        }
-
-        body.dark-mode .drop-zone.incorrect {
-            border-color: #f87171;
-            background: rgba(248, 113, 113, 0.2);
-        }
-
-        /* Mobile-first approach - base styles for mobile */
-        .container {
-            padding: 15px;
-        }
-
-        .header {
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .header h1 {
-            font-size: 1.8rem;
-            line-height: 1.2;
-        }
-
-        .header p {
+        .submit-testimony {
+            background: linear-gradient(45deg, #10b981, #059669);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
             font-size: 1rem;
-            margin-bottom: 15px;
+            width: 100%;
+            transition: all 0.3s ease;
         }
 
-        .guide-section {
-            flex-direction: column;
-            text-align: center;
-            padding: 15px;
+        .submit-testimony:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
         }
 
-        .avatar-placeholder {
-            width: 50px;
-            height: 50px;
-            font-size: 1.2rem;
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            backdrop-filter: blur(5px);
         }
 
-        .controls {
-            padding: 20px;
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal h2 {
+            color: #0ea5e9;
             margin-bottom: 20px;
+            text-align: center;
         }
 
-        .filter-section {
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .filter-btn {
-            padding: 8px 16px;
-            font-size: 0.9rem;
-            min-width: 120px;
-        }
-
-        .quiz-section {
-            padding: 15px;
-            margin-bottom: 15px;
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #cbd5e1;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         .quiz-question {
-            font-size: 1rem;
-            margin-bottom: 12px;
+            margin-bottom: 20px;
         }
 
         .quiz-options {
-            grid-template-columns: 1fr;
-            gap: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .quiz-option {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(203, 213, 225, 0.3);
+            color: white;
             padding: 12px;
-            font-size: 0.9rem;
-            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .drag-drop-section {
-            padding: 20px;
-            margin: 20px 0;
+        .quiz-option:hover {
+            background: rgba(59, 130, 246, 0.3);
         }
 
-        .drag-items {
-            justify-content: center;
-            gap: 10px;
+        .quiz-option.correct {
+            background: rgba(16, 185, 129, 0.3);
+            border-color: #10b981;
         }
 
-        .drag-item {
-            padding: 8px 16px;
-            font-size: 0.9rem;
-            text-align: center;
+        .quiz-option.incorrect {
+            background: rgba(239, 68, 68, 0.3);
+            border-color: #ef4444;
         }
 
-        .drop-zones {
-            grid-template-columns: 1fr;
-            gap: 10px;
-        }
-
-        .drop-zone {
-            min-height: 60px;
-            padding: 10px;
-            font-size: 0.9rem;
-        }
-
-        /* Timeline mobile optimization */
-        .timeline-event {
-            margin: 40px 0;
-        }
-
-        .timeline-event.left,
-        .timeline-event.right {
-            text-align: left;
-            padding-left: 60px;
-            padding-right: 15px;
-        }
-
-        .timeline-line {
-            left: 30px;
-            width: 4px;
-        }
-
-        .event-marker {
-            left: 30px;
-            width: 24px;
-            height: 24px;
-            font-size: 1rem;
-        }
-
-        .event-card {
-            padding: 20px;
-            border-radius: 15px;
-        }
-
-        .event-date {
-            font-size: 1rem;
-        }
-
-        .event-title {
-            font-size: 1.3rem;
-            line-height: 1.3;
-        }
-
-        .event-category {
-            padding: 4px 12px;
-            font-size: 0.8rem;
-        }
-
-        .event-preview {
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        .event-details p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .scripture-ref {
-            padding: 12px;
-            font-size: 0.9rem;
-            margin: 12px 0;
-        }
-
-        .expand-btn {
-            padding: 10px 20px;
-            font-size: 0.9rem;
-            width: 100%;
-            margin-top: 15px;
-        }
-
-        /* Tablet styles */
-        @media (min-width: 768px) {
-            .container {
-                padding: 20px;
+        @media (max-width: 768px) {
+            .container { 
+                padding: 15px; 
+                padding-top: 80px; /* Add padding to prevent overlap with mobile buttons */
             }
-
-            .header {
-                padding: 30px;
-                margin-bottom: 30px;
+            .header { 
+                padding: 25px; 
+                margin-bottom: 25px; 
+                margin-top: 20px; /* Additional top margin for mobile */
             }
-
-            .header h1 {
-                font-size: 2.2rem;
+            .header h1 { 
+                font-size: 1.6rem; 
+                line-height: 1.3;
             }
-
-            .header p {
-                font-size: 1.1rem;
-            }
-
-            .guide-section {
-                flex-direction: row;
+            .timeline-event { margin: 60px 0; }
+            .timeline-event.left, .timeline-event.right {
                 text-align: left;
+                padding-left: 70px;
+                padding-right: 15px;
             }
-
-            .avatar-placeholder {
-                width: 55px;
-                height: 55px;
-                font-size: 1.3rem;
+            .timeline-line { left: 35px; width: 4px; }
+            .event-marker { 
+                left: 35px; 
+                width: 28px; 
+                height: 28px; 
+                font-size: 1.1rem; 
             }
-
-            .controls {
-                padding: 25px;
+            .event-card { padding: 25px; }
+            .event-title { font-size: 1.4rem; }
+            .guide-section { 
+                flex-direction: column; 
+                text-align: center; 
+                gap: 15px;
             }
-
-            .filter-section {
-                gap: 12px;
-            }
-
-            .filter-btn {
-                padding: 10px 18px;
-                font-size: 1rem;
-                min-width: auto;
-            }
-
-            .quiz-options {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .drag-items {
-                gap: 12px;
-            }
-
-            .drop-zones {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .timeline-event {
-                margin: 60px 0;
-            }
-
-            .timeline-event.left {
-                text-align: right;
-                padding-right: calc(50% + 40px);
-                padding-left: 20px;
-            }
-
-            .timeline-event.right {
-                text-align: left;
-                padding-left: calc(50% + 40px);
-                padding-right: 20px;
-            }
-
-            .timeline-line {
-                left: 50%;
-                transform: translateX(-50%);
-                width: 5px;
-            }
-
-            .event-marker {
-                left: 50%;
-                transform: translateX(-50%);
-                width: 26px;
-                height: 26px;
-                font-size: 1.1rem;
-            }
-
-            .event-card {
-                padding: 25px;
-            }
-
-            .expand-btn {
-                width: auto;
-                margin-top: 10px;
-            }
-        }
-
-        /* Desktop styles */
-        @media (min-width: 1024px) {
-            .header h1 {
-                font-size: 2.5rem;
-            }
-
-            .header p {
-                font-size: 1.2rem;
-            }
-
             .avatar-placeholder {
                 width: 60px;
                 height: 60px;
-                font-size: 1.5rem;
+                font-size: 1.8rem;
             }
-
-            .quiz-options {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .drop-zones {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .timeline-event {
-                margin: 80px 0;
-            }
-
-            .timeline-line {
-                width: 6px;
-            }
-
-            .event-marker {
-                width: 30px;
-                height: 30px;
+            .jlr-title {
                 font-size: 1.2rem;
-            }
-
-            .event-card {
-                padding: 30px;
-                border-radius: 20px;
-            }
-
-            .event-title {
-                font-size: 1.6rem;
-            }
-
-            .event-preview {
-                font-size: 1.1rem;
-            }
-        }
-
-        /* Touch-friendly improvements */
-        @media (hover: none) and (pointer: coarse) {
-            .filter-btn,
-            .quiz-option,
-            .expand-btn,
-            .timeline-event {
-                min-height: 44px;
-                touch-action: manipulation;
-            }
-
-            .timeline-event:hover {
-                transform: none;
-            }
-
-            .event-marker:hover {
-                transform: translateX(-50%);
-            }
-
-            .expand-btn:hover {
-                transform: none;
-            }
-
-            .drag-item {
-                min-height: 44px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                flex-direction: column;
+                gap: 5px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Mobile Control Buttons -->
+    <div class="mobile-controls">
+        <button class="mobile-btn" onclick="openModal('loginModal')">Login</button>
+        <button class="mobile-btn" onclick="openModal('signupModal')">Sign Up</button>
+        <button class="mobile-btn" onclick="toggleLightMode()">☀️</button>
+    </div>
+
+    <!-- Ancient Israel Atmospheric Elements -->
+    <div class="ancient-elements">
+        <div class="ancient-element">🕊️</div>
+        <div class="ancient-element">🌿</div>
+        <div class="ancient-element">⭐</div>
+        <div class="ancient-element">🕯️</div>
+        <div class="ancient-element">📜</div>
+        <div class="ancient-element">🌾</div>
+        <div class="ancient-element">🏺</div>
+        <div class="ancient-element">🕊️</div>
+        <div class="ancient-element">🌿</div>
+    </div>
+
+    <!-- Desert Wind Effect -->
+    <div class="desert-wind"></div>
+
     <div class="container">
         <div class="header">
-            <button class="dark-mode-toggle" onclick="toggleDarkMode()">
-                <span>🌙</span> Dark Mode
-            </button>
-            <div class="user-auth" id="userAuth">
-                <button class="auth-btn" onclick="showLoginModal()">🔑 Login</button>
-                <button class="auth-btn" onclick="showRegisterModal()">📝 Sign Up</button>
-            </div>
-            <div class="user-profile hidden" id="userProfile">
-                <div class="user-info">
-                    <span id="welcomeUser">Welcome back!</span>
-                    <button class="auth-btn logout" onclick="logout()">Logout</button>
-                </div>
-            </div>
-            <h1>📖 Biblical Timeline: Journey of Faith</h1>
+            <h1>Jesus Love Revealed: A Journey of Faith - Biblical Timelines</h1>
+            
             <div class="jlr-branding">
-                <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 5px;">⛪ Jesus Love Revealed</div>
-                <div style="font-size: 0.9rem; opacity: 0.9;">Created by Jason Nutt • Founder of Jesus Love Revealed YouTube Channel</div>
-                <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.3);">
-                    <div style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 8px;">Enjoying this Biblical Timeline? Support the ministry:</div>
-                    <a href="https://cash.app/$jnuttwebdev1" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; text-decoration: none; color: white; font-size: 0.85rem; font-weight: 600; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.3);" onmouseover="this.style.background='rgba(255,255,255,0.3)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'; this.style.transform='translateY(0)'">
-                        ☕ Buy us a Coffee
+                <div class="jlr-title">
+                    <span>⛪</span>
+                    <span>Jesus Love Revealed</span>
+                </div>
+                <div class="jlr-subtitle">
+                    Created by Jason Nutt • Founder of Jesus Love Revealed YouTube Channel
+                </div>
+                <div class="support-section">
+                    <div class="support-text">Support our ministry and help spread God's love:</div>
+                    <a href="https://cash.app/$jnuttwebdev1" target="_blank" class="support-link">
+                        <span>☕</span>
+                        <span>Buy us a Coffee</span>
                     </a>
                 </div>
             </div>
-            <p style="font-size: 1.2rem; color: #666; margin-bottom: 20px;" id="scriptureText">
+
+            <div class="scripture-quote">
                 "For I know the plans I have for you," declares the Lord, "plans to prosper you and not to harm you, to give you hope and a future." - Jeremiah 29:11
-            </p>
+            </div>
             
             <div class="guide-section">
-                <div class="avatar-placeholder" id="userAvatar">
-                    👤
-                </div>
-                <div>
-                    <strong>Your Faith Guide</strong>
-                    <p id="avatarText">Click here to upload your avatar and personalize your journey!</p>
+                <div class="avatar-placeholder" id="userAvatar">👤</div>
+                <div class="guide-text">
+                    <h3>Your Personal Faith Guide</h3>
+                    <p>Click here to upload your avatar and personalize your biblical journey!</p>
                 </div>
             </div>
         </div>
 
-        <div class="demo-notice" id="demoNotice">
-            🎭 Demo Mode Active: Competing with sample users! Create your own account to track real progress.
-        </div>
-
-        <div class="data-management">
-            <h4>💾 Data Management</h4>
-            <p>Backup your progress or start fresh with these tools:</p>
-            <div class="data-buttons">
-                <button class="data-btn" onclick="exportData()">📤 Export Data</button>
-                <button class="data-btn" onclick="importData()">📥 Import Data</button>
-                <button class="data-btn" onclick="resetData()">🔄 Reset All Data</button>
-                <button class="data-btn" onclick="loadDemoData()">🎭 Load Demo Users</button>
+        <!-- Quiz Games Section -->
+        <div class="quiz-section">
+            <h2 class="quiz-title">🎯 Test Your Biblical Knowledge</h2>
+            <div class="quiz-buttons">
+                <button class="quiz-btn" onclick="startQuiz('biblical')">📖 Biblical Timeline Quiz</button>
+                <button class="quiz-btn" onclick="startQuiz('scripture')">✝️ Scripture Memory Quiz</button>
             </div>
         </div>
 
-        <div class="controls">
-            <h3 style="margin-bottom: 15px;">🔍 Explore by Period</h3>
-            <div class="filter-section">
-                <button class="filter-btn creation active" onclick="filterEvents('creation')">Creation & Beginnings</button>
-                <button class="filter-btn old-testament active" onclick="filterEvents('old-testament')">Old Testament</button>
-                <button class="filter-btn new-testament active" onclick="filterEvents('new-testament')">New Testament</button>
-                <button class="filter-btn prophetic active" onclick="filterEvents('prophetic')">Prophetic Future</button>
-                <button class="filter-btn" onclick="showAll()">Show All</button>
-            </div>
-
-            <div class="stats-section">
-                <div class="personal-stats">
-                    <h4>📊 Your Progress</h4>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-number" id="personalQuizScore">0%</div>
-                            <div class="stat-label">Quiz Accuracy</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" id="personalDragScore">0%</div>
-                            <div class="stat-label">Matching Accuracy</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" id="totalAnswered">0</div>
-                            <div class="stat-label">Questions Answered</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" id="currentStreak">0</div>
-                            <div class="stat-label">Current Streak</div>
-                        </div>
+        <!-- Testimony Section -->
+        <div class="testimony-section">
+            <h2 class="testimony-title">💝 Share Your Testimony</h2>
+            <div class="testimony-form">
+                <div class="form-group">
+                    <label for="testimonyName">Your Name:</label>
+                    <input type="text" id="testimonyName" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="testimonyTitle">Testimony Title:</label>
+                    <input type="text" id="testimonyTitle" placeholder="How God changed my life...">
+                </div>
+                <div class="form-group">
+                    <label for="testimonyText">Your Story:</label>
+                    <textarea id="testimonyText" placeholder="Share how Jesus has transformed your life and what He means to you..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Add a Photo (Optional):</label>
+                    <div class="image-upload" onclick="uploadTestimonyImage()">
+                        <div id="imageUploadText">📷 Click to upload your photo</div>
+                        <img id="testimonyImagePreview" class="image-preview" style="display: none;">
                     </div>
                 </div>
-                
-                <div class="leaderboard-section">
-                    <h4>🏆 Leaderboard</h4>
-                    <div class="leaderboard-tabs">
-                        <button class="tab-btn active" onclick="showLeaderboard('quiz')">Quiz Masters</button>
-                        <button class="tab-btn" onclick="showLeaderboard('drag')">Matching Experts</button>
-                        <button class="tab-btn" onclick="showLeaderboard('overall')">Overall Champions</button>
-                    </div>
-                    <div class="leaderboard-content" id="leaderboardContent">
-                        <div class="leaderboard-item">
-                            <div class="rank">1</div>
-                            <div class="player-info">
-                                <div class="player-name">Loading...</div>
-                                <div class="player-score">--</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <button class="submit-testimony" onclick="submitTestimony()">Share My Testimony</button>
             </div>
-
-            <div class="quiz-section" id="quizSection">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                    <h4>🧠 Test Your Knowledge</h4>
-                    <div class="quiz-score" id="quizScore">Score: 0/0 (0%)</div>
-                </div>
-                <div class="quiz-question" id="quizQuestion">
-                    Loading question...
-                </div>
-                <div class="quiz-options" id="quizOptions">
-                </div>
-            </div>
-        </div>
-
-        <div class="drag-drop-section">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                <h3>🎯 Match Events to Their Periods</h3>
-                <div class="drag-score" id="dragScore">Score: 0/0 (0%)</div>
-            </div>
-            <div class="drag-items" id="dragItems">
-            </div>
-            <div class="drop-zones">
-                <div class="drop-zone" data-period="creation">
-                    <strong>Creation Era</strong><br>
-                    <small>Beginning of Time</small>
-                </div>
-                <div class="drop-zone" data-period="old-testament">
-                    <strong>Old Testament</strong><br>
-                    <small>God's Chosen People</small>
-                </div>
-                <div class="drop-zone" data-period="new-testament">
-                    <strong>New Testament</strong><br>
-                    <small>Christ's Ministry</small>
-                </div>
-                <div class="drop-zone" data-period="prophetic">
-                    <strong>Prophetic Future</strong><br>
-                    <small>End Times</small>
-                </div>
-            </div>
-            <button class="expand-btn" onclick="generateNewDragDrop()" style="margin-top: 15px;">🔄 New Challenge</button>
         </div>
 
         <div class="timeline">
@@ -2140,14 +1053,14 @@
                     <div class="event-date">In the Beginning</div>
                     <div class="event-title">Creation of the Universe</div>
                     <div class="event-category creation">Creation & Beginnings</div>
-                    <div class="event-preview">"In the beginning God created the heavens and the earth." The foundation of all existence.</div>
+                    <div class="event-preview">"In the beginning God created the heavens and the earth." The foundation of all existence and God's perfect design.</div>
                     <div class="event-details">
-                        <p>God speaks the universe into existence through His divine Word, establishing the fundamental order of creation over six days and resting on the seventh.</p>
+                        <p>God speaks the universe into existence through His divine Word, establishing the fundamental order of creation over six days and resting on the seventh, setting the pattern for work and rest.</p>
                         <div class="scripture-ref">
-                            "And God said, 'Let there be light,' and there was light." - Genesis 1:3
+                            "And God said, 'Let there be light,' and there was light. God saw that the light was good, and he separated the light from the darkness." - Genesis 1:3-4
                         </div>
-                        <p><strong>Theological Significance:</strong> This establishes God as the sovereign Creator, the source of all life, and the foundation for understanding our purpose and relationship with Him.</p>
-                        <p><strong>For Disciples:</strong> Creation reveals God's character - His power, creativity, and intentionality. We are made in His image (imago Dei), giving us inherent dignity and purpose.</p>
+                        <p><strong>Theological Significance:</strong> This establishes God as the sovereign Creator, the source of all life, and the foundation for understanding our purpose and relationship with Him. Everything that exists comes from His word and will.</p>
+                        <p><strong>For Today:</strong> We are fearfully and wonderfully made in God's image, giving us inherent dignity, purpose, and the calling to be stewards of His creation.</p>
                     </div>
                     <button class="expand-btn">▼ Explore Deeper</button>
                 </div>
@@ -2159,14 +1072,14 @@
                     <div class="event-date">Genesis 3</div>
                     <div class="event-title">The Fall of Humanity</div>
                     <div class="event-category creation">Creation & Beginnings</div>
-                    <div class="event-preview">Adam and Eve's disobedience introduces sin into the world, but God promises redemption.</div>
+                    <div class="event-preview">Adam and Eve's disobedience introduces sin into the world, but God immediately promises redemption and hope.</div>
                     <div class="event-details">
-                        <p>The first humans, created in perfect fellowship with God, choose to disobey His command, bringing sin and death into creation.</p>
+                        <p>The first humans, created in perfect fellowship with God, choose to disobey His command, bringing sin, death, and separation into creation. Yet God's love pursues them even in their rebellion.</p>
                         <div class="scripture-ref">
                             "And I will put enmity between you and the woman, and between your offspring and hers; he will crush your head, and you will strike his heel." - Genesis 3:15
                         </div>
-                        <p><strong>The Protoevangelium:</strong> Genesis 3:15 is called the first gospel - God's first promise of a coming Savior who will defeat Satan and restore humanity.</p>
-                        <p><strong>Hope in Darkness:</strong> Even in judgment, God shows mercy by providing clothing and promising redemption through the woman's seed - pointing to Christ.</p>
+                        <p><strong>The First Gospel:</strong> Genesis 3:15 is called the Protoevangelium - God's first promise of a coming Savior who will defeat Satan and restore humanity to relationship with God.</p>
+                        <p><strong>Hope in Darkness:</strong> Even in judgment, God shows mercy by providing clothing and promising redemption through the woman's seed - pointing directly to Christ's future victory.</p>
                     </div>
                     <button class="expand-btn">▼ Explore Deeper</button>
                 </div>
@@ -2176,16 +1089,16 @@
                 <div class="event-marker old-testament">🌈</div>
                 <div class="event-card old-testament">
                     <div class="event-date">c. 2348 BC</div>
-                    <div class="event-title">Noah's Ark and the Flood</div>
+                    <div class="event-title">Noah's Ark and the Great Flood</div>
                     <div class="event-category old-testament">Old Testament</div>
-                    <div class="event-preview">God judges the world's wickedness but preserves Noah's family, establishing His covenant of grace.</div>
+                    <div class="event-preview">God judges the world's wickedness but preserves Noah's family, establishing His covenant of grace and faithfulness.</div>
                     <div class="event-details">
-                        <p>As humanity's wickedness grieves God's heart, He chooses to start anew while preserving righteous Noah and his family through the ark.</p>
+                        <p>As humanity's wickedness grieves God's heart, He chooses to start anew while preserving righteous Noah and his family through the ark - a picture of salvation through faith and obedience.</p>
                         <div class="scripture-ref">
                             "I establish my covenant with you: Never again will all life be destroyed by the waters of a flood; never again will there be a flood to destroy the earth." - Genesis 9:11
                         </div>
-                        <p><strong>God's Justice and Mercy:</strong> The flood demonstrates God's holy judgment against sin, while the ark shows His mercy and plan for salvation.</p>
-                        <p><strong>Covenant Theology:</strong> The rainbow covenant establishes God's faithfulness and introduces the pattern of divine covenants that culminate in Christ.</p>
+                        <p><strong>God's Justice and Mercy:</strong> The flood demonstrates God's holy judgment against sin, while the ark shows His mercy and plan for salvation. Noah found grace in the eyes of the Lord.</p>
+                        <p><strong>Covenant Promise:</strong> The rainbow covenant establishes God's faithfulness and introduces the pattern of divine covenants that culminate in Christ's new covenant.</p>
                     </div>
                     <button class="expand-btn">▼ Explore Deeper</button>
                 </div>
@@ -2199,107 +1112,31 @@
                     <div class="event-category old-testament">Old Testament</div>
                     <div class="event-preview">God calls Abram to leave his homeland and promises to make him a great nation through whom all peoples will be blessed.</div>
                     <div class="event-details">
-                        <p>God calls Abram from Ur of the Chaldeans, promising to make him the father of many nations and to bless all families of the earth through him.</p>
+                        <p>God calls Abram from Ur of the Chaldeans, promising to make him the father of many nations and to bless all families of the earth through him - the beginning of God's chosen people.</p>
                         <div class="scripture-ref">
                             "I will make you into a great nation, and I will bless you; I will make your name great, and you will be a blessing... and all peoples on earth will be blessed through you." - Genesis 12:2-3
                         </div>
-                        <p><strong>The Abrahamic Covenant:</strong> This unconditional covenant establishes the foundation for God's redemptive plan, promising land, descendants, and universal blessing.</p>
-                        <p><strong>Faith and Justification:</strong> Abraham's faith is credited to him as righteousness (Romans 4:16), making him the father of all who believe.</p>
-                    </div>
-                    <button class="expand-btn">▼ Explore Deeper</button>
-                </div>
-            </div>
-
-            <div class="timeline-event left old-testament" onclick="toggleDetails(this)">
-                <div class="event-marker old-testament">🔥</div>
-                <div class="event-card old-testament">
-                    <div class="event-date">c. 1446 BC</div>
-                    <div class="event-title">The Exodus from Egypt</div>
-                    <div class="event-category old-testament">Old Testament</div>
-                    <div class="event-preview">God delivers Israel from slavery through Moses, demonstrating His power and faithfulness to His covenant promises.</div>
-                    <div class="event-details">
-                        <p>After 400 years of slavery, God raises up Moses to lead Israel out of Egypt through miraculous plagues and the parting of the Red Sea.</p>
-                        <div class="scripture-ref">
-                            "I am the Lord your God, who brought you out of Egypt, out of the land of slavery." - Exodus 20:2
-                        </div>
-                        <p><strong>Redemption Pattern:</strong> The Exodus becomes the Old Testament's greatest redemption event, prefiguring Christ's greater deliverance from sin.</p>
-                        <p><strong>Passover Lamb:</strong> The Passover lamb's blood protecting Israel points directly to Christ as "our Passover lamb" (1 Corinthians 5:7).</p>
-                    </div>
-                    <button class="expand-btn">▼ Explore Deeper</button>
-                </div>
-            </div>
-
-            <div class="timeline-event right old-testament" onclick="toggleDetails(this)">
-                <div class="event-marker old-testament">📜</div>
-                <div class="event-card old-testament">
-                    <div class="event-date">c. 1446 BC</div>
-                    <div class="event-title">Giving of the Law at Sinai</div>
-                    <div class="event-category old-testament">Old Testament</div>
-                    <div class="event-preview">God establishes His covenant with Israel through the Law, revealing His holiness and humanity's need for redemption.</div>
-                    <div class="event-details">
-                        <p>At Mount Sinai, God gives Moses the Law, including the Ten Commandments, establishing the moral and ceremonial framework for His people.</p>
-                        <div class="scripture-ref">
-                            "Now if you obey me fully and keep my covenant, then out of all nations you will be my treasured possession." - Exodus 19:5
-                        </div>
-                        <p><strong>Purpose of the Law:</strong> The Law reveals God's holiness, defines sin, and points to our need for a Savior (Galatians 3:24).</p>
-                        <p><strong>Christ's Fulfillment:</strong> Jesus perfectly fulfilled the Law's requirements and bore its curse, freeing us to live by grace through faith.</p>
-                    </div>
-                    <button class="expand-btn">▼ Explore Deeper</button>
-                </div>
-            </div>
-
-            <div class="timeline-event left old-testament" onclick="toggleDetails(this)">
-                <div class="event-marker old-testament">👑</div>
-                <div class="event-card old-testament">
-                    <div class="event-date">c. 1000 BC</div>
-                    <div class="event-title">David's Kingdom and Messianic Promise</div>
-                    <div class="event-category old-testament">Old Testament</div>
-                    <div class="event-preview">God establishes David as king and promises an eternal kingdom through his lineage, pointing to the coming Messiah.</div>
-                    <div class="event-details">
-                        <p>David, the shepherd boy who defeated Goliath, becomes Israel's greatest king and receives God's promise of an eternal dynasty.</p>
-                        <div class="scripture-ref">
-                            "Your house and your kingdom will endure forever before me; your throne will be established forever." - 2 Samuel 7:16
-                        </div>
-                        <p><strong>Davidic Covenant:</strong> This covenant promises that the Messiah will come from David's line and establish an eternal kingdom.</p>
-                        <p><strong>Jesus as Son of David:</strong> The New Testament repeatedly identifies Jesus as the Son of David, fulfilling this ancient promise (Matthew 1:1).</p>
-                    </div>
-                    <button class="expand-btn">▼ Explore Deeper</button>
-                </div>
-            </div>
-
-            <div class="timeline-event right new-testament" onclick="toggleDetails(this)">
-                <div class="event-marker new-testament">⭐</div>
-                <div class="event-card new-testament">
-                    <div class="event-date">c. 4 BC</div>
-                    <div class="event-title">The Incarnation - Birth of Jesus</div>
-                    <div class="event-category new-testament">New Testament</div>
-                    <div class="event-preview">The eternal Word becomes flesh as Jesus is born of the Virgin Mary, fulfilling centuries of prophetic promises.</div>
-                    <div class="event-details">
-                        <p>In the fullness of time, God sends His Son, born of a woman, to redeem humanity and fulfill all the promises made to the fathers.</p>
-                        <div class="scripture-ref">
-                            "The Word became flesh and made his dwelling among us. We have seen his glory, the glory of the one and only Son, who came from the Father, full of grace and truth." - John 1:14
-                        </div>
-                        <p><strong>Hypostatic Union:</strong> Jesus is fully God and fully man, uniquely qualified to be our mediator and substitute.</p>
-                        <p><strong>Fulfillment of Prophecy:</strong> His virgin birth, Bethlehem birthplace, and Davidic lineage fulfill specific Old Testament prophecies.</p>
+                        <p><strong>The Abrahamic Covenant:</strong> This unconditional covenant establishes the foundation for God's redemptive plan, promising land, descendants, and universal blessing through Abraham's seed.</p>
+                        <p><strong>Faith and Righteousness:</strong> Abraham's faith is credited to him as righteousness (Romans 4:16), making him the father of all who believe and trust in God's promises.</p>
                     </div>
                     <button class="expand-btn">▼ Explore Deeper</button>
                 </div>
             </div>
 
             <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
-                <div class="event-marker new-testament">💧</div>
+                <div class="event-marker new-testament">⭐</div>
                 <div class="event-card new-testament">
-                    <div class="event-date">c. 30 AD</div>
-                    <div class="event-title">Jesus' Baptism and Ministry Begins</div>
+                    <div class="event-date">c. 4 BC</div>
+                    <div class="event-title">The Birth of Jesus Christ</div>
                     <div class="event-category new-testament">New Testament</div>
-                    <div class="event-preview">Jesus is baptized by John and begins His public ministry, anointed by the Holy Spirit and affirmed by the Father.</div>
+                    <div class="event-preview">The eternal Word becomes flesh as Jesus is born of the Virgin Mary, fulfilling centuries of prophetic promises and bringing hope to the world.</div>
                     <div class="event-details">
-                        <p>At His baptism, the Trinity is revealed as the Father speaks, the Spirit descends, and the Son is anointed for His messianic mission.</p>
+                        <p>In the fullness of time, God sends His Son, born of a woman, to redeem humanity and fulfill all the promises made to Abraham, David, and the prophets throughout history.</p>
                         <div class="scripture-ref">
-                            "And a voice from heaven said, 'This is my Son, whom I love; with him I am well pleased.'" - Matthew 3:17
+                            "The Word became flesh and made his dwelling among us. We have seen his glory, the glory of the one and only Son, who came from the Father, full of grace and truth." - John 1:14
                         </div>
-                        <p><strong>Trinitarian Revelation:</strong> This event provides one of the clearest revelations of the Trinity in Scripture.</p>
-                        <p><strong>Messianic Anointing:</strong> Jesus is anointed as Prophet, Priest, and King, beginning His redemptive work.</p>
+                        <p><strong>The Incarnation:</strong> Jesus is fully God and fully man (the hypostatic union), uniquely qualified to be our mediator, substitute, and the bridge between heaven and earth.</p>
+                        <p><strong>Prophecy Fulfilled:</strong> His virgin birth, Bethlehem birthplace, and Davidic lineage fulfill specific Old Testament prophecies, proving God's faithfulness across generations.</p>
                     </div>
                     <button class="expand-btn">▼ Explore Deeper</button>
                 </div>
@@ -2311,74 +1148,35 @@
                     <div class="event-date">c. 33 AD</div>
                     <div class="event-title">The Crucifixion and Resurrection</div>
                     <div class="event-category new-testament">New Testament</div>
-                    <div class="event-preview">Jesus dies for our sins and rises from the dead, accomplishing salvation and defeating death forever.</div>
+                    <div class="event-preview">Jesus dies for our sins and rises from the dead, accomplishing salvation and defeating death forever - the central event of all history.</div>
                     <div class="event-details">
-                        <p>The central event of human history: Jesus bears the penalty for sin on the cross and conquers death through His resurrection.</p>
+                        <p>The central event of human history: Jesus bears the penalty for sin on the cross and conquers death through His resurrection, opening the way for eternal life with God.</p>
                         <div class="scripture-ref">
-                            "He was delivered over to death for our sins and was raised to life for our justification." - Romans 4:25
+                            "He was delivered over to death for our sins and was raised to life for our justification. Therefore, since we have been justified through faith, we have peace with God." - Romans 4:25-5:1
                         </div>
-                        <p><strong>Substitutionary Atonement:</strong> Jesus takes our place, bearing God's wrath against sin so we can receive His righteousness.</p>
-                        <p><strong>Victory Over Death:</strong> The resurrection proves Jesus' deity, validates His sacrifice, and guarantees our future resurrection.</p>
-                        <p><strong>New Creation:</strong> Christ's resurrection begins the new creation, making all things new for those who believe.</p>
-                    </div>
-                    <button class="expand-btn">▼ Explore Deeper</button>
-                </div>
-            </div>
-
-            <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
-                <div class="event-marker new-testament">🔥</div>
-                <div class="event-card new-testament">
-                    <div class="event-date">c. 33 AD</div>
-                    <div class="event-title">Pentecost and Birth of the Church</div>
-                    <div class="event-category new-testament">New Testament</div>
-                    <div class="event-preview">The Holy Spirit is poured out on the disciples, empowering them to spread the Gospel to all nations.</div>
-                    <div class="event-details">
-                        <p>Fifty days after the resurrection, the Holy Spirit comes upon the disciples, fulfilling Jesus' promise and launching the church's mission.</p>
-                        <div class="scripture-ref">
-                            "But you will receive power when the Holy Spirit comes on you; and you will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth." - Acts 1:8
-                        </div>
-                        <p><strong>The Great Commission:</strong> The church is empowered to make disciples of all nations, baptizing and teaching them.</p>
-                        <p><strong>Universal Gospel:</strong> The Spirit's gift of tongues demonstrates that the Gospel is for every tribe, tongue, and nation.</p>
-                    </div>
-                    <button class="expand-btn">▼ Explore Deeper</button>
-                </div>
-            </div>
-
-            <div class="timeline-event right prophetic" onclick="toggleDetails(this)">
-                <div class="event-marker prophetic">👑</div>
-                <div class="event-card prophetic">
-                    <div class="event-date">Future</div>
-                    <div class="event-title">The Second Coming of Christ</div>
-                    <div class="event-category prophetic">Prophetic Future</div>
-                    <div class="event-preview">Jesus will return in glory to judge the living and the dead, establishing His eternal kingdom.</div>
-                    <div class="event-details">
-                        <p>Christ will return visibly and gloriously to complete His redemptive work, judge all humanity, and establish the new heavens and new earth.</p>
-                        <div class="scripture-ref">
-                            "Look, he is coming with the clouds, and every eye will see him, even those who pierced him; and all peoples on earth will mourn because of him." - Revelation 1:7
-                        </div>
-                        <p><strong>Blessed Hope:</strong> The Second Coming is the Christian's blessed hope, when we will be glorified and sin will be finally defeated.</p>
-                        <p><strong>Final Judgment:</strong> Christ will judge all people according to their response to the Gospel, separating the righteous from the wicked.</p>
-                        <p><strong>Consummation:</strong> God's kingdom will be fully established, and He will dwell with His people forever.</p>
+                        <p><strong>Substitutionary Atonement:</strong> Jesus takes our place, bearing God's wrath against sin so we can receive His righteousness and be reconciled to the Father.</p>
+                        <p><strong>Victory Over Death:</strong> The resurrection proves Jesus' deity, validates His sacrifice, and guarantees our future resurrection and eternal life with Him.</p>
+                        <p><strong>New Creation:</strong> Christ's resurrection begins the new creation, making all things new for those who believe and trust in Him as Lord and Savior.</p>
                     </div>
                     <button class="expand-btn">▼ Explore Deeper</button>
                 </div>
             </div>
 
             <div class="timeline-event left prophetic" onclick="toggleDetails(this)">
-                <div class="event-marker prophetic">🌟</div>
+                <div class="event-marker prophetic">👑</div>
                 <div class="event-card prophetic">
-                    <div class="event-date">Eternity</div>
-                    <div class="event-title">New Heaven and New Earth</div>
+                    <div class="event-date">Future</div>
+                    <div class="event-title">The Second Coming of Christ</div>
                     <div class="event-category prophetic">Prophetic Future</div>
-                    <div class="event-preview">God creates a new heaven and new earth where righteousness dwells, and He will be with His people forever.</div>
+                    <div class="event-preview">Jesus will return in glory to judge the living and the dead, establishing His eternal kingdom and making all things new.</div>
                     <div class="event-details">
-                        <p>The ultimate fulfillment of God's redemptive plan: a perfect creation where sin, death, and suffering are no more.</p>
+                        <p>Christ will return visibly and gloriously to complete His redemptive work, judge all humanity, and establish the new heavens and new earth where righteousness dwells.</p>
                         <div class="scripture-ref">
-                            "Then I saw 'a new heaven and a new earth,' for the first heaven and the first earth had passed away... And I heard a loud voice from the throne saying, 'Look! God's dwelling place is now among the people, and he will dwell with them.'" - Revelation 21:1,3
+                            "Look, he is coming with the clouds, and every eye will see him, even those who pierced him; and all peoples on earth will mourn because of him. So shall it be! Amen." - Revelation 1:7
                         </div>
-                        <p><strong>Restoration Complete:</strong> What was lost in Eden is fully restored and glorified beyond our imagination.</p>
-                        <p><strong>Eternal Fellowship:</strong> The ultimate purpose of creation is fulfilled as God dwells with His people in perfect harmony.</p>
-                        <p><strong>No More Curse:</strong> Sin, death, pain, and sorrow are forever banished from God's perfect kingdom.</p>
+                        <p><strong>The Blessed Hope:</strong> The Second Coming is the Christian's blessed hope, when we will be glorified, sin will be finally defeated, and we will reign with Christ forever.</p>
+                        <p><strong>Final Judgment:</strong> Christ will judge all people according to their response to the Gospel, separating the righteous from the wicked for eternity.</p>
+                        <p><strong>Kingdom Consummated:</strong> God's kingdom will be fully established, and He will dwell with His people forever in perfect peace, joy, and righteousness.</p>
                     </div>
                     <button class="expand-btn">▼ Explore Deeper</button>
                 </div>
@@ -2387,61 +1185,111 @@
     </div>
 
     <!-- Login Modal -->
-    <div class="modal" id="loginModal">
+    <div id="loginModal" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <h3>🔑 Welcome Back!</h3>
-                <p>Sign in to track your biblical knowledge progress</p>
+            <button class="close-modal" onclick="closeModal('loginModal')">&times;</button>
+            <h2>🙏 Welcome Back</h2>
+            <div class="form-group">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" placeholder="Enter your email">
             </div>
-            <form id="loginForm">
-                <div class="form-group">
-                    <label for="loginEmail">Email</label>
-                    <input type="email" id="loginEmail" required>
-                </div>
-                <div class="form-group">
-                    <label for="loginPassword">Password</label>
-                    <input type="password" id="loginPassword" required>
-                </div>
-                <div class="modal-actions">
-                    <button type="submit" class="btn-primary">Sign In</button>
-                    <button type="button" class="btn-secondary" onclick="closeModal('loginModal')">Cancel</button>
-                </div>
-            </form>
-            <p style="margin-top: 15px; text-align: center; font-size: 0.9rem; opacity: 0.8;">
-                💡 Try demo account: sarah@example.com / demo123
+            <div class="form-group">
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" placeholder="Enter your password">
+            </div>
+            <button class="submit-testimony" onclick="handleLogin()">Login</button>
+            <p style="text-align: center; margin-top: 15px; color: #cbd5e1;">
+                Don't have an account? <a href="#" onclick="closeModal('loginModal'); openModal('signupModal')" style="color: #0ea5e9;">Sign up here</a>
             </p>
         </div>
     </div>
 
-    <!-- Register Modal -->
-    <div class="modal" id="registerModal">
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <h3>📝 Join the Journey!</h3>
-                <p>Create your account to start tracking your progress</p>
+            <button class="close-modal" onclick="closeModal('signupModal')">&times;</button>
+            <h2>✨ Join Our Faith Community</h2>
+            <div class="form-group">
+                <label for="signupName">Full Name:</label>
+                <input type="text" id="signupName" placeholder="Enter your full name">
             </div>
-            <form id="registerForm">
-                <div class="form-group">
-                    <label for="registerName">Full Name</label>
-                    <input type="text" id="registerName" required>
-                </div>
-                <div class="form-group">
-                    <label for="registerEmail">Email</label>
-                    <input type="email" id="registerEmail" required>
-                </div>
-                <div class="form-group">
-                    <label for="registerPassword">Password</label>
-                    <input type="password" id="registerPassword" required minlength="6">
-                </div>
-                <div class="modal-actions">
-                    <button type="submit" class="btn-primary">Create Account</button>
-                    <button type="button" class="btn-secondary" onclick="closeModal('registerModal')">Cancel</button>
-                </div>
-            </form>
+            <div class="form-group">
+                <label for="signupEmail">Email:</label>
+                <input type="email" id="signupEmail" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="signupPassword">Password:</label>
+                <input type="password" id="signupPassword" placeholder="Create a password">
+            </div>
+            <button class="submit-testimony" onclick="handleSignup()">Create Account</button>
+            <p style="text-align: center; margin-top: 15px; color: #cbd5e1;">
+                Already have an account? <a href="#" onclick="closeModal('signupModal'); openModal('loginModal')" style="color: #0ea5e9;">Login here</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div id="quizModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('quizModal')">&times;</button>
+            <h2 id="quizTitle">Biblical Quiz</h2>
+            <div id="quizContent">
+                <!-- Quiz questions will be loaded here -->
+            </div>
         </div>
     </div>
 
     <script>
+        // Global variables
+        let isLightMode = false;
+        let currentUser = null;
+        let currentQuiz = null;
+        let currentQuestionIndex = 0;
+        let quizScore = 0;
+
+        // Quiz data
+        const biblicalQuiz = [
+            {
+                question: "In what order did God create the world according to Genesis?",
+                options: ["Light, Sky, Land, Sun/Moon, Sea creatures, Land animals", "Land, Sky, Light, Animals, Plants, Humans", "Sky, Light, Land, Plants, Animals, Humans", "Light, Plants, Animals, Sky, Land, Humans"],
+                correct: 0,
+                explanation: "Genesis 1 shows God creating light first, then the sky, then separating land and sea, followed by the sun and moon, then sea creatures and birds, and finally land animals and humans."
+            },
+            {
+                question: "What was God's first promise of redemption after the Fall?",
+                options: ["The rainbow covenant with Noah", "The promise to Abraham", "Genesis 3:15 - the woman's seed will crush the serpent", "The giving of the Ten Commandments"],
+                correct: 2,
+                explanation: "Genesis 3:15 is called the Protoevangelium (first gospel), where God promises that the woman's offspring will defeat Satan."
+            },
+            {
+                question: "What did God promise Abraham that affects all nations?",
+                options: ["A great army", "Many descendants only", "All peoples on earth will be blessed through him", "A large territory"],
+                correct: 2,
+                explanation: "Genesis 12:3 promises that through Abraham, all families of the earth will be blessed - fulfilled ultimately in Jesus Christ."
+            }
+        ];
+
+        const scriptureQuiz = [
+            {
+                question: "Complete this verse: 'For God so loved the world that he gave his one and only Son, that whoever believes in him...'",
+                options: ["shall not perish but have eternal life", "will be saved from their sins", "will inherit the kingdom of heaven", "shall be called children of God"],
+                correct: 0,
+                explanation: "John 3:16 - This is perhaps the most famous verse in the Bible, summarizing the gospel message."
+            },
+            {
+                question: "Which verse says 'For I know the plans I have for you, plans to prosper you and not to harm you'?",
+                options: ["Psalm 23:1", "Jeremiah 29:11", "Romans 8:28", "Philippians 4:13"],
+                correct: 1,
+                explanation: "Jeremiah 29:11 - God spoke this to the Israelites in exile, showing His faithfulness and good plans for His people."
+            },
+            {
+                question: "Complete: 'Trust in the Lord with all your heart and lean not on...'",
+                options: ["your own strength", "your own understanding", "your own wisdom", "your own righteousness"],
+                correct: 1,
+                explanation: "Proverbs 3:5 - This verse teaches us to depend on God's wisdom rather than our limited human understanding."
+            }
+        ];
+
         // Avatar upload functionality
         document.getElementById('userAvatar').addEventListener('click', function() {
             const input = document.createElement('input');
@@ -2457,6 +1305,10 @@
                         avatar.style.backgroundSize = 'cover';
                         avatar.style.backgroundPosition = 'center';
                         avatar.innerHTML = '';
+                        
+                        // Update guide text
+                        const guideText = document.querySelector('.guide-text p');
+                        guideText.textContent = 'Welcome to your personalized biblical journey of faith!';
                     };
                     reader.readAsDataURL(file);
                 }
@@ -2464,1174 +1316,238 @@
             input.click();
         });
 
-        // Filter functionality
-        let activeFilters = new Set(['creation', 'old-testament', 'new-testament', 'prophetic']);
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
 
-        function filterEvents(category) {
-            const btn = event.target;
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+
+        // Light mode toggle
+        function toggleLightMode() {
+            isLightMode = !isLightMode;
+            const body = document.body;
             
-            if (activeFilters.has(category)) {
-                activeFilters.delete(category);
-                btn.classList.remove('active');
+            if (isLightMode) {
+                body.style.background = 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #cbd5e1 50%, #e2e8f0 75%, #f8fafc 100%)';
+                body.style.color = '#1f2937';
+                document.querySelector('.mobile-btn:last-child').textContent = '🌙';
             } else {
-                activeFilters.add(category);
-                btn.classList.add('active');
+                body.style.background = 'linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%)';
+                body.style.color = '#f1f5f9';
+                document.querySelector('.mobile-btn:last-child').textContent = '☀️';
             }
+        }
+
+        // Authentication functions
+        function handleLogin() {
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
             
-            updateEventVisibility();
-        }
-
-        function showAll() {
-            activeFilters = new Set(['creation', 'old-testament', 'new-testament', 'prophetic']);
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                if (!btn.textContent.includes('Show All')) {
-                    btn.classList.add('active');
-                }
-            });
-            updateEventVisibility();
-        }
-
-        function updateEventVisibility() {
-            document.querySelectorAll('.timeline-event').forEach(event => {
-                const hasActiveCategory = Array.from(event.classList).some(cls => activeFilters.has(cls));
-                event.classList.toggle('hidden', !hasActiveCategory);
-            });
-        }
-
-        // Enhanced User Authentication System
-        let currentUser = null;
-        let users = JSON.parse(localStorage.getItem('biblicalTimelineUsers')) || {};
-        let leaderboardData = JSON.parse(localStorage.getItem('biblicalTimelineLeaderboard')) || {
-            quiz: [],
-            drag: [],
-            overall: []
-        };
-        let recentQuestions = JSON.parse(localStorage.getItem('recentQuestions')) || [];
-
-        // Demo accounts for realistic experience
-        const demoAccounts = {
-            'sarah@example.com': {
-                name: 'Sarah Johnson',
-                email: 'sarah@example.com',
-                password: 'demo123',
-                stats: {
-                    quizCorrect: 47,
-                    quizTotal: 52,
-                    dragCorrect: 23,
-                    dragTotal: 28,
-                    currentStreak: 8,
-                    bestStreak: 15,
-                    joinDate: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString()
-                }
-            },
-            'michael@example.com': {
-                name: 'Michael Chen',
-                email: 'michael@example.com',
-                password: 'demo123',
-                stats: {
-                    quizCorrect: 38,
-                    quizTotal: 45,
-                    dragCorrect: 19,
-                    dragTotal: 22,
-                    currentStreak: 12,
-                    bestStreak: 18,
-                    joinDate: new Date(Date.now() - 45 * 24 * 60 * 60 * 1000).toISOString()
-                }
-            },
-            'emma@example.com': {
-                name: 'Emma Rodriguez',
-                email: 'emma@example.com',
-                password: 'demo123',
-                stats: {
-                    quizCorrect: 62,
-                    quizTotal: 68,
-                    dragCorrect: 31,
-                    dragTotal: 35,
-                    currentStreak: 5,
-                    bestStreak: 22,
-                    joinDate: new Date(Date.now() - 60 * 24 * 60 * 60 * 1000).toISOString()
-                }
-            },
-            'david@example.com': {
-                name: 'David Thompson',
-                email: 'david@example.com',
-                password: 'demo123',
-                stats: {
-                    quizCorrect: 29,
-                    quizTotal: 35,
-                    dragCorrect: 15,
-                    dragTotal: 18,
-                    currentStreak: 3,
-                    bestStreak: 9,
-                    joinDate: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000).toISOString()
-                }
-            },
-            'rachel@example.com': {
-                name: 'Rachel Kim',
-                email: 'rachel@example.com',
-                password: 'demo123',
-                stats: {
-                    quizCorrect: 55,
-                    quizTotal: 61,
-                    dragCorrect: 27,
-                    dragTotal: 30,
-                    currentStreak: 14,
-                    bestStreak: 20,
-                    joinDate: new Date(Date.now() - 25 * 24 * 60 * 60 * 1000).toISOString()
-                }
-            }
-        };
-
-        // Initialize demo accounts if no users exist
-        function initializeDemoAccounts() {
-            if (Object.keys(users).length === 0) {
-                users = { ...demoAccounts };
-                localStorage.setItem('biblicalTimelineUsers', JSON.stringify(users));
-                updateDemoNotice(true);
+            if (email && password) {
+                currentUser = { email: email, name: email.split('@')[0] };
+                closeModal('loginModal');
+                alert('Welcome back! You are now logged in.');
+                
+                // Update UI for logged in user
+                document.querySelector('.guide-text h3').textContent = `Welcome back, ${currentUser.name}!`;
             } else {
-                // Check if current users are all demo accounts
-                const isDemoMode = Object.keys(users).every(email => demoAccounts[email]);
-                updateDemoNotice(isDemoMode);
+                alert('Please fill in all fields.');
             }
         }
 
-        function updateDemoNotice(showDemo) {
-            const notice = document.getElementById('demoNotice');
-            if (showDemo) {
-                notice.style.display = 'block';
+        function handleSignup() {
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+            
+            if (name && email && password) {
+                currentUser = { email: email, name: name };
+                closeModal('signupModal');
+                alert('Account created successfully! Welcome to our faith community.');
+                
+                // Update UI for new user
+                document.querySelector('.guide-text h3').textContent = `Welcome, ${currentUser.name}!`;
             } else {
-                notice.style.display = 'none';
+                alert('Please fill in all fields.');
             }
         }
 
-        // Data Management Functions
-        function exportData() {
-            const data = {
-                users: users,
-                leaderboard: leaderboardData,
-                recentQuestions: recentQuestions,
-                currentUser: currentUser ? currentUser.email : null,
-                exportDate: new Date().toISOString(),
-                version: '1.0'
-            };
+        // Quiz functions
+        function startQuiz(type) {
+            currentQuiz = type === 'biblical' ? biblicalQuiz : scriptureQuiz;
+            currentQuestionIndex = 0;
+            quizScore = 0;
             
-            const dataStr = JSON.stringify(data, null, 2);
-            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            document.getElementById('quizTitle').textContent = 
+                type === 'biblical' ? '📖 Biblical Timeline Quiz' : '✝️ Scripture Memory Quiz';
             
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(dataBlob);
-            link.download = `biblical-timeline-backup-${new Date().toISOString().split('T')[0]}.json`;
-            link.click();
-            
-            alert('📤 Data exported successfully! Save this file to restore your progress later.');
+            showQuestion();
+            openModal('quizModal');
         }
 
-        function importData() {
+        function showQuestion() {
+            if (currentQuestionIndex >= currentQuiz.length) {
+                showQuizResults();
+                return;
+            }
+
+            const question = currentQuiz[currentQuestionIndex];
+            const content = document.getElementById('quizContent');
+            
+            content.innerHTML = `
+                <div class="quiz-question">
+                    <h3>Question ${currentQuestionIndex + 1} of ${currentQuiz.length}</h3>
+                    <p style="font-size: 1.1rem; margin: 20px 0;">${question.question}</p>
+                    <div class="quiz-options">
+                        ${question.options.map((option, index) => 
+                            `<button class="quiz-option" onclick="selectAnswer(${index})">${option}</button>`
+                        ).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function selectAnswer(selectedIndex) {
+            const question = currentQuiz[currentQuestionIndex];
+            const options = document.querySelectorAll('.quiz-option');
+            
+            // Disable all options
+            options.forEach(option => option.style.pointerEvents = 'none');
+            
+            // Show correct/incorrect
+            options[selectedIndex].classList.add(selectedIndex === question.correct ? 'correct' : 'incorrect');
+            if (selectedIndex !== question.correct) {
+                options[question.correct].classList.add('correct');
+            }
+            
+            if (selectedIndex === question.correct) {
+                quizScore++;
+            }
+            
+            // Show explanation
+            setTimeout(() => {
+                const content = document.getElementById('quizContent');
+                content.innerHTML += `
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(59, 130, 246, 0.1); border-radius: 10px;">
+                        <p><strong>Explanation:</strong> ${question.explanation}</p>
+                        <button class="quiz-btn" onclick="nextQuestion()" style="margin-top: 15px; min-width: auto; padding: 10px 20px;">
+                            ${currentQuestionIndex + 1 >= currentQuiz.length ? 'See Results' : 'Next Question'}
+                        </button>
+                    </div>
+                `;
+            }, 1500);
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            showQuestion();
+        }
+
+        function showQuizResults() {
+            const percentage = Math.round((quizScore / currentQuiz.length) * 100);
+            const content = document.getElementById('quizContent');
+            
+            let message = '';
+            if (percentage >= 80) {
+                message = '🌟 Excellent! You have great biblical knowledge!';
+            } else if (percentage >= 60) {
+                message = '👍 Good job! Keep studying God\'s Word!';
+            } else {
+                message = '📖 Keep learning! Every step in faith matters!';
+            }
+            
+            content.innerHTML = `
+                <div style="text-align: center;">
+                    <h3>Quiz Complete!</h3>
+                    <div style="font-size: 3rem; margin: 20px 0;">${percentage >= 80 ? '🏆' : percentage >= 60 ? '🎉' : '📚'}</div>
+                    <p style="font-size: 1.2rem; margin: 15px 0;">You scored ${quizScore} out of ${currentQuiz.length}</p>
+                    <p style="font-size: 1.1rem; margin: 15px 0;">${percentage}% Correct</p>
+                    <p style="margin: 20px 0; color: #10b981;">${message}</p>
+                    <button class="quiz-btn" onclick="closeModal('quizModal')" style="min-width: auto; padding: 10px 20px;">
+                        Continue Journey
+                    </button>
+                </div>
+            `;
+        }
+
+        // Testimony functions
+        function uploadTestimonyImage() {
             const input = document.createElement('input');
             input.type = 'file';
-            input.accept = '.json';
+            input.accept = 'image/*';
             input.onchange = function(e) {
                 const file = e.target.files[0];
                 if (file) {
                     const reader = new FileReader();
                     reader.onload = function(e) {
-                        try {
-                            const data = JSON.parse(e.target.result);
-                            
-                            if (data.users && data.leaderboard) {
-                                users = data.users;
-                                leaderboardData = data.leaderboard;
-                                recentQuestions = data.recentQuestions || [];
-                                
-                                localStorage.setItem('biblicalTimelineUsers', JSON.stringify(users));
-                                localStorage.setItem('biblicalTimelineLeaderboard', JSON.stringify(leaderboardData));
-                                localStorage.setItem('recentQuestions', JSON.stringify(recentQuestions));
-                                
-                                // Try to restore current user session
-                                if (data.currentUser && users[data.currentUser]) {
-                                    login(data.currentUser, users[data.currentUser].password);
-                                }
-                                
-                                updateLeaderboard();
-                                updateDemoNotice(false);
-                                alert('📥 Data imported successfully! Your progress has been restored.');
-                            } else {
-                                alert('❌ Invalid backup file format. Please select a valid Biblical Timeline backup file.');
-                            }
-                        } catch (error) {
-                            alert('❌ Error reading backup file. Please ensure it\'s a valid JSON file.');
-                        }
+                        const preview = document.getElementById('testimonyImagePreview');
+                        const uploadText = document.getElementById('imageUploadText');
+                        
+                        preview.src = e.target.result;
+                        preview.style.display = 'block';
+                        uploadText.textContent = '✅ Photo uploaded! Click to change';
                     };
-                    reader.readAsText(file);
+                    reader.readAsDataURL(file);
                 }
             };
             input.click();
         }
 
-        function resetData() {
-            if (confirm('⚠️ This will delete ALL your data including accounts, progress, and leaderboards. Are you sure?')) {
-                if (confirm('🚨 This action cannot be undone! Click OK to permanently delete everything.')) {
-                    localStorage.removeItem('biblicalTimelineUsers');
-                    localStorage.removeItem('biblicalTimelineLeaderboard');
-                    localStorage.removeItem('recentQuestions');
-                    localStorage.removeItem('currentBiblicalUser');
-                    
-                    users = {};
-                    leaderboardData = { quiz: [], drag: [], overall: [] };
-                    recentQuestions = [];
-                    currentUser = null;
-                    
-                    // Reset UI
-                    document.getElementById('userAuth').style.display = 'flex';
-                    document.getElementById('userProfile').classList.add('hidden');
-                    
-                    // Reset scores
-                    quizScore = 0;
-                    totalQuizzes = 0;
-                    dragScore = 0;
-                    totalDrags = 0;
-                    updateScoreDisplay();
-                    updateDragScore();
-                    updatePersonalStats();
-                    updateLeaderboard();
-                    updateDemoNotice(false);
-                    
-                    alert('🔄 All data has been reset! You can now start fresh or load demo data.');
-                }
-            }
-        }
-
-        function loadDemoData() {
-            if (confirm('🎭 This will load sample users and leaderboard data. Continue?')) {
-                users = { ...demoAccounts };
-                localStorage.setItem('biblicalTimelineUsers', JSON.stringify(users));
-                updateLeaderboard();
-                updateDemoNotice(true);
-                alert('🎭 Demo data loaded! You can now compete with sample users or login with: sarah@example.com / demo123');
-            }
-        }
-
-        // User management functions
-        function showLoginModal() {
-            document.getElementById('loginModal').classList.add('show');
-        }
-
-        function showRegisterModal() {
-            document.getElementById('registerModal').classList.add('show');
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.remove('show');
-        }
-
-        function register(name, email, password) {
-            if (users[email]) {
-                alert('User already exists! Please login instead.');
-                return false;
-            }
-
-            users[email] = {
-                name: name,
-                email: email,
-                password: password, // In real app, this would be hashed
-                stats: {
-                    quizCorrect: 0,
-                    quizTotal: 0,
-                    dragCorrect: 0,
-                    dragTotal: 0,
-                    currentStreak: 0,
-                    bestStreak: 0,
-                    joinDate: new Date().toISOString()
-                }
-            };
-
-            localStorage.setItem('biblicalTimelineUsers', JSON.stringify(users));
-            updateDemoNotice(false);
-            login(email, password);
-            return true;
-        }
-
-        function login(email, password) {
-            if (!users[email] || users[email].password !== password) {
-                alert('Invalid email or password!');
-                return false;
-            }
-
-            currentUser = users[email];
-            localStorage.setItem('currentBiblicalUser', email);
+        function submitTestimony() {
+            const name = document.getElementById('testimonyName').value;
+            const title = document.getElementById('testimonyTitle').value;
+            const text = document.getElementById('testimonyText').value;
             
-            // Update UI
-            document.getElementById('userAuth').style.display = 'none';
-            document.getElementById('userProfile').classList.remove('hidden');
-            document.getElementById('welcomeUser').textContent = `Welcome, ${currentUser.name}!`;
-            document.getElementById('avatarText').textContent = `${currentUser.name}, click to upload your avatar!`;
-            
-            updatePersonalStats();
-            closeModal('loginModal');
-            closeModal('registerModal');
-            return true;
-        }
-
-        function logout() {
-            currentUser = null;
-            localStorage.removeItem('currentBiblicalUser');
-            
-            // Reset UI
-            document.getElementById('userAuth').style.display = 'flex';
-            document.getElementById('userProfile').classList.add('hidden');
-            document.getElementById('avatarText').textContent = 'Click here to upload your avatar and personalize your journey!';
-            
-            // Reset scores display
-            quizScore = 0;
-            totalQuizzes = 0;
-            dragScore = 0;
-            totalDrags = 0;
-            updateScoreDisplay();
-            updateDragScore();
-            updatePersonalStats();
-        }
-
-        function updatePersonalStats() {
-            if (!currentUser) {
-                document.getElementById('personalQuizScore').textContent = '0%';
-                document.getElementById('personalDragScore').textContent = '0%';
-                document.getElementById('totalAnswered').textContent = '0';
-                document.getElementById('currentStreak').textContent = '0';
-                return;
-            }
-
-            const stats = currentUser.stats;
-            const quizAccuracy = stats.quizTotal > 0 ? Math.round((stats.quizCorrect / stats.quizTotal) * 100) : 0;
-            const dragAccuracy = stats.dragTotal > 0 ? Math.round((stats.dragCorrect / stats.dragTotal) * 100) : 0;
-
-            document.getElementById('personalQuizScore').textContent = `${quizAccuracy}%`;
-            document.getElementById('personalDragScore').textContent = `${dragAccuracy}%`;
-            document.getElementById('totalAnswered').textContent = stats.quizTotal + stats.dragTotal;
-            document.getElementById('currentStreak').textContent = stats.currentStreak;
-        }
-
-        function updateUserStats(isQuiz, isCorrect) {
-            if (!currentUser) return;
-
-            if (isQuiz) {
-                currentUser.stats.quizTotal++;
-                if (isCorrect) {
-                    currentUser.stats.quizCorrect++;
-                    currentUser.stats.currentStreak++;
-                } else {
-                    currentUser.stats.currentStreak = 0;
-                }
+            if (name && title && text) {
+                // In a real app, this would send to a server
+                alert(`Thank you, ${name}! Your testimony "${title}" has been shared. May God use your story to bless others!`);
+                
+                // Clear form
+                document.getElementById('testimonyName').value = '';
+                document.getElementById('testimonyTitle').value = '';
+                document.getElementById('testimonyText').value = '';
+                document.getElementById('testimonyImagePreview').style.display = 'none';
+                document.getElementById('imageUploadText').textContent = '📷 Click to upload your photo';
             } else {
-                currentUser.stats.dragTotal++;
-                if (isCorrect) {
-                    currentUser.stats.dragCorrect++;
-                    currentUser.stats.currentStreak++;
-                } else {
-                    currentUser.stats.currentStreak = 0;
-                }
-            }
-
-            if (currentUser.stats.currentStreak > currentUser.stats.bestStreak) {
-                currentUser.stats.bestStreak = currentUser.stats.currentStreak;
-            }
-
-            // Save to localStorage
-            users[currentUser.email] = currentUser;
-            localStorage.setItem('biblicalTimelineUsers', JSON.stringify(users));
-            
-            updatePersonalStats();
-            updateLeaderboard();
-        }
-
-        function updateLeaderboard() {
-            const userList = Object.values(users);
-            
-            // Quiz leaderboard (by accuracy, then by total questions)
-            leaderboardData.quiz = userList
-                .filter(user => user.stats.quizTotal > 0)
-                .sort((a, b) => {
-                    const aAccuracy = a.stats.quizCorrect / a.stats.quizTotal;
-                    const bAccuracy = b.stats.quizCorrect / b.stats.quizTotal;
-                    if (Math.abs(aAccuracy - bAccuracy) < 0.01) {
-                        return b.stats.quizTotal - a.stats.quizTotal;
-                    }
-                    return bAccuracy - aAccuracy;
-                })
-                .slice(0, 10);
-
-            // Drag leaderboard
-            leaderboardData.drag = userList
-                .filter(user => user.stats.dragTotal > 0)
-                .sort((a, b) => {
-                    const aAccuracy = a.stats.dragCorrect / a.stats.dragTotal;
-                    const bAccuracy = b.stats.dragCorrect / b.stats.dragTotal;
-                    if (Math.abs(aAccuracy - bAccuracy) < 0.01) {
-                        return b.stats.dragTotal - a.stats.dragTotal;
-                    }
-                    return bAccuracy - aAccuracy;
-                })
-                .slice(0, 10);
-
-            // Overall leaderboard (by total correct answers and streak)
-            leaderboardData.overall = userList
-                .filter(user => (user.stats.quizTotal + user.stats.dragTotal) > 0)
-                .sort((a, b) => {
-                    const aTotal = a.stats.quizCorrect + a.stats.dragCorrect;
-                    const bTotal = b.stats.quizCorrect + b.stats.dragCorrect;
-                    if (aTotal === bTotal) {
-                        return b.stats.bestStreak - a.stats.bestStreak;
-                    }
-                    return bTotal - aTotal;
-                })
-                .slice(0, 10);
-
-            localStorage.setItem('biblicalTimelineLeaderboard', JSON.stringify(leaderboardData));
-            displayLeaderboard('quiz');
-        }
-
-        function showLeaderboard(type) {
-            // Update tab buttons
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            displayLeaderboard(type);
-        }
-
-        function displayLeaderboard(type) {
-            const container = document.getElementById('leaderboardContent');
-            const data = leaderboardData[type] || [];
-            
-            if (data.length === 0) {
-                container.innerHTML = '<div class="leaderboard-item"><div class="player-info"><div class="player-name">No players yet!</div><div class="player-score">Be the first to compete</div></div></div>';
-                return;
-            }
-
-            container.innerHTML = data.map((user, index) => {
-                let scoreText = '';
-                if (type === 'quiz') {
-                    const accuracy = Math.round((user.stats.quizCorrect / user.stats.quizTotal) * 100);
-                    scoreText = `${accuracy}% (${user.stats.quizCorrect}/${user.stats.quizTotal})`;
-                } else if (type === 'drag') {
-                    const accuracy = Math.round((user.stats.dragCorrect / user.stats.dragTotal) * 100);
-                    scoreText = `${accuracy}% (${user.stats.dragCorrect}/${user.stats.dragTotal})`;
-                } else {
-                    const totalCorrect = user.stats.quizCorrect + user.stats.dragCorrect;
-                    scoreText = `${totalCorrect} correct • ${user.stats.bestStreak} best streak`;
-                }
-
-                return `
-                    <div class="leaderboard-item">
-                        <div class="rank">${index + 1}</div>
-                        <div class="player-info">
-                            <div class="player-name">${user.name}</div>
-                            <div class="player-score">${scoreText}</div>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        // Form handlers
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-            login(email, password);
-        });
-
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('registerName').value;
-            const email = document.getElementById('registerEmail').value;
-            const password = document.getElementById('registerPassword').value;
-            register(name, email, password);
-        });
-
-        // Close modals when clicking outside
-        document.querySelectorAll('.modal').forEach(modal => {
-            modal.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    this.classList.remove('show');
-                }
-            });
-        });
-
-        // Enhanced Quiz functionality with non-repeating questions
-        const quizBank = [
-            {
-                question: "In which book does God first promise to send a Messiah?",
-                options: ["Exodus", "Genesis", "Leviticus", "Deuteronomy"],
-                correct: 1
-            },
-            {
-                question: "What was the sign of God's covenant with Noah?",
-                options: ["Rainbow", "Dove", "Olive Branch", "Mountain"],
-                correct: 0
-            },
-            {
-                question: "Through which patriarch did God promise to bless all nations?",
-                options: ["Isaac", "Jacob", "Abraham", "Moses"],
-                correct: 2
-            },
-            {
-                question: "What event marks the beginning of the New Testament church?",
-                options: ["Jesus' Birth", "Crucifixion", "Pentecost", "Ascension"],
-                correct: 2
-            },
-            {
-                question: "Who led the Israelites out of Egypt?",
-                options: ["Aaron", "Moses", "Joshua", "Samuel"],
-                correct: 1
-            },
-            {
-                question: "How many days did Jesus fast in the wilderness?",
-                options: ["30", "40", "50", "60"],
-                correct: 1
-            },
-            {
-                question: "What did God create on the first day?",
-                options: ["Animals", "Plants", "Light", "Humans"],
-                correct: 2
-            },
-            {
-                question: "Who was the first king of Israel?",
-                options: ["David", "Solomon", "Saul", "Samuel"],
-                correct: 2
-            },
-            {
-                question: "In which city was Jesus born?",
-                options: ["Nazareth", "Jerusalem", "Bethlehem", "Capernaum"],
-                correct: 2
-            },
-            {
-                question: "How many disciples did Jesus choose?",
-                options: ["10", "11", "12", "13"],
-                correct: 2
-            },
-            {
-                question: "What did Jesus turn water into at the wedding?",
-                options: ["Oil", "Wine", "Milk", "Honey"],
-                correct: 1
-            },
-            {
-                question: "Who betrayed Jesus for 30 pieces of silver?",
-                options: ["Peter", "Thomas", "Judas", "Matthew"],
-                correct: 2
-            },
-            {
-                question: "How many books are in the New Testament?",
-                options: ["25", "26", "27", "28"],
-                correct: 2
-            },
-            {
-                question: "Who wrote most of the New Testament letters?",
-                options: ["Peter", "Paul", "John", "James"],
-                correct: 1
-            },
-            {
-                question: "What was the name of the garden where Adam and Eve lived?",
-                options: ["Paradise", "Eden", "Zion", "Canaan"],
-                correct: 1
-            },
-            {
-                question: "How many plagues did God send upon Egypt?",
-                options: ["7", "8", "9", "10"],
-                correct: 3
-            },
-            {
-                question: "Who built the ark?",
-                options: ["Abraham", "Noah", "Moses", "David"],
-                correct: 1
-            },
-            {
-                question: "What sea did Moses part?",
-                options: ["Dead Sea", "Mediterranean", "Red Sea", "Sea of Galilee"],
-                correct: 2
-            },
-            {
-                question: "Who was thrown into the lion's den?",
-                options: ["Daniel", "Shadrach", "Meshach", "Abednego"],
-                correct: 0
-            },
-            {
-                question: "What did Jesus say is the greatest commandment?",
-                options: ["Don't steal", "Love God", "Honor parents", "Don't lie"],
-                correct: 1
-            },
-            {
-                question: "How many days was Jonah in the whale?",
-                options: ["1", "2", "3", "4"],
-                correct: 2
-            },
-            {
-                question: "Who was the strongest man in the Bible?",
-                options: ["David", "Goliath", "Samson", "Joshua"],
-                correct: 2
-            },
-            {
-                question: "What did Jesus use to feed 5000 people?",
-                options: ["Bread and wine", "Fish and bread", "Meat and bread", "Fruit and bread"],
-                correct: 1
-            },
-            {
-                question: "Who was swallowed by a great fish?",
-                options: ["Jonah", "Job", "Joel", "Joshua"],
-                correct: 0
-            },
-            {
-                question: "What mountain did Moses receive the Ten Commandments on?",
-                options: ["Mount Olive", "Mount Zion", "Mount Sinai", "Mount Carmel"],
-                correct: 2
-            },
-            {
-                question: "Who was the mother of Jesus?",
-                options: ["Martha", "Mary", "Elizabeth", "Ruth"],
-                correct: 1
-            },
-            {
-                question: "What did God use to destroy Sodom and Gomorrah?",
-                options: ["Flood", "Fire and brimstone", "Earthquake", "Plague"],
-                correct: 1
-            },
-            {
-                question: "Who was the wisest king in the Bible?",
-                options: ["David", "Solomon", "Saul", "Hezekiah"],
-                correct: 1
-            },
-            {
-                question: "What did Moses' staff turn into?",
-                options: ["Fish", "Bird", "Snake", "Lion"],
-                correct: 2
-            },
-            {
-                question: "How many years did the Israelites wander in the wilderness?",
-                options: ["30", "40", "50", "60"],
-                correct: 1
-            }
-        ];
-
-        let quizScore = 0;
-        let totalQuizzes = 0;
-
-        function getRandomQuiz() {
-            // Filter out recently asked questions
-            const availableQuestions = quizBank.filter((_, index) => !recentQuestions.includes(index));
-            
-            // If we've used all questions, reset the recent list but keep the last 5
-            if (availableQuestions.length === 0) {
-                recentQuestions = recentQuestions.slice(-5);
-                return getRandomQuiz(); // Recursive call with reset list
-            }
-            
-            // Select random question from available ones
-            const randomIndex = Math.floor(Math.random() * availableQuestions.length);
-            const selectedQuestion = availableQuestions[randomIndex];
-            
-            // Find the original index and add to recent questions
-            const originalIndex = quizBank.indexOf(selectedQuestion);
-            recentQuestions.push(originalIndex);
-            
-            // Keep only last 10 questions in recent list
-            if (recentQuestions.length > 10) {
-                recentQuestions = recentQuestions.slice(-10);
-            }
-            
-            // Save to localStorage
-            localStorage.setItem('recentQuestions', JSON.stringify(recentQuestions));
-            
-            return selectedQuestion;
-        }
-
-        function checkAnswer(option, isCorrect, correctIndex) {
-            totalQuizzes++;
-            if (isCorrect) {
-                quizScore++;
-            }
-            
-            // Update user stats if logged in
-            updateUserStats(true, isCorrect);
-            updateScoreDisplay();
-            
-            document.querySelectorAll('.quiz-option').forEach((opt, index) => {
-                opt.style.pointerEvents = 'none';
-                if (opt === option) {
-                    opt.classList.add(isCorrect ? 'correct' : 'incorrect');
-                } else if (index === correctIndex) {
-                    opt.classList.add('correct');
-                }
-            });
-
-            setTimeout(() => {
-                loadQuiz();
-            }, 2000);
-        }
-
-        function updateScoreDisplay() {
-            const percentage = totalQuizzes > 0 ? Math.round((quizScore / totalQuizzes) * 100) : 0;
-            document.getElementById('quizScore').textContent = `Score: ${quizScore}/${totalQuizzes} (${percentage}%)`;
-        }
-
-        function loadQuiz() {
-            const quiz = getRandomQuiz();
-            document.getElementById('quizQuestion').textContent = quiz.question;
-            const optionsContainer = document.getElementById('quizOptions');
-            optionsContainer.innerHTML = '';
-            
-            quiz.options.forEach((option, index) => {
-                const optionDiv = document.createElement('div');
-                optionDiv.className = 'quiz-option';
-                optionDiv.textContent = option;
-                optionDiv.onclick = () => checkAnswer(optionDiv, index === quiz.correct, quiz.correct);
-                optionsContainer.appendChild(optionDiv);
-            });
-        }
-
-        // Drag and drop functionality with explanations
-        const dragDropEvents = {
-            creation: [
-                "Garden of Eden", "Adam and Eve", "Tree of Knowledge", "The Fall", 
-                "Cain and Abel", "First Sin", "God's First Promise", "Creation of Light",
-                "Seventh Day Rest", "Naming the Animals", "Rivers of Eden", "Forbidden Fruit",
-                "Cherubim Guard", "Flaming Sword", "First Death", "First Murder"
-            ],
-            "old-testament": [
-                "Exodus from Egypt", "Noah's Ark", "Tower of Babel", "Abraham's Call",
-                "Isaac's Birth", "Jacob's Ladder", "Joseph in Egypt", "Moses and Burning Bush",
-                "Ten Commandments", "Golden Calf", "Promised Land", "David and Goliath",
-                "Solomon's Temple", "Elijah's Fire", "Daniel's Lions", "Jonah and Whale",
-                "Red Sea Parting", "Manna from Heaven", "Bronze Serpent", "Ark of Covenant",
-                "Passover Lamb", "Pillar of Fire", "Joshua's Conquest", "Judges Period",
-                "Samuel's Calling", "Saul's Anointing", "David's Psalms", "Wisdom of Solomon"
-            ],
-            "new-testament": [
-                "Jesus' Birth", "Jesus' Baptism", "Sermon on Mount", "Feeding 5000",
-                "Walking on Water", "Jesus' Crucifixion", "Jesus' Resurrection", "Pentecost",
-                "Paul's Conversion", "Great Commission", "Last Supper", "Transfiguration",
-                "Healing the Blind", "Raising Lazarus", "Palm Sunday", "Ascension",
-                "Wedding at Cana", "Cleansing Temple", "Woman at Well", "Good Samaritan",
-                "Prodigal Son", "Lord's Prayer", "Beatitudes", "Golden Rule"
-            ],
-            prophetic: [
-                "Second Coming", "New Heaven & Earth", "Final Judgment", "Rapture",
-                "Millennium Reign", "Satan Bound", "Great White Throne", "New Jerusalem",
-                "River of Life", "Tree of Life Returns", "No More Death", "God Dwells with Man",
-                "Marriage Supper", "Crystal Sea", "Pearly Gates", "Streets of Gold"
-            ]
-        };
-
-        // Event explanations and timeline references
-        const eventExplanations = {
-            // Creation Events
-            "Garden of Eden": {
-                explanation: "The perfect paradise where God placed Adam and Eve, representing humanity's original relationship with God.",
-                timelineRef: "Creation of the Universe",
-                scripture: "Genesis 2:8"
-            },
-            "Adam and Eve": {
-                explanation: "The first humans, created in God's image to have fellowship with Him and rule over creation.",
-                timelineRef: "Creation of the Universe", 
-                scripture: "Genesis 1:27"
-            },
-            "The Fall": {
-                explanation: "When Adam and Eve disobeyed God by eating the forbidden fruit, bringing sin and death into the world.",
-                timelineRef: "The Fall of Humanity",
-                scripture: "Genesis 3:6"
-            },
-            "First Sin": {
-                explanation: "The original disobedience that separated humanity from God and corrupted all of creation.",
-                timelineRef: "The Fall of Humanity",
-                scripture: "Genesis 3:6"
-            },
-            "God's First Promise": {
-                explanation: "God's promise that the woman's offspring would defeat Satan - the first prophecy of Christ.",
-                timelineRef: "The Fall of Humanity",
-                scripture: "Genesis 3:15"
-            },
-
-            // Old Testament Events  
-            "Noah's Ark": {
-                explanation: "God saved Noah's family and animals from the worldwide flood, showing both His judgment and mercy.",
-                timelineRef: "Noah's Ark and the Flood",
-                scripture: "Genesis 7:1"
-            },
-            "Abraham's Call": {
-                explanation: "God called Abraham to leave his homeland and promised to make him a great nation through whom all would be blessed.",
-                timelineRef: "God's Call to Abraham", 
-                scripture: "Genesis 12:1-3"
-            },
-            "Exodus from Egypt": {
-                explanation: "God delivered Israel from 400 years of slavery through Moses, demonstrating His faithfulness to His promises.",
-                timelineRef: "The Exodus from Egypt",
-                scripture: "Exodus 12:31"
-            },
-            "Ten Commandments": {
-                explanation: "God's moral law given to Moses at Mount Sinai, revealing His holiness and humanity's need for redemption.",
-                timelineRef: "Giving of the Law at Sinai",
-                scripture: "Exodus 20:1-17"
-            },
-            "David and Goliath": {
-                explanation: "Young David's victory over the giant Goliath showed God's power working through faith and courage.",
-                timelineRef: "David's Kingdom and Messianic Promise",
-                scripture: "1 Samuel 17:50"
-            },
-
-            // New Testament Events
-            "Jesus' Birth": {
-                explanation: "The eternal Word became flesh when Jesus was born of the Virgin Mary, fulfilling centuries of prophecy.",
-                timelineRef: "The Incarnation - Birth of Jesus",
-                scripture: "Luke 2:7"
-            },
-            "Jesus' Baptism": {
-                explanation: "Jesus was baptized by John and anointed by the Holy Spirit, beginning His public ministry.",
-                timelineRef: "Jesus' Baptism and Ministry Begins",
-                scripture: "Matthew 3:16-17"
-            },
-            "Jesus' Crucifixion": {
-                explanation: "Jesus died on the cross as our substitute, bearing the penalty for sin that we deserved.",
-                timelineRef: "The Crucifixion and Resurrection",
-                scripture: "John 19:30"
-            },
-            "Jesus' Resurrection": {
-                explanation: "Jesus conquered death and rose from the grave, proving His deity and securing our salvation.",
-                timelineRef: "The Crucifixion and Resurrection", 
-                scripture: "Matthew 28:6"
-            },
-            "Pentecost": {
-                explanation: "The Holy Spirit was poured out on the disciples, empowering them to spread the Gospel worldwide.",
-                timelineRef: "Pentecost and Birth of the Church",
-                scripture: "Acts 2:4"
-            },
-
-            // Prophetic Events
-            "Second Coming": {
-                explanation: "Jesus will return in glory to judge the living and the dead and establish His eternal kingdom.",
-                timelineRef: "The Second Coming of Christ",
-                scripture: "Revelation 1:7"
-            },
-            "New Heaven & Earth": {
-                explanation: "God will create a perfect new creation where righteousness dwells and He will be with His people forever.",
-                timelineRef: "New Heaven and New Earth",
-                scripture: "Revelation 21:1"
-            },
-            "Final Judgment": {
-                explanation: "Christ will judge all people according to their response to the Gospel, separating the righteous from the wicked.",
-                timelineRef: "The Second Coming of Christ",
-                scripture: "Revelation 20:12"
-            }
-        };
-
-        let dragScore = 0;
-        let totalDrags = 0;
-        let draggedItem = null;
-
-        function generateNewDragDrop() {
-            const dragContainer = document.getElementById('dragItems');
-            dragContainer.innerHTML = '';
-            
-            // Reset drop zones
-            document.querySelectorAll('.drop-zone').forEach(zone => {
-                zone.classList.remove('correct', 'incorrect');
-                // Remove any previously dropped items
-                const droppedItems = zone.querySelectorAll('.drag-item');
-                droppedItems.forEach(item => item.remove());
-            });
-            
-            // Get 2-3 random events from each period for more choices
-            const periods = ['creation', 'old-testament', 'new-testament', 'prophetic'];
-            const selectedEvents = [];
-            
-            periods.forEach(period => {
-                const events = dragDropEvents[period];
-                const numEvents = Math.floor(Math.random() * 2) + 2; // 2-3 events per period
-                const shuffledEvents = [...events].sort(() => Math.random() - 0.5);
-                
-                for (let i = 0; i < Math.min(numEvents, shuffledEvents.length); i++) {
-                    selectedEvents.push({ event: shuffledEvents[i], period: period });
-                }
-            });
-            
-            // Shuffle all events
-            selectedEvents.sort(() => Math.random() - 0.5);
-            
-            // Create drag items
-            selectedEvents.forEach(({ event, period }) => {
-                const dragItem = document.createElement('div');
-                dragItem.className = 'drag-item';
-                dragItem.draggable = true;
-                dragItem.dataset.period = period;
-                dragItem.dataset.event = event;
-                dragItem.textContent = event;
-                
-                dragItem.addEventListener('dragstart', function(e) {
-                    draggedItem = this;
-                    this.classList.add('dragging');
-                });
-
-                dragItem.addEventListener('dragend', function() {
-                    this.classList.remove('dragging');
-                    draggedItem = null;
-                });
-                
-                dragContainer.appendChild(dragItem);
-            });
-        }
-
-        function updateDragScore() {
-            const percentage = totalDrags > 0 ? Math.round((dragScore / totalDrags) * 100) : 0;
-            document.getElementById('dragScore').textContent = `Score: ${dragScore}/${totalDrags} (${percentage}%)`;
-        }
-
-        function setupDropZones() {
-            document.querySelectorAll('.drop-zone').forEach(zone => {
-                zone.addEventListener('dragover', function(e) {
-                    e.preventDefault();
-                    this.classList.add('drag-over');
-                });
-
-                zone.addEventListener('dragleave', function() {
-                    this.classList.remove('drag-over');
-                });
-
-                zone.addEventListener('drop', function(e) {
-                    e.preventDefault();
-                    this.classList.remove('drag-over');
-                    
-                    if (draggedItem) {
-                        const draggedPeriod = draggedItem.dataset.period;
-                        const zonePeriod = this.dataset.period;
-                        const eventName = draggedItem.dataset.event;
-                        
-                        totalDrags++;
-                        
-                        if (draggedPeriod === zonePeriod) {
-                            dragScore++;
-                            this.classList.add('correct');
-                            this.appendChild(draggedItem);
-                            draggedItem.style.cursor = 'default';
-                            draggedItem.draggable = false;
-                            
-                            // Update user stats if logged in
-                            updateUserStats(false, true);
-                            
-                            // Check if all items are placed correctly
-                            const remainingItems = document.querySelectorAll('#dragItems .drag-item');
-                            if (remainingItems.length === 0) {
-                                setTimeout(() => {
-                                    alert('🎉 Great job! Click "New Challenge" for more practice!');
-                                }, 500);
-                            }
-                        } else {
-                            this.classList.add('incorrect');
-                            setTimeout(() => this.classList.remove('incorrect'), 1000);
-                            
-                            // Update user stats if logged in
-                            updateUserStats(false, false);
-                            
-                            // Show explanation and guide to correct answer
-                            showEventExplanation(eventName, draggedPeriod);
-                        }
-                        
-                        updateDragScore();
-                    }
-                });
-            });
-        }
-
-        // Show explanation for incorrect drag and drop answers
-        function showEventExplanation(eventName, correctPeriod) {
-            const explanation = eventExplanations[eventName];
-            
-            if (explanation) {
-                // Create explanation modal
-                const modal = document.createElement('div');
-                modal.className = 'modal show';
-                modal.innerHTML = `
-                    <div class="modal-content" style="max-width: 500px;">
-                        <div class="modal-header">
-                            <h3>📚 Learn About: ${eventName}</h3>
-                        </div>
-                        <div style="margin-bottom: 20px;">
-                            <p style="margin-bottom: 15px; line-height: 1.6;">${explanation.explanation}</p>
-                            <div style="background: rgba(59, 130, 246, 0.1); padding: 15px; border-radius: 10px; border-left: 4px solid #3b82f6; margin: 15px 0;">
-                                <strong>📖 Scripture:</strong> ${explanation.scripture}
-                            </div>
-                            <p style="margin-bottom: 15px;"><strong>✅ Correct Period:</strong> ${getPeriodDisplayName(correctPeriod)}</p>
-                        </div>
-                        <div class="modal-actions">
-                            <button class="btn-primary" onclick="scrollToTimelineEvent('${explanation.timelineRef}')">📍 See on Timeline</button>
-                            <button class="btn-secondary" onclick="closeExplanationModal()">Got it!</button>
-                        </div>
-                    </div>
-                `;
-                
-                document.body.appendChild(modal);
-                
-                // Auto-close after 8 seconds
-                setTimeout(() => {
-                    if (document.body.contains(modal)) {
-                        closeExplanationModal();
-                    }
-                }, 8000);
-            } else {
-                // Fallback for events without detailed explanations
-                alert(`📚 "${eventName}" belongs to the ${getPeriodDisplayName(correctPeriod)} period. Try dragging it to the correct zone!`);
+                alert('Please fill in your name, title, and testimony before sharing.');
             }
         }
 
-        function getPeriodDisplayName(period) {
-            const periodNames = {
-                'creation': 'Creation Era',
-                'old-testament': 'Old Testament',
-                'new-testament': 'New Testament', 
-                'prophetic': 'Prophetic Future'
-            };
-            return periodNames[period] || period;
-        }
-
-        function closeExplanationModal() {
-            const modal = document.querySelector('.modal.show');
-            if (modal && modal.querySelector('.modal-header h3').textContent.includes('Learn About:')) {
-                modal.remove();
-            }
-        }
-
-        function scrollToTimelineEvent(timelineRef) {
-            closeExplanationModal();
-            
-            // Find the timeline event with matching title
-            const timelineEvents = document.querySelectorAll('.timeline-event');
-            let targetEvent = null;
-            
-            timelineEvents.forEach(event => {
-                const title = event.querySelector('.event-title');
-                if (title && title.textContent.includes(timelineRef)) {
-                    targetEvent = event;
-                }
-            });
-            
-            if (targetEvent) {
-                // Scroll to the event
-                targetEvent.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'center' 
-                });
-                
-                // Highlight the event temporarily
-                targetEvent.style.transform = 'scale(1.05)';
-                targetEvent.style.boxShadow = '0 0 30px rgba(59, 130, 246, 0.5)';
-                
-                setTimeout(() => {
-                    targetEvent.style.transform = '';
-                    targetEvent.style.boxShadow = '';
-                }, 3000);
-                
-                // Auto-expand the details
-                setTimeout(() => {
-                    const details = targetEvent.querySelector('.event-details');
-                    const button = targetEvent.querySelector('.expand-btn');
-                    
-                    if (details && !details.classList.contains('expanded')) {
-                        details.classList.add('expanded');
-                        button.textContent = '▲ Show Less';
-                    }
-                }, 1000);
-            } else {
-                alert('📍 Timeline event not found. You can explore the timeline below to learn more!');
-            }
-        }
-
-        // Timeline event details toggle
-        function toggleDetails(eventElement) {
-            const details = eventElement.querySelector('.event-details');
-            const button = eventElement.querySelector('.expand-btn');
+        // Timeline interaction
+        function toggleDetails(element) {
+            const details = element.querySelector('.event-details');
+            const button = element.querySelector('.expand-btn');
             
             if (details.classList.contains('expanded')) {
                 details.classList.remove('expanded');
                 button.textContent = '▼ Explore Deeper';
             } else {
-                // Close all other expanded details
-                document.querySelectorAll('.event-details.expanded').forEach(detail => {
-                    detail.classList.remove('expanded');
-                });
-                document.querySelectorAll('.expand-btn').forEach(btn => {
-                    btn.textContent = '▼ Explore Deeper';
-                });
-                
-                // Open clicked details
                 details.classList.add('expanded');
                 button.textContent = '▲ Show Less';
-                
-                // Smooth scroll to the event
-                eventElement.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'center' 
-                });
             }
         }
 
-        // Light mode functionality (dark is default)
-        function toggleDarkMode() {
-            const body = document.body;
-            const button = document.querySelector('.dark-mode-toggle');
-            
-            body.classList.toggle('light-mode');
-            
-            if (body.classList.contains('light-mode')) {
-                button.innerHTML = '<span>🌙</span> Dark Mode';
-                localStorage.setItem('lightMode', 'enabled');
-            } else {
-                button.innerHTML = '<span>☀️</span> Light Mode';
-                localStorage.setItem('lightMode', 'disabled');
-            }
-        }
-
-        // Initialize
-        window.addEventListener('load', () => {
-            // Check for saved light mode preference (dark is default)
-            if (localStorage.getItem('lightMode') === 'enabled') {
-                document.body.classList.add('light-mode');
-                document.querySelector('.dark-mode-toggle').innerHTML = '<span>🌙</span> Dark Mode';
-            } else {
-                document.querySelector('.dark-mode-toggle').innerHTML = '<span>☀️</span> Light Mode';
-            }
-            
-            // Initialize demo accounts and check user session
-            initializeDemoAccounts();
-            
-            // Check for saved user session
-            const savedUserEmail = localStorage.getItem('currentBiblicalUser');
-            if (savedUserEmail && users[savedUserEmail]) {
-                currentUser = users[savedUserEmail];
-                document.getElementById('userAuth').style.display = 'none';
-                document.getElementById('userProfile').classList.remove('hidden');
-                document.getElementById('welcomeUser').textContent = `Welcome, ${currentUser.name}!`;
-                document.getElementById('avatarText').textContent = `${currentUser.name}, click to upload your avatar!`;
-                updatePersonalStats();
-            }
-            
-            // Initialize leaderboard
-            updateLeaderboard();
-            
-            // Initialize quiz and drag-drop
-            loadQuiz();
-            setupDropZones();
-            generateNewDragDrop();
-            
-            // Animate timeline events on load
-            const events = document.querySelectorAll('.timeline-event');
-            events.forEach((event, index) => {
-                event.style.opacity = '0';
-                event.style.transform = 'translateY(50px)';
-                
+        // Add smooth scrolling for better UX
+        document.querySelectorAll('.timeline-event').forEach(event => {
+            event.addEventListener('click', function() {
                 setTimeout(() => {
-                    event.style.transition = 'all 0.6s ease';
-                    event.style.opacity = '1';
-                    event.style.transform = 'translateY(0)';
-                }, index * 150);
+                    this.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                }, 100);
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97e19c19e098a4ce',t:'MTc1NzcwMzIyOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97e1eac8c450a4b9',t:'MTc1NzcwNjQ1MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
-
-
