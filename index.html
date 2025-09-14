@@ -550,8 +550,12 @@
         }
 
         .scripture-quote.light-mode {
-            color: #374151;
-            text-shadow: 0 0 8px rgba(55, 65, 81, 0.2);
+            color: #1f2937;
+            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid rgba(59, 130, 246, 0.2);
         }
 
         @keyframes scriptureGlow {
@@ -597,6 +601,115 @@
             left: 100%;
         }
 
+        /* Enhanced Professional Title */
+        .header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, 
+                #ffffff 0%,
+                #f8fafc 10%,
+                #e2e8f0 20%,
+                #cbd5e1 30%,
+                #94a3b8 40%,
+                #64748b 50%,
+                #475569 60%,
+                #334155 70%,
+                #1e293b 80%,
+                #0f172a 90%,
+                #000000 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            text-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.8),
+                0 4px 8px rgba(0, 0, 0, 0.6),
+                0 8px 16px rgba(0, 0, 0, 0.4),
+                0 0 20px rgba(255, 255, 255, 0.3);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+            letter-spacing: 1.5px;
+            position: relative;
+            text-align: center;
+            animation: professionalGlow 4s ease-in-out infinite;
+        }
+
+        body.light-mode .header h1 {
+            background: linear-gradient(135deg, 
+                #000000 0%,
+                #1f2937 10%,
+                #374151 20%,
+                #4b5563 30%,
+                #6b7280 40%,
+                #9ca3af 50%,
+                #d1d5db 60%,
+                #e5e7eb 70%,
+                #f3f4f6 80%,
+                #f9fafb 90%,
+                #ffffff 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.9),
+                0 4px 8px rgba(0, 0, 0, 0.7),
+                0 8px 16px rgba(0, 0, 0, 0.5),
+                0 0 25px rgba(0, 0, 0, 0.4);
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
+        }
+
+        .header h1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 15% 25%, rgba(255, 215, 0, 0.3) 0%, transparent 30%),
+                radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.4) 0%, transparent 25%),
+                radial-gradient(circle at 25% 80%, rgba(135, 206, 235, 0.2) 0%, transparent 35%),
+                radial-gradient(circle at 75% 75%, rgba(255, 182, 193, 0.2) 0%, transparent 30%);
+            animation: biblicalGlow 8s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes biblicalGlow {
+            0%, 100% { 
+                opacity: 0.6;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 0.9;
+                transform: scale(1.02);
+            }
+        }
+
+        @keyframes celebrationFloat {
+            0% { 
+                opacity: 1; 
+                transform: translateY(0px) scale(1) rotate(0deg); 
+            }
+            100% { 
+                opacity: 0; 
+                transform: translateY(-100px) scale(0.5) rotate(360deg); 
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
         @keyframes nightSkyShift {
             0%, 100% { background-position: 0% 50%; }
             25% { background-position: 100% 25%; }
@@ -618,6 +731,25 @@
             75% { opacity: 0.8; transform: scale(1.05); }
         }
 
+        @keyframes professionalGlow {
+            0%, 100% { 
+                text-shadow: 
+                    0 2px 4px rgba(0, 0, 0, 0.8),
+                    0 4px 8px rgba(0, 0, 0, 0.6),
+                    0 8px 16px rgba(0, 0, 0, 0.4),
+                    0 0 20px rgba(255, 255, 255, 0.3);
+                filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+            }
+            50% { 
+                text-shadow: 
+                    0 3px 6px rgba(0, 0, 0, 0.9),
+                    0 6px 12px rgba(0, 0, 0, 0.7),
+                    0 12px 24px rgba(0, 0, 0, 0.5),
+                    0 0 30px rgba(255, 255, 255, 0.4);
+                filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));
+            }
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -633,42 +765,6 @@
             text-align: center;
             border: 1px solid rgba(59, 130, 246, 0.2);
             position: relative;
-        }
-
-        .header h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 2.8rem;
-            font-weight: 600;
-            background: linear-gradient(45deg, #60a5fa, #3b82f6, #0ea5e9);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            text-shadow: 
-                0 0 8px rgba(255, 255, 255, 0.3),
-                0 0 16px rgba(255, 255, 255, 0.2),
-                0 2px 4px rgba(96, 165, 250, 0.2),
-                0 4px 8px rgba(96, 165, 250, 0.1);
-            filter: drop-shadow(0 2px 4px rgba(96, 165, 250, 0.2));
-            animation: divineLight 6s ease-in-out infinite;
-            letter-spacing: 1px;
-        }
-
-        @keyframes divineLight {
-            0%, 100% { 
-                text-shadow: 
-                    0 0 8px rgba(255, 255, 255, 0.3),
-                    0 0 16px rgba(255, 255, 255, 0.2),
-                    0 2px 4px rgba(96, 165, 250, 0.2),
-                    0 4px 8px rgba(96, 165, 250, 0.1);
-            }
-            50% { 
-                text-shadow: 
-                    0 0 12px rgba(255, 255, 255, 0.4),
-                    0 0 20px rgba(255, 255, 255, 0.25),
-                    0 2px 4px rgba(96, 165, 250, 0.25),
-                    0 4px 8px rgba(96, 165, 250, 0.15);
-            }
         }
 
         .jlr-branding {
@@ -958,23 +1054,6 @@
             }
         }
 
-        .locked-feature::before {
-            content: '🔒';
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: rgba(239, 68, 68, 0.9);
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            animation: lockShake 2s ease-in-out infinite;
-            transition: all 0.3s ease;
-        }
-
         .locked-feature.unlocked::before {
             content: var(--unlock-icon, '🔓');
             background: rgba(16, 185, 129, 0.9);
@@ -1101,6 +1180,267 @@
         .expand-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Faithbot AI Assistant Styles */
+        .faithbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 2000;
+            cursor: pointer;
+            animation: faithbotFloat 3s ease-in-out infinite;
+        }
+
+        .faithbot-pulse-ring {
+            position: absolute;
+            border: 3px solid rgba(59, 130, 246, 0.4);
+            border-radius: 50%;
+            animation: faithbotPulse 2s ease-out infinite;
+        }
+
+        .faithbot-pulse-1 {
+            width: 100px;
+            height: 100px;
+            top: -10px;
+            left: -10px;
+            animation-delay: 0s;
+        }
+
+        .faithbot-pulse-2 {
+            width: 120px;
+            height: 120px;
+            top: -20px;
+            left: -20px;
+            animation-delay: 0.5s;
+        }
+
+        .faithbot-pulse-3 {
+            width: 140px;
+            height: 140px;
+            top: -30px;
+            left: -30px;
+            animation-delay: 1s;
+        }
+
+        @keyframes faithbotPulse {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+                border-color: rgba(59, 130, 246, 0.6);
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.5;
+                border-color: rgba(16, 185, 129, 0.4);
+            }
+            100% {
+                transform: scale(1.3);
+                opacity: 0;
+                border-color: rgba(59, 130, 246, 0);
+            }
+        }
+
+        @keyframes faithbotFloat {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg); 
+            }
+            33% { 
+                transform: translateY(-8px) rotate(2deg); 
+            }
+            66% { 
+                transform: translateY(-4px) rotate(-1deg); 
+            }
+        }
+
+        .faithbot-image {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #3b82f6, #06b6d4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            animation: faithbotShimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes faithbotShimmer {
+            0%, 100% {
+                box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+                background: linear-gradient(45deg, #3b82f6, #06b6d4);
+            }
+            50% {
+                box-shadow: 0 12px 35px rgba(16, 185, 129, 0.5);
+                background: linear-gradient(45deg, #10b981, #0ea5e9);
+            }
+        }
+
+        .faithbot-image:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.6);
+        }
+
+        .faithbot-notification {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 25px;
+            height: 25px;
+            background: linear-gradient(45deg, #ef4444, #dc2626);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: white;
+            animation: faithbotBounce 1s ease-in-out infinite;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+        }
+
+        @keyframes faithbotBounce {
+            0%, 100% { 
+                transform: scale(1) translateY(0px); 
+            }
+            50% { 
+                transform: scale(1.2) translateY(-3px); 
+            }
+        }
+
+        .faithbot-speech-bubble {
+            position: absolute;
+            bottom: 90px;
+            right: 0;
+            background: white;
+            color: #1f2937;
+            padding: 12px 18px;
+            border-radius: 20px 20px 5px 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+            max-width: 220px;
+            text-align: center;
+            animation: faithbotSpeechPulse 4s ease-in-out infinite;
+            border: 2px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .faithbot-speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 20px;
+            border: 8px solid transparent;
+            border-top-color: white;
+        }
+
+        @keyframes faithbotSpeechPulse {
+            0%, 100% { 
+                opacity: 1; 
+                transform: scale(1); 
+                background: white;
+            }
+            25% { 
+                opacity: 0.9; 
+                transform: scale(1.05); 
+                background: #f0f9ff;
+            }
+            50% { 
+                opacity: 1; 
+                transform: scale(1); 
+                background: #ecfdf5;
+            }
+            75% { 
+                opacity: 0.9; 
+                transform: scale(1.02); 
+                background: #fef3c7;
+            }
+        }
+
+        /* Faithbot Chat Modal Styles */
+        .faithbot-chat-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 800px;
+            height: 80vh;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            border-radius: 20px;
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .faithbot-header {
+            background: linear-gradient(45deg, #1e293b, #334155);
+            padding: 20px;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faithbot-avatar-small {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #3b82f6, #06b6d4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .faithbot-quick-actions {
+            padding: 15px 20px;
+            background: rgba(59, 130, 246, 0.05);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .quick-action-btn {
+            background: linear-gradient(45deg, #3b82f6, #2563eb);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .quick-action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+            background: linear-gradient(45deg, #2563eb, #1d4ed8);
+        }
+
+        .faithbot-iframe-container {
+            flex: 1;
+            padding: 20px;
+            background: #f8fafc;
+        }
+
+        .faithbot-iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         /* Mobile Control Buttons */
@@ -1268,7 +1608,7 @@
             padding: 40px;
             border-radius: 20px;
             border: 1px solid rgba(59, 130, 246, 0.3);
-            max-width: 500px;
+            max-width: 600px;
             width: 90%;
             max-height: 80vh;
             overflow-y: auto;
@@ -1319,16 +1659,19 @@
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(203, 213, 225, 0.3);
             color: white;
-            padding: 12px;
+            padding: 15px;
             border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: 'Crimson Text', serif;
             font-size: 0.95rem;
+            text-align: left;
+            line-height: 1.5;
         }
 
         .quiz-option:hover {
             background: rgba(59, 130, 246, 0.3);
+            transform: translateX(5px);
         }
 
         .quiz-option.correct {
@@ -1341,10 +1684,81 @@
             border-color: #ef4444;
         }
 
+        /* Difficulty Option Hover Effects */
+        .difficulty-option:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.3) !important;
+        }
+
+        .difficulty-option:active {
+            transform: translateY(-1px);
+        }
+
         @media (max-width: 768px) {
             .container { 
                 padding: 15px; 
                 padding-top: 80px;
+                padding-bottom: 120px; /* Extra space for Faithbot */
+            }
+            
+            /* Mobile Faithbot Styles */
+            .faithbot-container {
+                bottom: 20px !important;
+                right: 20px !important;
+            }
+            
+            .faithbot-image {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+            
+            .faithbot-pulse-ring {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .faithbot-speech-bubble {
+                bottom: 80px;
+                right: 0;
+                max-width: 180px;
+                font-size: 0.8rem;
+                padding: 10px 14px;
+            }
+            
+            .faithbot-chat-container {
+                width: 95% !important;
+                height: 85vh !important;
+                max-width: none;
+            }
+            
+            .faithbot-header {
+                padding: 15px;
+            }
+            
+            .faithbot-header h3 {
+                font-size: 1.1rem;
+            }
+            
+            .faithbot-header p {
+                font-size: 0.8rem;
+            }
+            
+            .faithbot-avatar-small {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .faithbot-quick-actions {
+                padding: 10px;
+                gap: 8px;
+            }
+            
+            .quick-action-btn {
+                padding: 6px 12px;
+                font-size: 0.75rem;
             }
             .header { 
                 padding: 25px; 
@@ -1428,6 +1842,10 @@
             .quiz-title, .testimony-title {
                 font-size: 1.6rem;
             }
+            .modal-content {
+                padding: 25px;
+                max-width: 95%;
+            }
         }
     </style>
 </head>
@@ -1507,9 +1925,60 @@
         </div>
     </div>
 
+    <!-- Faithbot AI Assistant - Always Visible -->
+    <div class="faithbot-container" id="faithbotContainer">
+        <!-- Pulsing Rings Animation -->
+        <div class="faithbot-pulse-ring faithbot-pulse-1"></div>
+        <div class="faithbot-pulse-ring faithbot-pulse-2"></div>
+        <div class="faithbot-pulse-ring faithbot-pulse-3"></div>
+        
+        <!-- Main Faithbot Button -->
+        <div class="faithbot-image" onclick="openFaithbotChat()">
+            👨‍💻
+            <!-- Notification Badge -->
+            <div class="faithbot-notification" id="faithbotNotification">
+                💬
+            </div>
+        </div>
+        
+        <!-- Speech Bubble -->
+        <div class="faithbot-speech-bubble" id="faithbotSpeech">
+            <span id="faithbotMessage">Hi! I'm Faithbot! 👋</span>
+        </div>
+    </div>
+
+    <!-- Faithbot Chat Modal -->
+    <div id="faithbotModal" class="modal">
+        <div class="faithbot-chat-container">
+            <div class="faithbot-header">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="faithbot-avatar-small">👨‍💻</div>
+                    <div>
+                        <h3 style="margin: 0; color: #0ea5e9; font-size: 1.3rem;">Faithbot AI Assistant</h3>
+                        <p style="margin: 0; color: #cbd5e1; font-size: 0.9rem;">Your personal biblical guide and prayer companion</p>
+                    </div>
+                </div>
+                <button class="close-modal" onclick="closeFaithbotChat()" style="background: none; border: none; color: #cbd5e1; font-size: 1.5rem; cursor: pointer;">&times;</button>
+            </div>
+            
+            <div class="faithbot-quick-actions">
+                <button class="quick-action-btn" onclick="sendQuickMessage('Daily Verse')">📖 Daily Verse</button>
+                <button class="quick-action-btn" onclick="sendQuickMessage('Prayer Help')">🙏 Prayer Help</button>
+                <button class="quick-action-btn" onclick="sendQuickMessage('Bible Study')">💡 Bible Study</button>
+            </div>
+            
+            <div class="faithbot-iframe-container">
+                <iframe src="https://api.faithbot.com/web" width="100%" height="100%" frameborder="0" style="border-radius: 10px;"></iframe>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="header">
-            <h1>Jesus Love Revealed: A Journey of Faith - Biblical Timelines</h1>
+            <h1>JESUS LOVE REVEALED</h1>
+            <div style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #0ea5e9; margin-top: -10px; margin-bottom: 20px; font-weight: 500; letter-spacing: 0.5px; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);">
+                Interactive Journey Through God's Redemptive Story
+            </div>
             
             <div class="jlr-branding">
                 <div class="jlr-title">
@@ -1557,8 +2026,8 @@
         <div class="quiz-section">
             <h2 class="quiz-title">🎯 Test Your Biblical Knowledge</h2>
             <div class="quiz-buttons">
-                <button class="quiz-btn" onclick="startQuiz('biblical')">📖 Biblical Timeline Quiz</button>
-                <button class="quiz-btn" onclick="startQuiz('scripture')">✝️ Scripture Memory Quiz</button>
+                <button class="quiz-btn" onclick="showQuizOptions('biblical')">📖 Biblical Timeline Quiz</button>
+                <button class="quiz-btn" onclick="showQuizOptions('scripture')">✝️ Scripture Memory Quiz</button>
             </div>
         </div>
 
@@ -1773,6 +2242,17 @@
         </div>
     </div>
 
+    <!-- Quiz Options Modal -->
+    <div id="quizOptionsModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('quizOptionsModal')">&times;</button>
+            <h2 id="quizOptionsTitle">Choose Your Challenge Level</h2>
+            <div id="quizOptionsContent">
+                <!-- Quiz difficulty options will be loaded here -->
+            </div>
+        </div>
+    </div>
+
     <!-- Quiz Modal -->
     <div id="quizModal" class="modal">
         <div class="modal-content">
@@ -1791,112 +2271,1349 @@
         let currentQuiz = null;
         let currentQuestionIndex = 0;
         let quizScore = 0;
+        let quizTimer = null;
+        let timeRemaining = 0;
+        let userAnswers = [];
+        let hintsUsed = 0;
+        const maxHints = 2;
 
-        // Quiz data
-        const biblicalQuiz = [
-           
-        {
-    "question": "Who was the first king of Israel?",
-    "options": ["Saul", "David", "Solomon", "Samuel"],
-    "correct": 0,
-    "explanation": "According to 1 Samuel 10:24, Saul was the first king of Israel."
-  },
-  {
-    "question": "Which book of the Bible contains the prophecy of the Messiah's birthplace?",
-    "options": ["Micah", "Isaiah", "Jeremiah", "Ezekiel"],
-    "correct": 0,
-    "explanation": "Micah 5:2 prophesies that the Messiah will be born in Bethlehem."
-  },
-  {
-    "question": "Who was the brother of Peter and one of Jesus' twelve apostles?",
-    "options": ["Andrew", "Philip", "Bartholomew", "Thomas"],
-    "correct": 0,
-    "explanation": "According to Matthew 4:18, Andrew was the brother of Peter and one of Jesus' twelve apostles."
-  },
-  {
-    "question": "What was the name of the mountain where Moses received the Ten Commandments?",
-    "options": ["Mount Sinai", "Mount Nebo", "Mount Zion", "Mount Moriah"],
-    "correct": 0,
-    "explanation": "According to Exodus 19:1-25, Moses received the Ten Commandments on Mount Sinai."
-  },
-  {
-    "question": "Who was the judge who defeated the Midianites with an army of 300 men?",
-    "options": ["Gideon", "Samson", "Jephthah", "Ehud"],
-    "correct": 0,
-    "explanation": "According to Judges 7:1-25, Gideon defeated the Midianites with an army of 300 men."
-  },
-  {
-    "question": "What was the name of the prophet who was swallowed by a whale?",
-    "options": ["Jonah", "Elijah", "Elisha", "Jeremiah"],
-    "correct": 0,
-    "explanation": "According to Jonah 1:17, Jonah was swallowed by a whale."
-  },
-  {
-    "question": "Who was the queen of Sheba who visited King Solomon?",
-    "options": ["Makeda", "Bathsheba", "Ruth", "Esther"],
-    "correct": 0,
-    "explanation": "According to 1 Kings 10:1-13, the queen of Sheba visited King Solomon."
-  },
-  {
-    "question": "What was the name of the city that was destroyed by fire and brimstone?",
-    "options": ["Sodom", "Gomorrah", "Admah", "Zeboim"],
-    "correct": 0,
-    "explanation": "According to Genesis 19:24, Sodom and Gomorrah were destroyed by fire and brimstone."
-  },
-  {
-    "question": "Who was the apostle who doubted Jesus' resurrection?",
-    "options": ["Thomas", "Philip", "Andrew", "Peter"],
-    "correct": 0,
-    "explanation": "According to John 20:24-29, Thomas doubted Jesus' resurrection."
-  },
-  {
-    "question": "What was the name of the mountain where Jesus was crucified?",
-    "options": ["Golgotha", "Mount Moriah", "Mount Zion", "Mount of Olives"],
-    "correct": 0,
-    "explanation": "According to Matthew 27:33, Jesus was crucified on Golgotha."
-  },
-        
-        
-        {
-                question: "In what order did God create the world according to Genesis?",
-                options: ["Light, Sky, Land, Sun/Moon, Sea creatures, Land animals", "Land, Sky, Light, Animals, Plants, Humans", "Sky, Light, Land, Plants, Animals, Humans", "Light, Plants, Animals, Sky, Land, Humans"],
+        // Expanded Quiz Data with Random Selection - 25+ Questions Each
+        const biblicalQuizBank = [
+            {
+                question: "According to Genesis 1, in what specific order did God create the world during the six days of creation?",
+                options: [
+                    "Day 1: Light, Day 2: Sky/Waters, Day 3: Land/Plants, Day 4: Sun/Moon/Stars, Day 5: Sea creatures/Birds, Day 6: Land animals/Humans",
+                    "Day 1: Sky, Day 2: Light, Day 3: Land, Day 4: Plants, Day 5: Animals, Day 6: Humans",
+                    "Day 1: Land, Day 2: Sky, Day 3: Light, Day 4: Animals, Day 5: Plants, Day 6: Humans",
+                    "Day 1: Sun/Moon, Day 2: Light, Day 3: Land, Day 4: Plants, Day 5: Animals, Day 6: Humans"
+                ],
                 correct: 0,
-                explanation: "Genesis 1 shows God creating light first, then the sky, then separating land and sea, followed by the sun and moon, then sea creatures and birds, and finally land animals and humans."
+                explanation: "Genesis 1 reveals God's perfect order: Light (Day 1), separating waters above and below (Day 2), dry land and vegetation (Day 3), celestial bodies (Day 4), sea creatures and birds (Day 5), and land animals plus humans made in His image (Day 6). Each day built upon the previous, showing God's wisdom and design.",
+                difficulty: "medium",
+                category: "Creation"
             },
             {
-                question: "What was God's first promise of redemption after the Fall?",
-                options: ["The rainbow covenant with Noah", "The promise to Abraham", "Genesis 3:15 - the woman's seed will crush the serpent", "The giving of the Ten Commandments"],
-                correct: 2,
-                explanation: "Genesis 3:15 is called the Protoevangelium (first gospel), where God promises that the woman's offspring will defeat Satan."
+                question: "Who was the first person to build an altar to the Lord after the flood?",
+                options: [
+                    "Abraham when he arrived in Canaan",
+                    "Noah immediately after leaving the ark",
+                    "Moses at Mount Sinai",
+                    "Isaac at Beersheba"
+                ],
+                correct: 1,
+                explanation: "Genesis 8:20 tells us that Noah built an altar to the Lord and offered burnt offerings as soon as he left the ark. This was an act of worship and thanksgiving to God for preserving his family through the flood.",
+                difficulty: "easy",
+                category: "Old Testament"
             },
             {
-                question: "What did God promise Abraham that affects all nations?",
-                options: ["A great army", "Many descendants only", "All peoples on earth will be blessed through him", "A large territory"],
+                question: "What was the sign of God's covenant with Abraham regarding his descendants?",
+                options: [
+                    "The rainbow in the sky",
+                    "Circumcision of all males",
+                    "The Sabbath day observance",
+                    "Animal sacrifices at altars"
+                ],
+                correct: 1,
+                explanation: "Genesis 17:10-11 establishes circumcision as the sign of God's covenant with Abraham. Every male was to be circumcised as a sign of the covenant between God and Abraham's descendants.",
+                difficulty: "medium",
+                category: "Covenants"
+            },
+            {
+                question: "Which son did Abraham almost sacrifice on Mount Moriah?",
+                options: [
+                    "Ishmael, his firstborn son",
+                    "Isaac, the son of promise",
+                    "Esau, the elder twin",
+                    "Jacob, the younger twin"
+                ],
+                correct: 1,
+                explanation: "Genesis 22 records God's test of Abraham's faith by asking him to sacrifice Isaac, his beloved son of promise. This event prefigures God's sacrifice of His own Son, Jesus Christ.",
+                difficulty: "easy",
+                category: "Faith"
+            },
+            {
+                question: "What did Jacob see in his dream at Bethel?",
+                options: [
+                    "A burning bush that was not consumed",
+                    "A ladder reaching to heaven with angels ascending and descending",
+                    "A great throne with living creatures around it",
+                    "A vision of the future twelve tribes of Israel"
+                ],
+                correct: 1,
+                explanation: "Genesis 28:12 describes Jacob's dream of a ladder (or stairway) reaching to heaven with angels going up and down on it. God spoke to Jacob in this dream, confirming the covenant promises made to Abraham and Isaac.",
+                difficulty: "easy",
+                category: "Visions"
+            },
+            {
+                question: "How many years did the Israelites spend in slavery in Egypt?",
+                options: [
+                    "400 years as prophesied to Abraham",
+                    "430 years from Jacob's arrival to the Exodus",
+                    "300 years under Pharaoh's oppression",
+                    "500 years including the time of favor"
+                ],
+                correct: 1,
+                explanation: "Exodus 12:40-41 states that the Israelites lived in Egypt for 430 years. This period began when Jacob and his family moved to Egypt during the famine and ended with Moses leading them out in the Exodus.",
+                difficulty: "medium",
+                category: "Chronology"
+            },
+            {
+                question: "What were the first three plagues God sent upon Egypt?",
+                options: [
+                    "Water to blood, frogs, gnats/lice",
+                    "Darkness, hail, locusts",
+                    "Boils, flies, livestock disease",
+                    "Frogs, gnats, flies"
+                ],
+                correct: 0,
+                explanation: "Exodus 7-8 records the first three plagues: turning the Nile to blood (7:14-25), frogs covering the land (8:1-15), and gnats/lice throughout Egypt (8:16-19). Each plague demonstrated God's power over Egyptian gods.",
+                difficulty: "medium",
+                category: "Miracles"
+            },
+            {
+                question: "On which mountain did Moses receive the Ten Commandments?",
+                options: [
+                    "Mount Ararat where the ark rested",
+                    "Mount Sinai (also called Mount Horeb)",
+                    "Mount Carmel where Elijah confronted the prophets of Baal",
+                    "Mount Nebo where Moses viewed the Promised Land"
+                ],
+                correct: 1,
+                explanation: "Exodus 19-20 records Moses receiving the Ten Commandments on Mount Sinai (also called Horeb). This mountain became the place where God established His covenant with Israel and gave them the Law.",
+                difficulty: "easy",
+                category: "Law"
+            },
+            {
+                question: "Who was the first king of Israel chosen by the people?",
+                options: [
+                    "David, the shepherd boy from Bethlehem",
+                    "Saul, from the tribe of Benjamin",
+                    "Solomon, the wise son of David",
+                    "Samuel, the prophet and judge"
+                ],
+                correct: 1,
+                explanation: "1 Samuel 9-10 tells of Saul being chosen as Israel's first king. Though God had warned against having a king like other nations, He granted their request and chose Saul from the tribe of Benjamin.",
+                difficulty: "easy",
+                category: "Kings"
+            },
+            {
+                question: "With what weapon did David defeat the giant Goliath?",
+                options: [
+                    "A sword borrowed from King Saul",
+                    "A sling and five smooth stones",
+                    "A spear thrown with great accuracy",
+                    "His bare hands in hand-to-hand combat"
+                ],
+                correct: 1,
+                explanation: "1 Samuel 17:40-50 describes David choosing five smooth stones from a brook and using his sling to strike Goliath in the forehead. David trusted in the Lord rather than conventional weapons of war.",
+                difficulty: "easy",
+                category: "Faith"
+            },
+            {
+                question: "Which prophet confronted King Ahab and the prophets of Baal on Mount Carmel?",
+                options: [
+                    "Elisha, the successor prophet",
+                    "Elijah, the Tishbite",
+                    "Isaiah, the court prophet",
+                    "Jeremiah, the weeping prophet"
+                ],
+                correct: 1,
+                explanation: "1 Kings 18 records Elijah's dramatic confrontation with 450 prophets of Baal on Mount Carmel. God answered Elijah's prayer with fire from heaven, proving He alone is the true God of Israel.",
+                difficulty: "easy",
+                category: "Prophets"
+            },
+            {
+                question: "How many days was Jonah in the belly of the great fish?",
+                options: [
+                    "Three days and three nights",
+                    "Seven days representing completion",
+                    "Forty days like other biblical periods",
+                    "One day and one night"
+                ],
+                correct: 0,
+                explanation: "Jonah 1:17 states that Jonah was in the belly of the great fish for three days and three nights. Jesus referenced this as a sign of His own death and resurrection (Matthew 12:40).",
+                difficulty: "easy",
+                category: "Prophets"
+            },
+            {
+                question: "Which Babylonian king conquered Jerusalem and destroyed the Temple?",
+                options: [
+                    "Nebuchadnezzar II",
+                    "Belshazzar the prince",
+                    "Cyrus the Persian",
+                    "Darius the Mede"
+                ],
+                correct: 0,
+                explanation: "2 Kings 25 and 2 Chronicles 36 record Nebuchadnezzar's conquest of Jerusalem in 586 BC. He destroyed Solomon's Temple and carried the people into Babylonian exile, fulfilling the prophets' warnings.",
+                difficulty: "medium",
+                category: "History"
+            },
+            {
+                question: "Who led the first group of Jewish exiles back to Jerusalem from Babylon?",
+                options: [
+                    "Ezra the priest and scribe",
+                    "Nehemiah the cupbearer",
+                    "Zerubbabel the governor",
+                    "Joshua the high priest"
+                ],
                 correct: 2,
-                explanation: "Genesis 12:3 promises that through Abraham, all families of the earth will be blessed - fulfilled ultimately in Jesus Christ."
+                explanation: "Ezra 1-2 records Zerubbabel leading the first return of exiles around 538 BC under Cyrus's decree. He oversaw the rebuilding of the Temple's foundation, though the work was later interrupted.",
+                difficulty: "hard",
+                category: "Restoration"
+            },
+            {
+                question: "Which Old Testament book is entirely set in the Persian court?",
+                options: [
+                    "Daniel with its court narratives",
+                    "Esther and the story of Queen Esther",
+                    "Ezra and the return from exile",
+                    "Nehemiah and the wall rebuilding"
+                ],
+                correct: 1,
+                explanation: "The book of Esther is entirely set in the Persian court of King Ahasuerus (Xerxes). It shows God's providence in protecting His people even when His name is not explicitly mentioned in the text.",
+                difficulty: "medium",
+                category: "Books"
+            },
+            {
+                question: "What was the last book of the Old Testament to be written?",
+                options: [
+                    "Malachi, with its prophecy of the coming messenger",
+                    "Chronicles, summarizing Israel's history",
+                    "Nehemiah, ending the historical books",
+                    "Daniel, with its apocalyptic visions"
+                ],
+                correct: 0,
+                explanation: "Malachi, written around 430-400 BC, was the last Old Testament book written. It ends with a promise of Elijah's return before the 'great and dreadful day of the Lord,' pointing toward John the Baptist and Christ.",
+                difficulty: "hard",
+                category: "Chronology"
+            },
+            {
+                question: "In which city was Jesus born according to Micah's prophecy?",
+                options: [
+                    "Nazareth where Mary and Joseph lived",
+                    "Bethlehem, the city of David",
+                    "Jerusalem, the holy city",
+                    "Capernaum by the Sea of Galilee"
+                ],
+                correct: 1,
+                explanation: "Micah 5:2 prophesied that the Messiah would be born in Bethlehem Ephrathah. Matthew 2:1-6 and Luke 2:4-7 record the fulfillment of this prophecy in Jesus' birth.",
+                difficulty: "easy",
+                category: "Prophecy"
+            },
+            {
+                question: "How many wise men (Magi) came to worship the baby Jesus?",
+                options: [
+                    "Three, based on the three gifts mentioned",
+                    "Twelve, representing the tribes of Israel",
+                    "The Bible doesn't specify the exact number",
+                    "Seven, the number of completion"
+                ],
+                correct: 2,
+                explanation: "Matthew 2:1-12 mentions 'wise men from the east' but doesn't specify how many. The tradition of three comes from the three gifts (gold, frankincense, and myrrh), but the actual number is unknown.",
+                difficulty: "medium",
+                category: "Details"
+            },
+            {
+                question: "At what age did Jesus begin His public ministry?",
+                options: [
+                    "About 30 years old",
+                    "33 years old when He was crucified",
+                    "25 years old after His baptism",
+                    "40 years old after His temptation"
+                ],
+                correct: 0,
+                explanation: "Luke 3:23 states that Jesus was about 30 years old when He began His ministry. This was the age when Levitical priests began their service, showing Jesus' fulfillment of priestly roles.",
+                difficulty: "easy",
+                category: "Chronology"
+            },
+            {
+                question: "How many disciples did Jesus choose to be His apostles?",
+                options: [
+                    "Seventy, whom He sent out to preach",
+                    "Twelve, representing the tribes of Israel",
+                    "Seven, to serve the early church",
+                    "Three, His inner circle of Peter, James, and John"
+                ],
+                correct: 1,
+                explanation: "Mark 3:13-19 and Luke 6:12-16 record Jesus choosing twelve apostles. The number twelve symbolically represents the twelve tribes of Israel, showing continuity between Old and New Covenants.",
+                difficulty: "easy",
+                category: "Disciples"
+            },
+            {
+                question: "What was Jesus' first recorded miracle?",
+                options: [
+                    "Healing a man born blind in Jerusalem",
+                    "Turning water into wine at a wedding in Cana",
+                    "Feeding 5,000 people with loaves and fish",
+                    "Calming a storm on the Sea of Galilee"
+                ],
+                correct: 1,
+                explanation: "John 2:1-11 records Jesus turning water into wine at a wedding in Cana of Galilee as His first miracle. John calls it the first of His signs, revealing His glory to His disciples.",
+                difficulty: "easy",
+                category: "Miracles"
+            },
+            {
+                question: "On which mountain did Jesus deliver the Sermon on the Mount?",
+                options: [
+                    "Mount Sinai where Moses received the Law",
+                    "Mount of Olives overlooking Jerusalem",
+                    "An unnamed mountain in Galilee",
+                    "Mount Tabor, the traditional site of Transfiguration"
+                ],
+                correct: 2,
+                explanation: "Matthew 5:1 simply says Jesus 'went up on a mountainside' in Galilee. The exact location isn't specified, but tradition places it on the Mount of Beatitudes near the Sea of Galilee.",
+                difficulty: "medium",
+                category: "Geography"
+            },
+            {
+                question: "Which disciple walked on water with Jesus?",
+                options: [
+                    "John, the beloved disciple",
+                    "Peter, who stepped out in faith",
+                    "James, the brother of John",
+                    "Andrew, Peter's brother"
+                ],
+                correct: 1,
+                explanation: "Matthew 14:28-31 records Peter asking to walk on water and Jesus inviting him to come. Peter walked on water until he became afraid and began to sink, whereupon Jesus rescued him.",
+                difficulty: "easy",
+                category: "Faith"
+            },
+            {
+                question: "How many days was Jesus in the tomb before His resurrection?",
+                options: [
+                    "Three full days and nights",
+                    "Parts of three days (Friday afternoon to Sunday morning)",
+                    "Seven days representing completion",
+                    "One full day and night"
+                ],
+                correct: 1,
+                explanation: "Jesus was crucified on Friday afternoon and rose on Sunday morning, which in Jewish reckoning counts as three days (part of Friday, all of Saturday, part of Sunday). This fulfilled His prophecy of rising 'on the third day.'",
+                difficulty: "medium",
+                category: "Resurrection"
+            },
+            {
+                question: "To whom did Jesus first appear after His resurrection?",
+                options: [
+                    "Peter, the leader of the disciples",
+                    "Mary Magdalene at the tomb",
+                    "The two disciples on the road to Emmaus",
+                    "All eleven disciples together"
+                ],
+                correct: 1,
+                explanation: "John 20:11-18 and Mark 16:9 record Jesus first appearing to Mary Magdalene at the tomb. She was the first to see the risen Lord and was commissioned to tell the disciples the good news.",
+                difficulty: "medium",
+                category: "Resurrection"
+            },
+            {
+                question: "What was the first promise of redemption God gave after Adam and Eve's fall into sin?",
+                options: [
+                    "The rainbow covenant promising never to flood the earth again",
+                    "The promise to Abraham that all nations would be blessed through him",
+                    "Genesis 3:15 - 'Her offspring will crush the serpent's head'",
+                    "The giving of the Ten Commandments to Moses on Mount Sinai"
+                ],
+                correct: 2,
+                explanation: "Genesis 3:15 is called the 'Protoevangelium' (first gospel). God promised that the woman's seed (ultimately Jesus Christ) would crush Satan's head, though Satan would bruise His heel (referring to Christ's suffering on the cross). This was the first glimpse of God's redemptive plan.",
+                difficulty: "hard",
+                category: "Redemption"
+            },
+            {
+                question: "What three-fold promise did God make to Abraham in Genesis 12:1-3 that affects all of humanity?",
+                options: [
+                    "Land inheritance, military victory, and political power",
+                    "Land for his descendants, countless offspring, and blessing to all nations through him",
+                    "Wealth, health, and prosperity for his family line",
+                    "A great temple, priestly lineage, and sacrificial system"
+                ],
+                correct: 1,
+                explanation: "The Abrahamic Covenant included: (1) Land - the Promised Land for his descendants, (2) Seed - descendants as numerous as stars, and (3) Blessing - all families of earth blessed through him. This covenant is unconditional and finds its ultimate fulfillment in Jesus Christ, Abraham's greatest descendant.",
+                difficulty: "medium",
+                category: "Covenants"
+            },
+            {
+                question: "How did God demonstrate both His justice and mercy during the Great Flood in Noah's time?",
+                options: [
+                    "He only punished the wicked and spared everyone else",
+                    "He judged the world's wickedness while preserving righteous Noah's family through the ark",
+                    "He gave everyone multiple chances to repent before the flood came",
+                    "He only flooded certain regions while protecting others"
+                ],
+                correct: 1,
+                explanation: "The flood demonstrates God's holy justice against sin - He cannot tolerate wickedness forever. Yet His mercy is shown in preserving Noah's family, who 'found grace in the eyes of the Lord.' The ark represents salvation through faith and obedience, prefiguring Christ as our ark of safety from God's judgment.",
+                difficulty: "medium",
+                category: "Judgment & Mercy"
+            },
+            {
+                question: "What makes Jesus Christ's birth unique among all births in human history?",
+                options: [
+                    "He was born in a stable instead of a house",
+                    "Angels announced His birth to shepherds",
+                    "He was conceived by the Holy Spirit and born of a virgin",
+                    "Wise men brought Him gifts from the East"
+                ],
+                correct: 2,
+                explanation: "The virgin birth (Isaiah 7:14, Matthew 1:23) is crucial because it shows Jesus is both fully God (conceived by the Holy Spirit) and fully man (born of Mary). This unique nature qualifies Him to be our mediator - He can represent humanity to God and represent God to humanity. No other person in history has this dual nature.",
+                difficulty: "easy",
+                category: "Incarnation"
+            },
+            {
+                question: "Why was Jesus' death on the cross necessary for our salvation rather than just His perfect life?",
+                options: [
+                    "To show us an example of sacrificial love",
+                    "To pay the penalty for sin that God's justice demands",
+                    "To demonstrate His commitment to His followers",
+                    "To fulfill Jewish sacrificial traditions"
+                ],
+                correct: 1,
+                explanation: "Romans 6:23 says 'the wages of sin is death.' God's perfect justice demands payment for sin. Jesus' death was substitutionary atonement - He took our place, bearing God's wrath against sin so we could receive His righteousness. His perfect life qualified Him to be our substitute; His death accomplished our redemption.",
+                difficulty: "hard",
+                category: "Atonement"
+            },
+            {
+                question: "What does Jesus' resurrection prove about His identity and our future?",
+                options: [
+                    "That He was a good teacher who inspired His followers",
+                    "That He conquered death, proving His deity and guaranteeing our resurrection",
+                    "That His disciples were very devoted to His memory",
+                    "That miracles were common in ancient times"
+                ],
+                correct: 1,
+                explanation: "The resurrection is the cornerstone of Christian faith (1 Corinthians 15:17). It proves Jesus is God (Romans 1:4), validates His sacrifice for sin, and guarantees our future resurrection (1 Corinthians 15:20-23). Because He lives, we too shall live. Death has been defeated!",
+                difficulty: "medium",
+                category: "Resurrection"
+            },
+            {
+                question: "What will happen when Jesus returns in His Second Coming?",
+                options: [
+                    "He will establish a temporary earthly kingdom",
+                    "He will judge all humanity and establish His eternal kingdom",
+                    "He will only gather His followers to heaven",
+                    "He will give everyone another chance to believe"
+                ],
+                correct: 1,
+                explanation: "At the Second Coming, Jesus will return visibly and gloriously (Revelation 1:7) to judge the living and the dead (2 Timothy 4:1). He will separate the righteous from the wicked (Matthew 25:31-46), establish the new heavens and new earth (Revelation 21:1), and reign forever with His people in perfect righteousness.",
+                difficulty: "medium",
+                category: "Eschatology"
             }
         ];
 
-        const scriptureQuiz = [
+        const scriptureQuizBank = [
             {
-                question: "Complete this verse: 'For God so loved the world that he gave his one and only Son, that whoever believes in him...'",
-                options: ["shall not perish but have eternal life", "will be saved from their sins", "will inherit the kingdom of heaven", "shall be called children of God"],
+                question: "Complete this foundational verse about God's love: 'For God so loved the world that he gave his one and only Son, that whoever believes in him...'",
+                options: [
+                    "shall not perish but have eternal life",
+                    "will be saved from their sins and troubles",
+                    "will inherit the kingdom of heaven on earth",
+                    "shall be called children of God and live in peace"
+                ],
                 correct: 0,
-                explanation: "John 3:16 - This is perhaps the most famous verse in the Bible, summarizing the gospel message."
+                explanation: "John 3:16 is called 'the Gospel in a nutshell.' It reveals God's love (agape - unconditional), His sacrifice (gave His Son), the requirement (believe), and the result (eternal life, not just improved earthly life). This verse summarizes the entire message of salvation.",
+                difficulty: "easy",
+                category: "Gospel",
+                reference: "John 3:16"
             },
             {
-                question: "Which verse says 'For I know the plans I have for you, plans to prosper you and not to harm you'?",
-                options: ["Psalm 23:1", "Jeremiah 29:11", "Romans 8:28", "Philippians 4:13"],
-                correct: 1,
-                explanation: "Jeremiah 29:11 - God spoke this to the Israelites in exile, showing His faithfulness and good plans for His people."
+                question: "Complete Psalm 23:1: 'The Lord is my ___, I lack ___.'",
+                options: [
+                    "shepherd... nothing",
+                    "strength... courage",
+                    "guide... wisdom",
+                    "protector... safety"
+                ],
+                correct: 0,
+                explanation: "Psalm 23:1 establishes the intimate relationship between God and His people. As our Shepherd, He provides everything we need - protection, guidance, provision, and care. This psalm has comforted believers for millennia.",
+                difficulty: "easy",
+                category: "Psalms",
+                reference: "Psalm 23:1"
             },
             {
-                question: "Complete: 'Trust in the Lord with all your heart and lean not on...'",
-                options: ["your own strength", "your own understanding", "your own wisdom", "your own righteousness"],
+                question: "What does Isaiah 53:5 say about Jesus' suffering: 'But he was pierced for our ___, he was crushed for our ___; the punishment that brought us ___ was on him, and by his ___ we are healed.'",
+                options: [
+                    "transgressions... iniquities... peace... wounds",
+                    "sins... rebellion... salvation... stripes",
+                    "wickedness... evil... forgiveness... blood",
+                    "crimes... lawlessness... redemption... sacrifice"
+                ],
+                correct: 0,
+                explanation: "Isaiah 53:5 is a prophetic description of Christ's substitutionary atonement, written 700 years before His birth. It shows that His suffering was for our sins, His punishment brought us peace with God, and His wounds provide our spiritual healing.",
+                difficulty: "medium",
+                category: "Prophecy",
+                reference: "Isaiah 53:5"
+            },
+            {
+                question: "Complete Jesus' words in Matthew 11:28: 'Come to me, all you who are ___ and ___, and I will give you ___.'",
+                options: [
+                    "weary... burdened... rest",
+                    "lost... confused... direction",
+                    "broken... hurting... healing",
+                    "seeking... searching... answers"
+                ],
+                correct: 0,
+                explanation: "Matthew 11:28 is Jesus' invitation to all who struggle under the weight of sin, legalism, or life's burdens. He offers rest - not just physical rest, but spiritual rest and peace that comes from relationship with Him.",
+                difficulty: "easy",
+                category: "Invitation",
+                reference: "Matthew 11:28"
+            },
+            {
+                question: "What does Romans 3:23 teach about humanity: 'For all have ___ and fall short of the ___ of God.'",
+                options: [
+                    "sinned... glory",
+                    "failed... expectations",
+                    "rebelled... standards",
+                    "disobeyed... commandments"
+                ],
+                correct: 0,
+                explanation: "Romans 3:23 establishes the universal need for salvation. All humans have sinned and cannot meet God's perfect standard of righteousness (His glory). This verse shows why we need Christ's righteousness credited to us.",
+                difficulty: "easy",
+                category: "Sin",
+                reference: "Romans 3:23"
+            },
+            {
+                question: "Complete 1 Corinthians 13:4-5: 'Love is ___, love is ___. It does not ___, it does not ___, it is not ___.'",
+                options: [
+                    "patient... kind... envy... boast... proud",
+                    "gentle... caring... judge... condemn... harsh",
+                    "forgiving... merciful... hate... reject... bitter",
+                    "understanding... compassionate... criticize... blame... selfish"
+                ],
+                correct: 0,
+                explanation: "1 Corinthians 13:4-5 describes agape love - God's unconditional love that should characterize Christians. This love is patient with others' faults, kind in actions, doesn't envy others' blessings, doesn't boast about achievements, and isn't proud or arrogant.",
+                difficulty: "medium",
+                category: "Love",
+                reference: "1 Corinthians 13:4-5"
+            },
+            {
+                question: "What does Philippians 4:19 promise: 'And my God will meet all your ___ according to the riches of his ___ in Christ Jesus.'",
+                options: [
+                    "needs... glory",
+                    "desires... love",
+                    "requests... mercy",
+                    "wants... grace"
+                ],
+                correct: 0,
+                explanation: "Philippians 4:19 promises that God will supply our needs (not necessarily wants) according to His glorious riches in Christ. This follows Paul's teaching on contentment and trusting God's provision rather than worldly wealth.",
+                difficulty: "easy",
+                category: "Provision",
+                reference: "Philippians 4:19"
+            },
+            {
+                question: "Complete Galatians 2:20: 'I have been ___ with Christ and I no longer ___, but Christ ___ in me. The life I now live in the body, I live by ___ in the Son of God.'",
+                options: [
+                    "crucified... live... lives... faith",
+                    "united... struggle... works... trust",
+                    "joined... worry... dwells... hope",
+                    "connected... fear... abides... belief"
+                ],
+                correct: 0,
+                explanation: "Galatians 2:20 describes the believer's identification with Christ's death and resurrection. Our old self died with Christ, and now Christ lives His life through us by faith. This is the essence of the Christian life - not self-effort, but Christ's life in us.",
+                difficulty: "hard",
+                category: "Identity",
+                reference: "Galatians 2:20"
+            },
+            {
+                question: "What does 2 Timothy 3:16 say about Scripture: 'All Scripture is ___-___ and is useful for ___, ___, ___ and ___ in righteousness.'",
+                options: [
+                    "God-breathed... teaching, rebuking, correcting, training",
+                    "divinely-inspired... learning, growing, maturing, walking",
+                    "heaven-sent... preaching, counseling, guiding, living",
+                    "spiritually-given... studying, understanding, applying, practicing"
+                ],
+                correct: 0,
+                explanation: "2 Timothy 3:16 establishes the divine inspiration and authority of Scripture. 'God-breathed' (theopneustos) means Scripture originates from God Himself. It serves four purposes: teaching truth, rebuking error, correcting wrong behavior, and training in righteous living.",
+                difficulty: "medium",
+                category: "Scripture",
+                reference: "2 Timothy 3:16"
+            },
+            {
+                question: "Complete Hebrews 11:1: 'Now faith is ___ in what we hope for and ___ of what we do not see.'",
+                options: [
+                    "confidence... certainty",
+                    "belief... proof",
+                    "trust... evidence",
+                    "assurance... conviction"
+                ],
+                correct: 0,
+                explanation: "Hebrews 11:1 defines biblical faith as confidence in God's promises and certainty about unseen spiritual realities. Faith isn't blind belief, but confident trust based on God's character and proven faithfulness throughout history.",
+                difficulty: "medium",
+                category: "Faith",
+                reference: "Hebrews 11:1"
+            },
+            {
+                question: "What does 1 Peter 5:7 encourage us to do: 'Cast all your ___ on him because he ___ for you.'",
+                options: [
+                    "anxiety... cares",
+                    "burdens... provides",
+                    "worries... watches",
+                    "troubles... helps"
+                ],
+                correct: 0,
+                explanation: "1 Peter 5:7 teaches us to give all our anxieties and worries to God because He genuinely cares for us. The word 'cast' means to throw upon, indicating we should actively give our concerns to God rather than carrying them ourselves.",
+                difficulty: "easy",
+                category: "Comfort",
+                reference: "1 Peter 5:7"
+            },
+            {
+                question: "Complete James 1:17: 'Every good and ___ gift is from above, coming down from the Father of the heavenly lights, who does not ___ like shifting shadows.'",
+                options: [
+                    "perfect... change",
+                    "wonderful... move",
+                    "precious... vary",
+                    "blessed... shift"
+                ],
+                correct: 0,
+                explanation: "James 1:17 teaches that all good gifts come from God, who is unchanging in His character and generosity. Unlike shadows that shift with the sun's movement, God's nature and love remain constant and reliable.",
+                difficulty: "medium",
+                category: "God's Character",
+                reference: "James 1:17"
+            },
+            {
+                question: "What does Revelation 3:20 say about Jesus: 'Here I am! I stand at the ___ and ___. If anyone hears my voice and opens the door, I will ___ and eat with that person, and they with me.'",
+                options: [
+                    "door... knock... come in",
+                    "gate... call... enter",
+                    "entrance... wait... visit",
+                    "threshold... speak... dine"
+                ],
+                correct: 0,
+                explanation: "Revelation 3:20 shows Jesus' gentle invitation to fellowship. He doesn't force His way in but knocks and waits for us to open the door of our hearts. The meal represents intimate fellowship and communion with Christ.",
+                difficulty: "easy",
+                category: "Invitation",
+                reference: "Revelation 3:20"
+            },
+            {
+                question: "Complete Matthew 6:33: 'But seek first his ___ and his ___, and all these things will be given to you as well.'",
+                options: [
+                    "kingdom... righteousness",
+                    "will... glory",
+                    "love... mercy",
+                    "truth... grace"
+                ],
+                correct: 0,
+                explanation: "Matthew 6:33 teaches proper priorities - seeking God's kingdom (His rule) and righteousness (right relationship with Him) first. When we prioritize spiritual matters, God promises to provide for our physical needs.",
+                difficulty: "easy",
+                category: "Priorities",
+                reference: "Matthew 6:33"
+            },
+            {
+                question: "What does Colossians 3:23 say about our work: 'Whatever you do, work at it with all your ___, as working for the ___, not for human masters.'",
+                options: [
+                    "heart... Lord",
+                    "strength... King",
+                    "effort... Savior",
+                    "energy... Master"
+                ],
+                correct: 0,
+                explanation: "Colossians 3:23 transforms our perspective on work and service. Whether in employment, ministry, or daily tasks, we should work wholeheartedly as if serving Christ directly, not just to please human authorities.",
+                difficulty: "easy",
+                category: "Service",
+                reference: "Colossians 3:23"
+            },
+            {
+                question: "Complete 2 Corinthians 5:17: 'Therefore, if anyone is in Christ, the new ___ has come: The old has ___, the new is here!'",
+                options: [
+                    "creation... gone",
+                    "life... passed",
+                    "beginning... ended",
+                    "nature... died"
+                ],
+                correct: 0,
+                explanation: "2 Corinthians 5:17 describes the radical transformation that occurs when someone becomes a Christian. They become a new creation - not just improved, but fundamentally changed. The old sinful nature is gone, replaced by new life in Christ.",
+                difficulty: "easy",
+                category: "Transformation",
+                reference: "2 Corinthians 5:17"
+            },
+            {
+                question: "What does 1 Thessalonians 5:16-18 command: '___ always, ___ continually, give ___ in all circumstances; for this is God's will for you in Christ Jesus.'",
+                options: [
+                    "Rejoice... pray... thanks",
+                    "Worship... serve... praise",
+                    "Celebrate... seek... glory",
+                    "Smile... trust... honor"
+                ],
+                correct: 0,
+                explanation: "1 Thessalonians 5:16-18 gives three commands that summarize the Christian life: constant rejoicing in the Lord, continual prayer and communion with God, and thanksgiving in all circumstances. This is God's will for believers.",
+                difficulty: "medium",
+                category: "Christian Living",
+                reference: "1 Thessalonians 5:16-18"
+            },
+            {
+                question: "Complete Romans 12:2: 'Do not ___ to the pattern of this world, but be ___ by the renewing of your mind. Then you will be able to test and approve what God's will is.'",
+                options: [
+                    "conform... transformed",
+                    "adapt... changed",
+                    "adjust... renewed",
+                    "yield... converted"
+                ],
+                correct: 0,
+                explanation: "Romans 12:2 calls Christians to resist worldly conformity and instead be transformed by renewing our minds with God's truth. This mental transformation enables us to discern and follow God's perfect will for our lives.",
+                difficulty: "medium",
+                category: "Transformation",
+                reference: "Romans 12:2"
+            },
+            {
+                question: "What does Ephesians 6:11 instruct us to do: 'Put on the full ___ of God, so that you can take your stand against the devil's ___.'",
+                options: [
+                    "armor... schemes",
+                    "protection... attacks",
+                    "covering... plans",
+                    "shield... tricks"
+                ],
+                correct: 0,
+                explanation: "Ephesians 6:11 introduces the concept of spiritual warfare and our need for God's armor. The 'schemes' (methodeia) refers to Satan's strategic, methodical attacks against believers. We need divine protection, not human strength.",
+                difficulty: "medium",
+                category: "Spiritual Warfare",
+                reference: "Ephesians 6:11"
+            },
+            {
+                question: "Complete 1 John 4:19: 'We love because he ___ loved us.'",
+                options: [
+                    "first",
+                    "always",
+                    "perfectly",
+                    "unconditionally"
+                ],
+                correct: 0,
+                explanation: "1 John 4:19 explains the source and motivation for Christian love. We don't love God to earn His love; rather, our love is a response to His prior love for us. He loved us first while we were still sinners (Romans 5:8).",
+                difficulty: "easy",
+                category: "Love",
+                reference: "1 John 4:19"
+            },
+            {
+                question: "Which prophet spoke these comforting words: 'For I know the plans I have for you, plans to prosper you and not to harm you, to give you hope and a future'?",
+                options: [
+                    "Isaiah during the Babylonian threat",
+                    "Jeremiah to the exiles in Babylon",
+                    "Ezekiel during the temple's destruction",
+                    "Daniel in the lion's den"
+                ],
                 correct: 1,
-                explanation: "Proverbs 3:5 - This verse teaches us to depend on God's wisdom rather than our limited human understanding."
+                explanation: "Jeremiah 29:11 was written to Jewish exiles in Babylon who felt abandoned by God. Jeremiah assured them that even in exile, God had good plans for them. This verse teaches us that God's plans are always for our ultimate good, even when circumstances seem hopeless.",
+                difficulty: "medium",
+                category: "Prophecy",
+                reference: "Jeremiah 29:11"
+            },
+            {
+                question: "Complete this wisdom from Proverbs: 'Trust in the Lord with all your heart and lean not on your own ___; in all your ways submit to him, and he will make your paths ___.'",
+                options: [
+                    "strength... smooth",
+                    "understanding... straight",
+                    "wisdom... clear",
+                    "righteousness... blessed"
+                ],
+                correct: 1,
+                explanation: "Proverbs 3:5-6 teaches complete dependence on God rather than human wisdom. Our understanding is limited and often wrong, but God's wisdom is perfect. When we acknowledge Him in all decisions, He promises to direct our paths according to His perfect will.",
+                difficulty: "easy",
+                category: "Wisdom",
+                reference: "Proverbs 3:5-6"
+            },
+            {
+                question: "What does Romans 8:28 promise to those who love God: 'And we know that in all things God works for the ___ of those who love him, who have been called according to his ___.'",
+                options: [
+                    "benefit... will",
+                    "good... purpose",
+                    "blessing... plan",
+                    "success... calling"
+                ],
+                correct: 1,
+                explanation: "Romans 8:28 doesn't promise that all things are good, but that God works all things together for good for those who love Him. This includes suffering, trials, and even our mistakes. God's purpose is to conform us to Christ's image (v.29), which is the ultimate good.",
+                difficulty: "medium",
+                category: "Providence",
+                reference: "Romans 8:28"
+            },
+            {
+                question: "According to Ephesians 2:8-9, how are we saved: 'For it is by ___ you have been saved, through ___, and this is not from yourselves, it is the gift of God—not by ___, so that no one can boast.'",
+                options: [
+                    "grace... faith... works",
+                    "love... belief... deeds",
+                    "mercy... trust... actions",
+                    "kindness... hope... efforts"
+                ],
+                correct: 0,
+                explanation: "Ephesians 2:8-9 clearly teaches salvation by grace alone, through faith alone, not by works. Grace is God's unmerited favor, faith is our response of trust, and works are excluded to prevent boasting. Salvation is entirely God's gift, not something we earn or deserve.",
+                difficulty: "easy",
+                category: "Salvation",
+                reference: "Ephesians 2:8-9"
+            },
+            {
+                question: "What does Philippians 4:13 actually mean in context: 'I can do all this through him who gives me strength'?",
+                options: [
+                    "Christians can accomplish anything they set their minds to",
+                    "God will help us succeed in all our personal goals and dreams",
+                    "We can be content in any circumstance through Christ's strength",
+                    "Believers have unlimited power to perform miracles"
+                ],
+                correct: 2,
+                explanation: "Philippians 4:13 is often misquoted. In context (v.11-12), Paul is talking about contentment in all circumstances - whether having plenty or being in need. Christ gives strength to be content and faithful regardless of external conditions, not to achieve personal success.",
+                difficulty: "hard",
+                category: "Contentment",
+                reference: "Philippians 4:11-13"
+            },
+            {
+                question: "Complete Jesus' promise in John 14:6: 'I am the way and the ___ and the ___. No one comes to the Father except through ___.'",
+                options: [
+                    "truth... life... me",
+                    "light... hope... faith",
+                    "door... shepherd... belief",
+                    "bread... water... prayer"
+                ],
+                correct: 0,
+                explanation: "John 14:6 is one of Jesus' 'I AM' statements, claiming to be the exclusive way to God. He is the Way (the only path), the Truth (absolute reality), and the Life (eternal life). This verse establishes the exclusivity of salvation through Christ alone.",
+                difficulty: "easy",
+                category: "Exclusivity",
+                reference: "John 14:6"
+            },
+            {
+                question: "What does 1 John 1:9 promise about confession: 'If we confess our sins, he is ___ and ___ and will forgive us our sins and purify us from all unrighteousness.'",
+                options: [
+                    "loving... merciful",
+                    "faithful... just",
+                    "gracious... kind",
+                    "patient... forgiving"
+                ],
+                correct: 1,
+                explanation: "1 John 1:9 shows that God's forgiveness is based on His faithfulness to His promises and His justice satisfied by Christ's sacrifice. When we confess, God doesn't just overlook sin - He forgives based on Christ's payment and purifies us from all unrighteousness.",
+                difficulty: "medium",
+                category: "Forgiveness",
+                reference: "1 John 1:9"
             }
         ];
+
+        // Quiz selection and randomization functions
+        function getRandomQuestions(quizBank, count = 7) {
+            const shuffled = [...quizBank].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count).map(q => {
+                const originalCorrect = q.correct;
+                const shuffledOptions = shuffleArray([...q.options]);
+                const newCorrectIndex = shuffledOptions.findIndex(option => option === q.options[originalCorrect]);
+                return {
+                    ...q,
+                    options: shuffledOptions,
+                    correct: newCorrectIndex
+                };
+            });
+        }
+
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        // Light Mode Toggle Function
+        function toggleLightMode() {
+            isLightMode = !isLightMode;
+            const body = document.body;
+            
+            if (isLightMode) {
+                body.classList.add('light-mode');
+                body.style.background = 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 25%, #bbf7d0 50%, #dcfce7 75%, #f0fdf4 100%)';
+                body.style.color = '#1f2937';
+                
+                // Update scripture quote for light mode
+                const scriptureQuote = document.querySelector('.scripture-quote');
+                if (scriptureQuote) {
+                    scriptureQuote.classList.add('light-mode');
+                }
+            } else {
+                body.classList.remove('light-mode');
+                body.style.background = 'linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%)';
+                body.style.color = '#f1f5f9';
+                
+                // Remove light mode from scripture quote
+                const scriptureQuote = document.querySelector('.scripture-quote');
+                if (scriptureQuote) {
+                    scriptureQuote.classList.remove('light-mode');
+                }
+            }
+        }
+
+        // Show quiz difficulty options
+        function showQuizOptions(type) {
+            const title = type === 'biblical' ? '📖 Biblical Timeline Quiz' : '✝️ Scripture Memory Quiz';
+            document.getElementById('quizOptionsTitle').textContent = `${title} - Choose Your Level`;
+            
+            const content = document.getElementById('quizOptionsContent');
+            content.innerHTML = `
+                <div style="text-align: center; padding: 20px;">
+                    <p style="margin-bottom: 30px; font-size: 1.1rem; line-height: 1.6; color: #cbd5e1;">
+                        Select your preferred difficulty level to customize your learning experience:
+                    </p>
+                    
+                    <div style="display: grid; gap: 20px; max-width: 500px; margin: 0 auto;">
+                        <div class="difficulty-option" onclick="startQuiz('${type}', 'easy')" style="background: linear-gradient(45deg, #10b981, #059669); padding: 20px; border-radius: 15px; cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent;">
+                            <div style="font-size: 2rem; margin-bottom: 10px;">🌱</div>
+                            <h3 style="color: white; margin-bottom: 10px; font-size: 1.3rem;">Beginner Level</h3>
+                            <p style="color: rgba(255,255,255,0.9); margin-bottom: 15px; line-height: 1.5;">Perfect for new believers or those starting their biblical journey. Basic questions about well-known stories and verses.</p>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+                                <span>⏰ 6 minutes</span>
+                                <span>❓ 7 questions</span>
+                                <span>💡 3 hints</span>
+                            </div>
+                        </div>
+                        
+                        <div class="difficulty-option" onclick="startQuiz('${type}', 'medium')" style="background: linear-gradient(45deg, #3b82f6, #2563eb); padding: 20px; border-radius: 15px; cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent;">
+                            <div style="font-size: 2rem; margin-bottom: 10px;">📖</div>
+                            <h3 style="color: white; margin-bottom: 10px; font-size: 1.3rem;">Intermediate Level</h3>
+                            <p style="color: rgba(255,255,255,0.9); margin-bottom: 15px; line-height: 1.5;">For regular Bible readers with solid foundational knowledge. Requires understanding of biblical context and details.</p>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+                                <span>⏰ 5 minutes</span>
+                                <span>❓ 7 questions</span>
+                                <span>💡 2 hints</span>
+                            </div>
+                        </div>
+                        
+                        <div class="difficulty-option" onclick="startQuiz('${type}', 'hard')" style="background: linear-gradient(45deg, #dc2626, #b91c1c); padding: 20px; border-radius: 15px; cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent;">
+                            <div style="font-size: 2rem; margin-bottom: 10px;">🏆</div>
+                            <h3 style="color: white; margin-bottom: 10px; font-size: 1.3rem;">Advanced Level</h3>
+                            <p style="color: rgba(255,255,255,0.9); margin-bottom: 15px; line-height: 1.5;">For biblical scholars and serious students. Deep theological knowledge and detailed scripture understanding required.</p>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+                                <span>⏰ 4 minutes</span>
+                                <span>❓ 7 questions</span>
+                                <span>💡 1 hint</span>
+                            </div>
+                        </div>
+                        
+                        <div class="difficulty-option" onclick="startQuiz('${type}', 'mixed')" style="background: linear-gradient(45deg, #7c3aed, #5b21b6); padding: 20px; border-radius: 15px; cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent;">
+                            <div style="font-size: 2rem; margin-bottom: 10px;">🎯</div>
+                            <h3 style="color: white; margin-bottom: 10px; font-size: 1.3rem;">Mixed Challenge</h3>
+                            <p style="color: rgba(255,255,255,0.9); margin-bottom: 15px; line-height: 1.5;">A blend of all difficulty levels for a comprehensive challenge. Test your knowledge across the spectrum!</p>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+                                <span>⏰ 5 minutes</span>
+                                <span>❓ 7 questions</span>
+                                <span>💡 2 hints</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px; padding: 15px; background: rgba(59, 130, 246, 0.1); border-radius: 10px; border-left: 4px solid #3b82f6;">
+                        <p style="color: #0ea5e9; font-weight: 600; margin-bottom: 8px;">💡 Pro Tip:</p>
+                        <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.5;">
+                            Start with Beginner if you're new to Bible study, or choose Mixed Challenge to test your overall knowledge!
+                        </p>
+                    </div>
+                </div>
+            `;
+            
+            openModal('quizOptionsModal');
+        }
+
+        // Enhanced Quiz Functions with Difficulty Selection
+        function startQuiz(type, difficulty = 'mixed') {
+            closeModal('quizOptionsModal');
+            
+            const quizBank = type === 'biblical' ? biblicalQuizBank : scriptureQuizBank;
+            
+            // Filter questions by difficulty
+            let filteredQuestions;
+            if (difficulty === 'mixed') {
+                filteredQuestions = quizBank;
+            } else {
+                filteredQuestions = quizBank.filter(q => q.difficulty === difficulty);
+                // If not enough questions of selected difficulty, add some mixed
+                if (filteredQuestions.length < 7) {
+                    const additionalQuestions = quizBank.filter(q => q.difficulty !== difficulty);
+                    filteredQuestions = [...filteredQuestions, ...additionalQuestions];
+                }
+            }
+            
+            currentQuiz = getRandomQuestions(filteredQuestions, 7);
+            currentQuestionIndex = 0;
+            quizScore = 0;
+            userAnswers = [];
+            hintsUsed = 0;
+            
+            // Set time and hints based on difficulty
+            const difficultySettings = {
+                easy: { time: 360, hints: 3 }, // 6 minutes, 3 hints
+                medium: { time: 300, hints: 2 }, // 5 minutes, 2 hints
+                hard: { time: 240, hints: 1 }, // 4 minutes, 1 hint
+                mixed: { time: 300, hints: 2 } // 5 minutes, 2 hints
+            };
+            
+            const settings = difficultySettings[difficulty];
+            timeRemaining = settings.time;
+            maxHints = settings.hints;
+            
+            const difficultyLabels = {
+                easy: '🌱 Beginner',
+                medium: '📖 Intermediate', 
+                hard: '🏆 Advanced',
+                mixed: '🎯 Mixed Challenge'
+            };
+            
+            document.getElementById('quizTitle').textContent = 
+                `${type === 'biblical' ? '📖 Biblical Timeline Quiz' : '✝️ Scripture Memory Quiz'} - ${difficultyLabels[difficulty]}`;
+            
+            startQuizTimer();
+            showQuestion();
+            openModal('quizModal');
+        }
+
+        function startQuizTimer() {
+            quizTimer = setInterval(() => {
+                timeRemaining--;
+                updateTimerDisplay();
+                
+                if (timeRemaining <= 0) {
+                    clearInterval(quizTimer);
+                    autoSubmitQuiz();
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            const timerElement = document.getElementById('quizTimer');
+            if (timerElement) {
+                timerElement.textContent = `⏰ ${minutes}:${seconds.toString().padStart(2, '0')}`;
+                
+                // Change color when time is running low
+                if (timeRemaining <= 60) {
+                    timerElement.style.color = '#ef4444';
+                    timerElement.style.animation = 'pulse 1s infinite';
+                } else if (timeRemaining <= 120) {
+                    timerElement.style.color = '#f59e0b';
+                }
+            }
+        }
+
+        function showQuestion() {
+            if (currentQuestionIndex >= currentQuiz.length) {
+                clearInterval(quizTimer);
+                showQuizResults();
+                return;
+            }
+
+            const question = currentQuiz[currentQuestionIndex];
+            const content = document.getElementById('quizContent');
+            
+            content.innerHTML = `
+                <div class="quiz-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 15px; background: rgba(59, 130, 246, 0.1); border-radius: 10px;">
+                    <div>
+                        <span style="font-weight: 600; color: #0ea5e9;">Question ${currentQuestionIndex + 1} of ${currentQuiz.length}</span>
+                        <span style="margin-left: 15px; padding: 5px 10px; background: rgba(16, 185, 129, 0.2); border-radius: 15px; font-size: 0.8rem;">
+                            ${question.difficulty?.toUpperCase() || 'MEDIUM'} • ${question.category || 'Biblical Knowledge'}
+                        </span>
+                    </div>
+                    <div id="quizTimer" style="font-weight: 600; color: #10b981;">⏰ ${Math.floor(timeRemaining / 60)}:${(timeRemaining % 60).toString().padStart(2, '0')}</div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p style="font-size: 1.2rem; margin: 25px 0; line-height: 1.6; font-weight: 500;">${question.question}</p>
+                    
+                    ${question.reference ? `<div style="text-align: center; margin: 15px 0; padding: 10px; background: rgba(16, 185, 129, 0.1); border-radius: 8px; font-style: italic; color: #10b981;">📖 ${question.reference}</div>` : ''}
+                    
+                    <div class="quiz-options" style="margin: 25px 0;">
+                        ${question.options.map((option, index) => 
+                            `<button class="quiz-option interactive-option" onclick="selectAnswer(${index})" 
+                                onmouseover="this.style.transform='translateX(5px)'" 
+                                onmouseout="this.style.transform='translateX(0px)'">
+                                <span style="font-weight: 600; margin-right: 10px; color: #0ea5e9;">${String.fromCharCode(65 + index)}.</span>
+                                ${option}
+                            </button>`
+                        ).join('')}
+                    </div>
+                    
+                    <div class="quiz-controls" style="display: flex; gap: 15px; justify-content: center; margin-top: 25px;">
+                        ${hintsUsed < maxHints ? 
+                            `<button class="quiz-btn hint-btn" onclick="showHint()" style="background: linear-gradient(45deg, #f59e0b, #d97706); min-width: auto; padding: 8px 16px; font-size: 0.9rem;">
+                                💡 Hint (${maxHints - hintsUsed} left)
+                            </button>` : ''
+                        }
+                        <button class="quiz-btn" onclick="skipQuestion()" style="background: linear-gradient(45deg, #6b7280, #4b5563); min-width: auto; padding: 8px 16px; font-size: 0.9rem;">
+                            ⏭️ Skip Question
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // Update timer display
+            updateTimerDisplay();
+        }
+
+        function showHint() {
+            if (hintsUsed >= maxHints) return;
+            
+            hintsUsed++;
+            const question = currentQuiz[currentQuestionIndex];
+            const options = document.querySelectorAll('.quiz-option');
+            
+            // Eliminate one wrong answer
+            let wrongAnswers = [];
+            options.forEach((option, index) => {
+                if (index !== question.correct) {
+                    wrongAnswers.push(index);
+                }
+            });
+            
+            if (wrongAnswers.length > 0) {
+                const eliminateIndex = wrongAnswers[Math.floor(Math.random() * wrongAnswers.length)];
+                options[eliminateIndex].style.opacity = '0.3';
+                options[eliminateIndex].style.pointerEvents = 'none';
+                options[eliminateIndex].innerHTML += ' <span style="color: #ef4444;">❌ Eliminated</span>';
+            }
+            
+            // Update hint button
+            const hintBtn = document.querySelector('.hint-btn');
+            if (hintBtn) {
+                if (hintsUsed >= maxHints) {
+                    hintBtn.style.display = 'none';
+                } else {
+                    hintBtn.innerHTML = `💡 Hint (${maxHints - hintsUsed} left)`;
+                }
+            }
+            
+            // Show hint message
+            const content = document.getElementById('quizContent');
+            const hintMessage = document.createElement('div');
+            hintMessage.style.cssText = 'margin: 15px 0; padding: 10px; background: rgba(245, 158, 11, 0.1); border-radius: 8px; color: #f59e0b; text-align: center; font-weight: 600;';
+            hintMessage.innerHTML = '💡 One incorrect answer has been eliminated!';
+            content.appendChild(hintMessage);
+            
+            setTimeout(() => hintMessage.remove(), 3000);
+        }
+
+        function skipQuestion() {
+            const question = currentQuiz[currentQuestionIndex];
+            userAnswers.push({
+                question: question.question,
+                userAnswer: null,
+                correctAnswer: question.options[question.correct],
+                correct: false,
+                skipped: true
+            });
+            
+            currentQuestionIndex++;
+            showQuestion();
+        }
+
+        function selectAnswer(selectedIndex) {
+            const question = currentQuiz[currentQuestionIndex];
+            const options = document.querySelectorAll('.quiz-option');
+            const isCorrect = selectedIndex === question.correct;
+            
+            // Record answer
+            userAnswers.push({
+                question: question.question,
+                userAnswer: question.options[selectedIndex],
+                correctAnswer: question.options[question.correct],
+                correct: isCorrect,
+                skipped: false,
+                hintsUsed: hintsUsed > 0
+            });
+            
+            // Disable all options
+            options.forEach(option => {
+                option.style.pointerEvents = 'none';
+                option.style.transform = 'translateX(0px)';
+            });
+            
+            // Show results with animation
+            options[selectedIndex].classList.add(isCorrect ? 'correct' : 'incorrect');
+            if (!isCorrect) {
+                options[question.correct].classList.add('correct');
+                options[selectedIndex].innerHTML += ' <span style="color: #ef4444;">❌</span>';
+            } else {
+                options[selectedIndex].innerHTML += ' <span style="color: #10b981;">✅</span>';
+            }
+            
+            options[question.correct].innerHTML += ' <span style="color: #10b981;">✓ Correct Answer</span>';
+            
+            if (isCorrect) {
+                quizScore++;
+                // Add celebration effect
+                createCelebrationEffect();
+            }
+            
+            // Show detailed explanation
+            setTimeout(() => {
+                const content = document.getElementById('quizContent');
+                content.innerHTML += `
+                    <div class="explanation-section" style="margin-top: 25px; padding: 20px; background: rgba(59, 130, 246, 0.1); border-radius: 15px; border-left: 4px solid ${isCorrect ? '#10b981' : '#ef4444'};">
+                        <h4 style="color: ${isCorrect ? '#10b981' : '#ef4444'}; margin-bottom: 15px; font-size: 1.1rem;">
+                            ${isCorrect ? '🎉 Excellent!' : '📚 Learning Opportunity'}
+                        </h4>
+                        <p style="line-height: 1.6; margin-bottom: 15px;"><strong>Explanation:</strong> ${question.explanation}</p>
+                        ${question.reference ? `<p style="font-style: italic; color: #0ea5e9; margin-bottom: 15px;">📖 Scripture Reference: ${question.reference}</p>` : ''}
+                        <div style="text-align: center;">
+                            <button class="quiz-btn" onclick="nextQuestion()" style="margin-top: 15px; min-width: auto; padding: 12px 24px; font-size: 1rem;">
+                                ${currentQuestionIndex + 1 >= currentQuiz.length ? '🏆 See Final Results' : '➡️ Next Question'}
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }, 1000);
+        }
+
+        function createCelebrationEffect() {
+            const celebrations = ['🎉', '✨', '🌟', '💫', '🎊'];
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    const particle = document.createElement('div');
+                    particle.textContent = celebrations[Math.floor(Math.random() * celebrations.length)];
+                    particle.style.cssText = `
+                        position: fixed;
+                        font-size: 1.5rem;
+                        pointer-events: none;
+                        z-index: 3000;
+                        animation: celebrationFloat 2s ease-out forwards;
+                        left: ${Math.random() * window.innerWidth}px;
+                        top: ${Math.random() * window.innerHeight}px;
+                    `;
+                    document.body.appendChild(particle);
+                    setTimeout(() => particle.remove(), 2000);
+                }, i * 100);
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            showQuestion();
+        }
+
+        function autoSubmitQuiz() {
+            // Fill remaining questions as skipped
+            while (currentQuestionIndex < currentQuiz.length) {
+                const question = currentQuiz[currentQuestionIndex];
+                userAnswers.push({
+                    question: question.question,
+                    userAnswer: null,
+                    correctAnswer: question.options[question.correct],
+                    correct: false,
+                    skipped: true,
+                    timeExpired: true
+                });
+                currentQuestionIndex++;
+            }
+            showQuizResults();
+        }
+
+        function showQuizResults() {
+            clearInterval(quizTimer);
+            const percentage = Math.round((quizScore / currentQuiz.length) * 100);
+            const content = document.getElementById('quizContent');
+            
+            let badge = '';
+            let message = '';
+            let encouragement = '';
+            
+            if (percentage >= 90) {
+                badge = '🏆';
+                message = 'Outstanding Biblical Scholar!';
+                encouragement = 'Your deep knowledge of God\'s Word is truly inspiring!';
+            } else if (percentage >= 80) {
+                badge = '🌟';
+                message = 'Excellent Bible Student!';
+                encouragement = 'You have a strong foundation in biblical truth!';
+            } else if (percentage >= 70) {
+                badge = '📖';
+                message = 'Growing in Knowledge!';
+                encouragement = 'Keep studying - you\'re on the right path!';
+            } else if (percentage >= 60) {
+                badge = '🌱';
+                message = 'Learning and Growing!';
+                encouragement = 'Every step in faith matters. Keep seeking God\'s truth!';
+            } else {
+                badge = '💝';
+                message = 'Beginning the Journey!';
+                encouragement = 'God loves your heart to learn. Keep exploring His Word!';
+            }
+            
+            const skippedCount = userAnswers.filter(a => a.skipped).length;
+            const hintsUsedTotal = userAnswers.filter(a => a.hintsUsed).length;
+            
+            content.innerHTML = `
+                <div style="text-align: center; padding: 20px;">
+                    <div style="font-size: 4rem; margin: 20px 0; animation: bounce 1s ease-in-out;">${badge}</div>
+                    <h3 style="color: #0ea5e9; margin-bottom: 15px; font-size: 1.5rem;">${message}</h3>
+                    
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 20px; border-radius: 15px; margin: 20px 0;">
+                        <div style="font-size: 2rem; font-weight: 600; color: #10b981; margin-bottom: 10px;">
+                            ${quizScore}/${currentQuiz.length} Correct
+                        </div>
+                        <div style="font-size: 1.3rem; color: #0ea5e9; margin-bottom: 15px;">
+                            ${percentage}% Score
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; font-size: 0.9rem;">
+                            <div>⏰ Time Used: ${Math.floor((300 - timeRemaining) / 60)}:${((300 - timeRemaining) % 60).toString().padStart(2, '0')}</div>
+                            <div>💡 Hints Used: ${hintsUsedTotal}</div>
+                            <div>⏭️ Skipped: ${skippedCount}</div>
+                            <div>🎯 Difficulty: Mixed</div>
+                        </div>
+                    </div>
+                    
+                    <p style="margin: 20px 0; color: #10b981; font-size: 1.1rem; line-height: 1.6;">${encouragement}</p>
+                    
+                    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 25px;">
+                        <button class="quiz-btn" onclick="showDetailedResults()" style="min-width: auto; padding: 10px 20px;">
+                            📊 Review Answers
+                        </button>
+                        <button class="quiz-btn" onclick="restartQuiz()" style="background: linear-gradient(45deg, #10b981, #059669); min-width: auto; padding: 10px 20px;">
+                            🔄 Try Again
+                        </button>
+                        <button class="quiz-btn" onclick="closeModal('quizModal')" style="background: linear-gradient(45deg, #6b7280, #4b5563); min-width: auto; padding: 10px 20px;">
+                            ✨ Continue Journey
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function showDetailedResults() {
+            const content = document.getElementById('quizContent');
+            let resultsHTML = `
+                <div style="text-align: left;">
+                    <h3 style="text-align: center; margin-bottom: 25px; color: #0ea5e9;">📊 Detailed Answer Review</h3>
+            `;
+            
+            userAnswers.forEach((answer, index) => {
+                const statusIcon = answer.skipped ? '⏭️' : (answer.correct ? '✅' : '❌');
+                const statusColor = answer.skipped ? '#f59e0b' : (answer.correct ? '#10b981' : '#ef4444');
+                
+                resultsHTML += `
+                    <div style="margin-bottom: 20px; padding: 15px; border-radius: 10px; border-left: 4px solid ${statusColor}; background: rgba(59, 130, 246, 0.05);">
+                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <span style="font-size: 1.2rem; margin-right: 10px;">${statusIcon}</span>
+                            <span style="font-weight: 600; color: ${statusColor};">
+                                Question ${index + 1}: ${answer.skipped ? 'Skipped' : (answer.correct ? 'Correct' : 'Incorrect')}
+                            </span>
+                        </div>
+                        <p style="margin-bottom: 10px; font-size: 0.95rem; line-height: 1.5;">${answer.question}</p>
+                        ${!answer.skipped ? `
+                            <div style="margin: 10px 0; font-size: 0.9rem;">
+                                <div style="color: ${answer.correct ? '#10b981' : '#ef4444'};">
+                                    Your Answer: ${answer.userAnswer}
+                                </div>
+                                ${!answer.correct ? `<div style="color: #10b981; margin-top: 5px;">Correct Answer: ${answer.correctAnswer}</div>` : ''}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+            
+            resultsHTML += `
+                    <div style="text-align: center; margin-top: 25px;">
+                        <button class="quiz-btn" onclick="showQuizResults()" style="min-width: auto; padding: 10px 20px;">
+                            ← Back to Results
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            content.innerHTML = resultsHTML;
+        }
+
+        function restartQuiz() {
+            closeModal('quizModal');
+            // Determine quiz type and show options again
+            const title = document.getElementById('quizTitle').textContent;
+            const type = title.includes('Biblical Timeline') ? 'biblical' : 'scripture';
+            setTimeout(() => showQuizOptions(type), 500);
+        }
 
         // Avatar upload functionality with guide activation
         document.getElementById('userAvatar').addEventListener('click', function() {
@@ -1942,6 +3659,164 @@
             input.click();
         });
 
+        // Modal Functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+            
+            // Clear quiz timer if closing quiz modal
+            if (modalId === 'quizModal' && quizTimer) {
+                clearInterval(quizTimer);
+            }
+        }
+
+        // Authentication Functions
+        function handleLogin() {
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            if (email && password) {
+                // Simulate login success
+                currentUser = { email: email, name: email.split('@')[0] };
+                closeModal('loginModal');
+                
+                // Show success message
+                alert('Welcome back! You are now logged in.');
+            } else {
+                alert('Please enter both email and password.');
+            }
+        }
+
+        function handleSignup() {
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+            
+            if (name && email && password) {
+                // Simulate signup success
+                currentUser = { email: email, name: name };
+                closeModal('signupModal');
+                
+                // Show success message
+                alert(`Welcome ${name}! Your account has been created successfully.`);
+            } else {
+                alert('Please fill in all fields.');
+            }
+        }
+
+        // Testimony Functions
+        function uploadTestimonyImage() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const preview = document.getElementById('testimonyImagePreview');
+                        const uploadText = document.getElementById('imageUploadText');
+                        
+                        preview.src = e.target.result;
+                        preview.style.display = 'block';
+                        uploadText.textContent = 'Image uploaded! Click to change';
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
+            input.click();
+        }
+
+        function submitTestimony() {
+            const name = document.getElementById('testimonyName').value;
+            const title = document.getElementById('testimonyTitle').value;
+            const text = document.getElementById('testimonyText').value;
+            
+            if (name && title && text) {
+                // Simulate testimony submission
+                alert(`Thank you ${name}! Your testimony "${title}" has been submitted and will be reviewed for sharing with our community.`);
+                
+                // Clear form
+                document.getElementById('testimonyName').value = '';
+                document.getElementById('testimonyTitle').value = '';
+                document.getElementById('testimonyText').value = '';
+                document.getElementById('testimonyImagePreview').style.display = 'none';
+                document.getElementById('imageUploadText').textContent = '📷 Click to upload your photo';
+            } else {
+                alert('Please fill in your name, title, and testimony text.');
+            }
+        }
+
+        // Timeline Functions
+        function toggleDetails(element) {
+            const details = element.querySelector('.event-details');
+            const button = element.querySelector('.expand-btn');
+            
+            if (details.classList.contains('expanded')) {
+                details.classList.remove('expanded');
+                button.textContent = '▼ Explore Deeper';
+            } else {
+                details.classList.add('expanded');
+                button.textContent = '▲ Show Less';
+            }
+        }
+
+        // Guide Functions
+        function activateGuideAvatar(imageSrc) {
+            const guideContainer = document.getElementById('guideContainer');
+            const guideAvatarImage = document.getElementById('guideAvatarImage');
+            const guideSpeechText = document.getElementById('guideSpeechText');
+            
+            guideAvatarImage.style.backgroundImage = `url(${imageSrc})`;
+            guideAvatarImage.style.backgroundSize = 'cover';
+            guideAvatarImage.style.backgroundPosition = 'center';
+            guideAvatarImage.innerHTML = '';
+            
+            guideSpeechText.textContent = 'Great! Now I can guide you through all the features! 🎉';
+            
+            guideContainer.style.display = 'block';
+            
+            // Start the guided tour automatically
+            setTimeout(() => {
+                startGuidedTour();
+            }, 2000);
+        }
+
+        function startGuidedTour() {
+            const guideSpeechText = document.getElementById('guideSpeechText');
+            const callouts = document.querySelectorAll('.callout-point');
+            
+            guideSpeechText.textContent = 'Let me show you around! Click the glowing points to learn about each feature! ✨';
+            
+            // Show all callout points
+            callouts.forEach(callout => {
+                callout.style.display = 'block';
+            });
+        }
+
+        function hideGuide() {
+            const guideContainer = document.getElementById('guideContainer');
+            const callouts = document.querySelectorAll('.callout-point');
+            
+            guideContainer.style.display = 'none';
+            
+            // Hide all callout points
+            callouts.forEach(callout => {
+                callout.style.display = 'none';
+            });
+        }
+
         // Unlock features animation
         function unlockFeatures() {
             const features = document.querySelectorAll('.locked-feature');
@@ -1958,477 +3833,153 @@
             // Unlock each feature with staggered animation
             features.forEach((feature, index) => {
                 setTimeout(() => {
-                    feature.style.animation = 'unlockFeature 0.6s ease-out forwards';
+                    feature.style.animation = 'unlockFeature 0.8s ease-out forwards';
                     feature.style.background = 'linear-gradient(45deg, #10b981, #059669)';
-                    feature.style.borderColor = '#10b981';
+                    feature.style.color = 'white';
                     feature.style.opacity = '1';
                     feature.classList.add('unlocked');
                     
-                    // Change lock to unlock icon
+                    // Remove lock icon and add unlock icon
+                    const lockIcon = feature.querySelector('::before');
                     feature.style.setProperty('--unlock-icon', '"🔓"');
                     
-                    // Add success particle effect
-                    createSuccessParticles(feature);
+                    // Add particle effect
+                    for (let i = 0; i < 5; i++) {
+                        setTimeout(() => {
+                            const particle = document.createElement('div');
+                            particle.textContent = '✨';
+                            particle.style.cssText = `
+                                position: absolute;
+                                font-size: 1rem;
+                                pointer-events: none;
+                                animation: particleFloat 1.5s ease-out forwards;
+                                left: ${Math.random() * 100}%;
+                                top: ${Math.random() * 100}%;
+                            `;
+                            feature.style.position = 'relative';
+                            feature.appendChild(particle);
+                            setTimeout(() => particle.remove(), 1500);
+                        }, i * 100);
+                    }
                 }, index * 200);
             });
         }
 
-        // Create success particle effect
-        function createSuccessParticles(element) {
-            const particles = ['✨', '🎉', '⭐', '💫'];
-            
-            for (let i = 0; i < 6; i++) {
-                setTimeout(() => {
-                    const particle = document.createElement('div');
-                    particle.textContent = particles[Math.floor(Math.random() * particles.length)];
-                    particle.style.position = 'absolute';
-                    particle.style.fontSize = '1.2rem';
-                    particle.style.pointerEvents = 'none';
-                    particle.style.zIndex = '1000';
-                    particle.style.animation = 'particleFloat 2s ease-out forwards';
-                    
-                    const rect = element.getBoundingClientRect();
-                    particle.style.left = (rect.left + Math.random() * rect.width) + 'px';
-                    particle.style.top = (rect.top + Math.random() * rect.height) + 'px';
-                    
-                    document.body.appendChild(particle);
-                    
-                    setTimeout(() => {
-                        particle.remove();
-                    }, 2000);
-                }, i * 100);
-            }
-        }
-
-        // Guide Avatar Functions
-        function activateGuideAvatar(imageUrl) {
-            const guideContainer = document.getElementById('guideContainer');
-            const guideAvatarImage = document.getElementById('guideAvatarImage');
-            
-            // Set the uploaded image as the guide avatar
-            guideAvatarImage.style.backgroundImage = `url(${imageUrl})`;
-            guideAvatarImage.style.backgroundSize = 'cover';
-            guideAvatarImage.style.backgroundPosition = 'center';
-            guideAvatarImage.innerHTML = '';
-            
-            // Show the guide container
-            guideContainer.style.display = 'block';
-            
-            // Position the callout points over interactive elements
-            positionCalloutPoints();
-            
-            // Start the welcome sequence
-            setTimeout(() => {
-                updateGuideSpeech("Hi! I'm your personal guide! 👋");
-                setTimeout(() => {
-                    updateGuideSpeech("Let me show you all the amazing features!");
-                    setTimeout(() => {
-                        updateGuideSpeech("Hover over the green points to explore! 🎯");
-                    }, 3000);
-                }, 3000);
-            }, 1000);
-        }
-
-        function positionCalloutPoints() {
-            // Position timeline callout over the first timeline event
-            const firstTimelineEvent = document.querySelector('.timeline-event');
-            const timelineCallout = document.querySelector('.timeline-callout');
-            if (firstTimelineEvent && timelineCallout) {
-                const rect = firstTimelineEvent.getBoundingClientRect();
-                const containerRect = document.querySelector('.container').getBoundingClientRect();
-                timelineCallout.style.position = 'absolute';
-                timelineCallout.style.top = (rect.top - containerRect.top + rect.height / 2) + 'px';
-                timelineCallout.style.left = (rect.left - containerRect.left + rect.width / 2) + 'px';
-                timelineCallout.style.transform = 'translate(-50%, -50%)';
-            }
-
-            // Position quiz callout over quiz buttons
-            const quizSection = document.querySelector('.quiz-section');
-            const quizCallout = document.querySelector('.quiz-callout');
-            if (quizSection && quizCallout) {
-                const rect = quizSection.getBoundingClientRect();
-                quizCallout.style.position = 'fixed';
-                quizCallout.style.top = (rect.top + rect.height / 2) + 'px';
-                quizCallout.style.left = (rect.left + rect.width / 2) + 'px';
-                quizCallout.style.transform = 'translate(-50%, -50%)';
-            }
-
-            // Position testimony callout over testimony form
-            const testimonySection = document.querySelector('.testimony-section');
-            const testimonyCallout = document.querySelector('.testimony-callout');
-            if (testimonySection && testimonyCallout) {
-                const rect = testimonySection.getBoundingClientRect();
-                testimonyCallout.style.position = 'fixed';
-                testimonyCallout.style.top = (rect.top + rect.height / 2) + 'px';
-                testimonyCallout.style.left = (rect.left + rect.width / 2) + 'px';
-                testimonyCallout.style.transform = 'translate(-50%, -50%)';
-            }
-
-            // Position support callout over support link
-            const supportLink = document.querySelector('.support-link');
-            const supportCallout = document.querySelector('.support-callout');
-            if (supportLink && supportCallout) {
-                const rect = supportLink.getBoundingClientRect();
-                supportCallout.style.position = 'fixed';
-                supportCallout.style.top = (rect.top + rect.height / 2) + 'px';
-                supportCallout.style.left = (rect.left + rect.width / 2) + 'px';
-                supportCallout.style.transform = 'translate(-50%, -50%)';
-            }
-        }
-
-        function updateGuideSpeech(text) {
-            const speechElement = document.getElementById('guideSpeechText');
-            speechElement.textContent = text;
-            
-            // Add a little animation
-            speechElement.parentElement.style.transform = 'translateX(-50%) scale(0.9)';
-            setTimeout(() => {
-                speechElement.parentElement.style.transform = 'translateX(-50%) scale(1)';
-            }, 200);
-        }
-
-        function startGuidedTour() {
-            const callouts = document.querySelectorAll('.callout-point');
-            let currentIndex = 0;
-            
-            function highlightNextFeature() {
-                if (currentIndex >= callouts.length) {
-                    updateGuideSpeech("Tour complete! Enjoy exploring! ✨");
-                    return;
-                }
-                
-                const callout = callouts[currentIndex];
-                const feature = callout.dataset.feature;
-                
-                // Highlight the current callout
-                callout.style.transform = 'scale(1.5)';
-                callout.style.zIndex = '20';
-                
-                // Update speech based on feature
-                const speeches = {
-                    'timeline': "📜 This is our interactive Biblical Timeline! Click events to learn more!",
-                    'quiz': "🎯 Test your biblical knowledge with fun quizzes!",
-                    'testimony': "💝 Share your faith story to encourage others!",
-                    'support': "☕ Support our ministry to keep spreading God's love!"
-                };
-                
-                updateGuideSpeech(speeches[feature]);
-                
-                // Reset after 4 seconds and move to next
-                setTimeout(() => {
-                    callout.style.transform = 'scale(1)';
-                    callout.style.zIndex = '10';
-                    currentIndex++;
-                    highlightNextFeature();
-                }, 4000);
-            }
-            
-            updateGuideSpeech("Starting guided tour! 🚀");
-            setTimeout(highlightNextFeature, 2000);
-        }
-
-        function hideGuide() {
-            const guideContainer = document.getElementById('guideContainer');
-            guideContainer.style.display = 'none';
-            
-            // Update the main guide text
-            const guideText = document.querySelector('.guide-text p');
-            guideText.textContent = 'Click to bring back your personal guide anytime!';
-        }
-
-        // Make the main avatar clickable to reshow guide
-        document.getElementById('userAvatar').addEventListener('dblclick', function() {
-            if (this.style.backgroundImage) {
-                const imageUrl = this.style.backgroundImage.slice(5, -2); // Remove url(" and ")
-                activateGuideAvatar(imageUrl);
-            }
-        });
-
-        // Modal functions
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'block';
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-
         // Close modal when clicking outside
         window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
-            }
-        }
-
-        // Light mode toggle
-        function toggleLightMode() {
-            isLightMode = !isLightMode;
-            const body = document.body;
-            const scriptureQuote = document.querySelector('.scripture-quote');
-            
-            if (isLightMode) {
-                body.style.background = 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 25%, #bbf7d0 50%, #dcfce7 75%, #f0fdf4 100%)';
-                body.style.color = '#1f2937';
-                body.style.backgroundSize = '400% 400%';
-                body.style.animation = 'lightModeShift 40s ease-in-out infinite';
-                document.querySelector('.mobile-btn:last-child').textContent = '🌙';
-                
-                // Update scripture quote for light mode
-                scriptureQuote.classList.add('light-mode');
-                
-                // Update header and cards for light mode
-                const headers = document.querySelectorAll('.header, .quiz-section, .testimony-section');
-                headers.forEach(header => {
-                    header.style.background = 'rgba(255, 255, 255, 0.9)';
-                    header.style.color = '#1f2937';
-                    header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
-                });
-                
-                const eventCards = document.querySelectorAll('.event-card');
-                eventCards.forEach(card => {
-                    card.style.background = 'linear-gradient(135deg, #ffffff 0%, #f9fafb 15%, #ffffff 30%, #f3f4f6 45%, #ffffff 60%, #f9fafb 75%, #ffffff 100%)';
-                    card.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9)';
-                });
-            } else {
-                body.style.background = 'linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%)';
-                body.style.color = '#f1f5f9';
-                body.style.backgroundSize = '400% 400%';
-                body.style.animation = 'nightSkyShift 40s ease-in-out infinite';
-                document.querySelector('.mobile-btn:last-child').textContent = '☀️';
-                
-                // Reset scripture quote to dark mode
-                scriptureQuote.classList.remove('light-mode');
-                
-                // Reset to dark mode
-                const headers = document.querySelectorAll('.header, .quiz-section, .testimony-section');
-                headers.forEach(header => {
-                    header.style.background = '';
-                    header.style.color = '';
-                    header.style.boxShadow = '';
-                });
-                
-                const eventCards = document.querySelectorAll('.event-card');
-                eventCards.forEach(card => {
-                    card.style.background = '';
-                    card.style.boxShadow = '';
-                });
-            }
-        }
-
-        // Authentication functions
-        function handleLogin() {
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-            
-            if (email && password) {
-                currentUser = { email: email, name: email.split('@')[0] };
-                closeModal('loginModal');
-                alert('Welcome back! You are now logged in.');
-                
-                // Update UI for logged in user
-                document.querySelector('.guide-text h3').textContent = `Welcome back, ${currentUser.name}!`;
-            } else {
-                alert('Please fill in all fields.');
-            }
-        }
-
-        function handleSignup() {
-            const name = document.getElementById('signupName').value;
-            const email = document.getElementById('signupEmail').value;
-            const password = document.getElementById('signupPassword').value;
-            
-            if (name && email && password) {
-                currentUser = { email: email, name: name };
-                closeModal('signupModal');
-                alert('Account created successfully! Welcome to our faith community.');
-                
-                // Update UI for new user
-                document.querySelector('.guide-text h3').textContent = `Welcome, ${currentUser.name}!`;
-            } else {
-                alert('Please fill in all fields.');
-            }
-        }
-
-        // Quiz functions
-        function startQuiz(type) {
-            currentQuiz = type === 'biblical' ? biblicalQuiz : scriptureQuiz;
-            currentQuestionIndex = 0;
-            quizScore = 0;
-            
-            document.getElementById('quizTitle').textContent = 
-                type === 'biblical' ? '📖 Biblical Timeline Quiz' : '✝️ Scripture Memory Quiz';
-            
-            showQuestion();
-            openModal('quizModal');
-        }
-
-        function showQuestion() {
-            if (currentQuestionIndex >= currentQuiz.length) {
-                showQuizResults();
-                return;
-            }
-
-            const question = currentQuiz[currentQuestionIndex];
-            const content = document.getElementById('quizContent');
-            
-            content.innerHTML = `
-                <div class="quiz-question">
-                    <h3>Question ${currentQuestionIndex + 1} of ${currentQuiz.length}</h3>
-                    <p style="font-size: 1.1rem; margin: 20px 0;">${question.question}</p>
-                    <div class="quiz-options">
-                        ${question.options.map((option, index) => 
-                            `<button class="quiz-option" onclick="selectAnswer(${index})">${option}</button>`
-                        ).join('')}
-                    </div>
-                </div>
-            `;
-        }
-
-        function selectAnswer(selectedIndex) {
-            const question = currentQuiz[currentQuestionIndex];
-            const options = document.querySelectorAll('.quiz-option');
-            
-            // Disable all options
-            options.forEach(option => option.style.pointerEvents = 'none');
-            
-            // Show correct/incorrect
-            options[selectedIndex].classList.add(selectedIndex === question.correct ? 'correct' : 'incorrect');
-            if (selectedIndex !== question.correct) {
-                options[question.correct].classList.add('correct');
-            }
-            
-            if (selectedIndex === question.correct) {
-                quizScore++;
-            }
-            
-            // Show explanation
-            setTimeout(() => {
-                const content = document.getElementById('quizContent');
-                content.innerHTML += `
-                    <div style="margin-top: 20px; padding: 15px; background: rgba(59, 130, 246, 0.1); border-radius: 10px;">
-                        <p><strong>Explanation:</strong> ${question.explanation}</p>
-                        <button class="quiz-btn" onclick="nextQuestion()" style="margin-top: 15px; min-width: auto; padding: 10px 20px;">
-                            ${currentQuestionIndex + 1 >= currentQuiz.length ? 'See Results' : 'Next Question'}
-                        </button>
-                    </div>
-                `;
-            }, 1500);
-        }
-
-        function nextQuestion() {
-            currentQuestionIndex++;
-            showQuestion();
-        }
-
-        function showQuizResults() {
-            const percentage = Math.round((quizScore / currentQuiz.length) * 100);
-            const content = document.getElementById('quizContent');
-            
-            let message = '';
-            if (percentage >= 80) {
-                message = '🌟 Excellent! You have great biblical knowledge!';
-            } else if (percentage >= 60) {
-                message = '👍 Good job! Keep studying God\'s Word!';
-            } else {
-                message = '📖 Keep learning! Every step in faith matters!';
-            }
-            
-            content.innerHTML = `
-                <div style="text-align: center;">
-                    <h3>Quiz Complete!</h3>
-                    <div style="font-size: 3rem; margin: 20px 0;">${percentage >= 80 ? '🏆' : percentage >= 60 ? '🎉' : '📚'}</div>
-                    <p style="font-size: 1.2rem; margin: 15px 0;">You scored ${quizScore} out of ${currentQuiz.length}</p>
-                    <p style="font-size: 1.1rem; margin: 15px 0;">${percentage}% Correct</p>
-                    <p style="margin: 20px 0; color: #10b981;">${message}</p>
-                    <button class="quiz-btn" onclick="closeModal('quizModal')" style="min-width: auto; padding: 10px 20px;">
-                        Continue Journey
-                    </button>
-                </div>
-            `;
-        }
-
-        // Testimony functions
-        function uploadTestimonyImage() {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = 'image/*';
-            input.onchange = function(e) {
-                const file = e.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        const preview = document.getElementById('testimonyImagePreview');
-                        const uploadText = document.getElementById('imageUploadText');
-                        
-                        preview.src = e.target.result;
-                        preview.style.display = 'block';
-                        uploadText.textContent = '✅ Photo uploaded! Click to change';
-                    };
-                    reader.readAsDataURL(file);
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                    
+                    // Clear quiz timer if closing quiz modal
+                    if (modal.id === 'quizModal' && quizTimer) {
+                        clearInterval(quizTimer);
+                    }
                 }
-            };
-            input.click();
-        }
-
-        function submitTestimony() {
-            const name = document.getElementById('testimonyName').value;
-            const title = document.getElementById('testimonyTitle').value;
-            const text = document.getElementById('testimonyText').value;
-            
-            if (name && title && text) {
-                // In a real app, this would send to a server
-                alert(`Thank you, ${name}! Your testimony "${title}" has been shared. May God use your story to bless others!`);
-                
-                // Clear form
-                document.getElementById('testimonyName').value = '';
-                document.getElementById('testimonyTitle').value = '';
-                document.getElementById('testimonyText').value = '';
-                document.getElementById('testimonyImagePreview').style.display = 'none';
-                document.getElementById('imageUploadText').textContent = '📷 Click to upload your photo';
-            } else {
-                alert('Please fill in your name, title, and testimony before sharing.');
-            }
-        }
-
-        // Timeline interaction
-        function toggleDetails(element) {
-            const details = element.querySelector('.event-details');
-            const button = element.querySelector('.expand-btn');
-            
-            if (details.classList.contains('expanded')) {
-                details.classList.remove('expanded');
-                button.textContent = '▼ Explore Deeper';
-            } else {
-                details.classList.add('expanded');
-                button.textContent = '▲ Show Less';
-            }
-        }
-
-        // Add smooth scrolling for better UX
-        document.querySelectorAll('.timeline-event').forEach(event => {
-            event.addEventListener('click', function() {
-                setTimeout(() => {
-                    this.scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'center' 
-                    });
-                }, 100);
             });
-        });
+        }
 
-        // Reposition callout points on window resize and scroll
-        window.addEventListener('resize', () => {
-            if (document.getElementById('guideContainer').style.display !== 'none') {
-                setTimeout(positionCalloutPoints, 100);
-            }
-        });
+        // Faithbot Functions
+        let faithbotMessages = [
+            "Hi! I'm Faithbot! 👋",
+            "Need prayer? I'm here to help! 🙏",
+            "Let's explore God's Word together! 📖",
+            "I can help with Bible questions! 💡",
+            "Ready for some biblical wisdom? ✨",
+            "Your faith journey companion! 🌟",
+            "Ask me about scripture! 📜",
+            "Let's grow in faith together! 🌱"
+        ];
+        
+        let currentMessageIndex = 0;
+        let faithbotMessageTimer;
+        let faithbotNotificationTimer;
 
-        window.addEventListener('scroll', () => {
-            if (document.getElementById('guideContainer').style.display !== 'none') {
-                positionCalloutPoints();
+        function rotateFaithbotMessages() {
+            const messageElement = document.getElementById('faithbotMessage');
+            if (messageElement) {
+                currentMessageIndex = (currentMessageIndex + 1) % faithbotMessages.length;
+                messageElement.textContent = faithbotMessages[currentMessageIndex];
             }
+        }
+
+        function showFaithbotNotification() {
+            const notification = document.getElementById('faithbotNotification');
+            if (notification) {
+                notification.style.display = 'flex';
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 3000);
+            }
+        }
+
+        function openFaithbotChat() {
+            const modal = document.getElementById('faithbotModal');
+            if (modal) {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                
+                // Hide notification when opened
+                const notification = document.getElementById('faithbotNotification');
+                if (notification) {
+                    notification.style.display = 'none';
+                }
+            }
+        }
+
+        function closeFaithbotChat() {
+            const modal = document.getElementById('faithbotModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function sendQuickMessage(message) {
+            // This would integrate with the Faithbot iframe
+            // For now, we'll just show a confirmation
+            const iframe = document.querySelector('.faithbot-iframe-container iframe');
+            if (iframe) {
+                // Try to send message to iframe (if supported by the API)
+                try {
+                    iframe.contentWindow.postMessage({
+                        type: 'quickMessage',
+                        message: message
+                    }, '*');
+                } catch (e) {
+                    console.log('Quick message sent:', message);
+                }
+            }
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add some initial animations
+            const timelineEvents = document.querySelectorAll('.timeline-event');
+            timelineEvents.forEach((event, index) => {
+                event.style.opacity = '0';
+                event.style.transform = 'translateY(50px)';
+                setTimeout(() => {
+                    event.style.transition = 'all 0.6s ease-out';
+                    event.style.opacity = '1';
+                    event.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+
+            // Initialize Faithbot
+            setTimeout(() => {
+                // Start rotating messages every 4 seconds
+                faithbotMessageTimer = setInterval(rotateFaithbotMessages, 4000);
+                
+                // Show notification every 10 seconds
+                faithbotNotificationTimer = setInterval(showFaithbotNotification, 10000);
+                
+                // Show initial notification after 5 seconds
+                setTimeout(showFaithbotNotification, 5000);
+            }, 2000);
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97e23c2b02a5ed32',t:'MTc1NzcwOTc4NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97f0916b71b9a54f',t:'MTc1Nzg2MDA3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
-
