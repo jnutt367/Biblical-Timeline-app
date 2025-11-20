@@ -1387,48 +1387,14 @@
                     </div>
                 </div>
                 
-                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.3);">
-                    <div style="font-size: 0.95rem; opacity: 0.8; margin-bottom: 10px;">Support our ministry and help spread God's love:</div>
-                    <a href="https://buymeacoffee.com/jnutt367m" target="_blank" class="support-link">
-                        <span>☕</span>
-                        <span>Buy me a Coffee</span>
-                    </a>
-                </div>
-            </div>
+               
 
             <div class="scripture-quote">
                 "For I know the plans I have for you," declares the Lord, "plans to prosper you and not to harm you, to give you hope and a future." - Jeremiah 29:11
             </div>
         </div>
 
-        <!-- Quiz Games Section -->
-        <div class="quiz-section">
-            <h2 class="quiz-title">🎯 Test Your Biblical Knowledge</h2>
-            <div class="quiz-buttons">
-                <button class="quiz-btn" onclick="showQuizOptions('biblical')">📖 Biblical Timeline Quiz</button>
-                <button class="quiz-btn" onclick="showQuizOptions('scripture')">✝️ Scripture Memory Quiz</button>
-            </div>
-        </div>
-
-        <!-- Testimony Section -->
-        <div class="testimony-section">
-            <h2 class="testimony-title">💝 Share Your Testimony</h2>
-            <div class="testimony-form">
-                <div class="form-group">
-                    <label for="testimonyName">Your Name:</label>
-                    <input type="text" id="testimonyName" placeholder="Enter your name">
-                </div>
-                <div class="form-group">
-                    <label for="testimonyTitle">Testimony Title:</label>
-                    <input type="text" id="testimonyTitle" placeholder="How God changed my life...">
-                </div>
-                <div class="form-group">
-                    <label for="testimonyText">Your Story:</label>
-                    <textarea id="testimonyText" placeholder="Share how Jesus has transformed your life and what He means to you..."></textarea>
-                </div>
-                <button class="submit-testimony" onclick="submitTestimony()">Share My Testimony</button>
-            </div>
-        </div>
+       
 
         <div class="timeline">
             <div class="timeline-line"></div>
@@ -1657,10 +1623,36 @@
                 </div>
             </div>
             
-
-
-
             <div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+                <div class="event-marker old-testament">💍</div>
+                <div class="event-card old-testament">
+                    <div class="event-date">c. 1916 BC</div>
+                    <div class="event-title">Isaac Marries Rebekah</div>
+                    <div class="event-category old-testament">Old Testament</div>
+                    <div class="event-preview">
+                        Isaac marries Rebekah, whom God sent through Abraham’s servant to continue the covenant line.
+                    </div>
+                    <div class="event-details">
+                        <p>
+                            Abraham’s servant prays for guidance and finds Rebekah at the well. She agrees to marry Isaac, and God’s covenant promises continue through their union.
+                        </p>
+                        <div class="scripture-ref">
+                            “The LORD led me to the house of my master’s brother.” – Genesis 24:27
+                        </div>
+                        <p>
+                            <strong>Prophetic Picture:</strong> Rebekah’s obedience and God’s guidance foreshadow the faithful provision and direction found in Christ, leading to the covenant’s fulfillment.
+                        </p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+            
+
+
+
+
+
+            <div class="timeline-event left old-testament" onclick="toggleDetails(this)">
                 <div class="event-marker old-testament">👶</div>
                 <div class="event-card old-testament">
                     <div class="event-date">c. 1836 BC</div>
@@ -1690,7 +1682,7 @@
             
 
 
-            <div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+            <div class="timeline-event right old-testament" onclick="toggleDetails(this)">
                 <div class="event-marker old-testament">🍲</div>
                 <div class="event-card old-testament">
                     <div class="event-date">c. 1816 BC</div>
@@ -1720,7 +1712,7 @@
 
 
             
-            <div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+            <div class="timeline-event left old-testament" onclick="toggleDetails(this)">
                 <div class="event-marker old-testament">🪬</div>
                 <div class="event-card old-testament">
                     <div class="event-date">c. 1836 BC</div>
@@ -1748,7 +1740,7 @@
             </div>
             
 
-            <div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+            <div class="timeline-event right old-testament" onclick="toggleDetails(this)">
                 <div class="event-marker old-testament">🔮</div>
                 <div class="event-card old-testament">
                     <div class="event-date">c. 1728 BC</div>
@@ -1774,7 +1766,7 @@
             </div>
             
 
-            <div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+            <div class="timeline-event left old-testament" onclick="toggleDetails(this)">
                 <div class="event-marker old-testament">🔯</div>
                 <div class="event-card old-testament">
                     <div class="event-date">c. 1700 BC</div>
@@ -1805,7 +1797,7 @@
 
 
 
-            <div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+            <div class="timeline-event right old-testament" onclick="toggleDetails(this)">
                 <div class="event-marker old-testament">👶</div>
                 <div class="event-card old-testament">
                     <div class="event-date">c. 1526 BC</div>
@@ -1830,7 +1822,7 @@
                 </div>
             </div>
             
-            <div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+            <div class="timeline-event left old-testament" onclick="toggleDetails(this)">
                 <div class="event-marker old-testament">🏜️</div>
                 <div class="event-card old-testament">
                     <div class="event-date">c. 1506 BC</div>
@@ -1856,7 +1848,7 @@
             </div>
             
             
-            <div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+            <div class="timeline-event right old-testament" onclick="toggleDetails(this)">
                 <div class="event-marker old-testament">🔥</div>
                 <div class="event-card old-testament">
                     <div class="event-date">c. 1466 BC</div>
@@ -1887,7 +1879,7 @@
 
             
             
-            <div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+            <div class="timeline-event left old-testament" onclick="toggleDetails(this)">
                 <div class="event-marker old-testament">🌊</div>
                 <div class="event-card old-testament">
                     <div class="event-date">c. 1446 BC</div>
@@ -1912,7 +1904,7 @@
             </div>
             
             
-            <div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+            <div class="timeline-event right old-testament" onclick="toggleDetails(this)">
                 <div class="event-marker old-testament">🌄</div>
                 <div class="event-card old-testament">
                     <div class="event-date">c. 1446 BC</div>
@@ -1941,7 +1933,7 @@
 
 
 
-            <div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+            <div class="timeline-event left old-testament" onclick="toggleDetails(this)">
                 <div class="event-marker old-testament">⚔️</div>
                 <div class="event-card old-testament">
                     <div class="event-date">c. 1406 BC</div>
@@ -1975,7 +1967,7 @@
 
            
 
-            <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
+            <div class="timeline-event right new-testament" onclick="toggleDetails(this)">
                 <div class="event-marker new-testament">⭐</div>
                 <div class="event-card new-testament">
                     <div class="event-date">c. 4 BC</div>
@@ -1994,7 +1986,7 @@
                 </div>
             </div>
 
-            <div class="timeline-event right new-testament" onclick="toggleDetails(this)">
+            <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
                 <div class="event-marker new-testament">✝️</div>
                 <div class="event-card new-testament">
                     <div class="event-date">c. 33 AD</div>
@@ -2014,7 +2006,7 @@
                 </div>
             </div>
 
-            <div class="timeline-event left prophetic" onclick="toggleDetails(this)">
+            <div class="timeline-event right prophetic" onclick="toggleDetails(this)">
                 <div class="event-marker prophetic">👑</div>
                 <div class="event-card prophetic">
                     <div class="event-date">Future</div>
@@ -2035,6 +2027,50 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.3);">
+        <div style="font-size: 0.95rem; opacity: 0.8; margin-bottom: 10px;">Support our ministry and help spread God's love:</div>
+        <a href="https://buymeacoffee.com/jnutt367m" target="_blank" class="support-link">
+            <span>☕</span>
+            <span>Buy me a Coffee</span>
+        </a>
+    </div>
+</div>
+
+ <!-- Quiz Games Section -->
+ <div class="quiz-section">
+    <h2 class="quiz-title">🎯 Test Your Biblical Knowledge</h2>
+    <div class="quiz-buttons">
+        <button class="quiz-btn" onclick="showQuizOptions('biblical')">📖 Biblical Timeline Quiz</button>
+        <button class="quiz-btn" onclick="showQuizOptions('scripture')">✝️ Scripture Memory Quiz</button>
+    </div>
+</div>
+
+<!-- Testimony Section -->
+<div class="testimony-section">
+    <h2 class="testimony-title">💝 Share Your Testimony</h2>
+    <div class="testimony-form">
+        <div class="form-group">
+            <label for="testimonyName">Your Name:</label>
+            <input type="text" id="testimonyName" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label for="testimonyTitle">Testimony Title:</label>
+            <input type="text" id="testimonyTitle" placeholder="How God changed my life...">
+        </div>
+        <div class="form-group">
+            <label for="testimonyText">Your Story:</label>
+            <textarea id="testimonyText" placeholder="Share how Jesus has transformed your life and what He means to you..."></textarea>
+        </div>
+        <button class="submit-testimony" onclick="submitTestimony()">Share My Testimony</button>
+    </div>
+</div>
+
+
 
     <!-- Login Modal -->
     <div id="loginModal" class="modal">
