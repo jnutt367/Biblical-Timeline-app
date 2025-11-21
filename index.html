@@ -1297,6 +1297,49 @@
             }
         }
     </style>
+<!-- Firebase SDK -->
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { 
+      getAuth, 
+      createUserWithEmailAndPassword, 
+      signInWithEmailAndPassword 
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+  
+    const firebaseConfig = {
+        apiKey: "AIzaSyBilmj5KGjBZwmQ_KDuUnLmdHurRjAbxXE",
+        authDomain: "biblical-timeline-app.firebaseapp.com",
+        projectId: "biblical-timeline-app",
+    };
+  
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+  
+    window.handleSignup = async function () {
+      const email = document.getElementById("signupEmail").value;
+      const password = document.getElementById("signupPassword").value;
+  
+      try {
+        await createUserWithEmailAndPassword(auth, email, password);
+        alert("Signup successful!");
+      } catch (error) {
+        alert(error.message);
+      }
+    };
+  
+    window.handleLogin = async function () {
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+  
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        alert("Login successful!");
+      } catch (error) {
+        alert(error.message);
+      }
+    };
+  </script>
+
 </head>
 <body>
     <!-- Mobile Control Buttons -->
@@ -2818,5 +2861,8 @@
             showNotification('Welcome to Jesus Love Revealed! Explore God\'s amazing story! 🙏✨');
         });
     </script>
+
+  
+
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97f0c83621240c83',t:'MTc1Nzg2MjMyMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
