@@ -12,7 +12,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+    
         body {
             font-family: 'Crimson Text', Georgia, serif;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
@@ -71,7 +71,14 @@
             color: #a1f4d9; /* Deep emerald tone */
             transition: opacity 0.5s ease-in-out;
           }
-
+    .nav-item   {
+    padding: 5px;
+    margin:5px;
+    border-radius: 5px;
+    background-color: #00bcd4;
+    color: whitesmoke;
+    
+}
 /* Timeline Card Styling */
 .timeline-event .event-card {
     border-radius: 12px;
@@ -1307,7 +1314,26 @@
             box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
             background: linear-gradient(45deg, #2563eb, #1d4ed8);
         }
-
+        #backToTop {
+            position: fixed;
+            right: 20px;
+            bottom: 220px;
+            padding: 12px 16px;
+            background: #059669; /* emerald */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+          }
+          
+          #backToTop:hover {
+            background: #047857;
+          }
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .container { 
@@ -1635,7 +1661,7 @@
                 "I am the light of the world. Whoever follows me will not walk in darkness, but will have the light of life". 
             </div>
         </div>
-      
+        
 
 <!-- Your HTML content goes here -->
 <div class="timeline-search">
@@ -1657,7 +1683,20 @@
     </label>
 </div>
 
-        
+<div class="quick-nav">
+    <button class="nav-item" onclick="scrollToSection('testimonyList')">Testimony</button>
+    <button class="nav-item" onclick="scrollToSection('testimonyList')">Trivia</button>
+  </div>
+  
+  
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  </script>
+  
 
         <div class="timeline">
             <div class="timeline-line"></div>
@@ -3726,6 +3765,7 @@
     </div>
 </div>
 
+
 <div id="testimonyList"></div>
 
     <!-- Login Modal -->
@@ -3774,7 +3814,7 @@
         </div>
     </div>
 
-
+    <button id="backToTop">↑ Top</button>
 
     <!-- Quiz Options Modal -->
     <div id="quizOptionsModal" class="modal">
@@ -3804,6 +3844,20 @@
             </div>
         </div>
     </div>
+    
+    
+
+
+
+    <script>
+        function scrollToSection(id) {
+          document.getElementById(id).scrollIntoView({
+            behavior: "smooth"
+          });
+        }
+      </script>
+      
+
 
     <script>
         // A list of rotating scriptures
@@ -4517,11 +4571,35 @@
             showNotification('Welcome to Jesus Love Revealed! Explore God\'s amazing story! 🙏✨');
         });
     </script>
-
+    <script>
+        // Get the button
+        const backToTopBtn = document.getElementById("backToTop");
+      
+        // Show button when scrolling down
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 300) { // show after scrolling 300px
+            backToTopBtn.style.opacity = "1";
+            backToTopBtn.style.pointerEvents = "auto";
+          } else {
+            backToTopBtn.style.opacity = "0";
+            backToTopBtn.style.pointerEvents = "none";
+          }
+        });
+      
+        // Scroll smoothly to top when clicked
+        backToTopBtn.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        });
+      </script>
+      
     <script src="timelineSearch.js"></script>
 
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97f0c83621240c83',t:'MTc1Nzg2MjMyMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 <!-- Link your external JS file here, just before closing </body> -->
 
+  
 
 </html>
