@@ -52,7 +52,12 @@
         body.light-mode::before {
             opacity: 0;
         }
-
+        .search {
+            padding:1rem;
+            width: 20rem;
+            border-radius: 15px;
+            border-color: #06b6d4;
+        }
         @keyframes nightSkyShift {
             0%, 100% { background-position: 0% 50%; }
             25% { background-position: 100% 25%; }
@@ -1536,9 +1541,18 @@
                 "For I know the plans I have for you," declares the Lord, "plans to prosper you and not to harm you, to give you hope and a future." - Jeremiah 29:11
             </div>
         </div>
-        <div id="testimonyList"></div>
+      
 
-       
+<!-- Your HTML content goes here -->
+<div class="timeline-search">
+    <input type="text" class="search" id="timelineSearch" placeholder="Search timeline..." oninput="searchTimeline()">
+</div>
+
+<!-- All your timeline events -->
+
+
+
+        
 
         <div class="timeline">
             <div class="timeline-line"></div>
@@ -2418,7 +2432,623 @@
 </div>
 
 
+<div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">🪓</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 1025 BC</div>
+        <div class="event-title">David vs. Goliath</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            Young David defeats the Philistine giant Goliath with a sling and a stone, demonstrating God’s power through faith.
+        </div>
+        <div class="event-details">
+            <p>David trusts God rather than weapons or human strength. His victory over Goliath shows that God fights for His people and honors faith and courage.</p>
+            <div class="scripture-ref">
+                "David said to the Philistine, 'You come against me with sword and spear, but I come against you in the name of the LORD Almighty.'" – 1 Samuel 17:45
+            </div>
+            <p><strong>Lesson:</strong> God can use the seemingly weak to overcome the seemingly impossible.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
 
+
+<div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">👑</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 1010 BC</div>
+        <div class="event-title">David Becomes King</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            David unites Judah and later all Israel, establishing Jerusalem as the political and spiritual center.
+        </div>
+        <div class="event-details">
+            <p>After Saul’s death, David is anointed king over Judah and eventually all Israel. He captures Jerusalem, making it the capital, and establishes a dynasty promised by God.</p>
+            <div class="scripture-ref">
+                "David reigned over all Israel, doing what was just and right for all his people." – 2 Samuel 8:15
+            </div>
+            <p><strong>Lesson:</strong> God’s timing and plans prevail, and He establishes leaders according to His purposes, not human expectation.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+
+<div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">⚠️</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 1015 BC</div>
+        <div class="event-title">Saul’s Downfall</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            Saul disobeys God and loses His favor, paving the way for David to rise as king.
+        </div>
+        <div class="event-details">
+            <p>Saul’s repeated disobedience, including improper sacrifice and sparing enemies God commanded to destroy, leads God to reject him as king. This demonstrates the importance of obedience over appearance or ambition.</p>
+            <div class="scripture-ref">
+                "Because you have rejected the word of the LORD, he has also rejected you as king." – 1 Samuel 15:23
+            </div>
+            <p><strong>Lesson:</strong> God values obedience and humility above human strength, power, or position.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+
+<div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">🤝</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 1020 BC</div>
+        <div class="event-title">David and Jonathan’s Friendship</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            David and Saul’s son Jonathan form a deep covenant friendship, showing loyalty and love grounded in God.
+        </div>
+        <div class="event-details">
+            <p>Jonathan recognizes God’s plan for David to become king and supports him, even at personal risk. Their covenant illustrates true friendship and faithfulness to God’s will.</p>
+            <div class="scripture-ref">
+                "Jonathan made a covenant with David because he loved him as himself." – 1 Samuel 18:3
+            </div>
+            <p><strong>Lesson:</strong> Godly friendship is marked by loyalty, encouragement, and alignment with God’s purposes.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+
+<div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">🗡️</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 1015 BC</div>
+        <div class="event-title">David Spares Saul</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            David refuses to harm Saul, demonstrating respect for God’s anointed king and trust in God’s timing.
+        </div>
+        <div class="event-details">
+            <p>Despite multiple opportunities to kill Saul, David spares him, showing patience, restraint, and obedience to God’s authority. This preserves God’s plan for David to become king in His timing.</p>
+            <div class="scripture-ref">
+                "The LORD forbid that I should lay a hand on the LORD’s anointed." – 1 Samuel 24:10
+            </div>
+            <p><strong>Lesson:</strong> Trusting God’s timing and honoring His authority brings blessing, even when circumstances are difficult.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+<div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">📦</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 1004 BC</div>
+        <div class="event-title">Ark of the Covenant Brought to Jerusalem</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            David brings the Ark of the Covenant to Jerusalem, establishing the city as Israel’s spiritual and political center.
+        </div>
+        <div class="event-details">
+            <p>David joyfully leads the people as the Ark is transported with music and celebration. This event symbolizes God’s presence dwelling among His people and unifies the nation.</p>
+            <div class="scripture-ref">
+                "David and all Israel brought up the ark of the LORD with shouting and with the sound of the trumpet." – 1 Chronicles 15:28
+            </div>
+            <p><strong>Lesson:</strong> God’s presence is central to leadership and worship, and public celebration of Him unites His people.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+
+<div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">⚔️</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 1000 BC</div>
+        <div class="event-title">David Defeats the Philistines</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            David strengthens Israel by defeating the Philistines, securing the borders, and unifying the nation.
+        </div>
+        <div class="event-details">
+            <p>Through military victories over the Philistines, David consolidates Israel’s power and ensures peace within the land, demonstrating God’s blessing on faithful leadership.</p>
+            <div class="scripture-ref">
+                "David struck down the Philistines with a great slaughter, and he secured the territory of Israel." – 2 Samuel 5:17-25
+            </div>
+            <p><strong>Lesson:</strong> God strengthens and blesses leaders who trust Him in their responsibilities and battles.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+
+<div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">⚠️</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 998 BC</div>
+        <div class="event-title">David and Bathsheba</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            David sins by taking Bathsheba and arranging Uriah’s death, but repents when confronted by the prophet Nathan.
+        </div>
+        <div class="event-details">
+            <p>David’s actions bring consequences, yet his repentance demonstrates God’s mercy. This pivotal moment teaches accountability, forgiveness, and the cost of sin.</p>
+            <div class="scripture-ref">
+                "David said to Nathan, 'I have sinned against the LORD.' And Nathan said to David, 'The LORD has taken away your sin.'" – 2 Samuel 12:13
+            </div>
+            <p><strong>Lesson:</strong> God’s forgiveness is available to those who repent sincerely, and His mercy restores even after grave mistakes.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+
+<div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">📜</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 995 BC</div>
+        <div class="event-title">God’s Covenant with David</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            God promises David an eternal dynasty, establishing the foundation for the coming Messiah.
+        </div>
+        <div class="event-details">
+            <p>Through the prophet Nathan, God assures David that his lineage will last forever, pointing forward to Jesus Christ as the ultimate fulfillment of this covenant.</p>
+            <div class="scripture-ref">
+                "Your house and your kingdom will endure forever before me; your throne will be established forever." – 2 Samuel 7:16
+            </div>
+            <p><strong>Lesson:</strong> God’s promises are faithful and eternal, and His plans extend beyond any single human lifetime.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+
+<div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">👑</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 970 BC</div>
+        <div class="event-title">Solomon Becomes King of Israel</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            Solomon, son of David, ascends to the throne, beginning a reign known for wisdom, wealth, and peace.
+        </div>
+        <div class="event-details">
+            <p>God grants Solomon wisdom and guidance to lead Israel, making him renowned for fair judgment and prosperous leadership.</p>
+            <div class="scripture-ref">
+                "God said to Solomon, 'Since this was in your heart, and you have not asked for wealth or possessions, but have asked for yourself discernment… I give you a wise and discerning heart.'" – 1 Kings 3:11-12
+            </div>
+            <p><strong>Lesson:</strong> Wisdom and obedience to God bring blessing and peace to leaders and their people.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+<div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">🏛️</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 957 BC</div>
+        <div class="event-title">Solomon Builds the Temple</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            Solomon constructs the First Temple in Jerusalem, providing a permanent dwelling place for God’s presence.
+        </div>
+        <div class="event-details">
+            <p>The temple becomes the spiritual center of Israel, a place for worship, sacrifice, and God’s glory. Solomon dedicates it with prayer and celebration.</p>
+            <div class="scripture-ref">
+                "The LORD has said that he would dwell in thick darkness; I have built a temple for your name." – 2 Chronicles 6:1
+            </div>
+            <p><strong>Lesson:</strong> God’s presence among His people brings unity, worship, and blessing to a nation when honored.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+
+
+<div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">🧠</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 950 BC</div>
+        <div class="event-title">Solomon’s Wisdom and Judgment</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            Solomon demonstrates God-given wisdom in civil and spiritual matters, gaining fame across the world.
+        </div>
+        <div class="event-details">
+            <p>The famous story of two women claiming the same child shows Solomon’s insight and discernment, revealing God’s guidance in leadership and justice.</p>
+            <div class="scripture-ref">
+                "Give the living child to the first woman. Do not kill him; she is his mother." – 1 Kings 3:27
+            </div>
+            <p><strong>Lesson:</strong> True wisdom comes from God and leads to fair judgment and respect among people.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+
+<div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">👑</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 931 BC</div>
+        <div class="event-title">Solomon Dies; Rehoboam Becomes King</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            Solomon’s son Rehoboam ascends to the throne, facing a nation ready to rebel over heavy taxation and labor demands.
+        </div>
+        <div class="event-details">
+            <p>Rehoboam refuses the elders’ advice to lighten the people’s burden, leading to civil unrest and setting the stage for the kingdom’s division.</p>
+            <div class="scripture-ref">
+                "The king answered the people harshly… so Israel has been in rebellion against the house of David to this day." – 1 Kings 12:14
+            </div>
+            <p><strong>Lesson:</strong> Godly counsel and humility are essential for leadership; ignoring wisdom can have lasting consequences.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+<div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">⚔️</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 931 BC</div>
+        <div class="event-title">Jeroboam Rules Northern Kingdom</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            Jeroboam becomes king over Israel (the northern ten tribes), establishing rival worship centers to prevent reunification with Judah.
+        </div>
+        <div class="event-details">
+            <p>Jeroboam sets up golden calves in Bethel and Dan, leading Israel into idolatry while attempting to secure political independence from Judah.</p>
+            <div class="scripture-ref">
+                "He made two golden calves… and said to the people, 'Here are your gods, Israel, who brought you up out of Egypt.'" – 1 Kings 12:28
+            </div>
+            <p><strong>Lesson:</strong> Political expedience without obedience to God leads to spiritual decline and long-term consequences.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+
+<div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">🛡️</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 931 BC</div>
+        <div class="event-title">Rehoboam Rules Southern Kingdom</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            Rehoboam rules Judah (the southern tribes), with Jerusalem as the capital, while maintaining the Davidic line.
+        </div>
+        <div class="event-details">
+            <p>Judah remains under Rehoboam’s rule, preserving the temple in Jerusalem and David’s lineage. However, idolatry and disobedience continue to challenge the kingdom.</p>
+            <div class="scripture-ref">
+                "Judah followed the house of David; they did what was right in the eyes of the LORD." – 1 Kings 14:21
+            </div>
+            <p><strong>Lesson:</strong> Faithfulness to God sustains a kingdom, but even the faithful must guard against idolatry and compromise.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+<div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">🔥</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 874 BC</div>
+        <div class="event-title">Elijah Confronts Ahab and Jezebel</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            Prophet Elijah challenges Israel’s idolatry under King Ahab and Queen Jezebel, confronting Baal worship.
+        </div>
+        <div class="event-details">
+            <p>Elijah demonstrates God’s power over Baal on Mount Carmel, calling Israel back to faithfulness and warning of judgment for idolatry.</p>
+            <div class="scripture-ref">
+                "The God who answers by fire, He is God." – 1 Kings 18:24
+            </div>
+            <p><strong>Lesson:</strong> God is sovereign and faithful; He calls His people to repentance even in times of widespread sin.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+<div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">📖</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 870 BC</div>
+        <div class="event-title">Jehoshaphat’s Reforms in Judah</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            King Jehoshaphat strengthens Judah’s faithfulness through religious reforms and seeking God’s guidance in governance.
+        </div>
+        <div class="event-details">
+            <p>Jehoshaphat removes idolatry, sends teachers of the Law throughout Judah, and trusts God in battles, demonstrating faithful leadership.</p>
+            <div class="scripture-ref">
+                "In the third year of his reign, he sent… to teach in the cities of Judah." – 2 Chronicles 17:7-9
+            </div>
+            <p><strong>Lesson:</strong> Leaders who honor God through justice and teaching help preserve faithfulness in their people.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+<div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">✨</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 850 BC</div>
+        <div class="event-title">Elisha Performs Miracles</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            Elisha, successor of Elijah, demonstrates God’s power through miracles, guiding and correcting Israel.
+        </div>
+        <div class="event-details">
+            <p>Elisha heals, provides for the needy, and calls Israel back to trust in God, showing God’s mercy even amid rebellion.</p>
+            <div class="scripture-ref">
+                "The man of God went from place to place, performing miracles by the power of the LORD." – 2 Kings 4:42-44
+            </div>
+            <p><strong>Lesson:</strong> God works through His prophets to sustain hope, deliver, and guide His people despite human failings.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+
+<div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">⚔️</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 722 BC</div>
+        <div class="event-title">Assyrian Conquest of Israel</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            The Northern Kingdom of Israel falls to Assyria due to persistent idolatry and rebellion against God.
+        </div>
+        <div class="event-details">
+            <p>Despite prophetic warnings, Israel’s kings lead the nation into sin. The Assyrians conquer Samaria, and Israel’s people are exiled, fulfilling God’s judgment.</p>
+            <div class="scripture-ref">
+                "So the king of Assyria captured Samaria and carried Israel away…" – 2 Kings 17:6
+            </div>
+            <p><strong>Lesson:</strong> God’s patience is long, but persistent rebellion and idolatry bring consequences.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+<div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">🛡️</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 715 BC</div>
+        <div class="event-title">Hezekiah’s Reforms in Judah</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            King Hezekiah removes idolatry and restores proper worship of God, trusting Him in times of Assyrian threat.
+        </div>
+        <div class="event-details">
+            <p>Hezekiah closes high places, purifies the temple, and leads the people in covenant renewal. God miraculously delivers Judah from the Assyrians.</p>
+            <div class="scripture-ref">
+                "Hezekiah trusted in the LORD, the God of Israel…" – 2 Kings 18:5
+            </div>
+            <p><strong>Lesson:</strong> God honors repentance, obedience, and trust in Him, even in the face of overwhelming danger.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+<div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">📜</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 622 BC</div>
+        <div class="event-title">Josiah’s Revival and Rediscovery of the Law</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            King Josiah finds the Book of the Law, reforms Judah, and leads the people back to covenant faithfulness.
+        </div>
+        <div class="event-details">
+            <p>The high priest Hilkiah discovers the Law during temple repairs. Josiah tears down idols, reinstitutes Passover, and calls Judah to repentance.</p>
+            <div class="scripture-ref">
+                "All the people stood to the covenant. Then the king and all who were present… humbled themselves and promised to follow the LORD." – 2 Kings 23:3
+            </div>
+            <p><strong>Lesson:</strong> Returning to God’s Word brings revival and blessing, even after periods of great spiritual decline.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+<div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">🏰</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 605 BC</div>
+        <div class="event-title">Babylonian Siege of Jerusalem</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            Babylon begins its conquest of Judah, taking young nobles and skilled workers into exile.
+        </div>
+        <div class="event-details">
+            <p>King Nebuchadnezzar captures Jerusalem’s youth, including Daniel and his friends, to serve in Babylon. This begins the first wave of exile.</p>
+            <div class="scripture-ref">
+                "Among these were Daniel, Hananiah, Mishael, and Azariah…" – Daniel 1:6
+            </div>
+            <p><strong>Lesson:</strong> God’s plans prevail even in captivity, and faithfulness in exile brings His glory.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+<div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">🔥</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 586 BC</div>
+        <div class="event-title">Destruction of Jerusalem and the Temple</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            Babylon destroys Jerusalem and Solomon’s Temple, carrying Judah’s people into exile.
+        </div>
+        <div class="event-details">
+            <p>The city and temple are burned; the people are exiled to Babylon. This tragic event fulfills God’s warning through the prophets for persistent idolatry and disobedience.</p>
+            <div class="scripture-ref">
+                "He burned the house of the LORD, the king’s palace, and all the houses of Jerusalem…" – 2 Kings 25:9
+            </div>
+            <p><strong>Lesson:</strong> God’s justice is perfect, but His promises of restoration remain for those who return to Him.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+
+<div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">📝</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 605–536 BC</div>
+        <div class="event-title">Daniel and the Babylonian Exile</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            Daniel and his friends remain faithful to God in Babylon, serving kings and demonstrating God’s power.
+        </div>
+        <div class="event-details">
+            <p>Through visions, interpretations, and miracles, Daniel honors God while advising foreign rulers, showing that God’s presence is not limited to Israel.</p>
+            <div class="scripture-ref">
+                "But Daniel resolved not to defile himself with the royal food and wine…" – Daniel 1:8
+            </div>
+            <p><strong>Lesson:</strong> God’s people can glorify Him in exile and hardship, influencing even powerful nations through faithfulness.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+<div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">🕊️</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 538 BC</div>
+        <div class="event-title">Cyrus Allows the Jews to Return</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            King Cyrus of Persia issues a decree allowing the Jewish exiles to return to Jerusalem and rebuild the temple.
+        </div>
+        <div class="event-details">
+            <p>This marks the beginning of the restoration period. God fulfills His promise of return, showing His faithfulness despite exile and hardship.</p>
+            <div class="scripture-ref">
+                "The LORD… has charged me to build him a house at Jerusalem…" – Ezra 1:2
+            </div>
+            <p><strong>Lesson:</strong> God’s promises endure, and He empowers His people to rebuild and restore even after great loss.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+
+<div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">🏛️</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 516 BC</div>
+        <div class="event-title">Temple Rebuilt in Jerusalem</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            The Second Temple is completed, restoring the center of Jewish worship and community life in Jerusalem.
+        </div>
+        <div class="event-details">
+            <p>Under Zerubbabel and the encouragement of prophets like Haggai and Zechariah, the temple is rebuilt, renewing Israel’s worship and covenant identity.</p>
+            <div class="scripture-ref">
+                "The temple was completed according to the command of the LORD…" – Ezra 6:14
+            </div>
+            <p><strong>Lesson:</strong> God restores what is broken when His people obey and trust Him.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+
+
+<div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">🧱</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 445 BC</div>
+        <div class="event-title">Nehemiah Rebuilds Jerusalem’s Walls</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            Nehemiah leads the people in rebuilding the walls of Jerusalem, strengthening the city’s security and spiritual life.
+        </div>
+        <div class="event-details">
+            <p>Facing opposition, Nehemiah organizes the people to work together, fortifies the city, and restores covenant faithfulness.</p>
+            <div class="scripture-ref">
+                "So we rebuilt the wall… and all the wall was joined together up to half its height." – Nehemiah 4:6
+            </div>
+            <p><strong>Lesson:</strong> God equips and strengthens His people to overcome opposition and restore what is broken.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+<div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">🏗️</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 520 BC</div>
+        <div class="event-title">Haggai Encourages Rebuilding</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            Prophet Haggai motivates the people to finish rebuilding the Second Temple in Jerusalem after delays and discouragement.
+        </div>
+        <div class="event-details">
+            <p>Haggai reminds the people that God’s glory is present in the temple, urging them to prioritize God’s house over personal concerns.</p>
+            <div class="scripture-ref">
+                "The LORD of hosts says: ‘Give careful thought to your ways.’" – Haggai 1:5
+            </div>
+            <p><strong>Lesson:</strong> Obedience and prioritizing God’s work bring His blessing and presence into the community.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+
+<div class="timeline-event right old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">🔮</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 520–518 BC</div>
+        <div class="event-title">Zechariah Prophesies the Messiah</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            Zechariah delivers visions and prophecies pointing to the coming Savior and the future restoration of God’s people.
+        </div>
+        <div class="event-details">
+            <p>He foretells the humble arrival of the Messiah, the coming of God’s kingdom, and the ultimate triumph over sin and injustice.</p>
+            <div class="scripture-ref">
+                "Rejoice greatly, Daughter Zion! See, your king comes to you…" – Zechariah 9:9
+            </div>
+            <p><strong>Lesson:</strong> God’s promises of salvation and restoration are faithful, even after centuries of waiting.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
+
+
+<div class="timeline-event left old-testament" onclick="toggleDetails(this)">
+    <div class="event-marker old-testament">📣</div>
+    <div class="event-card old-testament">
+        <div class="event-date">c. 430 BC</div>
+        <div class="event-title">Malachi Calls Israel to Faithfulness</div>
+        <div class="event-category old-testament">Old Testament</div>
+        <div class="event-preview">
+            The prophet Malachi warns God’s people to return to covenant faithfulness and foretells the coming messenger who will prepare the way for the Lord.
+        </div>
+        <div class="event-details">
+            <p>Malachi rebukes spiritual complacency and idolatry, pointing to the coming of John the Baptist as the one who will prepare the way for Christ.</p>
+            <div class="scripture-ref">
+                "See, I will send my messenger, who will prepare the way before me." – Malachi 3:1
+            </div>
+            <p><strong>Lesson:</strong> God calls His people to repentance and faithfulness, preparing hearts for His ultimate plan of salvation.</p>
+        </div>
+        <button class="expand-btn">▼ Explore Deeper</button>
+    </div>
+</div>
 
 
 
@@ -2446,6 +3076,244 @@
                     <button class="expand-btn">▼ Explore Deeper</button>
                 </div>
             </div>
+
+
+            <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">🕊️</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 4 BC</div>
+                    <div class="event-title">Presentation of Jesus in the Temple</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Mary and Joseph bring baby Jesus to the temple in Jerusalem, where Simeon and Anna recognize Him as the Messiah.
+                    </div>
+                    <div class="event-details">
+                        <p>Simeon declares that Jesus is "a light for revelation to the Gentiles and the glory of your people Israel," affirming God’s salvation plan for all.</p>
+                        <div class="scripture-ref">
+                            "My eyes have seen your salvation…" – Luke 2:30-31
+                        </div>
+                        <p><strong>Lesson:</strong> God reveals His salvation to all who seek Him, confirming the hope of the Messiah early in His life.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+            
+            <div class="timeline-event right new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">💫</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 4 BC</div>
+                    <div class="event-title">Visit of the Magi</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Wise men from the East follow a star to worship Jesus, offering gifts of gold, frankincense, and myrrh.
+                    </div>
+                    <div class="event-details">
+                        <p>Their visit signifies that Jesus’ mission is for all nations, and even Gentiles recognize His kingship from birth.</p>
+                        <div class="scripture-ref">
+                            "We saw his star when it rose and have come to worship him." – Matthew 2:2
+                        </div>
+                        <p><strong>Lesson:</strong> God’s salvation plan extends beyond Israel; the Messiah is the hope for the whole world.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            
+            <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">🏠</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 6–30 AD</div>
+                    <div class="event-title">Jesus’ Childhood in Nazareth</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Jesus grows up in Nazareth, learning obedience to God and preparing for His ministry.
+                    </div>
+                    <div class="event-details">
+                        <p>He grows in wisdom and stature, and even at twelve years old, He amazes the teachers in the temple with His understanding of God’s Word.</p>
+                        <div class="scripture-ref">
+                            "And Jesus grew in wisdom and stature, and in favor with God and man." – Luke 2:52
+                        </div>
+                        <p><strong>Lesson:</strong> Jesus’ life shows faithful growth and devotion to God from an early age, preparing Him for His mission.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            <div class="timeline-event right new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">💧</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 27 AD</div>
+                    <div class="event-title">Jesus Baptized by John</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Jesus is baptized in the Jordan River by John, beginning His public ministry.
+                    </div>
+                    <div class="event-details">
+                        <p>As Jesus emerges from the water, the Spirit descends like a dove, and God declares, "This is my beloved Son," affirming His divine mission.</p>
+                        <div class="scripture-ref">
+                            "You are my Son, whom I love; with you I am well pleased." – Mark 1:11
+                        </div>
+                        <p><strong>Lesson:</strong> God publicly affirms Jesus’ identity and mission, setting the stage for His ministry of salvation.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            
+
+            <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">🌵</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 27 AD</div>
+                    <div class="event-title">Temptation of Jesus in the Wilderness</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        After forty days of fasting, Jesus faces temptation from Satan, demonstrating obedience to God.
+                    </div>
+                    <div class="event-details">
+                        <p>Jesus resists all temptations using Scripture, modeling perfect faithfulness and reliance on God’s Word.</p>
+                        <div class="scripture-ref">
+                            "Man shall not live on bread alone, but on every word that comes from the mouth of God." – Matthew 4:4
+                        </div>
+                        <p><strong>Lesson:</strong> Obedience and reliance on God’s Word are key to overcoming temptation and fulfilling God’s plan.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+            
+            <div class="timeline-event right new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">🎣</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 27 AD</div>
+                    <div class="event-title">Jesus Calls His First Disciples</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Jesus calls fishermen Simon Peter, Andrew, James, and John to follow Him and become "fishers of men."
+                    </div>
+                    <div class="event-details">
+                        <p>Immediately, they leave their nets and follow Jesus, beginning a life devoted to learning from Him and spreading His message.</p>
+                        <div class="scripture-ref">
+                            "Come, follow me," Jesus said, "and I will make you fishers of men." – Matthew 4:19
+                        </div>
+                        <p><strong>Lesson:</strong> Following Jesus requires faith and immediate obedience, trusting Him to guide and transform our lives.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+            
+
+            <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">🍷</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 27 AD</div>
+                    <div class="event-title">Jesus Turns Water into Wine</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        At a wedding in Cana, Jesus performs His first miracle, demonstrating His power and compassion.
+                    </div>
+                    <div class="event-details">
+                        <p>Jesus turns water into wine, showing His glory and pointing to the abundant life He offers.</p>
+                        <div class="scripture-ref">
+                            "This, the first of his signs, Jesus did at Cana in Galilee…" – John 2:11
+                        </div>
+                        <p><strong>Lesson:</strong> Jesus brings transformation and abundance, revealing God’s power and care for everyday life.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+            
+            <div class="timeline-event right new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">💊</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 27 AD</div>
+                    <div class="event-title">Healing of the Official’s Son</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Jesus heals a nobleman’s son from a distance, showing His authority over illness and life itself.
+                    </div>
+                    <div class="event-details">
+                        <p>The father’s faith in Jesus’ word brings healing, demonstrating that belief in Him connects us to God’s power.</p>
+                        <div class="scripture-ref">
+                            "Go; your son will live." – John 4:50
+                        </div>
+                        <p><strong>Lesson:</strong> Faith in Jesus activates His power and reveals God’s mercy and love.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">⛰️</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 28 AD</div>
+                    <div class="event-title">Sermon on the Mount</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Jesus teaches about the Kingdom of God, blessings, love, forgiveness, and how to live a righteous life.
+                    </div>
+                    <div class="event-details">
+                        <p>He shares the Beatitudes, teaches the Lord’s Prayer, and gives guidance on ethical living, showing God’s heart for humanity.</p>
+                        <div class="scripture-ref">
+                            "Blessed are the poor in spirit, for theirs is the kingdom of heaven." – Matthew 5:3
+                        </div>
+                        <p><strong>Lesson:</strong> Jesus calls His followers to a life of humility, love, and obedience, reflecting God’s values.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            
+            <div class="timeline-event right new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">🌊</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 28 AD</div>
+                    <div class="event-title">Jesus Calms the Storm</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Jesus demonstrates His authority over nature by calming a violent storm while on a boat with His disciples.
+                    </div>
+                    <div class="event-details">
+                        <p>The disciples witness His power, reinforcing faith in Him as the Son of God who can bring peace in life’s storms.</p>
+                        <div class="scripture-ref">
+                            "He got up, rebuked the winds and the waves, and it was completely calm." – Matthew 8:26
+                        </div>
+                        <p><strong>Lesson:</strong> Trust in Jesus brings peace and security, even in the midst of chaos and fear.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">🍞</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 28 AD</div>
+                    <div class="event-title">Feeding the 5,000</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Jesus miraculously feeds over 5,000 people with five loaves of bread and two fish, demonstrating God’s provision.
+                    </div>
+                    <div class="event-details">
+                        <p>This miracle highlights compassion for people’s physical and spiritual needs, showing that Jesus provides abundantly.</p>
+                        <div class="scripture-ref">
+                            "They all ate and were satisfied, and the disciples picked up twelve basketfuls of leftovers." – Matthew 14:20
+                        </div>
+                        <p><strong>Lesson:</strong> God provides abundantly when we trust in Him, and Jesus meets both our spiritual and practical needs.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            
+
+
+
+
+
+
+
+
+
+
 
             <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
                 <div class="event-marker new-testament">✝️</div>
@@ -2531,7 +3399,7 @@
     </div>
 </div>
 
-
+<div id="testimonyList"></div>
 
     <!-- Login Modal -->
     <div id="loginModal" class="modal">
@@ -2552,6 +3420,8 @@
             </p>
         </div>
     </div>
+
+
 
     <!-- Signup Modal -->
     <div id="signupModal" class="modal">
@@ -2577,6 +3447,8 @@
         </div>
     </div>
 
+
+
     <!-- Quiz Options Modal -->
     <div id="quizOptionsModal" class="modal">
         <div class="modal-content">
@@ -2587,6 +3459,9 @@
             </div>
         </div>
     </div>
+
+
+
 
     <!-- Quiz Modal -->
     <div id="quizModal" class="modal">
@@ -3280,7 +4155,10 @@
         });
     </script>
 
-  
+    <script src="timelineSearch.js"></script>
 
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97f0c83621240c83',t:'MTc1Nzg2MjMyMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<!-- Link your external JS file here, just before closing </body> -->
+
+
 </html>
