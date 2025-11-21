@@ -52,7 +52,13 @@
         body.light-mode::before {
             opacity: 0;
         }
-
+        #rotatingScripture {
+            animation: scriptureGlow 6s ease-in-out infinite;
+            text-shadow: 0 0 10px rgba(242, 4, 4, 0.3);
+            transition: all 0.5s ease;
+            font-family: 'Crimson Text', serif;
+            font-weight: 400;
+        }
 /* Timeline Card Styling */
 .timeline-event .event-card {
     border-radius: 12px;
@@ -1608,10 +1614,12 @@
                     </div>
                 </div>
                 
-               
+                <div id="rotatingScripture" class="scripture-box">
+                    Loading scripture...
+                  </div>
 
             <div class="scripture-quote">
-                "For I know the plans I have for you," declares the Lord, "plans to prosper you and not to harm you, to give you hope and a future." - Jeremiah 29:11
+                "I am the light of the world. Whoever follows me will not walk in darkness, but will have the light of life". 
             </div>
         </div>
       
@@ -3784,7 +3792,43 @@
         </div>
     </div>
 
-    
+    <script>
+        // A list of rotating scriptures
+        const scriptures = [
+          `"For I know the plans I have for you," declares the Lord, 
+          "plans to prosper you and not to harm you, to give you hope and a future." 
+          — Jeremiah 29:11`,
+      
+          `“The Lord is close to the brokenhearted and saves those who are crushed in spirit.”
+          — Psalm 34:18`,
+      
+          `“Trust in the Lord with all your heart and lean not on your own understanding.”
+          — Proverbs 3:5`,
+      
+          `“I can do all things through Christ who strengthens me.”
+          — Philippians 4:13`,
+      
+          `“Cast all your anxiety on Him because He cares for you.”
+          — 1 Peter 5:7`,
+      
+          `“The light shines in the darkness, and the darkness has not overcome it.”
+          — John 1:5`
+        ];
+      
+        let index = 0;
+      
+        function rotateScripture() {
+          const el = document.getElementById("rotatingScripture");
+          el.textContent = scriptures[index];
+      
+          index = (index + 1) % scriptures.length; // Loop back to start
+        }
+      
+        // Change scripture every 10 seconds
+        rotateScripture(); 
+        setInterval(rotateScripture, 10000);
+      </script>
+      
 
     <script>
         // Global variables
