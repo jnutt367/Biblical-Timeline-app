@@ -1297,49 +1297,148 @@
             }
         }
     </style>
+
+   
 <!-- Firebase SDK -->
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
     import { 
       getAuth, 
       createUserWithEmailAndPassword, 
-      signInWithEmailAndPassword 
+      signInWithEmailAndPassword,
+      onAuthStateChanged
     } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      getDocs,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
   
+    // -----------------------------------------------------
+    // 🔥 YOUR FIREBASE CONFIG — Replace these values
+    // -----------------------------------------------------
     const firebaseConfig = {
         apiKey: "AIzaSyBilmj5KGjBZwmQ_KDuUnLmdHurRjAbxXE",
         authDomain: "biblical-timeline-app.firebaseapp.com",
         projectId: "biblical-timeline-app",
     };
   
+    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const auth = getAuth();
+    const db = getFirestore();
   
+    // -----------------------------------------------------
+    // USER SIGNUP
+    // -----------------------------------------------------
     window.handleSignup = async function () {
+      const name = document.getElementById("signupName").value;
       const email = document.getElementById("signupEmail").value;
       const password = document.getElementById("signupPassword").value;
   
       try {
         await createUserWithEmailAndPassword(auth, email, password);
-        alert("Signup successful!");
-      } catch (error) {
-        alert(error.message);
+        alert("Account created! Welcome, " + name);
+        closeModal("signupModal");
+      } catch (err) {
+        alert(err.message);
       }
     };
   
+    // -----------------------------------------------------
+    // USER LOGIN
+    // -----------------------------------------------------
     window.handleLogin = async function () {
       const email = document.getElementById("loginEmail").value;
       const password = document.getElementById("loginPassword").value;
   
       try {
         await signInWithEmailAndPassword(auth, email, password);
-        alert("Login successful!");
-      } catch (error) {
-        alert(error.message);
+        alert("You're now logged in!");
+        closeModal("loginModal");
+      } catch (err) {
+        alert(err.message);
       }
     };
-  </script>
+  
+    // -----------------------------------------------------
+    // SAVE TESTIMONY
+    // -----------------------------------------------------
+    window.submitTestimony = async function () {
+      const name = document.getElementById("testimonyName").value;
+      const title = document.getElementById("testimonyTitle").value;
+      const text = document.getElementById("testimonyText").value;
+  
+      const user = auth.currentUser;
+  
+      if (!user) {
+        alert("You must be logged in to submit a testimony.");
+        return;
+      }
+  
+      if (!title || !text) {
+        alert("Please fill in all fields.");
+        return;
+      }
+  
+      try {
+        await addDoc(collection(db, "testimonies"), {
+          userId: user.uid,
+          name: name || "Anonymous",
+          title: title,
+          text: text,
+          createdAt: serverTimestamp()
+        });
+  
+        alert("Your testimony has been shared!");
+        loadTestimonies();
+      } catch (err) {
+        alert(err.message);
+      }
+    };
+  
+    // -----------------------------------------------------
+    // LOAD ALL TESTIMONIES
+    // -----------------------------------------------------
+    window.loadTestimonies = async function () {
+      const container = document.getElementById("testimonyList");
+      if (!container) return;
+  
+      container.innerHTML = "<p>Loading testimonies...</p>";
+  
+      const snapshot = await getDocs(collection(db, "testimonies"));
+  
+      container.innerHTML = "";
+  
+      snapshot.forEach((doc) => {
+        const t = doc.data();
+        const div = document.createElement("div");
+        div.classList.add("testimony-card");
+        div.innerHTML = `
+          <h3>${t.title}</h3>
+          <p>${t.text}</p>
+          <small>— ${t.name}</small>
+          <hr>
+        `;
+        container.appendChild(div);
+      });
+    };
 
+    
+    // -----------------------------------------------------
+    // AUTO-LOAD TESTIMONIES WHEN USER IS LOGGED IN
+    // -----------------------------------------------------
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        loadTestimonies();
+      }
+    });
+    
+
+
+  </script>
 </head>
 <body>
     <!-- Mobile Control Buttons -->
@@ -1356,11 +1455,11 @@
         <div class="faithbot-pulse-ring faithbot-pulse-3"></div>
         
         <div class="faithbot-image" onclick="openFaithbotChat()">
-            🤖
+            👱🏽‍♀️
         </div>
         
         <div class="faithbot-speech-bubble" id="faithbotSpeech">
-            <span id="faithbotMessage">Hi! I'm Faithbot! 👋</span>
+            <span id="faithbotMessage">Hi! I'm Faith! 👋</span>
         </div>
     </div>
 
@@ -1369,9 +1468,9 @@
         <div class="faithbot-chat-container">
             <div class="faithbot-header">
                 <div style="display: flex; align-items: center; gap: 15px;">
-                    <div class="faithbot-avatar-small">🤖</div>
+                    <div class="faithbot-avatar-small">👱🏽‍♀️</div>
                     <div>
-                        <h3 style="margin: 0; color: white; font-size: 1.3rem;">Faithbot AI Assistant</h3>
+                        <h3 style="margin: 0; color: white; font-size: 1.3rem;">Faith AI Assistant</h3>
                         <p style="margin: 0; color: rgba(255,255,255,0.8); font-size: 0.9rem;">Your personal biblical guide and prayer companion</p>
                     </div>
                 </div>
@@ -1387,7 +1486,7 @@
                 </div>
                 
                 <div class="chat-message bot">
-                    <strong>Faithbot:</strong> Hello! I'm here to help you with Bible questions, prayer requests, daily verses, and spiritual guidance. How can I assist you in your faith journey today? 🙏
+                    <strong>Faith:</strong> Hello! I'm here to help you with Bible questions, prayer requests, daily verses, and spiritual guidance. How can I assist you in your faith journey today? 🙏
                 </div>
             </div>
             
@@ -1436,6 +1535,7 @@
                 "For I know the plans I have for you," declares the Lord, "plans to prosper you and not to harm you, to give you hope and a future." - Jeremiah 29:11
             </div>
         </div>
+        <div id="testimonyList"></div>
 
        
 
@@ -2638,7 +2738,7 @@
             messageDiv.className = `chat-message ${sender}`;
             
             if (sender === 'bot') {
-                messageDiv.innerHTML = `<strong>Faithbot:</strong> ${message}`;
+                messageDiv.innerHTML = `<strong>Faith:</strong> ${message}`;
             } else {
                 messageDiv.innerHTML = `<strong>You:</strong> ${message}`;
             }
