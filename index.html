@@ -52,6 +52,68 @@
         body.light-mode::before {
             opacity: 0;
         }
+
+/* Timeline Card Styling */
+.timeline-event .event-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff; /* keeps cards readable */
+}
+
+/* Hover effect */
+.timeline-event .event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Scripture Highlight */
+.event-details .scripture-ref {
+    background-color: #eaf4ff;
+    border-left: 4px solid #0ea5e9;
+    padding: 6px 10px;
+    margin: 8px 0;
+    font-style: italic;
+}
+
+/* Lesson Highlight */
+.event-details p strong {
+    color: #0ea5e9;
+}
+
+/* Expand button animation */
+.expand-btn {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.expand-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Alternating marker positions */
+.timeline-event.left .event-marker {
+    left: -25px; /* offset left events */
+}
+
+.timeline-event.right .event-marker {
+    right: -25px; /* offset right events */
+}
+
+/* Smooth collapse/expand animation for details */
+.event-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.timeline-event.expanded .event-details {
+    max-height: 800px; /* enough to show full content */
+}
+
+
+
         .search {
             padding:1rem;
             width: 20rem;
@@ -1271,11 +1333,12 @@
                 line-height: 1.3;
             }
             
+           
             .timeline-event { margin: 60px 0; }
             
             .timeline-event.left, .timeline-event.right {
                 text-align: left;
-                padding-left: 70px;
+                padding-left: 20px;
                 padding-right: 15px;
             }
             
@@ -1287,7 +1350,8 @@
                 height: 28px; 
                 font-size: 1.1rem; 
             }
-            
+
+
             .event-card { padding: 25px; }
             .event-title { font-size: 1.5rem; }
             .event-date { font-size: 1.2rem; }
@@ -1301,6 +1365,8 @@
                 max-width: 95%;
             }
         }
+       
+
     </style>
 
    
@@ -1551,6 +1617,17 @@
 <!-- All your timeline events -->
 
 
+<div class="timeline-controls">
+    <label>
+        <input type="radio" name="timelineFilter" value="all" checked onchange="filterTimeline()"> All
+    </label>
+    <label>
+        <input type="radio" name="timelineFilter" value="old-testament" onchange="filterTimeline()"> Old Testament
+    </label>
+    <label>
+        <input type="radio" name="timelineFilter" value="new-testament" onchange="filterTimeline()"> New Testament
+    </label>
+</div>
 
         
 
@@ -3303,37 +3380,259 @@
                 </div>
             </div>
 
-            
 
-
-
-
-
-
-
-
-
-
-
-            <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
-                <div class="event-marker new-testament">✝️</div>
+            <div class="timeline-event right new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">🏥</div>
                 <div class="event-card new-testament">
-                    <div class="event-date">c. 33 AD</div>
-                    <div class="event-title">The Crucifixion and Resurrection</div>
+                    <div class="event-date">c. 28 AD</div>
+                    <div class="event-title">Healing the Centurion’s Servant</div>
                     <div class="event-category new-testament">New Testament</div>
-                    <div class="event-preview">Jesus dies for our sins and rises from the dead, accomplishing salvation and defeating death forever - the central event of all history.</div>
+                    <div class="event-preview">
+                        A Roman centurion asks Jesus to heal his servant, showing great faith in Jesus’ authority.
+                    </div>
                     <div class="event-details">
-                        <p>The central event of human history: Jesus bears the penalty for sin on the cross and conquers death through His resurrection, opening the way for eternal life with God.</p>
+                        <p>Jesus commends the centurion’s faith, saying He has not found such great faith even in Israel, and the servant is healed instantly.</p>
                         <div class="scripture-ref">
-                            "He was delivered over to death for our sins and was raised to life for our justification. Therefore, since we have been justified through faith, we have peace with God." - Romans 4:25-5:1
+                            "Truly I tell you, I have not found anyone in Israel with such great faith." – Matthew 8:10
                         </div>
-                        <p><strong>Substitutionary Atonement:</strong> Jesus takes our place, bearing God's wrath against sin so we can receive His righteousness and be reconciled to the Father.</p>
-                        <p><strong>Victory Over Death:</strong> The resurrection proves Jesus' deity, validates His sacrifice, and guarantees our future resurrection and eternal life with Him.</p>
-                        <p><strong>New Creation:</strong> Christ's resurrection begins the new creation, making all things new for those who believe and trust in Him as Lord and Savior.</p>
+                        <p><strong>Lesson:</strong> Faith in Jesus’ word is powerful and transcends cultural and social boundaries.</p>
                     </div>
                     <button class="expand-btn">▼ Explore Deeper</button>
                 </div>
             </div>
+
+            
+            <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">🌊</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 28 AD</div>
+                    <div class="event-title">Jesus Walks on Water</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Jesus demonstrates His authority over nature by walking on the Sea of Galilee to reach His disciples.
+                    </div>
+                    <div class="event-details">
+                        <p>Peter steps out in faith but begins to sink; Jesus saves him, teaching trust and reliance on Him.</p>
+                        <div class="scripture-ref">
+                            "Come," he said. Then Peter got down out of the boat… – Matthew 14:29
+                        </div>
+                        <p><strong>Lesson:</strong> Trust in Jesus enables us to overcome fear and walk through impossible situations with His help.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            
+            <div class="timeline-event right new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">👁️</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 28 AD</div>
+                    <div class="event-title">Healing a Man Born Blind</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Jesus heals a man blind from birth, showing His power to bring light and spiritual understanding.
+                    </div>
+                    <div class="event-details">
+                        <p>The man receives both physical sight and a revelation of Jesus as the Messiah, confounding the Pharisees.</p>
+                        <div class="scripture-ref">
+                            "He opened the man’s eyes… He went away seeing." – John 9:7
+                        </div>
+                        <p><strong>Lesson:</strong> Jesus brings both physical and spiritual sight, illuminating the truth for those who believe.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">🕯️</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 30 AD</div>
+                    <div class="event-title">Raising of Lazarus</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Jesus raises Lazarus from the dead, demonstrating His power over life and death.
+                    </div>
+                    <div class="event-details">
+                        <p>Four days after Lazarus dies, Jesus calls him out of the tomb, revealing Himself as "the resurrection and the life."</p>
+                        <div class="scripture-ref">
+                            "I am the resurrection and the life. The one who believes in me will live, even though they die." – John 11:25
+                        </div>
+                        <p><strong>Lesson:</strong> Jesus has authority over death and offers eternal life to all who believe in Him.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            <div class="timeline-event right new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">🌿</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 30 AD</div>
+                    <div class="event-title">Triumphal Entry into Jerusalem</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Jesus enters Jerusalem riding a donkey, fulfilling prophecy and being hailed as King.
+                    </div>
+                    <div class="event-details">
+                        <p>People spread palm branches and shout "Hosanna," recognizing Him as the Messiah who brings salvation.</p>
+                        <div class="scripture-ref">
+                            "Blessed is he who comes in the name of the Lord!" – John 12:13
+                        </div>
+                        <p><strong>Lesson:</strong> Jesus’ kingship is humble and righteous, fulfilling prophecy and God’s plan of salvation.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+            
+
+            <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">🏛️</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 30 AD</div>
+                    <div class="event-title">Cleansing of the Temple</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Jesus drives out merchants and money changers from the temple, emphasizing holiness and worship.
+                    </div>
+                    <div class="event-details">
+                        <p>He teaches that God’s house should be a house of prayer, not a marketplace, highlighting His authority over religious practices.</p>
+                        <div class="scripture-ref">
+                            "My house will be called a house of prayer, but you are making it a den of robbers." – Matthew 21:13
+                        </div>
+                        <p><strong>Lesson:</strong> True worship honors God with purity and reverence, not profit or exploitation.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+            
+            <div class="timeline-event right new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">🍷</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 30 AD</div>
+                    <div class="event-title">The Last Supper</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Jesus shares a final meal with His disciples, establishing the Lord’s Supper and teaching servanthood.
+                    </div>
+                    <div class="event-details">
+                        <p>He breaks bread and shares wine as symbols of His body and blood, instituting a covenant of grace for all believers.</p>
+                        <div class="scripture-ref">
+                            "Do this in remembrance of me." – Luke 22:19
+                        </div>
+                        <p><strong>Lesson:</strong> Jesus calls His followers to remember His sacrifice and serve one another in love.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            
+            <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">🙏</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 30 AD</div>
+                    <div class="event-title">Jesus Prays in Gethsemane</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Jesus prays in deep anguish before His arrest, submitting fully to God’s will.
+                    </div>
+                    <div class="event-details">
+                        <p>He asks God to take the cup of suffering from Him, yet surrenders to the Father’s plan, demonstrating perfect obedience.</p>
+                        <div class="scripture-ref">
+                            "Not my will, but yours be done." – Luke 22:42
+                        </div>
+                        <p><strong>Lesson:</strong> True faith trusts God’s plan, even in moments of fear, pain, or uncertainty.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            
+            <div class="timeline-event right new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">✝️</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 30 AD</div>
+                    <div class="event-title">Crucifixion of Jesus</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Jesus is crucified, taking the punishment for humanity’s sins and fulfilling God’s plan of redemption.
+                    </div>
+                    <div class="event-details">
+                        <p>He dies on the cross, demonstrating ultimate love and obedience, and provides the path to salvation for all who believe.</p>
+                        <div class="scripture-ref">
+                            "It is finished." – John 19:30
+                        </div>
+                        <p><strong>Lesson:</strong> Jesus’ sacrifice reconciles humanity with God and offers eternal life to everyone who believes in Him.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+            
+
+            <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">🌅</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 30 AD</div>
+                    <div class="event-title">Resurrection of Jesus</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Jesus rises from the dead on the third day, conquering sin and death.
+                    </div>
+                    <div class="event-details">
+                        <p>Women and disciples discover the empty tomb; angels proclaim that Jesus has risen, fulfilling prophecy.</p>
+                        <div class="scripture-ref">
+                            "He is not here; he has risen!" – Luke 24:6
+                        </div>
+                        <p><strong>Lesson:</strong> The Resurrection confirms Jesus as Lord and gives hope of eternal life to all believers.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+            
+
+            <div class="timeline-event right new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">☁️</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 30 AD</div>
+                    <div class="event-title">Ascension of Jesus</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        Jesus ascends into heaven in the presence of His disciples, promising the Holy Spirit.
+                    </div>
+                    <div class="event-details">
+                        <p>He blesses His disciples and is taken up into a cloud, signifying the completion of His earthly ministry.</p>
+                        <div class="scripture-ref">
+                            "While he was blessing them, he left them and was taken up into heaven." – Luke 24:51
+                        </div>
+                        <p><strong>Lesson:</strong> Jesus reigns from heaven and empowers His followers to continue His mission through the Holy Spirit.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            
+            <div class="timeline-event left new-testament" onclick="toggleDetails(this)">
+                <div class="event-marker new-testament">🔥</div>
+                <div class="event-card new-testament">
+                    <div class="event-date">c. 30 AD</div>
+                    <div class="event-title">Day of Pentecost</div>
+                    <div class="event-category new-testament">New Testament</div>
+                    <div class="event-preview">
+                        The Holy Spirit descends upon the disciples, empowering them to boldly proclaim the Gospel.
+                    </div>
+                    <div class="event-details">
+                        <p>They speak in many languages, and about 3,000 people are converted that day, marking the birth of the Church.</p>
+                        <div class="scripture-ref">
+                            "All of them were filled with the Holy Spirit and began to speak in other tongues…" – Acts 2:4
+                        </div>
+                        <p><strong>Lesson:</strong> The Holy Spirit equips believers for mission, uniting them in power, purpose, and faith.</p>
+                    </div>
+                    <button class="expand-btn">▼ Explore Deeper</button>
+                </div>
+            </div>
+
+            
+
+
+           
 
             <div class="timeline-event right prophetic" onclick="toggleDetails(this)">
                 <div class="event-marker prophetic">👑</div>

@@ -1,21 +1,29 @@
 const searchInput = document.getElementById('timelineSearch');
 const events = document.querySelectorAll('.timeline-event');
 
-searchInput.addEventListener('input', function() {
+function filterTimeline() {
+    const filterValue = document.querySelector('input[name="timelineFilter"]:checked').value;
     const query = searchInput.value.toLowerCase();
+
     events.forEach(event => {
         const title = event.querySelector('.event-title').innerText.toLowerCase();
         const preview = event.querySelector('.event-preview').innerText.toLowerCase();
         const details = event.querySelector('.event-details').innerText.toLowerCase();
+        const category = event.classList.contains('old-testament') ? 'old-testament' :
+                         event.classList.contains('new-testament') ? 'new-testament' : '';
 
-        if(title.includes(query) || preview.includes(query) || details.includes(query)) {
-            event.style.display = 'block';
-        } else {
-            event.style.display = 'none';
-        }
+        // Show if matches both category filter and search query
+        const matchesCategory = filterValue === 'all' || filterValue === category;
+        const matchesQuery = title.includes(query) || preview.includes(query) || details.includes(query);
+
+        event.style.display = (matchesCategory && matchesQuery) ? 'block' : 'none';
     });
-});
+}
 
+// Dynamic search filtering
+searchInput.addEventListener('input', filterTimeline);
+
+// Enter scroll + highlight
 searchInput.addEventListener('keydown', function(event) {
     if(event.key === "Enter") {
         const query = searchInput.value.toLowerCase();
@@ -24,12 +32,19 @@ searchInput.addEventListener('keydown', function(event) {
             const preview = eventCard.querySelector('.event-preview').innerText.toLowerCase();
             const details = eventCard.querySelector('.event-details').innerText.toLowerCase();
 
-            if(title.includes(query) || preview.includes(query) || details.includes(query)) {
+            const filterValue = document.querySelector('input[name="timelineFilter"]:checked').value;
+            const category = eventCard.classList.contains('old-testament') ? 'old-testament' :
+                             eventCard.classList.contains('new-testament') ? 'new-testament' : '';
+
+            if((title.includes(query) || preview.includes(query) || details.includes(query)) &&
+               (filterValue === 'all' || filterValue === category)) {
+
                 eventCard.scrollIntoView({behavior: 'smooth', block: 'center'});
-                eventCard.style.backgroundColor = '#fff9c4'; // highlight
-                setTimeout(() => eventCard.style.backgroundColor = '', 2000); // remove highlight after 2s
-                break; // scroll to first match only
+                eventCard.style.backgroundColor = '#fff9c4';
+                setTimeout(() => eventCard.style.backgroundColor = '', 2000);
+                break;
             }
         }
     }
 });
+
