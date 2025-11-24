@@ -99,6 +99,7 @@
     position: relative;
     transition: transform 0.2s, box-shadow 0.2s;
     margin: 1.5rem;
+    color: #000;
 }
 
 
@@ -1433,6 +1434,41 @@
           #backToTop:hover {
             background: #047857;
           }
+
+          .action-buttons {
+            display: flex;
+            flex-direction: column; /* stack vertically */
+            gap: 15px;              /* space between buttons */
+            max-width: 400px;       /* optional container width */
+            margin: 30px auto;      /* center horizontally */
+            padding: 0 20px;
+        }
+        
+        .action-buttons .btn {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #2e7d32, #81c784); /* emerald gradient */
+            color: white;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+            text-align: center;
+        }
+        
+        .action-buttons .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, #1b5e20, #4caf50);
+        }
+        
+
+
+
+
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .container { 
@@ -1806,9 +1842,9 @@
     </label>
 </div>
 
-<div class="quick-nav">
-    <button class="nav-item" onclick="scrollToSection('testimonyList')">Testimony</button>
-    <button class="nav-item" onclick="scrollToSection('testimonyList')">Trivia</button>
+<div class="action-buttons">
+    <button class="btn" onclick="scrollToSection('testimonyText')">Share Your Testimony</button>
+    <button class="btn" onclick="scrollToSection('testimonyText')">Trivia: Bible Knowledge</button>
   </div>
   
   
