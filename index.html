@@ -101,6 +101,37 @@
     margin: 1.5rem;
 }
 
+
+/* Testimony card scrollable content */
+.testimony-card {
+    width: 45%;
+    max-height: 250px; /* Adjust height as needed */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    background: linear-gradient(135deg, #e6f0ea, #d1e8d4);
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Optional: nice scroll behavior */
+.testimony-card::-webkit-scrollbar {
+    width: 6px;
+}
+
+.testimony-card::-webkit-scrollbar-thumb {
+    background-color: #2e7d32;
+    border-radius: 3px;
+}
+
+.testimony-card::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05);
+}
+
+
+
+
 /* Hover effect */
 .testimony-card:hover {
     transform: translateY(-5px);
