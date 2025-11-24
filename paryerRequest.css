@@ -1,0 +1,29 @@
+#prayerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+  
+  .prayer-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-left: 5px solid #3b82f6; /* Blue for prayer theme */
+  }
+  
+  .prayer-card h3 {
+    margin: 0 0 .5rem 0;
+    font-size: 1.1rem;
+    color: #1e3a8a;
+    font-weight: bold;
+  }
+  
+  .prayer-card p {
+    margin: 0;
+    line-height: 1.5;
+  }
+  
