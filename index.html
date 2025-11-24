@@ -79,6 +79,74 @@
     color: whitesmoke;
     
 }
+
+#testimonyList {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Common card styles */
+.testimony-card {
+    width: 45%;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    background: linear-gradient(135deg, #e6f0ea, #d1e8d4);
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin: 1.5rem;
+}
+
+/* Hover effect */
+.testimony-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Title & text */
+.testimony-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.25rem;
+    color: #1b5e20;
+}
+
+.testimony-card p strong {
+    color: #2e7d32;
+}
+
+.testimony-card p {
+    margin: 5px 0;
+    line-height: 1.6;
+    color: #2b2b2b;
+}
+
+/* Alternate positioning */
+.testimony-card.left {
+    align-self: flex-start;
+    border-left: 5px solid #2e7d32;
+}
+
+.testimony-card.right {
+    align-self: flex-end;
+    border-right: 5px solid #2e7d32;
+}
+
+/* Responsive for small screens */
+@media screen and (max-width: 600px) {
+    .testimony-card {
+        width: 90%;
+        align-self: center !important;
+    }
+}
+
+
+
+
+
 /* Timeline Card Styling */
 .timeline-event .event-card {
     border-radius: 12px;
@@ -1409,6 +1477,15 @@
                 padding: 25px;
                 max-width: 95%;
             }
+/* Testimony list wrapper */
+#testimonyList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
         }
         @media (min-width: 1080px) {
             .timeline::before {
@@ -1453,6 +1530,14 @@
     const auth = getAuth();
     const db = getFirestore();
   
+
+
+
+
+
+
+
+    
     // -----------------------------------------------------
     // USER SIGNUP
     // -----------------------------------------------------
@@ -1668,6 +1753,13 @@
     <input type="text" class="search" id="timelineSearch" placeholder="Search timeline..." oninput="searchTimeline()">
 </div>
 
+<div class="testimony-display" id="testimonyDisplay">
+    <h2>💝 Testimonies</h2>
+    <div id="testimonyList"></div>
+  </div>
+
+
+
 <!-- All your timeline events -->
 
 
@@ -1700,6 +1792,9 @@
 
         <div class="timeline">
             <div class="timeline-line"></div>
+
+           
+
 
             <div class="timeline-event right creation" onclick="toggleDetails(this)">
                 <div class="event-marker creation">🌍</div>
