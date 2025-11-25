@@ -1,13 +1,13 @@
 const tracks = [
     {
         title: "Deep Meditation",
-        desc: "Soaking worship pads for prayer and reflection.",
-        url: "https://cdn.pixabay.com/download/audio/2022/03/15/audio_3fba1c4ec0.mp3?filename=deep-meditation-112191.mp3"
+        desc: "Meditation/spiritual Healing Music",
+        url: "healing-spiritual-music-304095.mp3"
     },
     {
-        title: "Contemplative Ambient",
-        desc: "Calm background music for reading Scripture.",
-        url: "https://cdn.pixabay.com/download/audio/2023/01/01/audio_59c8d26895.mp3?filename=contemplative-ambient-131746.mp3"
+        title: "PIXABAY Gospel Worship Christian Church",
+        desc: "Gospel Worship Christian Church",
+        url: "gospel-worship-christian-church-348450.mp3"
     },
     {
         title: "Inspiring Cinematic Piano",
