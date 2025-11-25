@@ -1,9 +1,5 @@
 const tracks = [
-    {
-        title: "Deep Meditation",
-        desc: "Meditation/spiritual Healing Music",
-        url: "healing-spiritual-music-304095.mp3"
-    },
+    
     {
         title: "PIXABAY Gospel Worship Christian Church",
         desc: "Gospel Worship Christian Church",
@@ -23,7 +19,13 @@ const tracks = [
         title: "SDG MUSIC MINISTRY",
         desc: "Amazing Grace",
         url: "https://www.sdgministry.com/wp-content/uploads/2019/12/10-Amazing-Grace_Nothing-But-the-Blood.mp3"
+    },
+    {
+        title: "Deep Meditation",
+        desc: "Meditation/spiritual Healing Music",
+        url: "healing-spiritual-music-304095.mp3"
     }
+
 ];
 
 
