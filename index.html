@@ -1986,7 +1986,15 @@
         <input type="radio" name="timelineFilter" value="new-testament" onchange="filterTimeline()"> New Testament
     </label>
 </div>
-<!-- Worship Music Section -->
+
+
+<div class="action-buttons">
+    <button class="btn" onclick="scrollToSection('testimonyText')">Share Your Testimony</button>
+    <button class="btn" onclick="scrollToSection('testimonyText')">Trivia: Bible Knowledge</button>
+    <button class="btn" onclick="scrollToSection('testimonyList')">See Other's Testimonies</button>
+  </div>
+  
+  <!-- Worship Music Section -->
 <section id="worshipMusic" class="music-section">
     <h2>🎵 Worship & Prayer Music</h2>
 
@@ -1997,14 +2005,6 @@
     <!-- Hidden audio player -->
     <audio id="musicPlayer" controls style="display:block;"></audio>
 </section>
-
-<div class="action-buttons">
-    <button class="btn" onclick="scrollToSection('testimonyText')">Share Your Testimony</button>
-    <button class="btn" onclick="scrollToSection('testimonyText')">Trivia: Bible Knowledge</button>
-    <button class="btn" onclick="scrollToSection('testimonyList')">See Other's Testimonies</button>
-  </div>
-  
-  
   <script>
     function scrollToSection(id) {
       document.getElementById(id).scrollIntoView({
@@ -2015,7 +2015,7 @@
   
 <!-- PRAYER REQUEST SECTION -->
 
-
+<!--
 <div id="prayerContainer">
     <h2>Prayer Requests</h2>
 
@@ -2026,7 +2026,7 @@
     </form>
 
 </div>
-
+-->
         <div class="timeline">
             <div class="timeline-line"></div>
 
