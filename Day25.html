@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Bible Month Day 25 - Generosity</title>
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #004d26, #007f4f, #00b37e);
+    color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.slide-container {
+    width: 90%;
+    max-width: 900px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    padding: 40px;
+    background: rgba(0,0,0,0.25);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+.slide {
+    display: none;
+    text-align: center;
+    font-size: 1.25rem;
+    padding: 25px;
+    margin: 0 10px;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.2);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    animation: fadeSlide 1.5s ease-in-out;
+    position: relative;
+}
+.slide.active { display: block; }
+h2, p {
+    text-shadow: 0 2px 8px rgba(0, 255, 150, 0.5);
+    position: relative;
+    z-index: 2;
+}
+.icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    opacity: 0.2;
+    animation: float 4s infinite ease-in-out;
+}
+.icon.gift { top: 20px; left: 15px; }
+.icon.heart { bottom: 20px; right: 15px; }
+.icon.hands { top: 50%; left: 10px; transform: translateY(-50%); }
+.icon.cup { bottom: 30px; left: 50%; transform: translateX(-50%); }
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+@keyframes glowPulse {
+    0%, 100% { text-shadow: 0 2px 6px rgba(0, 255, 150, 0.4), 0 0 12px rgba(0, 255, 120, 0.3); }
+    50% { text-shadow: 0 4px 12px rgba(0, 255, 150, 0.6), 0 0 18px rgba(0, 255, 120, 0.4); }
+}
+.slide h2, .slide p { animation: glowPulse 2.5s infinite ease-in-out; }
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: #00ff99;
+    font-size: 2rem;
+    padding: 12px 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+button:hover { background: rgba(0,0,0,0.6); }
+#prev { left: 10px; } #next { right: 10px; }
+
+@keyframes fadeSlide {
+    0% {opacity: 0;} 50% {opacity: 0.8;} 100% {opacity: 1;}
+}
+</style>
+</head>
+<body>
+
+<div class="slide-container">
+
+    <!-- Slide 1 -->
+    <div class="slide active">
+        <h2>"Give, and it will be given to you..."</h2>
+        <p>– Luke 6:38</p>
+        <p>Welcome to Day 25 – The Blessing of Generosity</p>
+        
+        <img class="icon gift" src="https://img.icons8.com/gift" alt="gift">
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+        <p>Generosity is more than money — it’s giving time, love, and encouragement. God calls us to give freely.</p>
+        <img class="icon heart" src="https://img.icons8.com/like" alt="heart">
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+        <p>God promises blessings 'pressed down, shaken together, and running over.' Our generosity sows seeds that grow beyond measure.</p>
+        <img class="icon cup" src="https://img.icons8.com/cup" alt="overflowing cup">
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide">
+        <p>Generosity reflects God’s heart. Giving with joy mirrors Christ’s love and opens us to His favor.</p>
+        <img class="icon hands" src="https://img.icons8.com/emoji/96/raising-hands.png" alt="hands">
+    </div>
+
+    <!-- Slide 5 (Additional Scripture 1) -->
+    <div class="slide">
+        <p>“A generous person will prosper; whoever refreshes others will be refreshed.” – Proverbs 11:25</p>
+        <img class="icon gift" src="https://img.icons8.com/emoji/96/gift-emoji.png" alt="gift">
+    </div>
+
+    <!-- Slide 6 (Additional Scripture 2) -->
+    <div class="slide">
+        <p>“Whoever sows generously will also reap generously.” – 2 Corinthians 9:6-7</p>
+        <img class="icon cup" src="https://img.icons8.com/emoji/96/clinking-beer-mugs.png" alt="cup">
+    </div>
+
+    <!-- Slide 7 (Additional Scripture 3) -->
+    <div class="slide">
+        <p>“Bring the whole tithe… and see if I will not throw open the floodgates of heaven.” – Malachi 3:10</p>
+        <img class="icon hands" src="https://img.icons8.com/emoji/96/raising-hands.png" alt="hands">
+    </div>
+
+    <!-- Slide 8 – Call to Action -->
+    <div class="slide">
+        <p>Consider one way to give today — a kind word, a small gift, or your time. Give expecting nothing, trusting God to multiply it.</p>
+        <img class="icon heart" src="https://img.icons8.com/emoji/96/red-heart.png" alt="heart">
+    </div>
+
+    <!-- Slide 9 – Closing Prayer -->
+    <div class="slide">
+        <p>Lord, teach us to give with cheerful hearts. May our generosity reflect Your love and bring hope, provision, and joy to those around us. Amen.</p>
+        <img class="icon hands" src="https://img.icons8.com/emoji/96/raising-hands.png" alt="hands">
+    </div>
+
+    <button id="prev">&#8592;</button>
+    <button id="next">&#8594;</button>
+</div>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+    });
+}
+
+document.getElementById('prev').addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+});
+
+document.getElementById('next').addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+});
+
+// Auto-advance every 6 seconds
+setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}, 6000);
+</script>
+
+</body>
+</html>

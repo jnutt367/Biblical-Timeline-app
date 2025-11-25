@@ -1994,24 +1994,7 @@
     <button class="btn" onclick="scrollToSection('testimonyList')">See Other's Testimonies</button>
   </div>
   
-  <!-- Worship Music Section -->
-<section id="worshipMusic" class="music-section">
-    <h2>🎵 Worship & Prayer Music</h2>
-
-    <div id="playlistContainer" class="playlist-container">
-        <!-- Cards added by JavaScript -->
-    </div>
-
-    <!-- Hidden audio player -->
-    <audio id="musicPlayer" controls style="display:block;"></audio>
-</section>
-  <script>
-    function scrollToSection(id) {
-      document.getElementById(id).scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-  </script>
+ 
   
 <!-- PRAYER REQUEST SECTION -->
 
@@ -2027,6 +2010,11 @@
 
 </div>
 -->
+
+<div class="testimony-display" id="testimonyDisplay">
+    <h2>💝 Testimonies</h2>
+    <div id="testimonyList"></div>
+  </div>
         <div class="timeline">
             <div class="timeline-line"></div>
 
@@ -3527,10 +3515,7 @@
 </div>
 
 
-<div class="testimony-display" id="testimonyDisplay">
-    <h2>💝 Testimonies</h2>
-    <div id="testimonyList"></div>
-  </div>
+
 
 
 
@@ -4181,7 +4166,24 @@
         </div>
     </div>
     
-    
+     <!-- Worship Music Section -->
+<section id="worshipMusic" class="music-section">
+    <h2>🎵 Worship & Prayer Music</h2>
+
+    <div id="playlistContainer" class="playlist-container">
+        <!-- Cards added by JavaScript -->
+    </div>
+
+    <!-- Hidden audio player -->
+    <audio id="musicPlayer" controls style="display:block;"></audio>
+</section>
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  </script>
     <script src="prayerRequest.js"></script>
 
 
