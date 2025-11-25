@@ -285,7 +285,7 @@
     color: #1e3a8a;
     font-weight: bold;
     border-radius: 12px;
-    font-family: fantasy;
+    font-family: Verdana, sans-serif;
   }
  
   #prayerBtn {
@@ -441,15 +441,39 @@
         }
 
         @keyframes professionalGlow {
-            0%, 100% { 
-                text-shadow: 0 2px 4px rgba(249, 212, 6, 0.8);
-                filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+            0% {
+                text-shadow:
+                    0 1px 4px rgba(0, 255, 150, 0.45),
+                    0 0 6px rgba(0, 255, 120, 0.35);
+                filter: drop-shadow(0 2px 6px rgba(0, 255, 150, 0.25));
+                color: #00e68a;
             }
-            50% { 
-                text-shadow: 0 3px 6px rgba(238, 3, 15, 0.9);
-                filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));
+        
+            33% {
+                text-shadow:
+                    0 1px 5px rgba(120, 255, 200, 0.45),
+                    0 0 8px rgba(120, 255, 200, 0.35);
+                filter: drop-shadow(0 2px 7px rgba(120, 255, 200, 0.25));
+                color: #66ffd1;
+            }
+        
+            66% {
+                text-shadow:
+                    0 1px 6px rgba(0, 200, 120, 0.45),
+                    0 0 9px rgba(0, 200, 120, 0.35);
+                filter: drop-shadow(0 2px 8px rgba(0, 200, 120, 0.25));
+                color: #00c878;
+            }
+        
+            100% {
+                text-shadow:
+                    0 1px 4px rgba(0, 255, 150, 0.45),
+                    0 0 6px rgba(0, 255, 120, 0.35);
+                filter: drop-shadow(0 2px 6px rgba(0, 255, 150, 0.25));
+                color: #00e68a;
             }
         }
+        
 
         .mobile-controls {
             position: fixed;
