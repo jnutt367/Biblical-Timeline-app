@@ -10,14 +10,14 @@ const tracks = [
         url: "gospel-worship-christian-church-348450.mp3"
     },
     {
-        title: "Inspiring Cinematic Piano",
+        title: "PHJpianoSolos",
         desc: "Soft piano worship for devotion and prayer time.",
-        url: "https://cdn.pixabay.com/download/audio/2022/03/15/audio_9fc39bdfad.mp3?filename=inspiring-cinematic-piano-112191.mp3"
+        url: "christian-medley-385017.mp3"
     },
     {
         title: "Peaceful Sleep Music",
         desc: "Gentle ambient pads perfect for quiet moments.",
-        url: "https://cdn.pixabay.com/download/audio/2022/03/03/audio_bf3db59bd4.mp3?filename=peaceful-relaxing-sleep-music-110624.mp3"
+        url: "christian-medley-385017.mp3"
     },
     {
         title: "Emotional Ambient",
