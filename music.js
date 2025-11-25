@@ -15,14 +15,14 @@ const tracks = [
         url: "christian-medley-385017.mp3"
     },
     {
-        title: "Peaceful Sleep Music",
-        desc: "Gentle ambient pads perfect for quiet moments.",
-        url: "christian-medley-385017.mp3"
+        title: "SDG MUSIC MINISTRY",
+        desc: "Shout For Joy!",
+        url: "https://www.sdgministry.com/wp-content/uploads/2019/12/01-Shout-For-Joy.mp3"
     },
     {
-        title: "Emotional Ambient",
-        desc: "Meditative atmosphere for reflection.",
-        url: "https://cdn.pixabay.com/download/audio/2021/09/26/audio_0f9309e10e.mp3?filename=ambient-soft-breeze-11037.mp3"
+        title: "SDG MUSIC MINISTRY",
+        desc: "Amazing Grace",
+        url: "https://www.sdgministry.com/wp-content/uploads/2019/12/10-Amazing-Grace_Nothing-But-the-Blood.mp3"
     }
 ];
 
