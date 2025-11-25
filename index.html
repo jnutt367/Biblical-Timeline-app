@@ -81,6 +81,64 @@
     
 }
 
+.music-section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.playlist-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.music-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.music-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.music-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.music-desc {
+    opacity: 0.75;
+    font-size: 0.95rem;
+}
+
+.play-btn {
+    margin-top: 12px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #10b981;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.play-btn:hover {
+    background-color: #059669;
+}
+
+
+
+
 #testimonyList {
     display: flex;
     flex-direction: column;
@@ -1903,6 +1961,17 @@
         <input type="radio" name="timelineFilter" value="new-testament" onchange="filterTimeline()"> New Testament
     </label>
 </div>
+<!-- Worship Music Section -->
+<section id="worshipMusic" class="music-section">
+    <h2>🎵 Worship & Prayer Music</h2>
+
+    <div id="playlistContainer" class="playlist-container">
+        <!-- Cards added by JavaScript -->
+    </div>
+
+    <!-- Hidden audio player -->
+    <audio id="musicPlayer" controls style="display:block;"></audio>
+</section>
 
 <div class="action-buttons">
     <button class="btn" onclick="scrollToSection('testimonyText')">Share Your Testimony</button>
@@ -4939,7 +5008,7 @@
           });
         });
       </script>
-      
+      <script src="music.js"></script>
     <script src="timelineSearch.js"></script>
 
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97f0c83621240c83',t:'MTc1Nzg2MjMyMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
