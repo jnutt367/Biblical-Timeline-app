@@ -1728,12 +1728,12 @@
         }
         @media (min-width: 768px) {
             .action-buttons {
-                background: linear-gradient(to bottom, #327770 0%, #3d8583 50%, #c19d70 100%);
+                background-color: #0c4a6e;
                 border: #a0a3a4 2px solid;
                 border-radius:12px ;
                 display: grid;
-                gap: 25px;
-                opacity: 0.9;
+                gap: 14px;
+                opacity: 0.7;
                 grid-template-columns: auto auto;
                 
             }
@@ -1745,7 +1745,8 @@
 
 
     </style>
-    
+
+   
 <!-- Firebase SDK -->
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
@@ -2088,7 +2089,9 @@
             <div class="timeline-line"></div>
 
            
-       
+        <section class="timeline-section">
+                <h2>Creation & Beginnings</h2>
+
             <div class="timeline-event right creation" onclick="toggleDetails(this)">
                 <div class="event-marker creation">🌍</div>
                 <div class="event-card creation">
@@ -2126,7 +2129,7 @@
                     <button class="expand-btn">▼ Explore Deeper</button>
                 </div>
             </div>
-        
+        </section>
             
 
 
@@ -5467,21 +5470,6 @@
           });
         });
       </script>
-<!-- JS -->
-<script>
-    function toggleDetails(eventElement) {
-      const details = eventElement.querySelector('.event-details');
-      const btn = eventElement.querySelector('.expand-btn');
-      if(details.style.display === 'block') {
-        details.style.display = 'none';
-        btn.textContent = "▼ Explore Deeper";
-      } else {
-        details.style.display = 'block';
-        btn.textContent = "▲ Collapse";
-      }
-    }
-    </script>
-
       <script src="music.js"></script>
     <script src="timelineSearch.js"></script>
 
