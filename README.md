@@ -55,11 +55,7 @@ Folder Structure
 📸 Screenshots (Optional)
 
 <img src="images/Small-screens-JLR.png">
-<img src="images/wide-screen-JLR.png">
 
-<img src="images/testimony.png">
-<img src="images/trivia2-JLR.png">
-<img src="images/trivia1-JLR.png">
 <img src="images/mobile-nav-JLR.png">
 <img src="images/mobile-testimony-JLR.png">
 
@@ -67,6 +63,13 @@ Folder Structure
 <img src="images/scripture-memort-quiz-JLR.png">
 <img src="images/timeline-quiz-JLR.png">
 <img src="images/timeline-section-JLR.png">
+
+<img src="images/wide-screen-JLR.png">
+
+<img src="images/testimony.png">
+<img src="images/trivia2-JLR.png">
+<img src="images/trivia1-JLR.png">
+
 
 🙏 Mission Statement
 
