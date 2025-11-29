@@ -54,7 +54,7 @@ Folder Structure
 
 📸 Screenshots (Optional)
 
-Add a few screenshots of the UI here to help users visualize the experience.
+<img src="images/favicon.png">
 
 🙏 Mission Statement
 
