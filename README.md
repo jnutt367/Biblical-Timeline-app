@@ -1,5 +1,8 @@
 # Jesus' Love Revealed
 A Bible study, testimony, and encouragement platform created by Jason Nutt.
+<p align="center">
+  <img src="https://img.shields.io/badge/License-Christian%20MIT-blue.svg" alt="License: Christian MIT" />
+</p>
 
 📖 About the Project
 
@@ -93,9 +96,27 @@ If you feel led to support Jesus Love Revealed, your contributions help keep the
 Cash App: $JesusLoveRevealed
 Every contribution helps spread Jesus’s hope and love.
 
-📄 License
+## 📄 License
+
+This project is released under a Christian-friendly MIT License.  
+See the full license in the `LICENSE` file in the root of this repository.
+
+By using, copying, or modifying this software you agree to include the license
+and preamble in any redistributed copies. This project is offered freely for
+the glory of God and to help spread the truth of Jesus Christ.  
+
+
+“Then you will know the truth, and the truth will set you free.” — John 8:32
+
 
 This project is released under the MIT License.
+### Why a Christian-friendly MIT license?
+
+I use the MIT license for its simplicity, permissiveness, and legal clarity — it lets others freely use,
+modify, and share the project while protecting the author from liability. The short Christian preamble
+included in the `LICENSE` file does not alter the legal terms; it simply states the spiritual purpose
+behind the code and asks that the acknowledgment of Jesus Christ remain with redistributed copies.
+This keeps the project open, ministry-minded, and legally sound.
 
 
 <img src="https://img.shields.io/badge/Build-Passing-brightgreen" />
