@@ -60,10 +60,13 @@ Folder Structure
 <img src="images/testimony.png">
 <img src="images/trivia2-JLR.png">
 <img src="images/trivia1-JLR.png">
-<img src="">
-<img src="">
+<img src="images/mobile-nav-JLR.png">
+<img src="images/mobile-testimony-JLR.png">
 
-
+<img src="images/reports-JLR-praise.png">
+<img src="images/scripture-memort-quiz-JLR.png">
+<img src="images/timeline-quiz-JLR.png">
+<img src="images/timeline-section-JLR.png">
 
 🙏 Mission Statement
 
