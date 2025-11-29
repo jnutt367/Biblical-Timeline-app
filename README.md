@@ -54,7 +54,16 @@ Folder Structure
 
 📸 Screenshots (Optional)
 
-<img src="images/favicon.png">
+<img src="images/Small-screens-JLR.png">
+<img src="images/wide-screen-JLR.png">
+
+<img src="images/testimony.png">
+<img src="images/trivia2-JLR.png">
+<img src="images/trivia1-JLR.png">
+<img src="">
+<img src="">
+
+
 
 🙏 Mission Statement
 
