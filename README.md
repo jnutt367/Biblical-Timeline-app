@@ -8,6 +8,9 @@ Jesus Love Revealed is a simple and powerful Bible app designed to help people e
 This project is a free offering to the Body of Christ, built to share the truth of Jesus and encourage believers around the world.
 
 ✨ Features
+📲 Login 
+
+📱 & account Creation
 
 📚 Bible Reading Experience (Genesis, Hebrews, and more)
 
