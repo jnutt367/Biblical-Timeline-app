@@ -1,7 +1,4 @@
-# Biblical-Timeline-app
-
-Jesus Love Revealed App
-
+# Jesus' Love Revealed
 A Bible study, testimony, and encouragement platform created by Jason Nutt.
 
 📖 About the Project
