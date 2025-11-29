@@ -12,7 +12,7 @@ This project is a free offering to the Body of Christ, built to share the truth 
 
 📲 Login 
 
-📱 & account Creation
+📱 Account Creation
 
 📚 Bible Reading Experience (Genesis, Hebrews, and more)
 
