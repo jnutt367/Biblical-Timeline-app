@@ -3,12 +3,12 @@ const tracks = [
     {
         title: "PIXABAY Gospel Worship Christian Church",
         desc: "Gospel Worship Christian Church",
-        url: "gospel-worship-christian-church-348450.mp3"
+        url: "music/gospel-worship-christian-church-348450.mp3"
     },
     {
         title: "PHJpianoSolos",
         desc: "Soft piano worship for devotion and prayer time.",
-        url: "christian-medley-385017.mp3"
+        url: "music/christian-medley-385017.mp3"
     },
     {
         title: "SDG MUSIC MINISTRY",
@@ -23,7 +23,7 @@ const tracks = [
     {
         title: "Deep Meditation",
         desc: "Meditation/spiritual Healing Music",
-        url: "healing-spiritual-music-304095.mp3"
+        url: "music/healing-spiritual-music-304095.mp3"
     }
 
 ];
