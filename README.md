@@ -80,15 +80,10 @@ Every contribution helps spread Jesus’s hope and love.
 
 This project is released under the MIT License.
 
-If you want, J.A.R.V.I.S. can also:
 
-✅ Generate a badge set (build, license, version, etc.)
-✅ Create a CONTRIBUTING.md
-✅ Build a polished landing-page README version with images and banners
-✅ Add installation instructions for a React or Next.js version
-
-Just say the word, Jason.
-
-Do you like this personality?
-
-ChatGPT can make mistakes. Check important info.
+<img src="https://img.shields.io/badge/Build-Passing-brightgreen" />
+  <img src="https://img.shields.io/badge/License-MIT-blue" />
+  <img src="https://img.shields.io/badge/Version-1.0.0-purple" />
+  <img src="https://img.shields.io/badge/Status-Active-success" />
+  <img src="https://img.shields.io/badge/Platform-Web%20%7C%20Mobile-lightgrey" />
+  <img src="https://img.shields.io/badge/Made%20With-Love%20For%20Jesus-red" />
