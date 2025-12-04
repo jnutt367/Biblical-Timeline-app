@@ -6,58 +6,71 @@
   <title>How to Build a Daily Walk With God — Jesus Love Revealed</title>
   <link rel="stylesheet" href="css/course.css" />
 </head>
-
 <body>
   <div class="container">
-    <header class="hero">
-      <div class="hero-left">
-        <span class="kicker">Jesus Love Revealed — Course</span>
-        <h1>How to Build a Daily Walk With God</h1>
-        <p class="lead">
-          A 4-week, Scripture-centered course sponsored by Jesus'Love Revealed YouTube Channel!
-        </p>
-
-        <div class="cta-row">
-          <a class="btn btn-primary" href="week1.html">Start Week 1</a>
-          <a class="btn btn-ghost" href="#details">See Lessons</a>
+    <header class="header-banner" role="banner" aria-label="Jesus Love Revealed header">
+      <div class="header-left">
+        <img src="img/logo.png" alt="Jesus Love Revealed logo" class="logo" onerror="this.style.display='none'"/>
+        <div class="header-title">
+          <h1>JESUS LOVE REVEALED — How to Build a Daily Walk With God</h1>
+          <p class="small">4-week Scripture course — led by Jason Nutt</p>
+          <div class="accent-bar" aria-hidden="true"></div>
         </div>
       </div>
 
-      <aside class="card">
-        <strong style="font-size:16px">Join free today</strong>
+      <div class="header-cta">
+        <a class="btn btn-primary" href="week1.html">Start Week 1</a>
+        <a class="btn btn-ghost" href="#details">See Lessons</a>
+      </div>
+    </header>
+
+    <div class="grid" style="margin-top:18px">
+      <main>
+        <section class="card-block" id="details">
+          <h2>Course Overview</h2>
+          <p class="lead">A short, practical 4-week course to form a daily rhythm with Scripture, prayer, and obedience.</p>
+
+          <ul class="clean">
+            <li><a href="week1.html" style="color:var(--teal)">Week 1 — Falling in Love with Scripture</a></li>
+            <li><a href="week2.html" style="color:var(--teal)">Week 2 — Prayer & Hearing God</a></li>
+            <li><a href="week3.html" style="color:var(--teal)">Week 3 — Identity, Freedom & Renewal</a></li>
+            <li><a href="week4.html" style="color:var(--teal)">Week 4 — Purpose, Calling & Obedience</a></li>
+            <li><a href="bonus.html" style="color:var(--teal)">Bonus — Spiritual Warfare</a></li>
+          </ul>
+        </section>
+
+        <section class="card-block">
+          <h2>How It Works</h2>
+          <p class="small">Each week includes a short lesson, Scripture passages to read, assignments you can complete in minutes each day, reflection prompts, and a notes area to help you remember and apply what God says to you.</p>
+        </section>
+      </main>
+
+      <aside class="card-block" aria-label="Signup card">
+        <strong style="display:block;font-size:16px">Join free today</strong>
         <p class="small">Weekly lessons, assignments & community access.</p>
 
         <form id="signupForm">
-          <label>Full Name:</label>
-          
-          <input type="text" required />
-          <hr>
-          <label>Email:</label>
-          <input type="email" required />
-          <hr>
-          <button class="btn btn-primary" type="submit">Join the course</button>
+          <label class="small">Full name</label>
+          <input type="text" required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#eaf6f4" />
 
-          <div id="successBox" class="success">
-            <strong>Success!</strong>  
-            <p>You're enrolled. Start with Week 1 below.</p>
-            <a href="week1.html" class="btn btn-primary">Go to Week 1</a>
+          <label class="small" style="margin-top:8px">Email</label>
+          <input type="email" required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#eaf6f4" />
+
+          <div style="margin-top:12px">
+            <button class="btn btn-primary" type="submit">Join the course</button>
+            <a class="btn btn-ghost" href="week1.html" style="margin-left:8px">Preview Week 1</a>
+          </div>
+
+          <div id="successBox" class="reflection-box" style="display:none;margin-top:12px">
+            <strong>Success!</strong>
+            <p class="small">You're enrolled. Start with Week 1 below.</p>
+            <a class="btn btn-primary" href="week1.html">Go to Week 1</a>
           </div>
         </form>
-      </aside>
-    </header>
 
-    <section id="details" style="margin-top:20px">
-      <div class="card-block">
-        <h2>Course Overview</h2>
-        <ul class="clean">
-          <li><a href="week1.html">Week 1 — Falling in Love with Scripture</a></li>
-          <li><a href="week2.html">Week 2 — Prayer & Hearing God</a></li>
-          <li><a href="week3.html">Week 3 — Identity, Freedom & Renewal</a></li>
-          <li><a href="week4.html">Week 4 — Purpose, Calling & Obedience</a></li>
-          <li><a href="bonus.html">Bonus — Spiritual Warfare</a></li>
-        </ul>
-      </div>
-    </section>
+        <p class="small" style="margin-top:12px">Questions? Email <strong>hello@jesusloverevealed.org</strong></p>
+      </aside>
+    </div>
 
     <footer>
       © Jesus Love Revealed • Built by Jason Nutt
