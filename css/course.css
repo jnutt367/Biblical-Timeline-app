@@ -128,6 +128,36 @@
     color: var(--brand-accent);
     border: 2px solid var(--btn-ghost-border);
   }
+/* ==============================
+   DONATION BUTTON — CLASSY STYLE
+   ============================== */
+   .btn-donate {
+    background: transparent;
+    color: var(--brand-accent);
+    border: 2px solid var(--brand-accent);
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: var(--radius);
+    transition: all 0.25s ease;
+  }
+  
+  .btn-donate:hover {
+    background: var(--brand-accent);
+    color: var(--btn-primary-text);
+    box-shadow: 0 4px 12px rgba(0, 194, 168, 0.3);
+  }
+  
+  /* Responsive: full width on mobile */
+  @media (max-width: 768px) {
+    .cta-row .btn-donate {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+
+
+
   .logo {
     background-color: #00C2A8;
     opacity: 0.75;
