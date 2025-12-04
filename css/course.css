@@ -1,0 +1,108 @@
+/* ---- GLOBAL THEME ---- */
+:root{
+    --accent:#0b6b4f;
+    --accent-2:#0f8f66;
+    --muted:#6b7280;
+    --bg:#f7faf9;
+    --card:#ffffff;
+    --maxw:920px;
+    --radius:12px;
+    --glass: rgba(255,255,255,0.85);
+    --shadow: 0 8px 24px rgba(11,20,17,0.06);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background: linear-gradient(180deg, #f0fbf7 0%, var(--bg) 100%);
+    color:#0b1320;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.45;
+  }
+  
+  .container{
+    max-width:var(--maxw);
+    margin:36px auto;
+    padding:24px;
+  }
+  
+  header.hero{
+    display:flex;
+    gap:24px;
+    align-items:center;
+    background:var(--glass);
+    border-radius:var(--radius);
+    padding:22px;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(11,20,17,0.04);
+  }
+  
+  .hero-left{flex:1; min-width:0}
+  .kicker{
+    display:inline-block;
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    color:white;
+    padding:6px 12px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:13px;
+  }
+  
+  h1{
+    margin:12px 0 8px 0;
+    font-size:28px;
+    line-height:1.05;
+  }
+  
+  p.lead{color:var(--muted); margin:0 0 12px 0}
+  
+  .cta-row{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    align-items:center;
+    margin-top:12px;
+  }
+  
+  /* Buttons */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 18px;
+    border-radius:10px;
+    font-weight:700;
+    border:0;
+    cursor:pointer;
+    text-decoration:none;
+  }
+  
+  .btn-primary{
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    color:white;
+    box-shadow: 0 8px 20px rgba(15,143,102,0.18);
+  }
+  
+  .btn-ghost{
+    background:transparent;
+    color:var(--accent);
+    border:1px solid rgba(11,20,17,0.06);
+  }
+  
+  aside.card{
+    width:340px;
+    background:var(--card);
+    border-radius:12px;
+    padding:18px;
+    box-shadow:var(--shadow);
+  }
+  
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:28px}
+  
+  /* Responsive */
+  @media (max-width:880px){
+    header.hero{flex-direction:column; align-items:stretch}
+    aside.card{width:100%}
+  }
+  
