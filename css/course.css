@@ -54,6 +54,9 @@
     color: black;
     padding: 1rem;
     border-radius: 13px;
+    border-color: #00C2A8;
+    background-color: #00C2A8;
+    color: whitesmoke;
   }
   body {
     background: var(--bg);
