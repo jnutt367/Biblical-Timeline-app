@@ -1,167 +1,294 @@
-:root{
-    --navy-1:#07133a;        /* deep navy */
-    --navy-2:#3b0f5f;        /* deep purple */
-    --teal:#00C2A8;          /* chosen accent */
-    --muted:#9aa4b2;
-    --card:#ffffff;
-    --bg:#0f1724;            /* dark page background */
-    --card-contrast:#0b1220;
-    --radius:12px;
-    --maxw:920px;
-    --glass: rgba(255,255,255,0.03);
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    color-scheme: dark;
+/* ============================================================
+   JESUS LOVE REVEALED — COURSE THEME (LIGHT + DARK)
+   Fully Responsive • Brand Teal Accent • Dual Theme System
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. ROOT VARIABLES — LIGHT THEME (DEFAULT)
+   ------------------------------------------------------------ */
+   :root {
+    --brand-accent: #00C2A8;
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --card-bg: #f6f6f6;
+    --card-border: #e0e0e0;
+    --header-bg: linear-gradient(135deg, #0a0f24, #0c2a3e);
+    --scripture-bg: #f1fffc;
+    --scripture-border: #00c2a879;
+    --btn-primary-bg: #00C2A8;
+    --btn-primary-text: #ffffff;
+    --btn-ghost-border: #00C2A8;
+    --footer-bg: #fafafa;
+  
+    /* Typography */
+    --font-main: 'Inter', Arial, sans-serif;
+    --radius: 12px;
   }
   
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    background: linear-gradient(180deg, #081225 0%, #071522 40%, #06121a 100%);
-    color:#e6eef6;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.5;
-    font-size:16px;
+  /* ------------------------------------------------------------
+     2. DARK THEME OVERRIDES
+     ------------------------------------------------------------ */
+  body[data-theme="dark"] {
+    --bg: #0B0F14;
+    --text: #f5faff;
+    --card-bg: #131922;
+    --card-border: #1f2937;
+    --header-bg: linear-gradient(135deg, #020b14, #021c25);
+    --scripture-bg: #062c28;
+    --scripture-border: #00c2a8aa;
+    --btn-primary-bg: #00C2A8;
+    --btn-ghost-border: #00C2A8;
+    --footer-bg: #0f131a;
   }
   
-  .container{
-    max-width:var(--maxw);
-    margin:30px auto;
-    padding:22px;
+  /* ------------------------------------------------------------
+     3. GLOBAL RESET
+     ------------------------------------------------------------ */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  #themeToggle {
+    margin-left: 2rem;
+    color: black;
+    padding: 1rem;
+    border-radius: 13px;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    padding-bottom: 50px;
   }
   
-  /* Header banner */
-  .header-banner{
-    display:flex;
-    align-items:center;
-    gap:18px;
-    padding:18px 20px;
-    border-radius:14px;
-    background: linear-gradient(90deg,var(--navy-1),var(--navy-2));
-    box-shadow: 0 10px 30px rgba(3,6,10,0.6), inset 0 1px 0 rgba(255,255,255,0.03);
-    border:1px solid rgba(255,255,255,0.04);
-    margin-bottom:18px;
-  }
-  .header-left{display:flex;gap:16px;align-items:center;flex:1}
-  .header-left img.logo{height:56px;width:auto;border-radius:8px}
-  .header-title h1{margin:0;font-size:20px;letter-spacing:0.4px}
-  .header-title p{margin:2px 0 0 0;color:rgba(230,238,246,0.85);font-size:13px}
-  
-  /* accent bar under title */
-  .accent-bar{
-    height:6px;
-    background: linear-gradient(90deg,var(--teal), rgba(0,194,168,0.6));
-    border-radius:6px;
-    margin-top:10px;
-    width:140px;
+  a {
+    color: var(--brand-accent);
+    text-decoration: none;
   }
   
-  /* hero & cards */
-  .header-cta{display:flex;gap:12px;align-items:center}
-  .kicker{
-    display:inline-block;
-    background:rgba(255,255,255,0.04);
-    color:var(--teal);
-    padding:6px 10px;
-    border-radius:999px;
-    font-weight:700;
-    font-size:12px;
-    letter-spacing:0.6px;
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
   }
   
-  /* Card layout (light card on dark bg) */
-  .card-block{
-    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-    border-radius:var(--radius);
-    padding:18px;
-    box-shadow: 0 8px 28px rgba(3,6,12,0.55);
-    border:1px solid rgba(255,255,255,0.04);
-    margin-bottom:18px;
+  /* ------------------------------------------------------------
+     4. HERO SECTION
+     ------------------------------------------------------------ */
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 40px 0;
   }
   
-  /* headings */
-  h1,h2,h3{color:#eaf6f4;margin:0 0 10px 0}
-  h1{font-size:22px}
-  h2{font-size:18px}
-  .lead{color:var(--muted);margin:6px 0 12px 0;font-size:14px}
-  
-  /* text and lists */
-  p{color:rgba(230,238,246,0.95)}
-  ul.clean{padding-left:18px;color:var(--muted)}
-  ol.clean{padding-left:18px;color:var(--muted)}
-  
-  /* call-to-action buttons */
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:10px 14px;
-    border-radius:10px;
-    font-weight:700;
-    border:0;
-    cursor:pointer;
-    text-decoration:none;
-    color: #071225;
+  .hero-left h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
   }
-  .btn-primary{
-    background: linear-gradient(90deg,var(--teal), #00a88f);
-    box-shadow: 0 8px 20px rgba(0,194,168,0.16);
-    color: #06121a;
-    border:1px solid rgba(255,255,255,0.06);
+  
+  .hero-left .kicker {
+    letter-spacing: 1px;
+    color: var(--brand-accent);
+    text-transform: uppercase;
+    font-size: 0.9rem;
   }
-  .btn-ghost{
+  
+  .hero-left .lead {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 12px 22px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    display: inline-block;
+  }
+  
+  .btn-primary {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    box-shadow: 0 4px 12px #00c2a85d;
+  }
+  
+  .btn-ghost {
     background: transparent;
-    color:var(--teal);
-    border:1px solid rgba(255,255,255,0.06);
-    padding:8px 12px;
+    color: var(--brand-accent);
+    border: 2px solid var(--btn-ghost-border);
+  }
+  .logo {
+    background-color: #00C2A8;
+    opacity: 0.75;
+    border-radius: 50%;
+  }
+  .cta-row {
+    display: flex;
+    gap: 15px;
   }
   
-  /* scripture badge */
-  .scripture-badge{
-    display:inline-block;
-    padding:6px 10px;
-    border-radius:999px;
-    background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-    color:var(--teal);
-    font-weight:700;
-    margin-bottom:8px;
+  /* ------------------------------------------------------------
+     5. SIDEBAR CARD (SIGNUP BOX)
+     ------------------------------------------------------------ */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 22px;
+    border-radius: var(--radius);
+    box-shadow: 0 3px 10px #0000000b;
   }
   
-  /* reflection box style */
-  textarea{
-    width:100%;
-    background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.02));
-    color:#eaf6f4;
-    border:1px solid rgba(255,255,255,0.04);
-    padding:12px;
-    border-radius:10px;
-    resize:vertical;
-    font-size:15px;
+  .card input {
+    margin-bottom: 12px;
+    padding: 10px;
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid #ccc;
   }
   
-  /* small boxed reflection/question area */
-  .reflection-box{
-    background: linear-gradient(180deg, rgba(0,194,168,0.06), rgba(0,194,168,0.02));
-    border-left:4px solid var(--teal);
-    padding:12px;
-    border-radius:8px;
-    margin:10px 0;
-    color:#eaf6f4;
+  .success {
+    background: var(--scripture-bg);
+    border: 1px solid var(--scripture-border);
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: var(--radius);
+    display: none;
   }
   
-  /* footer */
-  footer{
-    color:var(--muted);
-    text-align:center;
-    margin-top:26px;
-    font-size:13px;
+  /* ------------------------------------------------------------
+     6. COURSE OVERVIEW
+     ------------------------------------------------------------ */
+  .clean {
+    list-style: none;
+    margin-top: 20px;
   }
   
-  /* layout helpers */
-  .grid{display:grid;grid-template-columns:1fr 340px;gap:18px}
-  @media (max-width:980px){ .grid{grid-template-columns:1fr} .header-left{flex-direction:column;align-items:flex-start} .header-cta{margin-top:12px} }
+  .clean li {
+    margin-bottom: 14px;
+  }
   
-  /* tiny utilities */
-  .small{font-size:13px;color:var(--muted)}
+  .clean li a {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  /* ------------------------------------------------------------
+     7. WEEK PAGE HEADERS
+     ------------------------------------------------------------ */
+  .week-header {
+    margin-bottom: 25px;
+  }
+  
+  .week-header h1 {
+    font-size: 2em;
+    margin-bottom: 8px;
+  }
+  
+  .week-header .lead {
+    opacity: 0.9;
+  }
+  
+  /* ------------------------------------------------------------
+     8. SCRIPTURE BOXES
+     ------------------------------------------------------------ */
+  .scripture-box {
+    background: var(--scripture-bg);
+    border-left: 5px solid var(--brand-accent);
+    border-radius: var(--radius);
+    padding: 15px 18px;
+    margin-bottom: 20px;
+    border: 1px solid var(--scripture-border);
+  }
+  
+  /* ------------------------------------------------------------
+     9. REFLECTION BOXES
+     ------------------------------------------------------------ */
+  .reflection-box {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 18px;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+  }
+  
+  .reflection-box strong {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  /* ------------------------------------------------------------
+     10. FOOTER
+     ------------------------------------------------------------ */
+  footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+    background: var(--footer-bg);
+    border-top: 1px solid var(--card-border);
+    border-radius: var(--radius);
+  }
+  
+  /* ------------------------------------------------------------
+     11. MOBILE RESPONSIVE PATCH
+     ------------------------------------------------------------ */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+  
+    .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .hero-left h1,
+    .week-header h1 {
+      font-size: 1.9rem;
+    }
+  
+    .cta-row {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .cta-row .btn {
+      width: 100%;
+    }
+  
+    .hero aside.card {
+      width: 100%;
+    }
+  
+    .card {
+      margin-bottom: 20px;
+    }
+  
+    .scripture-box {
+      padding: 12px;
+    }
+  
+    footer {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .hero-left h1,
+    .week-header h1 {
+      font-size: 1.6rem;
+    }
+  
+    .scripture-box,
+    .reflection-box {
+      font-size: 0.9rem;
+    }
+  }
   
