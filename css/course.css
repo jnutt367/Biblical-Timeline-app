@@ -50,7 +50,7 @@
     box-sizing: border-box;
   }
   #themeToggle {
-    margin-left: 2rem;
+    margin-left: 12rem;
     color: black;
     padding: 1rem;
     border-radius: 13px;
@@ -279,7 +279,12 @@
       font-size: 0.9rem;
     }
   }
-  
+  .logo {
+    background-color: #00C2A8;
+    opacity: 0.75;
+    border-radius: 50%;
+    width: 150px;
+  }
   @media (max-width: 375px) {
     .hero-left h1,
     .week-header h1 {
