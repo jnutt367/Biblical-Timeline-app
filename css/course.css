@@ -140,6 +140,7 @@
     border-radius: var(--radius);
     transition: all 0.25s ease;
     position: relative; /* needed for tooltip */
+    outline: none; /* remove default focus ring */
   }
   /* Tooltip text */
 .btn-donate::after {
@@ -197,7 +198,6 @@
       text-align: center;
     }
   }
-  
 
 
 
