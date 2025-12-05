@@ -139,8 +139,51 @@
     padding: 12px 20px;
     border-radius: var(--radius);
     transition: all 0.25s ease;
+    position: relative; /* needed for tooltip */
+  }
+  /* Tooltip text */
+.btn-donate::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%; /* above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 194, 168, 0.95);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 10;
   }
   
+  /* Tooltip arrow */
+  .btn-donate::before {
+    content: '';
+    position: absolute;
+    bottom: 115%; /* just above button */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: rgba(0, 194, 168, 0.95) transparent transparent transparent;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 10;
+  }
+  
+  /* Show tooltip on hover */
+  .btn-donate:hover::after,
+  .btn-donate:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-4px);
+  }
+
+
   .btn-donate:hover {
     background: var(--brand-accent);
     color: var(--btn-primary-text);
